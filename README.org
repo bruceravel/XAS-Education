@@ -4,7 +4,9 @@
 ** Talks
 
 These folders contain the LaTeX source for my talks.  All talks use
-[[https://bitbucket.org/rivanvx/beamer/wiki/Home][the Beamer LaTeX class]].
+LaTeX and [[https://bitbucket.org/rivanvx/beamer/wiki/Home][the Beamer LaTeX class]].  All images are included, usually as
+.png or .jpg files.  Source material (e.g. GIMP .xcf, LibreOffice .odg,
+Xfig .fig) are deposited for some images.
 
 PDF files can be found in [[https://github.com/bruceravel/XAS-Education/downloads][downloads area]].
 
@@ -20,7 +22,7 @@ PDF files can be found in [[https://github.com/bruceravel/XAS-Education/download
 
 These folders contain the XAS and structural data used in the talks.
 
- | *folder           | *contents*                                                             |
+ | *folder*          | *contents*                                                             |
  |-------------------+------------------------------------------------------------------------|
  | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
  | FeS2              | FeS2 transmission exafs + crystal data                                 |
@@ -38,8 +40,8 @@ This is a human-readable summary of the [[http://creativecommons.org/licenses/by
  
 You are free:
 
- + to Share — to copy, distribute and transmit the work
- + to Remix — to adapt the work
+ + *to Share* — to copy, distribute and transmit the work
+ + *to Remix* — to adapt the work
  + to make commercial use of the work
 
 Under the following conditions:
