@@ -1,0 +1,126 @@
+%% Time-stamp: <30-Jun-2007 14:37:50 bruce>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Include file for
+%%%    A Practical Introduction to Multiple Scattering Theory
+%%%                            Copyright (C) 2004-2005 Bruce Ravel
+%%%                            <bravel@anl.gov>
+%%%                            http://feff.phys.washington.edu/~ravel
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% This work is licensed under the Creative Commons Attribution,
+%% Share-Alike License. To view a copy of this license, visit
+%% http://creativecommons.org/licenses/by-sa/2.5/ or send a letter to
+%% Creative Commons, 559 Nathan Abbott Way, Stanford, California
+%% 94305, USA.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% single scattering
+\def  \SS {{
+%  \begin{minipage}[h][3truecm][c]{4truecm}
+  \begin{picture}(80,26)(0,0)
+    \linethickness{1pt}
+    \qbezier(8,13)(40,26)(72,13)
+    \qbezier(8,13)(40,0)(72,13)
+    {\color{red}
+    \put(8,13){\circle*{9}}}
+    {\color{Gold2}
+    \put(72,13){\circle*{9}}}
+  \end{picture}
+%  \end{minipage}
+}}
+
+%%% double scattering
+\def  \DS {{
+  \begin{minipage}[h][2truecm][c]{3truecm}
+  \begin{picture}(125,60)(0,0)
+    \linethickness{1pt}
+    \qbezier(12.5,20)(25,40)(62.5,50)
+    \qbezier(62.5,50)(100,40)(112.5,20)
+    \qbezier(12.5,20)(62.5,0)(112.5,20)
+    {\color{red}
+    \put(12.5,20){\circle*{13}}}
+    {\color{blue}
+    \put(59,50){\circle*{13}}
+    \put(112.5,20){\circle*{13}}}
+  \end{picture}
+  \end{minipage}
+}}
+
+%%% triple scattering #1
+\def  \TST {{
+  \begin{minipage}[h][2truecm][c]{3truecm}
+  \begin{picture}(125,60)(0,0)
+    \linethickness{1pt}
+    \qbezier(12.5,20)(25,40)(62.5,50)
+    \qbezier(62.5,50)(100,40)(112.5,20)
+    \qbezier(12.5,20)(50,30)(62.5,50)
+    \qbezier(62.5,50)(75,30)(112.5,20)
+    {\color{red}
+    \put(12.5,20){\circle*{13}}}
+    {\color{blue}
+    \put(59,50){\circle*{13}}
+    \put(112.5,20){\circle*{13}}}
+  \end{picture}
+  \end{minipage}
+}}
+
+%%% triple scattering #2
+\def  \TSF {{
+  \begin{minipage}[h][2truecm][c]{3truecm}
+  \begin{picture}(125,60)(0,-20)
+    \linethickness{1pt}
+    \qbezier(12.5,20)(25,40)(62.5,50)
+    \qbezier(62.5,50)(100,40)(112.5,20)
+    \qbezier(62.5,-10)(100,0)(112.5,20)
+    \qbezier(12.5,20)(25,0)(62.5,-10)
+    {\color{red}
+    \put(12.5,20){\circle*{13}}}
+    {\color{blue}
+    \put(59,50){\circle*{13}}
+    \put(112.5,20){\circle*{13}}
+    \put(59,-10){\circle*{13}}}
+  \end{picture}
+  \end{minipage}
+}}
+
+%% focussed DS
+\def  \FDS {{
+  \begin{minipage}[h][1truecm][c]{8truecm}
+  \begin{picture}(250,60)(0,0)
+    \linethickness{1pt}
+    \qbezier(12.5,20)(62.5,40)(125,20)
+    \qbezier(125,20)(187.5,40)(225.5,20)
+    \qbezier(12.5,20)(112.5,0)(225.5,20)
+    {\color{firebrick4}
+    \put(12.5,20){\circle*{13}}}
+    {\color{blue}
+    \put(125,20){\circle*{13}}
+    \put(225.5,20){\circle*{13}}}
+  \end{picture}
+  \end{minipage}
+}}
+
+%% focussed TS
+\def  \FTS {{
+  \begin{minipage}[h][1truecm][c]{8truecm}
+  \begin{picture}(250,60)(0,0)
+    \linethickness{1pt}
+    \qbezier(12.5,20)(62.5,40)(125,20)
+    \qbezier(125,20)(187.5,40)(225.5,20)
+    \qbezier(12.5,20)(62.5,0)(125,20)
+    \qbezier(125,20)(187.5,0)(225.5,20)
+    {\color{firebrick4}
+    \put(12.5,20){\circle*{13}}}
+    {\color{blue}
+    \put(125,20){\circle*{13}}
+    \put(225.5,20){\circle*{13}}}
+  \end{picture}
+  \end{minipage}
+}}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

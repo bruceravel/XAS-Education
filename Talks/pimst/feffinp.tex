@@ -1,0 +1,223 @@
+
+
+
+\begin{frame}[fragile]
+  \frametitle<1>{A Feff6 input file}
+  \frametitle<2>{A Feff8 input file}
+  \begin{columns}[T]
+    \begin{column}{0.44\linewidth}
+      Here is an example of a \textsc{feff}\only<1>6\only<2>8 input file:
+
+      \vspace*{\stretch{1}}
+
+      \begin{onlyenv}<1>
+        \begin{block}{}
+          \begin{alltt}
+            \tiny
+ {\color{Green4}TITLE Cobalt sulfide  CoS\_2}
+
+ {\color{Purple2}HOLE} 1 1.0 {\color{Blue4}*  Co K edge (7709.0 eV)
+
+ *         mphase,mpath,mfeff,mchi}
+ {\color{SteelBlue2}CONTROL}   1      1     1     1
+ {\color{SteelBlue2}PRINT}     1      0     0     0
+
+ {\color{Purple2}RMAX}        6.0
+
+
+ {\color{Brown4}POTENTIALS}
+ {\color{Blue4}*    ipot   Z  element}
+        0   27   Co
+        1   27   Co
+        2   16   S
+
+                  {\color{Blue4}* continued ------>}
+          \end{alltt}
+        \end{block}
+      \end{onlyenv}
+      \begin{onlyenv}<2>
+        \begin{block}{}
+          \begin{alltt}
+            \tiny
+ {\color{Green4}TITLE Cobalt sulfide  CoS\_2}
+ {\color{Purple2}EDGE} K
+ {\color{Purple2}S02}  1.0
+
+ {\color{Blue4} *    pot    xsph  fms   paths genfmt ff2chi}
+ {\color{SteelBlue2}CONTROL}   1      1     1     1     1     1
+ {\color{SteelBlue2}PRINT}     1      0     0     0     0     0
+
+ {\color{Purple2}EXCHANGE}   0
+ {\color{Purple2}SCF}        4.0
+ {\color{Purple2}XANES}      4.0
+ {\color{Purple2}FMS}        5.09694  0
+ {\color{Purple2}LDOS}      -30   20     0.1
+ {\color{Purple2}RPATH}      0.1
+ {\color{Blue4}*EXAFS     20}
+
+ {\color{Brown4}POTENTIALS}
+ {\color{Blue4}*   ipot  Z  element  l\_scmt  l\_fms  stoi.}
+        0   27   Co       2       2       0
+        1   27   Co       2       2       4
+        2   16   S        2       2       8
+                          {\color{Blue4}* continued ------>}
+          \end{alltt}
+        \end{block}
+      \end{onlyenv}
+     \end{column}
+     %%
+     \begin{column}{0.54\linewidth}
+      \begin{block}{}
+         \begin{alltt}
+         \tiny
+  {\color{Brown4}ATOMS}   {\color{Blue4}* this list contains 71 atoms
+  *   x          y          z     ipot  tag     distance}
+     0.00000    0.00000    0.00000  0  Co1     0.00000
+     2.14845    0.61305    0.61305  2  S1\_1    2.31678
+     0.61305   -2.14845    0.61305  2  S1\_1    2.31678
+    -0.61305    0.61305    2.14845  2  S1\_1    2.31678
+    -0.61305    2.14845   -0.61305  2  S1\_1    2.31678
+    -2.14845   -0.61305   -0.61305  2  S1\_1    2.31678
+     0.61305   -0.61305   -2.14845  2  S1\_1    2.31678
+    -3.37455    0.61305    0.61305  2  S1\_2    3.48415
+     0.61305    3.37455    0.61305  2  S1\_2    3.48415
+     0.61305   -0.61305    3.37455  2  S1\_2    3.48415
+     3.37455   -0.61305   -0.61305  2  S1\_2    3.48415
+    -0.61305   -3.37455   -0.61305  2  S1\_2    3.48415
+    -0.61305    0.61305   -3.37455  2  S1\_2    3.48415
+    -2.14845   -2.14845    2.14845  2  S1\_3    3.72122
+     2.14845    2.14845   -2.14845  2  S1\_3    3.72122
+     2.76150    2.76150    0.00000  1  Co1\_1   3.90535
+    -2.76150    2.76150    0.00000  1  Co1\_1   3.90535
+     2.76150   -2.76150    0.00000  1  Co1\_1   3.90535
+    -2.76150   -2.76150    0.00000  1  Co1\_1   3.90535
+     2.76150    0.00000    2.76150  1  Co1\_1   3.90535
+    -2.76150    0.00000    2.76150  1  Co1\_1   3.90535
+     0.00000    2.76150    2.76150  1  Co1\_1   3.90535
+  {\color{Blue4}*
+  * etc...
+  *}
+  {\color{Purple2}END}
+         \end{alltt}
+       \end{block}
+     \end{column}
+   \end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Using \textsc{atoms} to prepare the \textsc{feff} input file}
+  %%
+  \textsc{artemis} includes a tool called \textsc{atoms} that converts
+  crystallographic data into a \textsc{feff} input file.
+
+  \medskip
+
+  \begin{columns}[c]
+    \begin{column}[c]{0.6\linewidth}
+      \includegraphics<1>[width=0.9\linewidth]{images/artemis_atoms}
+    \end{column}
+    %%
+    \begin{column}[c]{0.4\linewidth}
+      The input data can be a CIF file or this simple format:
+      \begin{block}{}
+        \begin{alltt}
+          \tiny
+ {\color{Green4}title YBCO: Y Ba2 Cu3 O7}
+ {\color{Brown4}space} P M M M
+ {\color{Brown4}rmax}=5.2   {\color{Brown4}a}=3.823   {\color{Brown4}b}=3.886 {\color{Brown4}c}=11.681
+ {\color{Brown4}core}=cu2
+ {\color{Brown4}atoms}
+ {\color{Blue4}! At.type   x     y     z      tag}
+    Y       0.5   0.5   0.5
+    Ba      0.5   0.5   0.184
+    Cu      0     0     0       cu1
+    Cu      0     0     0.356   cu2
+    O       0     0.5   0       o1
+    O       0     0     0.158   o2
+    O       0     0.5   0.379   o3
+    O       0.5   0     0.377   o4
+         \end{alltt}
+       \end{block}
+     \end{column}
+   \end{columns}
+
+   \bigskip
+
+   These data are typically taken from the crystallography literature,
+   the \textit{Inorganic Crystal Structure Database}, or from:
+   \href{http://cars9.uchicago.edu/\char126newville/adb/search.html}
+   {\color{Purple4}\texttt{http://cars9.uchicago.edu/\char126newville/adb/search.html}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Feff input files for non-crystalline materials}
+  \begin{columns}[c]
+    \begin{column}{0.6\linewidth}
+      There are many sources of structural data about molecules,
+      proteins, and other non-crystalline materials. A bit of googling
+      turned up this Protein Data Bank File for cisplatin:
+
+      \centering\includegraphics<1>[width=0.4\linewidth]{images/cisplatin}
+      \begin{alltt}
+        \tiny
+ATOM   1 PT1  MOL A  1  -0.142   0.141   7.747  1.00  1.00
+ATOM   2 CL2  MOL A  1  -0.135  -2.042   8.092  1.00  1.00
+ATOM   3 CL3  MOL A  1   2.064   0.127   7.615  1.00  1.00
+ATOM   4  N4  MOL A  1  -0.147   2.166   7.427  1.00  1.00
+ATOM   5  N5  MOL A  1  -2.188   0.154   7.870  1.00  1.00
+ATOM   6 1H4  MOL A  1   0.793   2.489   7.319  1.00  1.00
+ATOM   7 2H4  MOL A  1  -0.570   2.625   8.208  1.00  1.00
+ATOM   8 3H4  MOL A  1  -0.668   2.370   6.598  1.00  1.00
+ATOM   9 1H5  MOL A  1  -2.464   0.303   8.819  1.00  1.00
+ATOM  10 2H5  MOL A  1  -2.546  -0.724   7.552  1.00  1.00
+ATOM  11 3H5  MOL A  1  -2.551   0.889   7.298  1.00  1.00
+TER
+      \end{alltt}
+    \end{column}
+    %%
+    \begin{column}{0.4\linewidth}
+      Cut, paste, insert some boilerplate, and voil\'a!
+
+      \begin{block}{}
+        \begin{alltt}
+          \tiny
+ {\color{Green4}TITLE cisplatin}
+ {\color{Purple2}HOLE}  4  1.0
+ {\color{Purple2}RMAX}  8
+ {\color{Brown4}POTENTIALS}
+     0   78   Pt
+     1   17   Cl
+     2    7   N
+     3    1   H
+
+ {\color{Brown4}ATOMS}
+   -0.142   0.141   7.747   0
+   -0.135  -2.042   8.092   1
+    2.064   0.127   7.615   1
+   -0.147   2.166   7.427   2
+   -2.188   0.154   7.870   2
+    0.793   2.489   7.319   3
+   -0.570   2.625   8.208   3
+   -0.668   2.370   6.598   3
+   -2.464   0.303   8.819   3
+   -2.546  -0.724   7.552   3
+   -2.551   0.889   7.298   3
+         \end{alltt}
+       \end{block}
+
+       {\tiny Note that the absorber need not be at
+         (0,0,0) and the list need not be in any particular order.}
+
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

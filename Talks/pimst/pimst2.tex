@@ -1,0 +1,103 @@
+\documentclass[10pt, xcolor=x11names, compress]{beamer}
+\usetheme{Warsaw}
+%\usetheme{Marburg}
+%\usecolortheme{crane}
+
+\usepackage{alltt}
+\usepackage{amsmath,amsfonts, amssymb, amscd}
+\usepackage{hyperref}
+%% \hypersetup{bookmarks=true,
+%%             pdftitle=A Practical Introduction to Multiple Scattering Theory,
+%%             pdfauthor=Bruce Ravel,
+%%             urlcolor=midnightblue,
+%%             linkcolor=darkorchid
+%%            }
+
+\usepackage{calc}
+\usepackage[overlay,absolute]{textpos}
+\TPGrid[5mm,5mm]{20}{20}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\newcommand{\chik}{$\chi(k)$}
+\newcommand{\chir}{$|\tilde{\chi}(R)|$}
+
+\newcommand{\eto}{EuTiO$_3$}
+\newcommand{\pto}{PbTiO$_3$}
+\newcommand{\pgt}{Pb$_{1-x}$Ge$_x$Te}
+\newcommand{\lsco}{La$_{1-x}$Sr$_x$CuO$_4$}
+\newcommand{\abc}{AgBr$_{1-x}$Cl$_x$}
+\newcommand{\nicn}{$\big[$Ni(CN)$_4\big]$$^{2-}$}
+\newcommand{\knicn}{K$_2$Ni(CN)$_4$}
+
+\newcommand{\GMS}{\mathbb{G}}
+\newcommand{\Gnot}{\mathsf{G^0}}
+\newcommand{\tmat}{\mathsf{t}}
+\newcommand{\boldr}{\boldsymbol{r}}
+
+\include{scatter}
+
+\mode<presentation>
+
+\title{A Practical Introduction to Multiple Scattering Theory}
+
+\author{Bruce Ravel}
+\institute[MESG, Argonne]{Molecular Environmental Sciences Group, Argonne National Laboratory\\
+  MRCAT, Sector 10, Advanced Photon Source\\
+  20 July, 2007}
+\date[APS EXAFS 07]{2007 APS EXAFS Summer School\\July 23-27, 2007}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+\include{copyright}
+
+
+
+\section*{Outline}
+\begin{frame}
+  \tableofcontents
+\end{frame}
+
+
+\section[Intro]{Introduction}
+\subsection{Overview}
+\include{intro}
+\subsection{Multiple Scattering and Full Multiple Scattering}
+\include{cluster}
+
+
+
+\section[XANES]{XANES Calculations}
+\subsection[Convergence of XANES]{\pto: Convergence of Full Multiple Scattering}
+
+\include{size}
+\subsection[Interesting XANES Problems]{Solving interesting XANES problems}
+\include{hardxanes}
+
+%%\section[EXAFS]{Using Multiple Scattering in EXAFS}
+
+
+\section[EXAFS]{Using FEFF to Solve EXAFS Problems}
+\subsection[\textsc{feff} input]{Preparing input for \textsc{feff}}
+\include{feffinp}
+\subsection[Atoms and paths]{Atoms and paths}
+\include{paths}
+\subsection[Good practice]{Using \textsc{feff} well}
+\include{tricks}
+
+
+
+\section[Resources]{Resources}
+\include{resources}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

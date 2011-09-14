@@ -1,0 +1,13 @@
+title = EuTiO3, cubic perovskite
+a = 3.979
+core = Ti	rmax = 7.0	space = p m 3 m
+atoms
+! sym	x	y	z	tag
+   Eu     0.0      0.0     0.0
+   Ti     0.5      0.5     0.5
+   O      0.0      0.5     0.5
+
+!!&& Local Variables:
+!!&& input-program-name: "atoms"
+!!&& End:
+%# Input-mode Time-stamp: <2000/01/30 18:20:50 bruce>

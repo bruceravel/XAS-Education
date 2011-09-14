@@ -1,0 +1,6 @@
+read_data (file=feff0002.dat, type=feff, group=o)
+read_data (file=feff0006.dat, type=feff, group=pb)
+read_data (file=feff0010.dat, type=feff, group=ti)
+newplot(o.k, o.mag, xlabel=wabenumber, ylabel="scattering amplitude", key=O, title="")
+plot(pb.k, pb.mag, key=Pb)
+plot(ti.k, ti.mag, key=Ti)
