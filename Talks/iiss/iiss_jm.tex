@@ -1,0 +1,1268 @@
+%\documentclass[10pt, xcolor=x11names, compress]{beamer}
+\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
+
+\usetheme{progressbar}
+%\usecolortheme[named=Purple4]{structure}
+\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{iwona} 
+
+\usepackage{alltt}
+\usepackage{amsmath,amsfonts, amssymb, amscd}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{wasysym}
+\usepackage{ulem}
+
+\usepackage{calc}
+\usepackage[overlay,absolute]{textpos}
+\TPGrid[5mm,5mm]{20}{20}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\debye}{\operatorname{debye}}
+
+\newcommand{\chik}{$\chi(k)$}
+\newcommand{\chir}{$|\tilde{\chi}(R)|$}
+
+
+\newcommand{\file}[1]{{\color{Firebrick4}\texttt{`#1'}}}
+\newcommand{\multiple}{{\color{Orange2}\textsl{multiple}}}
+
+
+\newcommand{\atoms}  {{\color{Brown4}\textsc{atoms}}}
+\newcommand{\feff}   {{\color{Brown4}\textsc{feff}}}
+\newcommand{\ifeffit}{{\color{Brown4}\textsc{ifeffit}}}
+\newcommand{\athena} {{\color{Brown4}\textsc{athena}}}
+\newcommand{\artemis}{{\color{Brown4}\textsc{artemis}}}
+
+\newcommand{\ybco}{YBa$_2$Cu$_3$O$_7$}
+\newcommand{\eto}{EuTiO$_3$}
+\newcommand{\bton}{BaTaO$_2$N}
+\newcommand{\ufivemineral}%
+{U$^{\mathrm{V}}$(H$_2$O)$_2$(U$^{\mathrm{VI}}$O$_2$)$_2$O$_4$(OH)+4$\cdot$H$_2$O}
+
+\renewenvironment<>{center}
+{\begin{actionenv}#1\begin{originalcenter}}
+{\end{originalcenter}\end{actionenv}}
+
+
+
+\mode<presentation>
+%\mode<beamer>
+
+\title{Introduction to Inner Shell Spectroscopy}
+
+\author{Bruce Ravel}
+\institute[NIST]{Synchrotron Methods Group, Ceramics Division\\%
+  Materials Science and Engineering Laboratory\\%
+  National Institute of Standards and Technology\\%
+  \&\\%
+  Local Contact, Beamline X23A2\\%
+  National Synchrotron Light Source\\[2ex]
+  ~}
+
+\date[JM]{Johnson Matthey Technology Centre\\11--13 October 2010}
+%\date[Sheffield]{University of Sheffield\\18 October 2010}
+
+%%\logo{\includegraphics[width=1.0cm]{images/ankaxas_black.jpg}}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+%\include{copyright}
+
+%\mode<handout>{\frame{\tableofcontents}}
+
+%% \section*{Outline}
+%% \begin{frame}
+%%   \tableofcontents
+%% \end{frame}
+
+
+\section[Introduction]{Introduction}
+
+%\subsection{Beamline}
+\begin{frame}
+  \frametitle{This Talk}
+  
+  This talk is an introduction to the inner-shell spectroscopies, XAS
+  and XRF.
+
+  \bigskip
+
+  \begin{block}{Outline}
+    \begin{itemize}
+    \item An overview of the basic physics of inner shell spectroscopies
+    \item An introduction to XAS and XRF beamline instrumentation
+    \item A flavor of the sorts of science that can be accomplished
+      with XAS and XRF using examples from my own research.
+    \end{itemize}
+  \end{block}
+
+  \bigskip
+
+  My hope is that you will leave with a sense of how XAS and XRF might
+  be applied to \alert{your} research.
+\end{frame}
+
+\setbeamercovered{dynamic}
+%\setbeamercovered{transparent=50}
+\begin{frame}
+  \frametitle{XAS and XRF}
+
+  \begin{center}
+    \Large
+    \alert{X}-ray \alert{A}bsorption \alert{S}pectroscopy\\
+    and\\
+    \alert{X}-\alert{R}ay \alert{F}luorescence spectroscopy\\[3ex]
+    These are {\color{Firebrick4}inner shell}
+    {\color{Purple4}spectroscopies}.
+  \end{center}
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \uncover<2->{{\color{Firebrick4}Inner shell} means that an x-ray
+        interacts primarily with a deep-core electron rather than with
+        a valence electron.}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \uncover<3>{{\color{Purple4}Spectroscopy} means that some aspect
+        of the interaction changes as a function of photon energy.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The basic physical process in XAS and XRF}
+
+  \begin{center}
+\only<beamer| beamer:1>{\includegraphics[width=0.7\linewidth]{images/atom.pdf}}%
+\only<beamer| beamer:2>{\includegraphics[width=0.7\linewidth]{images/ion.pdf}}%
+\only<beamer| beamer:3>{\includegraphics[width=0.7\linewidth]{images/emission.pdf}}
+\only<beamer| beamer:4>{\includegraphics[width=0.7\linewidth]{images/auger.pdf}}
+    \only<handout>{
+      \includegraphics[width=0.25\linewidth]{images/atom.pdf}
+      \includegraphics[width=0.25\linewidth]{images/ion.pdf}
+      \includegraphics[width=0.25\linewidth]{images/emission.pdf}
+      \includegraphics[width=0.25\linewidth]{images/auger.pdf}
+    }
+  \end{center}
+
+  %\vskip -25pt
+
+  \begin{enumerate}[<+->]
+  \item An incoming photon interacts with a deep-core electron.  Shown
+    here, a 1s electron is excited for a K-edge spectrum.
+  \item The deep-core electron is promoted to some unoccupied state
+    above the Fermi energy, propagates away, and leaves behind a
+    core-hole.
+  \item A short time later (1 or 2 femtoseconds), a higher-lying
+    electron decays into the core-hole and emits a photon.
+  \item Alternately, the energy from the higher-lying electron can be
+    used to emit an Auger electron.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Characteristic energies}
+  
+  Each element has a characteristic set of excitation and
+  fluorescence energies.  Two examples:
+
+  \begin{block}{Iron: Z=26}
+    \footnotesize
+    \begin{columns}[T]
+      \begin{column}{0.05\linewidth}
+      \end{column}
+      \begin{column}{0.2\linewidth}
+        \begin{tabular}{cr}
+          Edge &  Energy \\
+          \hline
+          \alert{K}    & \alert{7112}    \\
+          L3   & 706.8   \\
+          L2   & 719.9   \\
+          L1   & 844.6
+        \end{tabular}
+      \end{column}
+      \begin{column}{0.05\linewidth}
+      \end{column}
+      \begin{column}{0.7\linewidth}
+        \begin{tabular}{llcc}
+          Line & Transition & Energy &  Strength \\
+          \hline
+          K$\alpha_1$ & \alert{K}-L3 & 6405.2 & 0.580\\
+          K$\alpha_2$ & \alert{K}-L2 & 6392.1 & 0.294\\
+          K$\beta_1$  & \alert{K}-M3 & 7059.3 & 0.082\\
+          K$\beta_3$  & \alert{K}-M2 & 7059.3 & 0.043\\
+          K$\beta_5$  & \alert{K}-M4,5 & 7110.0 & 0.001
+        \end{tabular}
+      \end{column}
+    \end{columns}
+  \end{block}
+
+  \begin{block}{Uranium: Z=92}
+    \footnotesize
+    \begin{columns}[T]
+      \begin{column}{0.05\linewidth}
+      \end{column}
+      \begin{column}{0.2\linewidth}
+        \begin{tabular}{cr}
+          Edge &  Energy \\
+          \hline
+          K    & 115606  \\
+          \alert{L3}   & \alert{17166}   \\
+          L2   & 20948   \\
+          L1   & 21757
+        \end{tabular}
+      \end{column}
+      \begin{column}{0.05\linewidth}
+      \end{column}
+      \begin{column}{0.7\linewidth}
+        \begin{tabular}{llcc}
+          Line & Transition & Energy &  Strength \\
+          \hline
+          L$\alpha_1$ & \alert{L3}-M5   & 13614.0 & 0.686\\
+          L$\alpha_2$ & \alert{L3}-M4   & 13438.0 & 0.077\\
+          L$\beta_2$  & \alert{L3}-N4,5 & 16387.7 & 0.181\\
+          L$\beta_5$  & \alert{L3}-O4,5 & 17063.2 & 0.038\\
+          L$\beta_6$  & \alert{L3}-N1   & 15727.0 & 0.013\\
+          L$_\ell$    & \alert{L3}-M1   & 11618.0 & 0.005\\
+        \end{tabular}
+      \end{column}
+    \end{columns}
+  \end{block}
+\end{frame}
+
+
+\section[XAS]{X-ray Absorption}
+\begin{frame}
+  \frametitle<1| handout:1>{A simple picture of X-ray absorption} 
+  \frametitle<2| handout:2>{X-ray absorption in condensed matter}
+
+  \begin{overlayarea}{\linewidth}{6ex}
+    \only<1| handout:1>{An incident x-ray of energy $E$ is absorbed,
+      destroying a core electron of binding energy $E_0$ and emitting
+      a photo-electron with kinetic energy $(E-E_0)$. The core state
+      is eventually filled, ejecting a fluorescent x-ray or an Auger
+      electron.  }%
+    \only<2| handout:2>{The ejected photo-electron can scatter from
+      neighboring atoms. $R$ has some relationship to $\lambda$ and
+      there is a phase shift associated with the scattering event.
+      Thus the outgoing and scattered waves interfere.  }%
+  \end{overlayarea}
+
+  \vskip 20pt
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \only<1| handout:1>{\includegraphics[width=\linewidth]{images/bare_atom.png}}
+      \only<2| handout:2>{\includegraphics[width=\linewidth]{images/with_scattering.png}}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        \only<1| handout:1>{
+          An empty final state is required.\\
+          {\alert{No available state, \\
+              no absorption!}}\\
+          When the incident x-ray energy is larger than the binding
+          energy, there is a sharp increase in absorption.
+        }
+        \only<2| handout:2>{
+          The scattering of the photo-electron wave function interferes
+          with itself.\\[4ex]
+          $\mu(E)$ depends on the density of states with energy
+          $(E-E_0)$ at the absorbing atom.
+        }
+      \end{center}
+    \end{column}
+  \end{columns}
+
+  \vskip 20pt
+
+  \begin{overlayarea}{\linewidth}{3ex}
+    \only<1| handout:1>{For an isolated atom, $\mu(E)$ has a sharp step at the
+      core-level binding energy and is a smooth function of energy
+      above the edge.}%
+    \only<2| handout:2>{This interference \alert{at the absorbing atom} will vary
+      with energy, causing the oscillations in $\mu(E)$.
+    }%
+  \end{overlayarea}
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{X-ray absorption in condensed matter}
+%   The ejected photo-electron can scatter from neighboring atoms. $R$
+%   has some relationship to $\lambda$ and there is a phase shift
+%   associated with the scattering event.  Thus the outgoing and scattered
+%   waves interfere.
+
+%   \bigskip
+
+%   \begin{tabular}[h]{c@{\qquad}c}
+%     \begin{minipage}[h]{0.45\linewidth}
+%       \includegraphics[width=\linewidth]{images/with_scattering.png}
+%     \end{minipage} &
+%     \begin{minipage}[h]{0.5\linewidth}
+%     \end{minipage}
+%   \end{tabular}
+
+%   \bigskip
+
+%   This interference \alert{at the absorbing atom} will vary with
+%   energy, causing the oscillations in $\mu(E)$.
+% \end{frame}
+
+\begin{frame}
+  \frametitle{XAS and Valence State}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{xas/mn_xanes.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      As the valence increases\\[1ex]
+
+      {\color{Blue3}Mn$^0$}$\rightarrow$ 
+      \alert{Mn$^{2+}$} $\rightarrow$
+      {\color{Green4}Mn$^{3+}$} $\rightarrow$
+      {\color{Purple3}Mn$^{4+}$}\\[1ex]
+
+      the edge position shifts to higher energy.
+    \end{column}
+  \end{columns}    
+
+  \bigskip
+
+  \begin{block}{XAS is a direct measure of valence state}
+    \begin{itemize}
+    \item Since each element has its own edge energy, an element's
+      valence can be measured even in a heterogeneous sample
+    \item Since x-rays are deeply penetrating into matter, minimal
+      sample preparation is required
+    \item No assumption of symmetry or periodicity is made, so the
+      sample can be crystalline, amorphous, thin film, in solution,
+      surface sorbed, $\cdots$ , \textit{whatever}
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{XAS and Local Atomic Structure}
+  \begin{columns}[T]
+    \begin{column}{0.34\linewidth}
+      \visible<1->{\includegraphics[width=\linewidth]{xas/mn_xanes}}
+
+      \visible<2->{\includegraphics[width=\linewidth]{xas/mn_chik}}
+
+      \visible<3>{\includegraphics[width=\linewidth]{xas/mn_chir}}
+    \end{column}
+    \begin{column}{0.66\linewidth}
+      \begin{itemize}[<+->]
+      \item The different Mn species display big differences in the
+        fine structure beyond the edge as the valence increases
+        ({\color{Blue3}Mn$^0$}, \alert{Mn$^{2+}$},
+        {\color{Green4}Mn$^{3+}$}, {\color{Purple3}Mn$^{4+}$}).  The
+        white line and subsequent oscillations are quite
+        different.\\[3ex]
+      \item The oscillatory portion of the spectrum can be isolated
+        and ...\\[3ex]
+      \item ... Fourier transformed.  This FT function can be
+        interpreted to yield partial pair distribution functions of
+        atoms about the absorber.  The Mn-O distances are different
+        for the \alert{Mn$^{2+}$}, {\color{Green4}Mn$^{3+}$}, and
+        {\color{Purple3}Mn$^{4+}$} and clearly different from the
+        Mn-Mn distance in {\color{Blue3}Mn metal}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{XAS is a direct measure of local structure}
+
+  \begin{itemize}
+  \item Since each element has its own edge energy, an element's
+    local structure can be measured even in a heterogeneous sample
+  \item Since x-rays are deeply penetrating into matter, minimal
+    sample preparation is required
+  \item No assumption of symmetry or periodicity is made, so the
+    sample can be crystalline, amorphous, thin film, in solution,
+    surface sorbed, $\cdots$ , \textit{whatever}
+  \item Samples can be measured \textit{in situ}, which can mean
+    \begin{itemize}
+    \item cryostat or furnace
+    \item high pressure cell
+    \item electrochemistry cell or fuel cell
+    \item peristaltic or stop-flow pump with liquid samples
+    \item high field magnet
+    \item etc...
+    \end{itemize}
+  \end{itemize}
+
+  \begin{exampleblock}{}
+    \begin{center}
+      As a result, XAS is used in a very broad array of scientific
+      disciplines
+    \end{center}
+  \end{exampleblock}
+
+
+\end{frame}
+
+
+\section[XRF]{X-ray Fluorescence}
+\begin{frame}
+  \frametitle{Fluorescence from Many Elements}
+  X-ray fluorescence is a {\color{Purple4}spectroscopy} in which the
+  incident energy is fixed and the energy dependence of the secondary
+  photons is measured.
+
+  \bigskip
+
+  Every element with an absorption edge \alert{below} the incident
+  energy will fluoresce.
+
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \begin{center}
+        NIST X-ray Fluorescence Standard \#1833\\[2ex]
+        incident energy $\approx$ 12\,keV
+      \end{center}
+
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[width=\linewidth]{xrf/NBS1833.png}      
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fluorescence from A Sediment Sample}
+  \begin{center}
+    Here are the XRF spectra with incident beams \alert{above} and
+    {\color{Blue4}below} the U L$_{III}$ edge for sediment heavily
+    contaminated with uranium.
+
+    \includegraphics[width=0.7\linewidth]{xrf/xrf.png}
+  \end{center}
+
+  \begin{exampleblock}{}
+    \begin{center}
+      Combined with a standard measured under identical conditions,
+      concentrations can be quantified.
+    \end{center}
+  \end{exampleblock}
+\end{frame}
+\begin{frame}
+  \frametitle{Using the Fluorescence Spectrum for XAS}
+  \begin{center}
+    We can place a \alert{region of interest} (ROI) around the U
+    L$\alpha$ peak and measure its variation as a function of incident
+    energy.
+
+    \includegraphics[width=0.7\linewidth]{xrf/roi.png}
+  \end{center}
+
+  \begin{exampleblock}{}
+    \begin{center}
+      In this way, we measure signal only from the absorber and reject
+      all other photons entering the detector.
+    \end{center}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Learning About Your Sample}
+  In a recent experiment to study the bonding between Hg and catalytic
+  DNA molecules, I was given a solution with
+  \begin{itemize}
+  \item 3\,mM Hg chlorate
+  \item 3\,mM DNA
+  \item 50\,mM cacolylic acid (as a buffer)
+  \item 100\,mM NaClO$_4$
+  \end{itemize}
+  Here is the fluorescence spectrum:\\[1ex]
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \visible<1->{\includegraphics[width=\linewidth]{images/spectrum.png}}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        \visible<2>{
+          A quick Wikipedia search told me that cacodylic acid is:
+
+          \includegraphics[width=0.35\linewidth]{images/cacodylate.png}
+
+          \small
+          The big peak is As K$\alpha$ ($\sim$10.5\,keV), the little one is
+          Hg L$\alpha$ ($\sim$10\,keV).
+        }
+      \end{center}
+
+  \end{column}
+\end{columns}
+
+
+\end{frame}
+
+\section[Experiment]{The XAS and XRF Experiments}
+
+\begin{frame}
+  \frametitle{A Typical XAS Beamline}
+
+  \begin{center}
+    \includegraphics[width=0.7\linewidth]{exp/bl.pdf}
+
+    CM = Collimating Mirror \qquad FM = Focussing Mirror\\[1ex]
+    {\color{Green4}$\Box$} = X-ray Detector\\[1ex]
+    Monochromator: Si(111) or Si(311) or Si(220) or $\cdots$
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{The HXMA Beamline at the CLS}
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{exp/hxma.jpg}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Beamline Optics}
+
+  \begin{description}[Collimating mirror]
+  \item[Source] The source can be a bend magnet, a wiggler, or an
+    undulator.  XAS beamlines of each sort exist around the world.
+  \item[Collimating mirror] Correct the vertical divergence of the
+    beam and suppress harmonic content.
+  \item[Monochromator] Use Bragg diffraction from a highly perfect
+    crystal to select one energy (i.e.\ one wavelength) from the white
+    light coming from the source.  Two crystals are needed to direct
+    the beam into the hutch.
+  \item[Focussing mirror] Change the beam profile from a large
+    rectangle to a small circle with minimal reduction of flux.
+  \end{description}
+
+  \begin{block}{}
+    \begin{center}
+      Together these deliver a small, monochromatic, tunable beam into
+      the hutch for use in an experiment.
+    \end{center}
+  \end{block}
+\end{frame}
+
+\begin{frame}<1-3| handout:1-3>[label=hutch]
+  \frametitle<1| handout:1>{Hutch Instrumentation}
+  \frametitle<2| handout:2>{Hutch Instrumentation: Transmission XAS}
+  \frametitle<3| handout:3>{Hutch Instrumentation: Fluorescence XAS}
+  \frametitle<4| handout:4>{Hutch Instrumentation: Microprobe}
+
+  \begin{center}
+\only<1| handout:1>{\includegraphics[width=0.6\linewidth]{exp/hutch_xas.pdf}}%
+\only<2| handout:2>{\includegraphics[width=0.6\linewidth]{exp/transmission.pdf}}%
+\only<3| handout:3>{\includegraphics[width=0.6\linewidth]{exp/fluorescence.pdf}}%
+\only<4| handout:4>{\includegraphics[width=0.6\linewidth]{exp/microprobe.pdf}}
+  \end{center}
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \only<1| handout:1>{This is the typical layout of the hutch
+        instrumetation.  Depending on the details of the experiment,
+        the sample area might include special equipment.}%
+      \only<2| handout:2>{In a transmission experiment, we measure the
+        direct attenuation of the x-ray beam (Beer's law).
+        {\small
+          \begin{align}
+            I_t =& I_0\exp(-\mu t) \notag\\
+            \mu t = & \ln\big(\frac{I_0}{I_t}\big) \notag
+          \end{align}
+        }%
+        Ion chambers are easy to use and accurate over many decades of
+        intensity. %
+      }%
+      \only<3| handout:3>{The fluorescence detector might be an ion
+        chamber or it might be an energy discriminating detector. %
+        {\small
+          \begin{align}
+            I_f \propto& \mu I_0 \notag\\
+            \mu \propto& \frac{I_f}{I_0} \notag
+          \end{align}
+        }%
+        The energy discriminating detector is useful for low
+        concentrations or very heterogeneous samples.
+      }
+      \only<4| handout:4>{
+        \small
+        The energy discriminating detector can see all elements in a
+        sample with edges \textit{below} the incident energy.\\[1ex]
+        \includegraphics[width=\linewidth]{xrf/xrf.png}
+      }%
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{overlayarea}{\linewidth}{5in}
+        \only<1| handout:1>{
+          \begin{itemize}
+          \item Furnace or cryostat
+          \item Electrochemistry or fuel cell
+          \item High pressure cell
+          \item High field magnet
+          \item Peristaltic or stop flow fluid pump
+          \item \quad etc...
+          \end{itemize}
+        }
+        \only<2| handout:2>{\includegraphics[width=\linewidth]{exp/ionchamber.pdf}}
+        \only<3-4| handout:3-4>{\quad\includegraphics[width=0.8\linewidth]{exp/vortex.png}}
+        \only<3| handout:4>{~\\[2ex]This is a \textit{Vortex} 4 element silicon
+          drift detector} 
+      \end{overlayarea}
+    \end{column}
+  \end{columns}
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{A Typical Hard X-Ray Beamline}
+  \begin{center}
+    \includegraphics[width=0.8\linewidth]{images/periodic_table_of_elements.png}
+    
+    \small
+    {\color{SteelBlue3}K-edges, measured with Si(111) monochromator}\\
+    {\color{Cyan3}K-edges, measured with Si(311) monochromator}\\
+    {\color{Brown4}L-edges}\\[2ex]
+    Soft x-ray beamlines exist which deliver photons in the 100\,eV to
+    1\,keV range (e.g.\ first row K, transition metal L, actinide N)
+  \end{center}
+\end{frame}
+
+\section[Using XAS]{Using XAS}
+
+\begin{frame}
+  \frametitle{XAS Examples}
+
+  XAS is used in an amazingly wide variety of disciplines.  Here are
+  a few examples from my work in the past few years.
+
+  \bigskip
+
+  \begin{description}
+  \item[The XANES measurement:] Measure the rate of reduction of Au$^{3+}$
+    chloride to metallic Au and identify an intermediate species
+  \item[The EXAFS measurement:] An EXAFS analysis of simple compound
+  \item[High throughput XANES:] Using new instrumentation to address
+    problems in combinatorial chemistry
+  \item[Novel EXAFS analysis:] Nanoparticle structure
+    and morphology
+  \item[Microprobe EXAFS:] Applying XAS to a problems of spatial
+    heterogeneity
+  \end{description}
+
+  \bigskip
+
+  XAS beamlines regularly see experiments on magnetic materials,
+  {\small superconductors}, {\footnotesize materials for recording
+    media}, {\scriptsize metallo-organic compounds}, {\tiny
+    metalloproteins, {\color{SlateGray4}Earth mantel materials},
+    {\color{SlateGray3}extraterrestrial materials},
+    {\color{SlateGray2}liquids and amorphous solids},
+    {\color{SlateGray1}etc., etc., etc....}}
+\end{frame}
+
+\subsection[Economic geology]{Economic geology}
+\begin{frame}
+  \frametitle{Economic geology (I)}
+
+  One way that gold deposits form is by having Au chloride fluids rise
+  from the deep earth, wash over cyanobacteria colonies, and reduce to
+  metallic gold.
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{xas/aucl_exp.pdf}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      We simulated this process at the beamline by exposing
+      cyanobacteria to an Au$^{3+}$ solution and ``watching'' the
+      evolution of the Au XAS from Au$^{3+}$ to Au$^0$.
+
+      \begin{block}{Questions}
+        \begin{itemize}
+        \item What is the rate constant?
+        \item Is there an intermediate species?
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \begin{textblock*}{0.5\linewidth}(0pt,19.\TPVertModule) 
+    \tiny
+    M. Lengke et el., \textit{Mechanisms of Gold Bioaccumulation by
+      Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
+    Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006)
+  \end{textblock*}
+\end{frame}
+\begin{frame}
+  \frametitle{Economic geology (II)}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      We see that \alert{7 minutes} after injection, the data strongly
+      resemble the {\color{Blue3}Au$^{3+}$Cl}.  After
+      {\color{Purple4}one week}, the data resemble
+      {\color{Green4}Au metal}.\\[1ex]
+      \includegraphics[width=\linewidth]{xas/aucl_data.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      Over the course of the time series, the white line $\sim11921$
+      shrinks while the bump $\sim11945$ grows, suggesting the
+      reduction to Au metal.\\[1ex]
+      \includegraphics[width=\linewidth]{xas/aucl_time.png}
+    \end{column}
+  \end{columns}
+
+  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule) 
+    \tiny
+    M. Lengke et el., \textit{Mechanisms of Gold Bioaccumulation by
+      Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
+    Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006)
+  \end{textblock*}
+\end{frame}
+\begin{frame}
+  \frametitle{Economic geology (III)}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      We can analyze these data as a linear combination of species,
+      including {\color{Green4}Au$^{3+}$Cl}, {\color{Purple4}Au
+        metal}, and {\color{Orange2}Au$^{1+}$ sulfide}.\\[1ex]
+      \includegraphics[width=\linewidth]{xas/aucl_lcf.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      We can plot out the contributions from these species as a
+      function of time to get a sense of reaction rates.\\[1ex]
+      \includegraphics[width=\linewidth]{xas/aucl_results.png}
+    \end{column}
+  \end{columns}
+
+  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule) 
+    \tiny
+    M. Lengke et el., \textit{Mechanisms of Gold Bioaccumulation by
+      Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
+    Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006)
+  \end{textblock*}
+\end{frame}
+
+\subsection[EXAFS analysis]{EXAFS analysis}
+\begin{frame}
+  \frametitle{A straightforward EXAFS problem}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.8\linewidth]{JM/FeS2.jpg}
+
+      Iron pyrite (FeS$_2$, ``fool's gold'') is a fairly simple cubic
+      structure with Fe octohedrally coordinated by sulfur.
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{JM/fes2_mu.png}
+
+      We make a fine powder and measure the absorption spectrum.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Data processing}
+  \begin{columns}
+    \begin{column}{0.35\linewidth}
+      \includegraphics[width=\linewidth]{JM/fes2_mubkg.png}
+    \end{column}
+    \begin{column}{0.65\linewidth}
+      \small
+      We isolate the oscillations by approximating the ``background''
+      function.
+    \end{column}
+  \end{columns}
+  \begin{columns}
+    \begin{column}{0.35\linewidth}
+      \includegraphics[width=\linewidth]{JM/fes2_chi.png}
+    \end{column}
+    \begin{column}{0.65\linewidth}
+      \small
+      This leaves us with the oscillatory $\chi(k)$ function.
+    \end{column}
+  \end{columns}
+  \begin{columns}
+    \begin{column}{0.35\linewidth}
+      \includegraphics[width=\linewidth]{JM/fes2_chir.png}
+    \end{column}
+    \begin{column}{0.65\linewidth}
+      \small
+      This can be Fourier trasformed in the $\tilde\chi(R)$ function,
+      which bears a resemblence to a partial pair distribution
+      function.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Obtaining structural information}
+  Armed with a well-trained \sout{minion}\quad grad student, detailed
+  structural information can be obtained about the local atomic
+  configuration.
+
+  \bigskip
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{JM/fes2_fit+paths.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      Here are the results of data analysis.  We see how the
+      \begin{itemize}
+      \item {\color{Purple3}6 1$^{\mathrm{st}}$ neighbor S}
+      \item {\color{DarkOrange3}6 2$^{\mathrm{nd}}$ neighbor S}
+      \item {\color{Brown4}2 3$^{\mathrm{rd}}$ neighbor S}
+      \item {\color{Magenta2}12 4$^{\mathrm{th}}$ neighbor Fe}
+      \end{itemize}
+      contribute to the fit.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Applying EXAFS to more interesting problems}
+  \begin{block}{EXAFS can be applied to virtually any kind of system}
+    This approach to obtaining structural information can be applied
+    to solutions, surface sorbed species, supported nanoparticles, ...
+  \end{block}
+
+  By parameterizing terms in the equation that described the analysis
+  on the previous page, EXAFS can determine things like:
+
+  \medskip
+
+  \begin{itemize}
+  \item Coordination number
+  \item Atomic species of neighboring atoms
+  \item Distance between atoms
+  \item Degree of structural disorder
+  \end{itemize}
+
+  \medskip
+
+  The software is a powerful and flexible structural modeling tool.
+\end{frame}
+
+
+\section[XAS Applications]{Applications of XAS}
+
+\subsection[High throughout]{High throughput XANES analysis}
+
+\begin{frame}
+ \frametitle{What are the rate-limiting aspects of an XAS experiment?}%
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      Apects of the X-rays:
+      \begin{enumerate}
+      \item Photon flux
+      \item Step scanning overhead -- travel and settling time
+      \item Detection efficiencies
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      Aspects of the samples:
+      \begin{enumerate}
+      \item Sample concentration
+      \item Number of samples
+      \item \alert{Overhead for meeting and maintaining environmental
+        conditions}, e.g.
+        \begin{itemize}
+        \item Cyclovoltimetry
+        \item Furnace
+        \item Cryostat
+        \end{itemize}
+      \end{enumerate}      
+    \end{column}
+  \end{columns}
+
+  \bigskip
+
+  At my beamline, X23A2, I cannot really touch most of these issues,
+  however...
+
+  \begin{alertblock}{}
+    \begin{center}
+      What if we could measure many samples simultaneously?
+    \end{center}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Multi-channel ion chambers}
+  
+  On a bend magnet (like my beamline X23A2 at NSLS) we take a fairly
+  wide swath of radiation.  Our entrance slits open up to 22\,mm wide.
+
+  \bigskip
+
+  We define the beam using a Ta slit assembly and pass the beam
+  through an ionization chamber split into 4 electrically independent
+  channels.
+
+  \smallskip
+
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=\linewidth]{JM/slits.jpg}
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[width=\linewidth]{JM/4beams.jpg}
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.5\linewidth}(0pt,19.75\TPVertModule) 
+    \tiny B.\ Ravel, et al., J. Synchrotron Rad. (2010). 17, 380-385 
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{In situ, parallel experiments}
+  
+  We package the ion chambers nicely, load up a sample holder which is
+  commensurate with the slits, and conduct a temperature-programmed
+  XAS experiment.
+
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=\linewidth]{JM/blackboxes.jpg}
+    \end{column}
+    \begin{column}{0.25\linewidth}
+      \begin{center}
+        \includegraphics[width=\linewidth]{JM/sampleholder.jpg}\\[1ex]
+        \includegraphics[width=0.67\linewidth]{JM/justslits.jpg}
+      \end{center}
+    \end{column}
+    \begin{column}{0.35\linewidth}
+      \includegraphics[width=\linewidth]{JM/experiment.jpg}
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.5\linewidth}(0pt,19.75\TPVertModule) 
+    \tiny B.\ Ravel, et al., J. Synchrotron Rad. (2010). 17, 380-385 
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Reduction of Ni on $\gamma$-alumina}
+
+  Temperature programmed XANES at Ni K-edge during the in situ
+  reduction of four different preparations of Ni/$\gamma$-Al$_2$O$_3$.
+
+  \includegraphics[width=0.85\linewidth]{JM/figure6.pdf}
+
+  \begin{textblock*}{0.5\linewidth}(0pt,19.75\TPVertModule) 
+    \tiny B.\ Ravel, et al., J. Synchrotron Rad. (2010). 17, 380-385 
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Combinatorial chemistry at the synchrotron}
+  \begin{itemize}
+  \item Without focusing, the NSLS-II damping wiggler will provide a
+    beam profile that is 55\,mm wide at a distance of about 40\,m from
+    the source.
+  \item Using the same channel size, this would support an 11-channel
+    detector.
+  \item Each $\sim$4\,mm channel would be considerably brighter than
+    the full 20\,mm of beam on an NSLS bend.
+  \end{itemize}
+
+  \bigskip
+
+  \begin{alertblock}{Very high throughput XAS}
+    This capability combined with a slew scanning monochromator would
+    enable true combinatorial screening of samples at a wiggler XAS
+    beamline. 
+  \end{alertblock}
+\end{frame}
+
+\subsection[Nanoparticle]{Nanoparticle structure and morphology}
+
+\begin{frame}
+  \frametitle{EXAFS and nanoparticle structure}
+  
+  \begin{exampleblock}{The atomic configuration of a nanoparticle is
+      different from the bulk analog.}
+    That is not a profound commment.\\[1ex] However, there are
+    relatively few experimental techniques that can offer useful
+    information about the atomic configuration of nano-scale systems.
+  \end{exampleblock}
+
+  \begin{center}
+    EXAFS is one such technique, but it needs help.
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{EXAFS and molecular dynamics}
+  
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      In an MD simulation, the atoms of a gold nanoparticle are
+      allowed to relax in the presence of the nanoparticle surface. 
+
+      \medskip
+
+      This results in a distribution of Au--Au distances quite
+      different from the face-centered cubic bulk (12 nearest
+      neighbors at $\sim2.89\,\mathrm{\AA}$
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{JM/histogram.png}
+    \end{column}
+  \end{columns}
+
+  \begin{alertblock}{A Gaussian is a poor approximation of this
+      relaxed configuration}
+    An analysis based on a Gaussian distribution introduces a
+    significant systematic error into the analysis.
+  \end{alertblock}
+  \begin{textblock*}{0.6\linewidth}(0pt,20\TPVertModule)
+    \tiny This is S.W.T.\ Price's thesis work
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{EXAFS and molecular dynamics}
+  
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      The approach we take is to compute the contribution to the EXAFS
+      from a scatterer at \textbf{every} position in the MD histogram.
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{JM/histogram.png}
+    \end{column}
+  \end{columns}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{JM/histo_fit_withss.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      We can now test a particular MD simulation against real data.
+      EXAFS thus provides a \textit{measureable} metric for evaluating
+      the likelihood of a particular MD result.
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.6\linewidth}(0pt,20\TPVertModule)
+    \tiny This is S.W.T.\ Price's thesis work
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Why is EXAFS sensitive to configurational details?}
+
+  The scatterers at the different distances in the histogram add up
+  with some complex phase relationship that is \textit{different} from
+  a simple Gaussian distribution.
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{JM/histo_fit_wpaths.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{JM/histo_fit_wpaths_zoom.png}
+    \end{column}
+  \end{columns}
+  Although not perfect, this fit is an improvement on a more
+  conventional analysis and offers a way to evaluate different MD
+  simulations.
+  \begin{textblock*}{0.6\linewidth}(0pt,20\TPVertModule)
+    \tiny This is S.W.T.\ Price's thesis work
+  \end{textblock*}
+\end{frame}
+
+% \section[XRF Applications]{Applications of XRF}
+
+% \begin{frame}
+%   \frametitle{Beamline}
+
+%   Beamline
+% \end{frame}
+
+\subsection[Microprobe]{XAS and Micron Scale Spatial Heterogeneity}
+
+\againframe<4| handout:4>{hutch}
+
+\begin{frame}
+  \frametitle{Focussing optics}
+
+  Different types of focussing optics can be matched to the relevant
+  length scales of different samples
+
+  \begin{columns}
+    \begin{column}{0.6\linewidth}
+      \begin{description}[Refrac]
+      \item[1D focussing + slits] A total external reflection mirror
+        is bent to condense the x-rays vertically.  Slits are used to
+        define the horizontal extent. ($>50\,\mu$m)
+      \item[Kirkpatrick-Baez mirrors] Short mirrors with excellent
+        figures are used in both directions to define a small
+        spot. (1--25 $\mu$m)
+      \item[Refractive optics] Fresnel zone plates use refraction to
+        define a small first order spot ($<1\,\mu$m)
+      \end{description}
+    \end{column}
+    \begin{column}{0.4\linewidth}
+      \begin{center}
+        \includegraphics[width=0.9\linewidth]{xrf/kb.png}\\[1ex]
+        \includegraphics[width=0.7\linewidth]{xrf/zp.png}
+      \end{center}
+
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{X-ray Fluorescence Mapping}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.9\linewidth]{xrf/raster.jpg}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      The mapping experiment involves placing the sample on an
+      3-dimensional stage and in the focal spot of the beam.
+
+      \bigskip
+
+      The sample is rastered in $\hat{y}$ and $\hat{z}$ to cover a
+      two-dimensional area.
+
+      \bigskip
+
+      At each point $\overline{xy}$, the XRF spectrum is measured.
+      Integrating the elemetal regions of interest yields maps of the
+      elemental distributions.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection[200 $\mu$m]{200 Micron Probe}
+
+\begin{frame}
+  \frametitle{Gravel Contaminated with U}
+
+  \begin{center}
+    Gravel embedded in epoxy with a polished surface\\[1ex]
+
+    \only<1| handout:1>{Under a UV lamp, U glows greenish.}
+    \only<2| handout:2>{UV photo + superposed U map | 200\,$\mu$m probe at APS 10ID.}
+    \\[1ex]
+
+    \only<1| handout:1>{\includegraphics[width=0.7\linewidth]{xrf/pebble.png}}
+    \only<2| handout:2>{\includegraphics[width=0.7\linewidth]{xrf/pebblespot.png}}
+  \end{center}
+
+  \begin{textblock*}{0.6\linewidth}(0pt,20\TPVertModule)
+    \tiny D. Phillips et el., Env. Sci. and Tech., 2008,
+    \textbf{42}:19, 7104-7110.
+  \end{textblock*}
+\end{frame}
+\begin{frame}
+  \frametitle{XRF Spectra at each Position}
+
+  Here are a few of the XRF spectra from the marked area on the U map
+  from the previous page.
+  \begin{center}
+    \includegraphics[width=0.7\linewidth]{xrf/beanx=4000.png}
+  \end{center}
+  \begin{textblock*}{0.5\linewidth}(0pt,20\TPVertModule)
+    \tiny D. Phillips et el., Env. Sci. and Tech., 2008,
+    \textbf{42}:19, 7104-7110.
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$\mu$-EXAFS}
+
+  \begin{columns}[T]
+    \begin{column}{0.34\linewidth}
+      \visible<1->{\includegraphics[width=\linewidth]{xrf/bean_e}}
+
+      \visible<2->{\includegraphics[width=\linewidth]{xrf/bean_n}}
+
+      \visible<3>{\includegraphics[width=\linewidth]{xrf/bean_r}}
+    \end{column}
+    \begin{column}{0.66\linewidth}
+      \begin{itemize}[<+->]
+      \item High quality XAS data is measured with the 200\,$\mu$m
+        probe.  We can see the variation in U quantity under the spot
+        in the XAS step size.\\[5ex]
+      \item Normalizing the data, we see variability in the XANES,
+        indicating spatial heterogeneity in U speciation.\\[5ex]
+      \item The EXAFS is of high quality and can be analyzed to
+        uncover the different structural environments around the U at
+        the various locations.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.5\linewidth}(0pt,20\TPVertModule)
+    \tiny D. Phillips et el., Env. Sci. and Tech., 2008,
+    \textbf{42}:19, 7104-7110.
+  \end{textblock*}
+\end{frame}
+
+
+\section[XAS Community]{The XAS Community}
+
+\begin{frame}
+  \frametitle{Where to go for more information}
+  \begin{center}
+    {\LARGE \texttt{http://xafs.org/}}\\[1ex]
+    \includegraphics[width=\linewidth]{images/xafsorg.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Information about the software we will be using today
+    and tomorrow}
+  \begin{description}[Ifeffit]
+  \item[Ifeffit] A suite of interactive programs for XAFS analysis,
+    combining high-quality and well-tested XAFS analysis algorithms,
+    tools for general data manipulation, and graphical display of
+    data.\\\qquad{\scriptsize
+      \texttt{http://cars9.uchicago.edu/ifeffit/}}
+  \item[Athena \& Artemis] Graphical programs for the processing and
+    analysis of XAFS data.\\\qquad{\scriptsize
+      \texttt{http://cars9.uchicago.edu/\char126ravel/software/}}
+  \item[The Ifeffit mailing list] Discussion of \textsc{ifeffit} and
+    related XAFS analysis programs.  Also covered are general
+    discussions of XAFS, XAFS theory, and related
+    spectroscopies.\\\qquad{\scriptsize
+      \texttt{http://cars9.uchicago.edu/mailman/listinfo/ifeffit/}}
+  \end{description}
+
+  \begin{block}{}
+    \begin{center}
+      \textsc{ifeffit} and friends are free software
+    \end{center}
+  \end{block}
+
+\end{frame}
+
+% \begin{frame}
+%   \frametitle{Notes}
+% \end{frame}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
