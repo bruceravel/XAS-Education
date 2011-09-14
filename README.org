@@ -1,0 +1,19 @@
+
+* Bruce Ravel's XAS Education Materials
+
+** Talks
+
+These folders contain the LaTeX source for my talks.  All talks use
+[[https://bitbucket.org/rivanvx/beamer/wiki/Home][the Beamer LaTeX class]].
+
+ | *folder* | *title of talk*                                        |
+ |----------+--------------------------------------------------------|
+ | atea     | Advanced Topics In EXAFS Analysis                      |
+ | pimst    | A Practical Introduction to Multiple Scattering Theory |
+ | iiss     | Introduction to Inner Shell Spectroscopies             |
+
+** Examples
+
+These folders contain the XAS and structural data used in the talks.
+The talks make repeated use of the data.
+
