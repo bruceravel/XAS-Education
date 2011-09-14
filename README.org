@@ -6,6 +6,8 @@
 These folders contain the LaTeX source for my talks.  All talks use
 [[https://bitbucket.org/rivanvx/beamer/wiki/Home][the Beamer LaTeX class]].
 
+PDF files can be found in [[https://github.com/bruceravel/XAS-Education/downloads][downloads area]].
+
  | *folder* | *title of talk*                                        |
  |----------+--------------------------------------------------------|
  | atea     | Advanced Topics In EXAFS Analysis                      |

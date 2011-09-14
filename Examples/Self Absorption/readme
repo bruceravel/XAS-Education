@@ -1,0 +1,41 @@
+
+Iron/Gallium alloy
+
+  Chemical formula is Fe(72.74)Ga(27.26)
+
+  It is interesting to compare these data to the iron foil data
+
+==============================================================================
+
+Sulfate data:
+
+  Chemical formula is ((NH4)2SO4)XX(H2O)54.8
+
+  Amonium sulfate in water at three concentrations
+
+  1. Plot the raw data, notice the attenuation of the white line as
+     concentration increases
+
+  2. Apply the correction, adjusting the chemical formula (i.e. XX in
+     the formula above) appropriate to each sample.  Plot the
+     corrected data.
+
+==============================================================================
+
+Zirconalite data:
+
+  Chemical formula is CaZrTi2O7
+
+  Pristine:     fluorescence data on the undamaged sintered sample
+  Irradiated:   fluorescence data on the ion damaged sintered sample
+  Transmission: transmission data on the undamaged sample in powder form
+
+  1. Compare the Pristine and Transmission data
+
+  2. Fluo algorithm: try angle_in = 3 and angle_out=10
+     Plot tranmission and corrected data as XANES
+
+  3. Troger algorithm: try angle_in = 6 and angle_out=7
+     Plot tranmission and corrected data as chi(k) or chi(R)
+
+  4. Apply the same correction to the irradiated sample

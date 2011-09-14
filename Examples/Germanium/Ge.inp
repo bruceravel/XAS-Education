@@ -1,0 +1,15 @@
+title name:     germanium
+title formula:  Ge
+title sites:    Ge1
+title refer1:   Kittel, ISSP
+title refer2:
+title schoen:
+title notes1:   diamond structure
+space  f d 3 m
+a    = 5.658
+alpha= 90
+rmax = 6.00
+core = Ge1
+atom
+Ge     0.12500   0.12500   0.12500  Ge1
+------
