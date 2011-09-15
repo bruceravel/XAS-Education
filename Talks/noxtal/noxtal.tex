@@ -1,5 +1,5 @@
-%\documentclass[10pt, xcolor=x11names, compress]{beamer}
-\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
+\documentclass[10pt, xcolor=x11names, compress]{beamer}
+%\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
 
 \usetheme{progressbar}
 %\usecolortheme[named=Purple4]{structure}
@@ -194,10 +194,10 @@
 \begin{alltt}
 \scriptsize
 guess parameters:                                                            
-  amp   =   1.038     +/-   0.073
-  enot  =   2.660     +/-   0.744
-  delr  =   0.001     +/-   0.004
-  ss    =   0.00562   +/-   0.00047
+  amp   =   1.10      +/-   0.07
+  enot  =   3.94      +/-   0.75
+  delr  =   0.006     +/-   0.004
+  ss    =   0.00596   +/-   0.00040
 \end{alltt}
           \end{exampleblock}
 
@@ -349,14 +349,21 @@ just what was need!
 \begin{frame}
   \frametitle{Now do a fit}
   
-  \begin{center}
-    \only<beamer| beamer:1>{\includegraphics[width=0.87\linewidth]{images/mtin_fit.png}}
-    \only<beamer| beamer:2>{\includegraphics[width=0.87\linewidth]{images/mtin_intrp.png}}
-    \only<handout>{
-      \includegraphics[width=0.5\linewidth]{images/mtin_fit.png}
-      \includegraphics[width=0.5\linewidth]{images/mtin_intrp.png}
-    }
-  \end{center}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.8\linewidth]{images/mtin_fit.png}
+
+      \smallskip
+
+      \includegraphics[width=0.8\linewidth]{images/mtin_fit2.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.85\linewidth]{images/mtin_intrp.png}
+      %
+      %\includegraphics[width=0.7\linewidth]{images/mtin_fit_chir.png}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
