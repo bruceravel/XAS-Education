@@ -47,7 +47,18 @@ command line:
 
 where ~$HOME/TeX~ would be replaced by the location of the local XAS-Education repository.
 
+** Recommended reading
 
+The following are some of my favorite papers covering the ins and outs
+of advanced EXAFS analysis:
+
+ + [[http://dx.doi.org/10.1103/PhysRevB.66.224405][Scott Calvin's paper on analysis of doped ferrites]]
+
+ + [[http://dx.doi.org/10.1016/S0016-7037(02)00947-X][Shelly Kelly's urnium on biomass paper demonstrating the use of crystalline analogs]]
+
+ + [[http://dx.doi.org/10.1088/1742-6596/190/1/012026][My paper from the XAFS14 conference on Composing complex EXAFS problems with severe information constraints]]
+
+ + [[http://dx.doi.org/10.1103/PhysRevB.54.156][Eric Hudson's paper relating SS and MS values for sigma^2]]
 
 ** License
 
