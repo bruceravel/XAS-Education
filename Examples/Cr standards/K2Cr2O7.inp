@@ -1,0 +1,19 @@
+title name:     K2Cr2O7 potassion chromate   (beta)
+title formula:  K2Cr2O7
+title sites:    K1,Cr1,O1--4
+title refer1:   Wyckoff vol 3, IX, p 435--437
+title schoen:   C_2h^6
+title notes1:   see also KCr2O4
+space  C 2/c
+a    = 12.99  b    = 7.36  c    = 7.48
+beta = 91.91667
+rmax = 6.00
+core = Cr1
+atom
+Cr     0.10000   0.17500   0.13900  Cr1
+K      0.17200   0.33333   0.66667  K1
+O      0.05000   0.30000   0.00000  O1
+O      0.14400   0.31100   0.27800  O2
+O      0.17800   0.00000   0.07000  O3
+O      0.00000   0.04200   0.25000  O4
+------

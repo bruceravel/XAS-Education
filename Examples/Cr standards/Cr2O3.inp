@@ -1,0 +1,14 @@
+title name:     Cr2O3  chromium sequioxide (rhombohedral)
+title formula:  Cr2O3
+title sites:    Cr1,O1
+title refer1:   Wyckoff vol 2, V, p 6--8
+title schoen:   D_3d^6
+space  R -3 c
+a    = 5.350
+alpha= 55.15
+rmax = 6.00
+core = Cr1
+atom
+Cr     0.34750   0.34750   0.34750  Cr1
+O      0.55600  -0.05600   0.25000  O1
+------

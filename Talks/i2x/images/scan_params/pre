@@ -1,0 +1,33 @@
+# Athena data file -- Athena version 0.8.061
+# Saving LaTiO2N brown as normalized mu(E)
+# .  Element=Ti   Edge=K
+# Background parameters
+# .  E0=4981.198  Eshift=0.000  Rbkg=1.000
+# .  Standard=0: None
+# .  Kweight=2.0  Edge step=0.456
+# .  Fixed step=no    Flatten=yes
+# .  Pre-edge range: [ -45.797 : -20.784 ]
+# .  Pre-edge line: 10.599 + -0.0018005 * E
+# .  Normalization range: [ 50.000 : 353.659 ]
+# .  Post-edge polynomial: 39.52 + -0.012616 * E + 1.024e-06 * E^2
+# .  Spline range: [ 0.000 : 472.733 ]   Clamps: None/Strong
+# Foreward FT parameters
+# .  Kweight=0.5   Window=hanning   Phase correction=no
+# .  k-range: [ 2.000 : 10.000 ]   dk=1.00
+# Backward FT parameters
+# .  R-range: [ 1.000 : 3.000 ]
+# .  dR=0.00   Window=hanning
+# Plotting parameters
+# .  Multiplier=1   Y-offset=0.000
+# .
+# Merge in e space of:
+# ** C:/Documents and Settings/Joseph Woicik/Desktop/Users/Ravel/2010.03.09/ti_w910253.000
+# ** C:/Documents and Settings/Joseph Woicik/Desktop/Users/Ravel/2010.03.09/ti_w910253.001
+# ** C:/Documents and Settings/Joseph Woicik/Desktop/Users/Ravel/2010.03.09/ti_w910253.002
+#------------------------
+#  energy norm bkg_norm der_norm stddev i0
+  4934.4481       0.14743359E-02   0.14729378E-02  -0.27385008E-03    4350.8000
+  4939.4489       0.10488020E-03   0.10345289E-03  -0.15746182E-03    4414.8000
+  4944.4484      -0.10033106E-03  -0.10178766E-03  -0.75262339E-04    4476.8000
+  4949.4487      -0.64772657E-03  -0.64921247E-03  -0.97668301E-06    4534.8000
+  4954.4493      -0.11009874E-03  -0.11161394E-03  -0.56239662E-04    4585.8000
