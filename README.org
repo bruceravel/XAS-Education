@@ -5,8 +5,8 @@
 
 These folders contain the LaTeX source for my talks.  All talks use
 LaTeX and [[https://bitbucket.org/rivanvx/beamer/wiki/Home][the Beamer LaTeX class]].  All images are included, usually as
-.png or .jpg files.  Source material (e.g. GIMP .xcf, LibreOffice .odg,
-Xfig .fig) are deposited for some images.
+.png or .jpg files.  Source material (e.g. GIMP ~.xcf~, LibreOffice ~.odg~,
+Xfig ~.fig~) are deposited for some images.
 
 PDF files can be found in [[https://github.com/bruceravel/XAS-Education/downloads][downloads area]].
 
@@ -14,6 +14,7 @@ PDF files can be found in [[https://github.com/bruceravel/XAS-Education/download
  |------------+---------------------------------------------------------------------------------|
  | ATEA       | Advanced Topics In EXAFS Analysis                                               |
  | Experiment | The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design |
+ | i2x        | Interpreting XANES Data                                                         |
  | iiss       | Introduction to Inner Shell Spectroscopies                                      |
  | noxtal     | Modeling non-crystalline samples                                                |
  | pimst      | A Practical Introduction to Multiple Scattering Theory                          |
@@ -26,6 +27,7 @@ These folders contain the XAS and structural data used in the talks.
  | *folder*          | *contents*                                                             |
  |-------------------+------------------------------------------------------------------------|
  | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
+ | Cr standards      | Cr 3+ and 6+ oxide standards                                           |
  | FeS2              | FeS2 transmission exafs + crystal data                                 |
  | Germanium         | Crystalling and amorphous Ge data + crystal data                       |
  | Methyltin         | Monomethyl tin trichloride + dimethyl tin dichloride + structure data  |
