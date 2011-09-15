@@ -35,7 +35,6 @@ These folders contain the XAS and structural data used in the talks.
 ** Other folders
 
  + ~sty/~: Copies of my customizations of the [[http://recherche.noiraudes.net/fr/LaTeX.php][progressbar Beamer theme]] by Sylvain Bouveret.
- + ~images/~: common images used by two or more talks
 
 
 To use the style files, the ~TEXINPUTS~ environment variable must be
