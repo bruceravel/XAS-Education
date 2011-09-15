@@ -15,6 +15,7 @@ PDF files can be found in [[https://github.com/bruceravel/XAS-Education/download
  | ATEA       | Advanced Topics In EXAFS Analysis                                               |
  | Experiment | The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design |
  | iiss       | Introduction to Inner Shell Spectroscopies                                      |
+ | noxtal     | Modeling non-crystalline samples                                                |
  | pimst      | A Practical Introduction to Multiple Scattering Theory                          |
  | selfabs    | Understanding self-absorption in ﬂuorescence XAS                                |
 
@@ -30,6 +31,11 @@ These folders contain the XAS and structural data used in the talks.
  | Methyltin         | Monomethyl tin trichloride + dimethyl tin dichloride + structure data  |
  | Self Absorption   | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite |
  | Uranyl on Biomass | uranyl acetate in equillibrium with biomass                            |
+
+** Other folders
+
+ + ~sty/~: Copies of my customizations of the [[http://recherche.noiraudes.net/fr/LaTeX.php][progressbar Beamer theme]] by Sylvain Bouveret.
+ + ~images/~: common images used by two or more talks
 
 ** License
 
