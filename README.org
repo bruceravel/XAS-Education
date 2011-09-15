@@ -37,6 +37,17 @@ These folders contain the XAS and structural data used in the talks.
  + ~sty/~: Copies of my customizations of the [[http://recherche.noiraudes.net/fr/LaTeX.php][progressbar Beamer theme]] by Sylvain Bouveret.
  + ~images/~: common images used by two or more talks
 
+
+To use the style files, the ~TEXINPUTS~ environment variable must be
+set with a line like this either in the ~.bashrc~ file or at the
+command line:
+
+    : export TEXINPUTS=".:$HOME/TeX/XAS-Education/sty/:"
+
+where ~$HOME/TeX~ would be replaced by the location of the local XAS-Education repository.
+
+
+
 ** License
 
 Unless otherwise indicated, all these talks are licensed under the [[http://creativecommons.org/][Creative Commons]]
