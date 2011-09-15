@@ -8,7 +8,7 @@ LaTeX and [[https://bitbucket.org/rivanvx/beamer/wiki/Home][the Beamer LaTeX cla
 .png or .jpg files.  Source material (e.g. GIMP ~.xcf~, LibreOffice ~.odg~,
 Xfig ~.fig~) are deposited for some images.
 
-PDF files can be found in [[https://github.com/bruceravel/XAS-Education/downloads][downloads area]].
+PDF files can be found in the [[https://github.com/bruceravel/XAS-Education/downloads][downloads area]].
 
  | *folder*   | *title of talk*                                                                 |
  |------------+---------------------------------------------------------------------------------|
@@ -18,7 +18,7 @@ PDF files can be found in [[https://github.com/bruceravel/XAS-Education/download
  | iiss       | Introduction to Inner Shell Spectroscopies                                      |
  | noxtal     | Modeling non-crystalline samples                                                |
  | pimst      | A Practical Introduction to Multiple Scattering Theory                          |
- | selfabs    | Understanding self-absorption in ﬂuorescence XAS                                |
+ | selfabs    | Understanding self-absorption in fluorescence XAS                               |
 
 ** Examples
 
@@ -28,11 +28,11 @@ These folders contain the XAS and structural data used in the talks.
  |-------------------+------------------------------------------------------------------------|
  | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
  | Cr standards      | Cr 3+ and 6+ oxide standards                                           |
- | FeS2              | FeS2 transmission exafs + crystal data                                 |
- | Germanium         | Crystalling and amorphous Ge data + crystal data                       |
+ | FeS2              | FeS2 transmission EXAFS + crystal data                                 |
+ | Germanium         | Crystalline and amorphous Ge data + crystal data                       |
  | Methyltin         | Monomethyl tin trichloride + dimethyl tin dichloride + structure data  |
  | Self Absorption   | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite |
- | Uranyl on Biomass | uranyl acetate in equillibrium with biomass                            |
+ | Uranyl on Biomass | uranyl acetate in equilibrium with biomass                             |
 
 ** Other folders
 
@@ -54,7 +54,7 @@ of advanced EXAFS analysis:
 
  + [[http://dx.doi.org/10.1103/PhysRevB.66.224405][Scott Calvin's paper on analysis of doped ferrites]]
 
- + [[http://dx.doi.org/10.1016/S0016-7037(02)00947-X][Shelly Kelly's urnium on biomass paper demonstrating the use of crystalline analogs]]
+ + [[http://dx.doi.org/10.1016/S0016-7037(02)00947-X][Shelly Kelly's uranium on biomass paper demonstrating the use of crystalline analogs]]
 
  + [[http://dx.doi.org/10.1088/1742-6596/190/1/012026][My paper from the XAFS14 conference on Composing complex EXAFS problems with severe information constraints]]
 
