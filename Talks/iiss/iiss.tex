@@ -1,13 +1,9 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
 %\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
-%\usetheme{Warsaw}
-\usetheme{Marburg}
-\useinnertheme[shadow=true]{rounded}
-%\useoutertheme{shadow}
-%\usecolortheme{beetle}
-\usecolortheme{orchid}
-\usecolortheme{whale}
-\usefonttheme{structurebold}
+\usetheme{progressbar}
+\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
+
+\setbeamertemplate{navigation symbols}{}
 
 \usepackage{alltt}
 \usepackage{amsmath,amsfonts, amssymb, amscd}
@@ -64,7 +60,7 @@
 
 \date[XASs2010]{X-ray Absorption Spectroscopy School 2010\\University of Ghent\\14--15 January 2010}
 
-\logo{\includegraphics[width=1.0cm]{images/ankaxas_black.jpg}}
+%\logo{\includegraphics[width=1.0cm]{images/ankaxas_black.jpg}}
 
 \begin{document}
 \begin{frame}
@@ -167,8 +163,9 @@
 \begin{frame}
   \frametitle{Characteristic energies}
   
+  \small%
   Each element has a characteristic set of excitation and
-  fluorescence energies.  Two examples:
+  fluorescence energies.
 
   \begin{block}{Iron: Z=26}
     \small
@@ -358,9 +355,9 @@
         ({\color{Blue3}Mn$^0$}, \alert{Mn$^{2+}$},
         {\color{Green4}Mn$^{3+}$}, {\color{Purple3}Mn$^{4+}$}).  The
         white line and subsequent oscillations are quite
-        different.\\[3ex]
+        different.\\[6ex]
       \item The oscillatory portion of the spectrum can be isolated
-        and ...\\[3ex]
+        and ...\\[6ex]
       \item ... Fourier transformed.  This FT function can be
         interpreted to yield partial pair distribution functions of
         atoms about the absorber.  The Mn-O distances are different
@@ -419,8 +416,7 @@
   energy will fluoresce.
 
   \begin{center}
-    NIST X-ray Fluorescence Standard \#1833\\
-    incident energy $\approx$ 12\,keV
+    NIST X-ray Fluorescence Standard \#1833, incident energy $\approx$ 12\,keV
     \includegraphics[width=0.7\linewidth]{xrf/NBS1833.png}
   \end{center}
 
@@ -468,7 +464,7 @@
   \begin{itemize}
   \item 3\,mM Hg chlorate
   \item 3\,mM DNA
-  \item 50\,mM cacolylic acid (as a buffer)
+  \item 50\,mM cacodylic acid (as a buffer)
   \item 100\,mM NaClO$_4$
   \end{itemize}
   Here is the fluorescence spectrum:\\[1ex]
@@ -501,10 +497,10 @@
   \frametitle{A Typical XAS Beamline}
 
   \begin{center}
-    \includegraphics[width=0.8\linewidth]{exp/bl.pdf}
+    \includegraphics[width=0.75\linewidth]{exp/bl.pdf}
 
-    CM = Collimating Mirror \qquad FM = Focussing Mirror\\[1ex]
-    {\color{Green4}$\Box$} = X-ray Detector\\[1ex]
+    CM=Collimating Mirror \quad FM=Focussing Mirror
+    \quad {\color{Green4}$\Box$}=X-ray Detector\\
     Monochromator: Si(111) or Si(311) or Si(220) or $\cdots$
   \end{center}
 \end{frame}
@@ -612,11 +608,11 @@
 \begin{frame}
   \frametitle{Elements Measured at a Typical Hard X-Ray Beamline}
   \begin{center}
-    \includegraphics[width=0.8\linewidth]{images/periodic_table_of_elements.png}
+    \includegraphics[width=0.75\linewidth]{images/periodic_table_of_elements.png}
 
     {\color{SteelBlue3}K-edges, measured with Si(111) monochromator}\\
     {\color{Cyan3}K-edges, measured with Si(311) monochromator}\\
-    {\color{Brown4}L-edges}\\[2ex]
+    {\color{Brown4}L-edges}\\[1ex]
     Soft x-ray beamlines exist which deliver photons in the 100\,eV to
     1\,keV range (e.g.\ first row K, transition metal L, actinide N)
   \end{center}
@@ -668,24 +664,22 @@
       We simulated this process at the beamline by exposing
       cyanobacteria to an Au$^{3+}$ solution and ``watching'' the
       evolution of the Au XAS from Au$^{3+}$ to Au$^0$.
-    \end{column}
-  \end{columns}
-
-  \begin{center}
-    \begin{minipage}{0.6\linewidth}
       \begin{block}{Questions}
         \begin{itemize}
         \item What is the rate constant?
         \item Is there an intermediate species?
         \end{itemize}
       \end{block}
-    \end{minipage}
-  \end{center}
-  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule) 
+    \end{column}
+  \end{columns}
+
+  \begin{textblock*}{0.5\linewidth}(0pt,18.5\TPVertModule) 
     \tiny
     M. Lengke et el., \textit{Mechanisms of Gold Bioaccumulation by
       Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
-    Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006)
+    Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006),
+    \href{http://dx.doi.org/10.1021/es061040r}
+    {\color{blue4}\texttt{DOI: 10.1021/es061040r}}
   \end{textblock*}
 \end{frame}
 \begin{frame}
@@ -707,11 +701,13 @@
     \end{column}
   \end{columns}
 
-  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule) 
+  \begin{textblock*}{0.5\linewidth}(0pt,18.5\TPVertModule) 
     \tiny
     M. Lengke et el., \textit{Mechanisms of Gold Bioaccumulation by
       Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
-    Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006)
+    Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006),
+    \href{http://dx.doi.org/10.1021/es061040r}
+    {\color{blue4}\texttt{DOI: 10.1021/es061040r}}
   \end{textblock*}
 \end{frame}
 \begin{frame}
@@ -731,11 +727,13 @@
     \end{column}
   \end{columns}
 
-  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule) 
+  \begin{textblock*}{0.5\linewidth}(0pt,18.5\TPVertModule) 
     \tiny
     M. Lengke et el., \textit{Mechanisms of Gold Bioaccumulation by
       Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
-    Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006)
+    Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006),
+    \href{http://dx.doi.org/10.1021/es061040r}
+    {\color{blue4}\texttt{DOI: 10.1021/es061040r}}
   \end{textblock*}
 \end{frame}
 
@@ -758,7 +756,9 @@
     \tiny
     N. Belai et el., \textit{Pentavalent Uranium Oxide via Reduction
       of [UO$_2$]$^{2+}$ Under Hydrothermal Reaction Conditions},
-    Inorg. Chem. in press
+    Inorg. Chem., 2008, 47 (21), pp 10135–10140,
+    \href{http://dx.doi.org/10.1021/ic801534m}
+    {\color{blue4}\texttt{DOI: 10.1021/ic801534m}}
   \end{textblock*}
 \end{frame}
 \begin{frame}
@@ -797,7 +797,9 @@
     \tiny
     N. Belai et el., \textit{Pentavalent Uranium Oxide via Reduction
       of [UO$_2$]$^{2+}$ Under Hydrothermal Reaction Conditions},
-    Inorg. Chem. in press
+    Inorg. Chem., 2008, 47 (21), pp 10135–10140,
+    \href{http://dx.doi.org/10.1021/ic801534m}
+    {\color{blue4}\texttt{DOI: 10.1021/ic801534m}}
   \end{textblock*}
 \end{frame}
 
@@ -827,7 +829,9 @@
   \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule) 
     \tiny
     B. Ravel et el., \textit{Role of local disorder in the dielectric
-      response of BaTaO$_2$N}, Phys. Rev. \textbf{B73}, p. 184121 (2006) 
+      response of BaTaO$_2$N}, Phys. Rev. \textbf{B73}, p. 184121 (2006),
+    \href{http://dx.doi.org/10.1103/PhysRevB.73.184121}
+    {\color{blue4}\texttt{DOI: 10.1103/PhysRevB.73.184121}}
   \end{textblock*}
 \end{frame}
 
@@ -855,7 +859,9 @@
   \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule) 
     \tiny
     B. Ravel et al., \textit{Role of local disorder in the dielectric
-      response of BaTaO$_2$N}, Phys. Rev. \textbf{B73}, p. 184121 (2006) 
+      response of BaTaO$_2$N}, Phys. Rev. \textbf{B73}, p. 184121 (2006), 
+    \href{http://dx.doi.org/10.1103/PhysRevB.73.184121}
+    {\color{blue4}\texttt{DOI: 10.1103/PhysRevB.73.184121}}
   \end{textblock*}
 \end{frame}
 
@@ -938,12 +944,15 @@
     \only<2| handout:2>{UV photo + superposed U map | 200\,$\mu$m probe at APS 10ID.}
     \\[1ex]
 
-    \only<1| handout:1>{\includegraphics[width=0.8\linewidth]{xrf/pebble.png}}
-    \only<2| handout:2>{\includegraphics[width=0.8\linewidth]{xrf/pebblespot.png}}
+    \only<1| handout:1>{\includegraphics[width=0.75\linewidth]{xrf/pebble.png}}
+    \only<2| handout:2>{\includegraphics[width=0.75\linewidth]{xrf/pebblespot.png}}
   \end{center}
 
-  \begin{textblock*}{0.5\linewidth}(0pt,20\TPVertModule)
-    \tiny D. Phillips et el., Env. Sci. and Tech., in press.
+  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule) \tiny
+    D. Phillips et el., Env. Sci. and Tech., 2008, 42 (19), pp
+    7104–7110
+    \href{http://dx.doi.org/10.1021/es8001579}{\color{Blue4}\texttt{DOI:
+        10.1021/es8001579}}
   \end{textblock*}
 \end{frame}
 \begin{frame}
@@ -954,6 +963,12 @@
   \begin{center}
     \includegraphics[width=0.7\linewidth]{xrf/beanx=4000.png}
   \end{center}
+  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule) \tiny
+    D. Phillips et el., Env. Sci. and Tech., 2008, 42 (19), pp
+    7104–7110
+    \href{http://dx.doi.org/10.1021/es8001579}{\color{Blue4}\texttt{DOI:
+        10.1021/es8001579}}
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
@@ -971,17 +986,20 @@
       \begin{itemize}[<+->]
       \item High quality XAS data is measured with the 200\,$\mu$m
         probe.  We can see the variation in U quantity under the spot
-        in the XAS step size.\\[5ex]
+        in the XAS step size.\\[10ex]
       \item Normalizing the data, we see variability in the XANES,
-        indicating spatial heterogeneity in U speciation.\\[5ex]
+        indicating spatial heterogeneity in U speciation.\\[10ex]
       \item The EXAFS is of high quality and can be analyzed to
         uncover the different structural environments around the U at
         the various locations.
       \end{itemize}
     \end{column}
   \end{columns}
-  \begin{textblock*}{0.5\linewidth}(0pt,20\TPVertModule)
-    \tiny D. Phillips et el., Env. Sci. and Tech., in press.
+  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule) \tiny
+    D. Phillips et el., Env. Sci. and Tech., 2008, 42 (19), pp
+    7104–7110
+    \href{http://dx.doi.org/10.1021/es8001579}{\color{Blue4}\texttt{DOI:
+        10.1021/es8001579}}
   \end{textblock*}
 \end{frame}
 
@@ -1005,9 +1023,9 @@
 
   \begin{columns}[T]
     \begin{column}{0.6\linewidth}
-      \qquad\includegraphics[width=0.7\linewidth]{xrf/arabadopsis_sm.png}
+      \qquad\includegraphics[width=0.65\linewidth]{xrf/arabadopsis_sm.png}
 
-      \quad\includegraphics[width=0.8\linewidth]{xrf/arabadopsis_xanes.png}
+      \quad\includegraphics[width=0.7\linewidth]{xrf/arabadopsis_xanes.png}
 
       \small We measured XANES from a vein in the leaf with a
       20\,$\mu$m probe at APS 13BM.\\
@@ -1035,12 +1053,12 @@
   \textit{D. Radiodurens} were cultured on a TEM grid and dried.  The
   locations of cells were registered under a light microscope and
   found again at APS beamline 2\,ID-D, where a 250\,nm
-  probe was used.\\[1ex]
+  probe was used.
   
   \begin{columns}
     \begin{column}{0.4\linewidth}
       \begin{center}
-        \includegraphics[width=0.9\linewidth]{xrf/dr_tem_grid.jpg}\\[1ex]
+        \includegraphics[width=0.8\linewidth]{xrf/dr_tem_grid.jpg}\\[1ex]
         {\tiny
           \begin{tabular}{ccc}
             element & max $\mu$g/cm$^2$ & max mass ppm \\
@@ -1071,10 +1089,12 @@
 
   \bigskip
 
-  \begin{textblock*}{0.5\linewidth}(0pt,20\TPVertModule)
+  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule)
     \tiny M. Daly et el., \textit{Protein Oxidation Implicated as the
       Primary Determinant of Bacterial Radioresistance}, PLoS
-    Biol \textbf{5}(4): e92
+    Biol \textbf{5}(4): e92 
+    \href{http://dx.doi.org/10.1371/journal.pbio.0050092}
+    {\color{Blue4}\texttt{doi:10.1371/journal.pbio.0050092}}
   \end{textblock*}
 \end{frame}
 
@@ -1103,10 +1123,12 @@
 
   \bigskip
 
-  \begin{textblock*}{0.5\linewidth}(0pt,20\TPVertModule)
+  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule)
     \tiny M. Daly et el., \textit{Protein Oxidation Implicated as the
       Primary Determinant of Bacterial Radioresistance}, PLoS
     Biol \textbf{5}(4): e92
+    \href{http://dx.doi.org/10.1371/journal.pbio.0050092}
+    {\color{Blue4}\texttt{doi:10.1371/journal.pbio.0050092}}
   \end{textblock*}
 \end{frame}
 
@@ -1129,10 +1151,12 @@
   
   \bigskip
 
-  \begin{textblock*}{0.5\linewidth}(0pt,20\TPVertModule)
+  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule)
     \tiny M. Daly et el., \textit{Protein Oxidation Implicated as the
       Primary Determinant of Bacterial Radioresistance}, PLoS
     Biol \textbf{5}(4): e92
+    \href{http://dx.doi.org/10.1371/journal.pbio.0050092}
+    {\color{Blue4}\texttt{doi:10.1371/journal.pbio.0050092}}
   \end{textblock*}
 \end{frame}
 
@@ -1142,7 +1166,7 @@
   \frametitle{Where to go for more information}
   \begin{center}
     {\LARGE \texttt{http://xafs.org/}}\\[1ex]
-    \includegraphics[width=\linewidth]{images/xafsorg.png}
+    \includegraphics[width=0.95\linewidth]{images/xafsorg.png}
   \end{center}
 \end{frame}
 
