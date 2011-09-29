@@ -1,7 +1,11 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
-\usetheme{Warsaw}
-%\usetheme{Marburg}
-%\usecolortheme{crane}
+\usetheme{progressbar}
+%\usecolortheme[named=Purple4]{structure}
+\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{iwona} 
 
 \usepackage{alltt}
 \usepackage{amsmath,amsfonts, amssymb, amscd}
@@ -43,7 +47,7 @@
 \title{A Practical Introduction to Multiple Scattering Theory}
 \include{author}
 
-\date[APS EXAFS 07]{2007 APS EXAFS Summer School\\July 23-27, 2007}
+\date[APS EXAFS 07]{2007 APS EXAFS Summer School\\July 23-27, 2007\\~}
 
 \begin{document}
 \begin{frame}
@@ -53,16 +57,14 @@
 
 
 
-\section*{Outline}
-\begin{frame}
-  \tableofcontents
-\end{frame}
+% \section*{Outline}
+% \begin{frame}
+%   \tableofcontents
+% \end{frame}
 
 
-\section[Intro]{Introduction}
-\subsection{Overview}
+\section{Real-space multiple scattering}
 \include{intro}
-\subsection{Multiple Scattering and Full Multiple Scattering}
 \include{cluster}
 
 
