@@ -50,15 +50,9 @@
 
 \title{Introduction to Inner Shell Spectroscopy}
 
-\author{Bruce Ravel}
-\institute[NIST]{Synchrotron Methods Group, Ceramics Division\\%
-  Materials Science and Engineering Laboratory\\%
-  National Institute of Standards and Technology\\%
-  \&\\%
-  Local Contact, Beamline X23A2\\%
-  National Synchrotron Light Source}
-
-\date[XASs2010]{X-ray Absorption Spectroscopy School 2010\\University of Ghent\\14--15 January 2010}
+\include{author}
+\include{date}
+%\date[XASs2010]{X-ray Absorption Spectroscopy School 2010\\University of Ghent\\14--15 January 2010}
 
 %\logo{\includegraphics[width=1.0cm]{images/ankaxas_black.jpg}}
 
@@ -167,60 +161,68 @@
   Each element has a characteristic set of excitation and
   fluorescence energies.
 
-  \begin{block}{Iron: Z=26}
-    \small
-    \begin{columns}[T]
-      \begin{column}{0.3\linewidth}
-        \begin{tabular}{cr}
-          Edge &  Energy \\
-          \hline
-          \alert{K}    & \alert{7112}    \\
-          L3   & 706.8   \\
-          L2   & 719.9   \\
-          L1   & 844.6
-        \end{tabular}
-      \end{column}
-      \begin{column}{0.7\linewidth}
-        \begin{tabular}{llcc}
-          Line & Transition & Energy &  Strength \\
-          \hline
-          K$\alpha_1$ & \alert{K}-L3 & 6405.2 & 0.580\\
-          K$\alpha_2$ & \alert{K}-L2 & 6392.1 & 0.294\\
-          K$\beta_1$  & \alert{K}-M3 & 7059.3 & 0.082\\
-          K$\beta_3$  & \alert{K}-M2 & 7059.3 & 0.043\\
-          K$\beta_5$  & \alert{K}-M4,5 & 7110.0 & 0.001
-        \end{tabular}
-      \end{column}
-    \end{columns}
-  \end{block}
+  \medskip
 
-  \begin{block}{Uranium: Z=92}
-    \small
-    \begin{columns}[T]
-      \begin{column}{0.3\linewidth}
-        \begin{tabular}{cr}
-          Edge &  Energy \\
-          \hline
-          K    & 115606  \\
-          \alert{L3}   & \alert{17166}   \\
-          L2   & 20948   \\
-          L1   & 21757
-        \end{tabular}
-      \end{column}
-      \begin{column}{0.7\linewidth}
-        \begin{tabular}{llcc}
-          Line & Transition & Energy &  Strength \\
-          \hline
-          L$\alpha_1$ & \alert{L3}-M5   & 13614.0 & 0.686\\
-          L$\alpha_2$ & \alert{L3}-M4   & 13438.0 & 0.077\\
-          L$\beta_2$  & \alert{L3}-N4,5 & 16387.7 & 0.181\\
-          L$\beta_5$  & \alert{L3}-O4,5 & 17063.2 & 0.038\\
-          L$\beta_6$  & \alert{L3}-N1   & 15727.0 & 0.013\\
-          L$_\ell$    & \alert{L3}-M1   & 11618.0 & 0.005\\
-        \end{tabular}
-      \end{column}
-    \end{columns}
+  \begin{block}{}
+    Iron: Z=26
   \end{block}
+  \begin{columns}[T]
+    \begin{column}{0.1\linewidth}
+      ~
+    \end{column}
+    \begin{column}{0.3\linewidth}
+      \begin{tabular}{cr}
+        Edge &  Energy \\
+        \hline
+        \alert{K}    & \alert{7112}    \\
+        L3   & 706.8   \\
+        L2   & 719.9   \\
+        L1   & 844.6
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \begin{tabular}{llcc}
+        Line & Transition & Energy &  Strength \\
+        \hline
+        K$\alpha_1$ & \alert{K}-L3 & 6405.2 & 0.580\\
+        K$\alpha_2$ & \alert{K}-L2 & 6392.1 & 0.294\\
+        K$\beta_1$  & \alert{K}-M3 & 7059.3 & 0.082\\
+        K$\beta_3$  & \alert{K}-M2 & 7059.3 & 0.043\\
+        K$\beta_5$  & \alert{K}-M4,5 & 7110.0 & 0.001
+      \end{tabular}
+    \end{column}
+  \end{columns}
+
+  \begin{block}{}
+    Uranium: Z=92
+  \end{block}
+  \begin{columns}[T]
+    \begin{column}{0.1\linewidth}
+      ~
+    \end{column}
+    \begin{column}{0.3\linewidth}
+      \begin{tabular}{cr}
+        Edge &  Energy \\
+        \hline
+        K    & 115606  \\
+        \alert{L3}   & \alert{17166}   \\
+        L2   & 20948   \\
+        L1   & 21757
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \begin{tabular}{llcc}
+        Line & Transition & Energy &  Strength \\
+        \hline
+        L$\alpha_1$ & \alert{L3}-M5   & 13614.0 & 0.686\\
+        L$\alpha_2$ & \alert{L3}-M4   & 13438.0 & 0.077\\
+        L$\beta_2$  & \alert{L3}-N4,5 & 16387.7 & 0.181\\
+        L$\beta_5$  & \alert{L3}-O4,5 & 17063.2 & 0.038\\
+        L$\beta_6$  & \alert{L3}-N1   & 15727.0 & 0.013\\
+        L$_\ell$    & \alert{L3}-M1   & 11618.0 & 0.005\\
+      \end{tabular}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
@@ -412,7 +414,7 @@
 
   \bigskip
 
-  Every element with an absorption edge \alert{below} the incident
+  Every element with an edge \alert{below} the incident
   energy will fluoresce.
 
   \begin{center}
@@ -459,14 +461,31 @@
 
 \begin{frame}
   \frametitle{Learning About Your Sample}
-  In a recent experiment to study the bonding between Hg and catalytic
-  DNA molecules, I was given a solution with
-  \begin{itemize}
-  \item 3\,mM Hg chlorate
-  \item 3\,mM DNA
-  \item 50\,mM cacodylic acid (as a buffer)
-  \item 100\,mM NaClO$_4$
-  \end{itemize}
+  I once performed a study to measure the bonding between Hg and
+  catalytic DNA molecules.  I was given a solution with
+  \begin{columns}[T]
+    \begin{column}{0.125\linewidth}
+      ~
+    \end{column}
+    \begin{column}{0.3\linewidth}
+      \begin{itemize}
+      \item 3\,mM Hg chlorate
+      \item 3\,mM DNA
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.45\linewidth}
+      \begin{itemize}
+      \item 50\,mM cacodylic acid (buffer)
+      \item 100\,mM NaClO$_4$ (salt)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.125\linewidth}
+      ~
+    \end{column}
+  \end{columns}
+
+  \medskip
+
   Here is the fluorescence spectrum:\\[1ex]
   \begin{columns}
     \begin{column}{0.5\linewidth}
@@ -484,11 +503,16 @@
           Hg L$\alpha$ ($\sim$10\,keV).
         }
       \end{center}
-
-  \end{column}
-\end{columns}
-
-
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule)%
+    \tiny%
+    B.\ Ravel, et al., \textit{EXAFS studies of catalytic DNA sensors
+      for mercury contamination of water}, Radiation Physics and
+    Chemistry \textbf{78}:10 (2009) pp\ S75-S79
+    \href{http://dx.doi.org/10.1016/j.radphyschem.2009.05.024}
+    {\color{Blue4}\texttt{DOI: 10.1016/j.radphyschem.2009.05.024}}
+  \end{textblock*}
 \end{frame}
 
 \section[Experiment]{The XAS and XRF Experiments}
@@ -679,7 +703,7 @@
       Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
     Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006),
     \href{http://dx.doi.org/10.1021/es061040r}
-    {\color{blue4}\texttt{DOI: 10.1021/es061040r}}
+    {\color{Blue4}\texttt{DOI: 10.1021/es061040r}}
   \end{textblock*}
 \end{frame}
 \begin{frame}
@@ -707,7 +731,7 @@
       Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
     Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006),
     \href{http://dx.doi.org/10.1021/es061040r}
-    {\color{blue4}\texttt{DOI: 10.1021/es061040r}}
+    {\color{Blue4}\texttt{DOI: 10.1021/es061040r}}
   \end{textblock*}
 \end{frame}
 \begin{frame}
@@ -733,7 +757,7 @@
       Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
     Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006),
     \href{http://dx.doi.org/10.1021/es061040r}
-    {\color{blue4}\texttt{DOI: 10.1021/es061040r}}
+    {\color{Blue4}\texttt{DOI: 10.1021/es061040r}}
   \end{textblock*}
 \end{frame}
 
@@ -758,7 +782,7 @@
       of [UO$_2$]$^{2+}$ Under Hydrothermal Reaction Conditions},
     Inorg. Chem., 2008, 47 (21), pp 10135–10140,
     \href{http://dx.doi.org/10.1021/ic801534m}
-    {\color{blue4}\texttt{DOI: 10.1021/ic801534m}}
+    {\color{Blue4}\texttt{DOI: 10.1021/ic801534m}}
   \end{textblock*}
 \end{frame}
 \begin{frame}
@@ -799,7 +823,7 @@
       of [UO$_2$]$^{2+}$ Under Hydrothermal Reaction Conditions},
     Inorg. Chem., 2008, 47 (21), pp 10135–10140,
     \href{http://dx.doi.org/10.1021/ic801534m}
-    {\color{blue4}\texttt{DOI: 10.1021/ic801534m}}
+    {\color{Blue4}\texttt{DOI: 10.1021/ic801534m}}
   \end{textblock*}
 \end{frame}
 
@@ -831,7 +855,7 @@
     B. Ravel et el., \textit{Role of local disorder in the dielectric
       response of BaTaO$_2$N}, Phys. Rev. \textbf{B73}, p. 184121 (2006),
     \href{http://dx.doi.org/10.1103/PhysRevB.73.184121}
-    {\color{blue4}\texttt{DOI: 10.1103/PhysRevB.73.184121}}
+    {\color{Blue4}\texttt{DOI: 10.1103/PhysRevB.73.184121}}
   \end{textblock*}
 \end{frame}
 
@@ -861,7 +885,7 @@
     B. Ravel et al., \textit{Role of local disorder in the dielectric
       response of BaTaO$_2$N}, Phys. Rev. \textbf{B73}, p. 184121 (2006), 
     \href{http://dx.doi.org/10.1103/PhysRevB.73.184121}
-    {\color{blue4}\texttt{DOI: 10.1103/PhysRevB.73.184121}}
+    {\color{Blue4}\texttt{DOI: 10.1103/PhysRevB.73.184121}}
   \end{textblock*}
 \end{frame}
 
@@ -948,7 +972,7 @@
     \only<2| handout:2>{\includegraphics[width=0.75\linewidth]{xrf/pebblespot.png}}
   \end{center}
 
-  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule) \tiny
+  \begin{textblock*}{0.5\linewidth}(0pt,19.75\TPVertModule) \tiny
     D. Phillips et el., Env. Sci. and Tech., 2008, 42 (19), pp
     7104–7110
     \href{http://dx.doi.org/10.1021/es8001579}{\color{Blue4}\texttt{DOI:
@@ -963,7 +987,7 @@
   \begin{center}
     \includegraphics[width=0.7\linewidth]{xrf/beanx=4000.png}
   \end{center}
-  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule) \tiny
+  \begin{textblock*}{0.5\linewidth}(0pt,19.75\TPVertModule) \tiny
     D. Phillips et el., Env. Sci. and Tech., 2008, 42 (19), pp
     7104–7110
     \href{http://dx.doi.org/10.1021/es8001579}{\color{Blue4}\texttt{DOI:
@@ -995,7 +1019,7 @@
       \end{itemize}
     \end{column}
   \end{columns}
-  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule) \tiny
+  \begin{textblock*}{0.5\linewidth}(0pt,19.75\TPVertModule) \tiny
     D. Phillips et el., Env. Sci. and Tech., 2008, 42 (19), pp
     7104–7110
     \href{http://dx.doi.org/10.1021/es8001579}{\color{Blue4}\texttt{DOI:
@@ -1171,27 +1195,30 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Information about the software we will be using today
-    and tomorrow}
+  \frametitle{Information about the software}
   \begin{description}[Ifeffit]
   \item[Ifeffit] A suite of interactive programs for XAFS analysis,
     combining high-quality and well-tested XAFS analysis algorithms,
     tools for general data manipulation, and graphical display of
     data.\\\qquad{\scriptsize
-      \texttt{http://cars9.uchicago.edu/ifeffit/}}
+      \href{http://cars9.uchicago.edu/ifeffit/}
+      {\color{Blue4}\texttt{http://cars9.uchicago.edu/ifeffit/}}}
   \item[Athena \& Artemis] Graphical programs for the processing and
     analysis of XAFS data.\\\qquad{\scriptsize
-      \texttt{http://github.com/bruceravel/demeter/}}
+      \href{http://github.com/bruceravel/demeter/}
+      {\color{Blue4}\texttt{http://github.com/bruceravel/demeter/}}}
   \item[The Ifeffit mailing list] Discussion of \textsc{ifeffit} and
     related XAFS analysis programs.  Also covered are general
     discussions of XAFS, XAFS theory, and related
     spectroscopies.\\\qquad{\scriptsize
-      \texttt{http://cars9.uchicago.edu/mailman/listinfo/ifeffit/}}
+      \href{http://cars9.uchicago.edu/mailman/listinfo/ifeffit/}
+      {\color{Blue4}\texttt{http://cars9.uchicago.edu/mailman/listinfo/ifeffit/}}}
   \end{description}
 
   \begin{block}{}
     \begin{center}
-      \textsc{ifeffit} and friends are free software
+      \textsc{ifeffit} and friends are \alert{free} software\\
+      \alert{free} as in beer \textbf{and} \alert{free} as in speech
     \end{center}
   \end{block}
 
