@@ -28,15 +28,20 @@ These folders contain the XAS and structural data used in the talks.
  |-------------------+------------------------------------------------------------------------|
  | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
  | Cr standards      | Cr 3+ and 6+ oxide standards                                           |
+ | EuTiO3            | Data at several temperatures, Ti K, and Eu L3 edges                    |
  | FeS2              | FeS2 transmission EXAFS + crystal data                                 |
+ | GeSb              | A single scan of a thin GeSb on silicon, p. 6 ATEA                     |
  | Germanium         | Crystalline and amorphous Ge data + crystal data                       |
+ | HgDNA             | merged scans of data and control for HgDNA example, p.7 ATEA           |
  | Methyltin         | Monomethyl tin trichloride + dimethyl tin dichloride + structure data  |
  | Self Absorption   | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite |
  | Uranyl on Biomass | uranyl acetate in equilibrium with biomass                             |
 
 ** Other folders
 
- + ~sty/~: Copies of my customizations of the [[http://recherche.noiraudes.net/fr/LaTeX.php][progressbar Beamer theme]] by Sylvain Bouveret and common copyright statement
+ + ~sty/~
+   + Copies of my customizations of the [[http://recherche.noiraudes.net/fr/LaTeX.php][progressbar Beamer theme]] by Sylvain Bouveret
+   + common copyright statement, author information, and date
 
 
 To use the style files, the ~TEXINPUTS~ environment variable must be
@@ -46,6 +51,10 @@ command line:
     : export TEXINPUTS=".:$HOME/TeX/XAS-Education/sty/:"
 
 where ~$HOME/TeX~ would be replaced by the location of the local XAS-Education repository.
+
+To use the copyright, author, and date file, put these in the main .tex file of a talk
+
+    :  \include{XX.tex}  % where XX=(copyright|author|date)
 
 ** Recommended reading
 
