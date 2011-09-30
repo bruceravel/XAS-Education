@@ -64,8 +64,299 @@
 
 
 \section{Real-space multiple scattering}
-\include{intro}
-\include{cluster}
+%\include{intro}
+
+\begin{frame}
+  \frametitle{What I hope you take away from this talk}
+  \begin{itemize}
+  \item A broad outline of multiple scattering theory with enough
+    background to talk with a theorist
+  \item An understanding of how multiple scattering theory is used to
+    interpret \textbf{XANES} spectra
+  \item An understanding of how multiple scattering theory is used to
+    analyze \textbf{EXAFS} spectra
+  \item Some ideas about how to incorporate multiple scattering theory
+    in your research
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{This talk is about Feff}
+
+  There are many approaches to spectroscopy theory out there,
+  including multiplets, band structure, and finite difference methods.
+
+  \bigskip
+
+  \begin{exampleblock}{This talk is about Feff}
+    \textsc{feff} is a real-space, multiple scattering code.
+  \end{exampleblock}
+  
+  \bigskip
+
+  \begin{itemize}
+  \item A conceptual summary and simple physical interpretation of
+    what ``real-space multiple scattering'' means.
+  \item How RSMS is used to make XANES calculations.
+  \item How RSMS is used in fitting EXAFS data.
+  \end{itemize}
+\end{frame}
+
+\include{simple_picture}
+
+\begin{frame}
+  \frametitle{Computing X-ray Absorption from First Principles}
+  \begin{columns}
+    \begin{column}{0.75\linewidth}
+      In XAS we measure the \emph{dipole mediated}$^\mathrm{[1]}$
+      transition of an electron in a \emph{deep core}$^\mathrm{[2]}$
+      state {\color{blue}$|i\rangle$} into an
+      \emph{unoccupied}$^\mathrm{[3]}$ state {\color{red}$|f\rangle$}:
+
+      \begin{columns}
+        \begin{column}{0.15\linewidth}
+          ~
+        \end{column}
+        \begin{column}{0.7\linewidth}
+          \begin{block}{Fermi's Golden Rule}
+            $\mu(E) \propto\> \sum\limits_f^{E_f>E_F}
+            \big|{\color{red}\langle f|}
+            {\color{blue}\hat{\epsilon}\cdot\mathbf{r}}
+            {\color{blue}|i\rangle}\big|^2 \delta(E_f)$
+          \end{block}
+        \end{column}
+        \begin{column}{0.15\linewidth}
+          ~
+        \end{column}
+      \end{columns}
+
+      \medskip
+
+      Broadly speaking, there are two ways to solve this equation:
+      \begin{enumerate}
+      \item Accurately represent {\color{blue}$|i\rangle$}$^\mathrm{[4]}$  and
+        {\color{red}$|f\rangle$}$^\mathrm{[5]}$, then evaluate
+        the integral directly. This is the approach taken, for example, by
+        molecular orbital theory.
+      \item Use multiple scattering theory, AKA a Green's
+        function$^\mathrm{[6]}$ or propagator formalism:\\
+        {\footnotesize
+        $\mu(E) \propto
+        -\frac{1}{\pi} \Im {\color{blue}\langle \mathrm{i}
+          |} \hat{\epsilon}^\ast \cdot \boldsymbol{r} \,
+        {\color{Green4}\mathbb{G}(r,r';E)} \hat{\epsilon} \cdot \boldsymbol{r}' {\color{blue}|
+          \mathrm{i} \rangle}
+        \Theta(E-E_F)$.}
+      \end{enumerate}      
+    \end{column}
+    \begin{column}{0.25\linewidth}
+      \begin{enumerate}
+        \tiny
+      \item A photon interacts with an electron
+      \item Typically a \textit{1s}, \textit{2s}, or \textit{2p} electron
+      \item A bound or continuum state \textbf{not} already containing
+        an electron
+      \item Easy, basic Q.M.
+      \item Hard work, lots of computation
+      \item {\color{Green4}$\GMS$} is called a Green's function.
+      \end{enumerate}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Real Space Multiple Scattering}
+
+  In multiple scattering theory, all the hard work is in computing
+  the Green's function.
+
+  \begin{description}
+  \item[${\color{Green4}\GMS}$] the function that describes all
+    possible ways for a photoelectron to interact with the
+    surrounding atoms
+  \item[$\Gnot$] the function that describes how an electron
+    propagates between two points in space
+  \item[$\tmat$] the function that describes how a photo-electron
+    scatters from a neighboring atom
+  \end{description}
+
+  \begin{block}{Expanding the Green's function}
+    ~\\[-6ex]
+    \begin{align}
+      {\color{Green4}\GMS} =& \big(1 - \Gnot \tmat\big)^{-1} \, \Gnot \tag{XANES}\\
+      =& \Gnot + \Gnot\,\tmat\,\Gnot +
+      \Gnot\,\tmat\,\Gnot\,\tmat\,\Gnot +
+      \Gnot\,\tmat\,\Gnot\,\tmat\,\Gnot\,\tmat\,\Gnot + ... \tag{EXAFS}
+    \end{align}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Scattering Paths}
+  Solving {\color{DarkOrchid4} ${\color{Green4}\GMS} = \big(1 - \Gnot
+    \tmat\big)^{-1} \, \Gnot$} considers these and {\LARGE ALL} other
+  paths within some cluster of atoms:
+
+  \begin{tabular}[t]{ccc}
+    {\color{DarkOrchid4}single scattering path} & {\color{blue}\SS} & (2 legs)\\
+    {\color{DarkOrchid4}double scattering path} & \includegraphics[width=0.2\linewidth]{images/ds}& (3 legs)\\
+    {\color{DarkOrchid4}triple scattering path} & \includegraphics[width=0.2\linewidth]{images/ts}& (4 legs)\\
+  \end{tabular}
+
+  \medskip
+
+  \begin{center}
+    The clever thing about \textsc{feff} is that each term is further
+    expanded as a sum of all paths of that order.
+
+    {\color{DarkOrchid4}$\Gnot\,\tmat\,\Gnot$} is expanded as a sum of
+    {\color{DarkOrchid4}single scattering} paths
+
+    {\color{DarkOrchid4}$\Gnot\,\tmat\,\Gnot\,\tmat\,\Gnot$} is a sum
+    of all {\color{DarkOrchid4}double scattering} paths
+
+    and so on.
+  \end{center}
+
+\end{frame}
+
+
+%\include{cluster}
+
+
+\newcommand{\FeLeft}{0.60\linewidth}
+\newcommand{\FeRight}{0.38\linewidth}
+\newcommand{\FeCluster}{0.65\linewidth}
+\newcommand{\FePlot}{0.78\linewidth}
+
+\begin{frame}
+  \frametitle<1>{Iron metal: 1$^{\mathrm{st}}$ path, 1 shell }
+  \frametitle<2>{Iron metal: 2$^{\mathrm{nd}}$ path, 2 shells }
+  \frametitle<3>{Iron metal: 3$^{\mathrm{rd}}$ path, 1 shell }
+  \frametitle<4>{Iron metal: 4$^{\mathrm{th}}$ path, 2 shells }
+  \frametitle<5>{Iron metal: 5$^{\mathrm{th}}$ path, 3 shells }
+  \frametitle<6>{Iron metal: 8$^{\mathrm{th}}$ path, 4 shells }
+
+  \begin{columns}[T]
+    \begin{column}{0.60\linewidth}
+      \centering\includegraphics<1>[width=\FeCluster]{images/path1_diagram}
+      \centering\includegraphics<2>[width=\FeCluster]{images/path2_diagram}
+      \centering\includegraphics<3>[width=\FeCluster]{images/path3_diagram}
+      \centering\includegraphics<4>[width=\FeCluster]{images/path4_diagram}
+      \centering\includegraphics<5>[width=\FeCluster]{images/path5_diagram}
+      \centering\includegraphics<6>[width=\FeCluster]{images/path8_diagram}
+      \begin{enumerate}
+      \item %
+        \only<1>{The first path is much, but not all, of the first peak in {\chir}.}
+        \only<2>{The second path overlaps the first in {\chir}.}
+        \only<3>{This path contributes little to {\chir}.}
+        \only<4>{This path contributes little to {\chir}.}
+        \only<5>{This 3$^{\mathrm{rd}}$ shell SS path contributes most
+          of the spectral weight to the second peak of {\chir}.}
+        \only<6>{The 4$^{\mathrm{th}}$ shell SS path contributes to
+          the third peak in {\chir}.}\\
+        {\color{Firebrick3}Degeneracy = \only<1>{8}\only<2>{6}\only<3>{24}\only<4>{48}\only<5>{12}\only<6>{24}}
+      \item %
+        \only<1>{The first shell XANES calculation shows little of the
+          structure.}
+        \only<2>{The XANES calculation begins to show the structure of
+          the spectrum.}
+        \only<3>{The contribution from this path and all higher order
+          paths scattering among these atoms is in the first shell
+          XANES calculation.}
+        \only<4>{The contribution from this path and all higher order
+          paths scattering among these the first two shells is in the
+          second shell XANES calculation.}
+        \only<5>{The first peak after the edge in the XANES is
+          sharpened considerably by the addition of this shell.}
+        \only<6>{Including this shell in the XANES calculation broadens
+          the peak above the edge somewhat.  It also introduces the
+          second shoulder.}
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.38\linewidth}
+      \centering
+      \includegraphics<1>[width=\FePlot]{images/path1}
+      \includegraphics<2>[width=\FePlot]{images/path2}
+      \includegraphics<3>[width=\FePlot]{images/path3}
+      \includegraphics<4>[width=\FePlot]{images/path4}
+      \includegraphics<5>[width=\FePlot]{images/path5}
+      \includegraphics<6>[width=\FePlot]{images/path8}
+
+      \centering\color{Green4}\texttt{`feff000{\only<1>{1}\only<2>{2}\only<3>{3}\only<4>{4}\only<5>{5}\only<6>{8}}.dat'}
+      %\only<2>{\color{Green4}\texttt{`feff0002.dat'}}
+      %\only<3>{\color{Green4}\texttt{`feff0003.dat'}}
+      %\only<4>{\color{Green4}\texttt{`feff0004.dat'}}
+      %\only<5>{\color{Green4}\texttt{`feff0005.dat'}}
+      %\only<6>{\color{Green4}\texttt{`feff0008.dat'}}
+
+      \bigskip
+
+      \includegraphics<1>[width=\FePlot]{images/xanes_shell1}
+      \includegraphics<2>[width=\FePlot]{images/xanes_shell2}
+      \includegraphics<3>[width=\FePlot]{images/xanes_shell1}
+      \includegraphics<4>[width=\FePlot]{images/xanes_shell2}
+      \includegraphics<5>[width=\FePlot]{images/xanes_shell3}
+      \includegraphics<6>[width=\FePlot]{images/xanes_shell4}
+
+      \centering{\color{blue}XANES}
+
+      \bigskip
+
+      ~
+
+      \bigskip
+
+      ~
+
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Iron metal: 10$^{\mathrm{th}}$ path + MS, 5 shells}
+  \begin{columns}[T]
+    \begin{column}{0.1\linewidth}
+      ~
+    \end{column}
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=0.8\linewidth]{images/path10}
+
+      5$^{\mathrm{th}}$ shell EXAFS: Magnitude
+    \end{column}
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=0.8\linewidth]{images/path10_re}
+
+      5$^{\mathrm{th}}$ shell EXAFS: Real part
+    \end{column}
+    \begin{column}{0.1\linewidth}
+      ~
+    \end{column}
+  \end{columns}    
+
+  \medskip
+  
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \begin{block}{Convergence}
+        \includegraphics[width=\linewidth]{images/xanes_convergence}
+      \end{block}
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      There are several MS geometries with the same path length as the
+      5$^{\mathrm{th}}$ shell SS path.  Some are \emph{bigger} than
+      the SS path!
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
 
 
 

@@ -24,7 +24,9 @@
   \bigskip
 
   \begin{exampleblock}{This talk is about Feff}
-    \centering\textsc{feff} is a real-space, multiple scattering code.
+    \begin{center}
+      \textsc{feff} is a real-space, multiple scattering code.
+    \end{center}
   \end{exampleblock}
   
   \bigskip
@@ -38,68 +40,12 @@
 
 \end{frame}
 
-
-\begin{frame}
-  \frametitle{A simple picture of X-ray absorption}
-  An atom absorbs an x-ray of energy $E$, destroying a core electron
-  with energy $E_0$ and emitting a photo-electron with kinetic energy
-  $(E-E_0)$. The core state is eventually filled, ejecting a
-  fluorescent x-ray or an Auger electron.
-
-  \begin{tabular}[h]{c@{\qquad}c}
-    \begin{minipage}[h]{0.45\linewidth}
-      \includegraphics<1>[width=\linewidth]{images/bare_atom}
-    \end{minipage} &
-    \begin{minipage}[h]{0.5\linewidth}
-      \begin{center}
-        An empty final state is required.\\[2ex]
-        {\color{red} No available state, \\
-          no absorption!}\\[2ex]
-        Once the x-ray energy is large enough to promote a core electron
-        to the continuum, there is a sharp increase in absorption.
-      \end{center}
-    \end{minipage}
-  \end{tabular}
-
-  \medskip
-
-  For an isolated atom, $\mu(E)$ has a sharp step at the
-  core-level binding energy and is a smooth function of energy
-  above the edge.
-\end{frame}
-
-\begin{frame}
-  \frametitle{X-ray absorption in condensed matter}
-  The ejected photo-electron can scatter from neighboring atoms. $R$
-  has some relationship to $\lambda$ and there is a phase shift
-  associated with the scattering event.  Thus the outgoing and scattered
-  waves interfere.
-
-   \begin{tabular}[h]{c@{\qquad}c}
-     \begin{minipage}[h]{0.45\linewidth}
-       \includegraphics<1>[width=\linewidth]{images/with_scattering}
-     \end{minipage} &
-     \begin{minipage}[h]{0.5\linewidth}
-       \begin{center}
-         The scattering of the photo-electron wave function interferes
-         with itself.\\[4ex]
-         $\mu(E)$ depends on the density of states with energy
-         $(E-E_0)$ at the absorbing atom.
-       \end{center}
-     \end{minipage}
-   \end{tabular}
-
-   \medskip
-
-   This interference \emph{at the absorbing atom} will vary with
-   energy, causing the oscillations in $\mu(E)$.
-\end{frame}
+\input{simple_picture}
 
 \begin{frame}
   \frametitle{Computing X-ray Absorption from First Principles}
-
-  \begin{tabular}[h]{c@{\quad}|c}
-    \begin{minipage}[h]{0.75\linewidth}
+  \begin{columns}
+    \begin{column}{0.75\linewidth}
       In XAS we measure the \emph{dipole mediated}$^\mathrm{[1]}$ transition of
       an electron in a \emph{deep core}$^\mathrm{[2]}$ state
       {\color{blue}$|i\rangle$} into an \emph{unoccupied}$^\mathrm{[3]}$ state
@@ -130,11 +76,11 @@
         {\color{Green4}\mathbb{G}(r,r';E)} \hat{\epsilon} \cdot \boldsymbol{r}' {\color{blue}|
           \mathrm{i} \rangle}
         \Theta(E-E_F)$.}
-      \end{enumerate}
-    \end{minipage} &
-    \begin{minipage}[h]{0.18\linewidth}
-      \tiny
+      \end{enumerate}      
+    \end{column}
+    \begin{column}{0.25\linewidth}
       \begin{enumerate}
+      \tiny
       \item A photon interacts with an electron
       \item Typically a \textit{1s}, \textit{2s}, or \textit{2p} electron
       \item A bound or continuum state \textbf{not} already containing
@@ -142,9 +88,8 @@
       \item Easy, basic Q.M.
       \item Hard work, lots of computation
       \item {\color{Green4}$\GMS$} is called a Green's function.
-      \end{enumerate}
-    \end{minipage}
-  \end{tabular}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
