@@ -43,6 +43,9 @@
 {\begin{actionenv}#1\begin{originalcenter}}
 {\end{originalcenter}\end{actionenv}}
 
+\hyphenation{microbeam}
+\hyphenation{beyond}
+
 \mode<presentation>
 %\mode<beamer>
 
@@ -92,25 +95,25 @@
         which \textsc{athena} and \textsc{artemis} would not exist.
       \item Shelly Kelly and Scott Calvin, old friends, relentless
         finders of software bugs, and long-time co-conspirators in
-        this XAS eductaion gig
+        this XAS eductaion gig.
       \item My teachers, Ed Stern and John Rehr, who have done so much
         for the XAS community and who instilled in me a love of the
-        discipline of XAS
+        discipline of XAS.
       \item My most wonderful boss, Dan Fischer, for letting me duck
-        out of work to do things like this
+        out of work to do things like this.
       \item The folks who make the great software I use to write my codes:
         \href{http://www.perl.org}{\color{Blue4}Perl},
         \href{http://wxperl.sourceforge.net/}{\color{Blue4}wxPerl},
         \href{http://www.gnu.org/software/emacs/}{\color{Blue4}Emacs},
         \href{http://ecb.sourceforge.net}{\color{Blue4}The Emacs Code Browser},
         \href{http://git-scm.com/}{\color{Blue4}Git},
-        \href{http://github.com/}{\color{Blue4}GitHub}
+        \href{http://github.com/}{\color{Blue4}GitHub}.
       \item The folks who make the great software used to write this talk:
         \href{http://tug.ctan.org}{\color{Blue4}\LaTeX},
         \href{http://latex-beamer.sourceforge.net}{\color{Blue4}Beamer},
         \href{http://www.gimp.org}{\color{Blue4}The Gimp},
-        \href{http://www.gnuplot.info}{\color{Blue4}Gnuplot}
-      \item Paul Quinn and Diamond for the gracious invitation
+        \href{http://www.gnuplot.info}{\color{Blue4}Gnuplot}.
+      \item Paul Quinn and Diamond for the gracious invitation.
       \item And especially, \textit{all of you}.  It is astonishing and deeply
         flattering that so many people line up to hear what I have to
         say.
@@ -121,8 +124,7 @@
 
       \includegraphics[width=\linewidth]{mugs/shelly.jpg}
 
-      %\includegraphics[width=\linewidth]{mugs/scott.jpg}
-      \includegraphics[width=\linewidth]{dummy.png}
+      \includegraphics[width=\linewidth]{mugs/scott.jpg}
 
       \includegraphics[width=\linewidth]{mugs/ed.jpg}
 
@@ -135,10 +137,28 @@
 
 \begin{frame}
   \frametitle{The measurement goals of an XAS experiment}
-  Picture of mu(E) beside a picture of a ball-n-stick structure
 
-  Somehow the wiggles tell us something about the electronic 
-  and atomic structure
+  Somehow the wiggles in the XAS data tell us something about the
+  atomic and electronic structure of the material measured.
+
+  \medskip
+
+  \begin{columns}
+    \begin{column}{0.125\linewidth}
+      ~
+    \end{column}
+    \begin{column}{0.45\linewidth}
+      \includegraphics[width=\linewidth]{images/eto_mu.png}
+    \end{column}
+    \begin{column}{0.30\linewidth}
+      \includegraphics[width=\linewidth]{../ATEA/mds/eto.png}
+    \end{column}
+    \begin{column}{0.125\linewidth}
+      ~
+    \end{column}
+  \end{columns}
+
+  \medskip
 
   \begin{description}
   \item[Valence] the charge state of the absorber
@@ -152,7 +172,8 @@
 
 \begin{frame}
   \frametitle{What can XAS be measured on}
-  Well ... just about anything and on most element of the periodic table
+  Well ... just about anything and with most elements of the periodic
+  table
 
   \begin{columns}[T]
     \begin{column}{0.5\linewidth}
@@ -164,6 +185,7 @@
         \item Thin films and engineered materials
         \item Surface sorbed species
         \item Organic and organometallic species
+        \item Quasicrystals
         \item and on and on
         \end{itemize}
       \end{exampleblock}
@@ -189,7 +211,7 @@
   sitting next to a biologist.  If you are a materials scientist, you
   might be sitting next to a geologist.
 
-  \begin{block}{This fall, just at my beamline NSLS X23A2, my users include}
+  \begin{block}{This fall$^\ast$, just at my beamline NSLS X23A2, my users include}
     \begin{itemize}
     \item 2 groups from the microelectronics industry
     \item 2 groups of electrochemists
@@ -202,60 +224,344 @@
 
   to say nothing of the biologists, enironmental scientists,
   geologists, and chemical scientists visiting the other beamlines at
-  NSLS this fall.
+  NSLS at the same time.
+
+  \begin{textblock*}{0.5\linewidth}(0pt,20\TPVertModule) 
+    \tiny
+    $^\ast$September-December 2011
+  \end{textblock*}
 \end{frame}
 
 \section{How we measure XAS}
 
 \begin{frame}
   \frametitle{Sometimes XAS is easy...}
-  GeSb film
+  \begin{columns}
+    \begin{column}{0.36\linewidth}
+      \includegraphics[width=\linewidth]{images/gesb_mu.png}
+
+      \includegraphics[width=\linewidth]{images/gesb_chik.png}      
+
+      \includegraphics[width=\linewidth]{images/gesb_chir.png}
+    \end{column}
+    \begin{column}{0.60\linewidth}
+      Here we have a \textit{single scan} of the Ge K edge of a 50\,nm
+      film of Ge/Sb alloy on silica measured at glancing angle on a
+      beamline (NSLS X23A2) without focusing optics and using a
+      Si(311) crystal.
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.4\linewidth}(0.6\linewidth,19.0\TPVertModule)%
+    \tiny%
+    These data are courtesy of Joseph Wasington and Eric
+    Joseph (IBM Research)
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
   \frametitle{Sometimes XAS is hard...}
-  Hg + DNA
+  \begin{columns}
+    \begin{column}{0.36\linewidth}
+      \includegraphics[width=\linewidth]{images/hg_mu_stack.png}
+
+      \includegraphics[width=\linewidth]{images/hg_chik.png}      
+
+      \includegraphics[width=\linewidth]{../ATEA/info/hgdna_chir.png}
+    \end{column}
+    \begin{column}{0.60\linewidth}
+      Here are 42 scans taken over the course of 22 hours at APS BM20
+      (one of my favorite XAS beamlines in North America) on a sample
+      with 3\,mM Hg bound to an engineered DNA complex.
+
+      \medskip
+
+      Each scan is quite noisy, but the central limit theorem
+      \textit{always} works.  We were able to use the resulting
+      $\tilde\chi(R)$ data to good effect.
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.4\linewidth}(0.6\linewidth,18.0\TPVertModule)%
+    \tiny%
+    B.\ Ravel, et al., \textit{EXAFS studies of catalytic DNA sensors
+      for mercury contamination of water}, Radiation Physics and
+    Chemistry \textbf{78}:10 (2009) pp\ S75-S79.
+    \href{http://dx.doi.org/10.1016/j.radphyschem.2009.05.024}
+    {\color{Blue4}\texttt{DOI:10.1016/j.radphyschem.2009.05.024}}
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Sometimes we do elaborate experiments}
-  Spend several slides on
+  \frametitle{In any case...}
+  Regardless of how easy of difficult an experiment is, we have to
+  know how to
   \begin{itemize}
-  \item imaging and $\mu$XAS
-  \item qXAS and mountains of data
-  \item DAFS
-  \item NIXS
+  \item<1-> Evaluate the statistical quality of our data
+  \item<2-> Recognize both statistical and systematic errors in our data
+    and understand how to address each kind of error
+  \item<3-> Know when to stop measuring a sample -- I mean this both in
+    the sense of knowing how far above the edge to measure and knowing
+    how many repetitions to measure
+  \item<4-> Know how to process our data for further analysis
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Sometimes we elaborate experiments}
+  \begin{block}{}
+    New technologies and modern, 3$^{\mathrm{rd}}$ generation
+    synchrotrons offer intriguing new experimental possibilties.
+  \end{block}
+
+  \bigskip
+
+  \begin{alertblock}{}
+    In each case, one of the results of these elaborate experiments is
+    an XAS spectrum.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Imaging and $\mu$XAS}
+  \begin{columns}[T]
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=\linewidth]{images/xrfmap.png}
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      Here is an extraordinary XRF map of a metal hyperaccumulating
+      plant that also forms star-shaped, inorganic nodules on its
+      leaves.  
+      
+      \smallskip
+
+      \begin{overlayarea}{\linewidth}{9ex}
+        \only<2>{\alert{While the image is itself a great result, we
+            end up measuring XAS spectra with the microbeam.}}
+      \end{overlayarea}
+
+
+      \begin{center}
+        \includegraphics[width=0.8\linewidth]{images/xrfxas.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.4\linewidth}(0pt,18.5\TPVertModule)%
+    \tiny%
+    R.\ Tappero, et al., \textit{Hyperaccumulator Alyssum murale
+      relies on a different metal storage mechanism for cobalt than
+      for nickel}, New Phytologist \textbf{175}:4
+    (2007) pp\ 641-654
+    \href{http://dx.doi.org/10.1111/j.1469-8137.2007.02134.x}
+    {\color{Blue4}\texttt{DOI:10.1016/10.1111/j.1469-8137.2007.02134.x}}
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{qXAS and mountains of data}
+
+  \begin{columns}[T]
+    \begin{column}{0.55\linewidth}
+      \includegraphics[width=0.8\linewidth]{images/ede.png}
+    \end{column}
+    \begin{column}{0.42\linewidth}
+      \includegraphics[width=0.8\linewidth]{images/qxas_mono.png}
+    \end{column}
+  \end{columns}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \begin{overlayarea}{\linewidth}{24ex}
+        Energy dispersive XAS and quick-XAS are two ways of doing
+        time-resolved XAS with 10\,ms to 10\,s time resolution.  Both
+        approaches require specially- equipped beamlines and both
+        focus on the dynamics of the system. \only<2>{\alert{At then
+            end of the day, these are XAS spectra.}}
+      \end{overlayarea}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.8\linewidth]{images/qxas.png}
+    \end{column}
+  \end{columns}
+
+  \begin{textblock*}{0.7\linewidth}(0pt,19.5\TPVertModule)%
+    \tiny%
+    Data from W.A.\ Caliebe et al., \textit{HASYLAB Annual Report} (2006) pp.\
+    283-284; EDE schematic from SPring-8 press release, 30 April,
+    2009; QXAS schematic from SLS SuperXAS beamline webpage.
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{DAFS}
+
+  With coordinated motion between monochromator and goniometer,
+  diffraction anomalous fine structure measures the height of a
+  diffraction peak with respect to energy through the resonant energy
+  of an atom in the crystal.
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.8\linewidth]{images/dafs.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.8\linewidth]{images/dafschik.png}      
+    \end{column}
+  \end{columns}
+  \begin{overlayarea}{\linewidth}{6ex}
+    \only<2>{\alert{In the end, we extract a site-specific $\chi(k)$
+        function which is analyzed like normal EXAFS.}}
+  \end{overlayarea}
+
+  \begin{textblock*}{0.6\linewidth}(0pt,19.5\TPVertModule)%
+    \tiny%
+    B.\ Ravel et al., \textit{X-ray-absorption edge separation using
+      diffraction anomalous fine structure}, Phys.\ Rev.\ B \textbf{60}
+    (1999) pp\ 778-785.
+    \href{http://dx.doi.org/10.1103/PhysRevB.60.778}
+    {\color{Blue4}\texttt{DOI:10.1103/PhysRevB.60.778}}
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{NIXS}
+
+  Here is data from a non-resonant inelastic scattering data on
+  CaZrTi$_2$O$_7$ from 20ID at APS.
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=\linewidth]{images/lerix_sm.jpg}
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[width=0.75\linewidth]{images/nixs.png}
+
+      \includegraphics[width=0.75\linewidth]{images/TiL23.png}
+    \end{column}
+  \end{columns}
+
+  \begin{overlayarea}{\linewidth}{2ex}
+    \only<2>{\alert{Again, a XANES spectrum comes from this elaborate
+        experiment.}}
+  \end{overlayarea}
 
 \end{frame}
+
 
 \section{How we use XAS}
 
 \begin{frame}
   \frametitle{Fingerprinting}
+  The simplest way of using XAS is to simply identify chemical species
+  in a sample of unknown composition.
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/fe_stan.png}
+    \end{column}
+    \begin{column}{0.25\linewidth}
+      \begin{enumerate}
+      \item \only<1|handout:0>{Ferrihydrite?}\only<2|handout:1>{\color{Green4}Ferrihydrite}
+      \item \only<1|handout:0>{Iron metal?}\only<2|handout:1>{\color{Blue4}Iron metal}
+      \item \only<1|handout:0>{Iron pyrite?}\only<2|handout:1>{\color{Red3}Iron pyrite}
+      \item \only<1|handout:0>{Hematite?}\only<2|handout:1>{\color{Purple4}Hematite}
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.15\linewidth}
+    \end{column}
+  \end{columns}
+  
+  \bigskip
+
+  \begin{overlayarea}{\linewidth}{4ex}
+    \only<2|handout:1>{Compare the signal from your \textit{( dirt /
+        catalyst / paint chip / animal tissue / whatever )} with
+      the standards to identify the dominant species.}
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Some vocabulary}
+  Words commonly used to describe specific parts of the XANES spectrum.
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{../i2x/images/rams/ramsdellite.png}
+
+      \small
+
+      \begin{description}[edge]
+      \item[{\color{red}pre-edge}] Small (possibly large, certainly
+        meaningful!) features between the Fermi energy and the
+        threshold
+      \item[{\color{DarkOrchid2}edge}] The main rising part of XAS spectrum
+      \item[{\color{Green4}near-edge}] Characteristic features above the edge
+      \end{description}
+    \end{column}    
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{../i2x/images/ltno/ltno.png}
+
+      \begin{description}[wh]
+      \item[{\color{Blue3}white line}] Large, prominent peak just
+        above the edge, particularly in L or M edge spectra
+      \end{description}
+
+      \bigskip
+
+      \begin{block}{}
+        The EXAFS, then, is the data beyond the
+        {\color{Green4}near-edge}.
+      \end{block}
+    \end{column}    
+  \end{columns}
   
 \end{frame}
 
 \begin{frame}
   \frametitle{XANES Interpretation}
+  Fingerprinting, though useful, is a qualitative tool.  There are a
+  variety of quantitive tools available for interpreting XANES data.
   \begin{enumerate}
   \item Positioning
   \item Peak fitting
   \item Linear combination fitting
   \item Principle components analysis
+  \item Theory
   \end{enumerate}
 \end{frame}
 
 \begin{frame}
   \frametitle{XANES: Positioning}
-  \begin{columns}
+  \begin{columns}[T]
     \begin{column}{0.5\linewidth}
-      Uranium 4+ and 6+ and intermediate
+      \small%
+      U$^{6+}$ is partially reduced by \textit{G. sulfurreducens}
+      under a variety of conditions.  By measuring the edge positions
+      and comparing to U$^{6+}$ and U$^{4+}$ standards,
+      the amount of reduction is quatified between 24\% and 88\%.
+
+      \includegraphics[width=0.8\linewidth]{images/u46.png}      
     \end{column}
     \begin{column}{0.5\linewidth}
-      Farges
+      \small%
+      Farges et al. showed that Ti clusters by valence when the
+      position of the largest {\color{red}pre-edge} is plotted against
+      peak position in energy.
+
+      \includegraphics[width=0.8\linewidth]{../selfabs/images/farges.png}      
     \end{column}
   \end{columns}
+  \begin{textblock*}{0.5\linewidth}(0pt,18.75\TPVertModule)%
+    \tiny%
+    B.H.\ Jeon et el., \textit{Microbial Reduction of U(VI) at the
+      Solid-Water Interface}, Environ. Sci. Technol. \textbf{38}(21)
+    pp.~5649-5655. (2004), \href{http://dx.doi.org/10.1021/es0496120}
+    {\color{Blue4}\texttt{DOI:10.1021/es0496120}}
+  \end{textblock*}
+  \begin{textblock*}{0.4\linewidth}(0.6\linewidth,18.75\TPVertModule)
+    \tiny%
+    F.~Farges, G.E.~Brown, Jr., and J.J.~Rehr, PRB \textbf{56}:4,
+    (1997) p.\ 1809.
+    \href{http://dx.doi.org/10.1103/PhysRevB.56.1809}
+    {\color{Blue4}\texttt{DOI:10.1103/PhysRevB.56.1809}}
+  \end{textblock*}
+
 \end{frame}
 
 \begin{frame}
@@ -289,13 +595,46 @@
       Filamentous Cyanobacteria from Gold(III)-Chloride Complex},
     Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006),
     \href{http://dx.doi.org/10.1021/es061040r}
-    {\color{Blue4}\texttt{DOI: 10.1021/es061040r}}
+    {\color{Blue4}\texttt{DOI:10.1021/es061040r}}
   \end{textblock*}
 \end{frame}
 
 \begin{frame}
   \frametitle{XANES: Principle Components Analysis}
-  Swipe something published
+  \small%
+  PCA is a bit of linear algebra which breaks down an ensemble of
+  related data into abstract components.
+  \begin{columns}[T]
+    \begin{column}{0.33\linewidth}
+      \includegraphics[width=\linewidth]{images/aucyano_time_series.png}
+    \end{column}
+    \begin{column}{0.33\linewidth}
+      \includegraphics[width=\linewidth]{images/pca_all.png}      
+    \end{column}
+    \begin{column}{0.33\linewidth}
+      \includegraphics[width=\linewidth]{images/pca_2-8.png}            
+    \end{column}
+  \end{columns}
+
+  \medskip
+
+  The components can then be used to try to construct a standard as a
+  test to see whether that standard is present in the ensemble.
+
+  \medskip
+
+  \begin{columns}
+    \begin{column}{0.33\linewidth}
+      The number of species represented in the ensemble is related to
+      the number of statistically significant components.
+    \end{column}
+    \begin{column}{0.33\linewidth}
+      \includegraphics[width=\linewidth]{images/pca_tt_in}
+    \end{column}
+    \begin{column}{0.33\linewidth}
+      \includegraphics[width=\linewidth]{images/pca_tt_out}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -312,7 +651,7 @@
 
 \begin{frame}
   \frametitle{EXAFS Analysis}
-  
+
 \end{frame}
 
 \begin{frame}
