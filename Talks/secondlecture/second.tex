@@ -95,7 +95,7 @@
         which \textsc{athena} and \textsc{artemis} would not exist.
       \item Shelly Kelly and Scott Calvin, old friends, relentless
         finders of software bugs, and long-time co-conspirators in
-        this XAS eductaion gig.
+        this XAS education gig.
       \item My teachers, Ed Stern and John Rehr, who have done so much
         for the XAS community and who instilled in me a love of the
         discipline of XAS.
@@ -292,7 +292,7 @@
 
 \begin{frame}
   \frametitle{In any case...}
-  Regardless of how easy of difficult an experiment is, we have to
+  Regardless of how easy or difficult an experiment is, we have to
   know how to
   \begin{itemize}
   \item<1-> Evaluate the statistical quality of our data
@@ -358,7 +358,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{qXAS and mountains of data}
+  \frametitle{Time-resolved XAS and mountains of data}
 
   \begin{columns}[T]
     \begin{column}{0.55\linewidth}
@@ -393,18 +393,17 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{DAFS}
+  \frametitle{Diffraction Anomalous Fine Structure}
 
-  With coordinated motion between monochromator and goniometer,
-  diffraction anomalous fine structure measures the height of a
-  diffraction peak with respect to energy through the resonant energy
-  of an atom in the crystal.
+  With coordinated motion between monochromator and goniometer, DAFS
+  measures the height of a diffraction peak with respect to energy
+  through the resonant energy of an atom in the crystal.
   \begin{columns}[T]
     \begin{column}{0.5\linewidth}
-      \includegraphics[width=0.8\linewidth]{images/dafs.png}
+      \includegraphics[width=0.85\linewidth]{images/dafs.png}
     \end{column}
     \begin{column}{0.5\linewidth}
-      \includegraphics[width=0.8\linewidth]{images/dafschik.png}      
+      \includegraphics<2>[width=0.8\linewidth]{images/dafschik.png}      
     \end{column}
   \end{columns}
   \begin{overlayarea}{\linewidth}{6ex}
@@ -423,18 +422,19 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{NIXS}
+  \frametitle{Non-resonant Inelastic X-ray Scattering}
 
-  Here is data from a non-resonant inelastic scattering data on
+  \small
+  Here is NIXS data from a non-resonant inelastic scattering data on
   CaZrTi$_2$O$_7$ from 20ID at APS.
-  \begin{columns}
-    \begin{column}{0.4\linewidth}
+  \begin{columns}[T]
+    \begin{column}{0.42\linewidth}
       \includegraphics[width=\linewidth]{images/lerix_sm.jpg}
     \end{column}
     \begin{column}{0.6\linewidth}
-      \includegraphics[width=0.75\linewidth]{images/nixs.png}
+      \includegraphics[width=0.7\linewidth]{images/nixs.png}
 
-      \includegraphics[width=0.75\linewidth]{images/TiL23.png}
+      \includegraphics<2>[width=0.7\linewidth]{images/TiL23.png}
     \end{column}
   \end{columns}
 
@@ -442,41 +442,15 @@
     \only<2>{\alert{Again, a XANES spectrum comes from this elaborate
         experiment.}}
   \end{overlayarea}
-
+  \begin{textblock*}{0.7\linewidth}(0pt,20\TPVertModule)%
+    \tiny%
+    Lerix-I instrument: G.\ Seidler et al.; Data:
+    D.\ Reid, N.C.\ Hyatt, B.\ Ravel, to be published in PRB
+  \end{textblock*}
 \end{frame}
 
 
 \section{How we use XAS}
-
-\begin{frame}
-  \frametitle{Fingerprinting}
-  The simplest way of using XAS is to simply identify chemical species
-  in a sample of unknown composition.
-
-  \begin{columns}
-    \begin{column}{0.5\linewidth}
-      \includegraphics[width=\linewidth]{images/fe_stan.png}
-    \end{column}
-    \begin{column}{0.25\linewidth}
-      \begin{enumerate}
-      \item \only<1|handout:0>{Ferrihydrite?}\only<2|handout:1>{\color{Green4}Ferrihydrite}
-      \item \only<1|handout:0>{Iron metal?}\only<2|handout:1>{\color{Blue4}Iron metal}
-      \item \only<1|handout:0>{Iron pyrite?}\only<2|handout:1>{\color{Red3}Iron pyrite}
-      \item \only<1|handout:0>{Hematite?}\only<2|handout:1>{\color{Purple4}Hematite}
-      \end{enumerate}
-    \end{column}
-    \begin{column}{0.15\linewidth}
-    \end{column}
-  \end{columns}
-  
-  \bigskip
-
-  \begin{overlayarea}{\linewidth}{4ex}
-    \only<2|handout:1>{Compare the signal from your \textit{( dirt /
-        catalyst / paint chip / animal tissue / whatever )} with
-      the standards to identify the dominant species.}
-  \end{overlayarea}
-\end{frame}
 
 \begin{frame}
   \frametitle{Some vocabulary}
@@ -512,19 +486,59 @@
       \end{block}
     \end{column}    
   \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fingerprinting}
+  The simplest way of using XAS is to simply identify chemical species
+  in a sample of unknown composition.
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/fe_stan.png}
+    \end{column}
+    \begin{column}{0.25\linewidth}
+      \begin{enumerate}
+      \item \only<1|handout:0>{Ferrihydrite?}\only<2|handout:1>{\color{Green4}Ferrihydrite}
+      \item \only<1|handout:0>{Iron pyrite?}\only<2|handout:1>{\color{Red3}Iron pyrite}
+      \item \only<1|handout:0>{Iron metal?}\only<2|handout:1>{\color{Blue4}Iron metal}
+      \item \only<1|handout:0>{Hematite?}\only<2|handout:1>{\color{Purple4}Hematite}
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.15\linewidth}
+    \end{column}
+  \end{columns}
   
+  \bigskip
+
+  \begin{overlayarea}{\linewidth}{4ex}
+    \only<2|handout:1>{Compare the signal from your \textit{( dirt /
+        catalyst / paint chip / animal tissue / whatever )} with
+      the standards to identify the dominant species.}
+  \end{overlayarea}
+  \only<handout>{
+    \begin{textblock*}{0.7\linewidth}(0pt,19.5\TPVertModule)%
+      \tiny%
+      (For the color-blind: The spectra, top-to-bottom, are metal,
+      pyrite, ferrihydrite, and hematite.)
+    \end{textblock*}
+  }
 \end{frame}
 
 \begin{frame}
   \frametitle{XANES Interpretation}
-  Fingerprinting, though useful, is a qualitative tool.  There are a
-  variety of quantitive tools available for interpreting XANES data.
+  Fingerprinting, though useful, is purely qualitative.
+
+  \bigskip
+
+  There are a variety of quantitive tools available for interpreting
+  XANES data.
   \begin{enumerate}
   \item Positioning
   \item Peak fitting
   \item Linear combination fitting
   \item Principle components analysis
-  \item Theory
+  \item Application of theory
   \end{enumerate}
 \end{frame}
 
@@ -549,14 +563,18 @@
       \includegraphics[width=0.8\linewidth]{../selfabs/images/farges.png}      
     \end{column}
   \end{columns}
-  \begin{textblock*}{0.5\linewidth}(0pt,18.75\TPVertModule)%
+  \begin{exampleblock}<2>{}
+    \small%
+    \qquad Either analysis requires careful attention to data processing.
+  \end{exampleblock}
+  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule)%
     \tiny%
     B.H.\ Jeon et el., \textit{Microbial Reduction of U(VI) at the
       Solid-Water Interface}, Environ. Sci. Technol. \textbf{38}(21)
     pp.~5649-5655. (2004), \href{http://dx.doi.org/10.1021/es0496120}
     {\color{Blue4}\texttt{DOI:10.1021/es0496120}}
   \end{textblock*}
-  \begin{textblock*}{0.4\linewidth}(0.6\linewidth,18.75\TPVertModule)
+  \begin{textblock*}{0.4\linewidth}(0.6\linewidth,19\TPVertModule)
     \tiny%
     F.~Farges, G.E.~Brown, Jr., and J.J.~Rehr, PRB \textbf{56}:4,
     (1997) p.\ 1809.
@@ -631,15 +649,15 @@
       the number of statistically significant components.
     \end{column}
     \begin{column}{0.33\linewidth}
-      \includegraphics[width=\linewidth]{images/pca_tt_in}
+      \includegraphics[width=\linewidth]{images/pca_tt_in.png}
     \end{column}
     \begin{column}{0.33\linewidth}
-      \includegraphics[width=\linewidth]{images/pca_tt_out}
+      \includegraphics[width=\linewidth]{images/pca_tt_out.png}
     \end{column}
   \end{columns}
-  \begin{textblock*}{0.5\linewidth}(0pt,18.75\TPVertModule)%
+  \begin{textblock*}{0.48\linewidth}(0pt,19\TPVertModule)%
     \tiny%
-    The data are from M. Lengke et el.,
+    The data in the upper left are from M. Lengke et el.,
     Environ. Sci. Technol. \textbf{40}(20) p.~6304-6309. (2006),
     \href{http://dx.doi.org/10.1021/es061040r}
     {\color{Blue4}\texttt{DOI:10.1021/es061040r}}.  That paper did not
@@ -651,32 +669,128 @@
   \frametitle{XANES: Theory}
   \begin{columns}
     \begin{column}{0.5\linewidth}
-      Forward simulation
+      \begin{center}
+        Forward simulation with \textsc{feff}9
+      \end{center}
+      \includegraphics[width=\linewidth]{images/jfeff.png}
     \end{column}
     \begin{column}{0.5\linewidth}
-      MXAN and FitIt
+      \begin{itemize}
+      \item Fitting of XANES spectra is not built into \textsc{feff},
+        but other options exist
+      \item \textsc{mxan} by Benfatto and Della Longa allows variation
+        of structural parameters to refine a full multiple scattering
+        calculation against measured data
+      \item \textsc{FitIt} by Smolentsev and Soldatov fits measured
+        data by pre-computing spectra on a multidimensional grid of
+        caluclated spectra and interpolating to best fit the data.  It
+        can use either \textsc{feff} or Joly's \textsc{fdmnes}
+      \end{itemize}
+
     \end{column}
   \end{columns}
+
+  \begin{textblock*}{0.7\linewidth}(0pt,19\TPVertModule)%
+    \tiny%
+    \href{http://leonardo.phys.washington.edu/feff/}
+    {\color{Blue4}Feff homepage, \texttt{http://leonardo.phys.washington.edu/feff/}}%
+    \\
+    \href{http://www.esrf.eu/computing/scientific/MXAN/index.html}
+    {\color{Blue4}MXAN homepage, \texttt{http://www.esrf.eu/computing/scientific/MXAN/index.html}}%
+    \\
+    \href{http://www.nano.sfedu.ru/index.html} 
+    {\color{Blue4}FitIt homepage, \texttt{http://www.nano.sfedu.ru/index.html}}
+  \end{textblock*}
 \end{frame}
 
-\begin{frame}
-  \frametitle{EXAFS Analysis}
-
-\end{frame}
 
 \begin{frame}
   \frametitle{EXAFS analysis can be simple...}
-  
+
+  \begin{center}
+    Here is a quick first shell fit to the Fe K edge of lepidocrocite,
+    $\gamma$-FeO(OH).
+  \end{center}
+  \begin{columns}
+    \begin{column}{0.45\linewidth}
+      \includegraphics[width=\linewidth]{images/qfs.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/qfs_fit.png}      
+    \end{column}
+  \end{columns}
+  \begin{center}
+    Using \textsc{artemis} and a simple first shell fitting model, it
+    takes under a minute to fill in all the boxes and to get a fit of
+    this quality, providing a first stab at near-neighbor coordination
+    and distance.
+  \end{center}
+  \begin{block}{}
+    \begin{center}
+      Fit: $\mathrm{N=4}.6\pm0.3$, $\mathrm{R}=2.01\pm0.01$, $\sigma^2=0.00586\pm0.00088$\\
+      Crystal structure: $\mathrm{N=5}$, $\bar{\mathrm{R}}=2.05$, $\mathrm{C}_2=0.00679$
+    \end{center}
+  \end{block}
+
 \end{frame}
 
 \begin{frame}
   \frametitle{EXAFS analysis can be sophisticated...}
-  
+  \begin{block}{}
+    \begin{center}
+      Well ... this is the point of this course!
+    \end{center}
+  \end{block}
+
+  You will learn how to:
+  \begin{enumerate}
+  \item Use one or more \textsc{feff} to fit your data
+  \item Build interesting contraints between and restraints on your
+    fitting parameters
+  \item Do multiple data set fitting
+  \item Do multiple k-weight fitting
+  \item Evaluate the statistical quality of your fits
+  \item Present your fitting results defensibly in journal articles
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}
   \frametitle{EXAFS analysis can be quite elaborate...}
-  Scott's mixed ferrites
+  \begin{columns}[T]
+    \begin{column}{0.2\linewidth}
+      \includegraphics[width=\linewidth]{images/ferrite.png}
+      \begin{center}
+        {\color{Blue3}Oxygen}\\{\color{Green3}Octahedral site}
+        \\{\color{Red3}Tetrahedral site}
+      \end{center}
+    \end{column}
+    \begin{column}{0.3\linewidth}
+      \includegraphics[width=\linewidth]{images/ferrite_fits.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{itemize}
+      \item Manganese zinc ferrite nanoparticles
+      \item Each element can occupy each either metal site
+      \item Oxygen vacancies can exist
+      \item Data collected at 3 edges and on various sample
+        preparations
+      \item Scott created a fitting model using all the data
+        simultaneously and considering occupancies of each metal on
+        each site, oxygen vacancy, and nanoparticle undercoordination
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.7\linewidth}(0pt,18.75\TPVertModule)%
+    \tiny%
+    S.\ Calvin et el., \textit{Multiedge refinement of extended
+      x-ray-absorption fine structure of manganese zinc ferrite
+      nanoparticles}, Phys. Rev. B \textbf{66}(22) p.~224405. (2002),
+    \href{http://dx.doi.org/10.1103/PhysRevB.66.224405}
+    {\color{Blue4}\texttt{DOI:10.1103/PhysRevB.66.224405}}\\
+    Ferrite image from
+    \href{http://wikis.lib.ncsu.edu/index.php/Image:Size21.png}
+    {\color{Blue4}\texttt{http://wikis.lib.ncsu.edu/index.php/Image:Size21.png}}
+  \end{textblock*}
 \end{frame}
 
 \section{How we understand XAS}
