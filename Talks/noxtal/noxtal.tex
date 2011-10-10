@@ -76,11 +76,11 @@
 \section[Introduction]{Introduction}
 \begin{frame}
   \frametitle{Introduction}
-  On Wednesday I demonstrated {\artemis} by showing FeS$_2$, which is
-  a crystal.  This allowed me to start with {\atoms} and crystal data.
+  Earlier I demonstrated {\artemis} by showing FeS$_2$, which is a
+  crystal.  This allowed me to start with {\atoms} and crystal data.
 
-  \begin{alertblock}{Atoms is just one tool}
-    It is useful when its useful.
+  \begin{alertblock}{Atoms is just a tool}
+    It is useful when it's useful.
   \end{alertblock}
 
   In this short talk, I will suggest various ways to get started on
@@ -219,7 +219,9 @@ guess parameters:
   \bigskip
 
   \begin{block}{}
-    {\feff} needs a list of cartesian coordinates.
+    \begin{center}
+      {\feff} needs a list of cartesian coordinates.
+    \end{center}
   \end{block}
 
   \bigskip
@@ -345,9 +347,15 @@ just what was need!
 
 \begin{frame}
   \frametitle{Now do a fit}
-  
 
+  Import each data set and one {\feff} calculation into \artemis.  Use
+  the relevant paths with each data set.
   \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.85\linewidth]{images/mtin_intrp.png}
+      %
+      %\includegraphics[width=0.7\linewidth]{images/mtin_fit_chir.png}
+    \end{column}
     \begin{column}{0.5\linewidth}
       \includegraphics[width=0.8\linewidth]{images/mtin_fit.png}
 
@@ -355,12 +363,11 @@ just what was need!
 
       \includegraphics[width=0.8\linewidth]{images/mtin_fit2.png}
     \end{column}
-    \begin{column}{0.5\linewidth}
-      \includegraphics[width=0.85\linewidth]{images/mtin_intrp.png}
-      %
-      %\includegraphics[width=0.7\linewidth]{images/mtin_fit_chir.png}
-    \end{column}
   \end{columns}
+  \begin{textblock*}{0.5\linewidth}(0pt,19.25\TPVertModule)
+    \tiny%
+    This is the topic of the next demo.
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
@@ -517,10 +524,21 @@ just what was need!
 
 \begin{frame}
   \frametitle{Using crystal analogs in Artemis}
-  \begin{block}{}
-    The analysis of uranyl sorbed to biomass is the topic of my
-    afternoon lecture.
-  \end{block}
+  \begin{columns}[b]
+    \begin{column}{0.33\linewidth}
+      \begin{center}
+        \includegraphics[width=0.7\linewidth]{images/upo4_full.png}
+      \end{center}
+    \end{column}
+    \begin{column}{0.33\linewidth}
+      \includegraphics[width=\linewidth]{images/uranyl.png}
+    \end{column}
+    \begin{column}{0.33\linewidth}
+      \begin{center}
+        \includegraphics[width=0.65\linewidth]{images/NaU_triacetate.png}
+      \end{center}
+    \end{column}
+  \end{columns}
 
   \bigskip
 
@@ -528,20 +546,13 @@ just what was need!
   \begin{enumerate}
   \item Import each crystal structure into {\artemis}
   \item Run {\atoms}, run {\feff}
-  \item Choose the ``Import no paths'' option when asked
+  %\item Choose the ``Import no paths'' option when asked
   \item Examine the path list, select those SS and MS paths you need
     to describe your structure
   \item Parameterize, fit
   \end{enumerate}
 \end{frame}
 
-%   \begin{itemize}
-%   \item Uranyl acetate sorbed to biomass, three motifs (C, P, W)
-%   \item Two crystals
-%   \item Import into Artemis
-%   \item show plots of P and C data + paths
-%   \item Scope of fitting problem
-%   \end{itemize}
 
 \section{Take-home messages}
 \label{sec:takehome}
@@ -553,8 +564,8 @@ just what was need!
     that resembles the actual data is usually adequate.  More
     technically --- the computation of the scattering factor is not
     acutely sensitive to atomic positions.
-  \item[Be creative] ~\\What makes an expert practitioner is the
-    ability to conceive of and implement an analytical strategy.
+  \item[Be creative] ~\\What makes an \textit{expert} practitioner is
+    the ability to conceive of and implement an analytical strategy.
     There is no rule book (sadly) -- new problems bring new
     challenges.  An expert is just someone who sees an interesting
     idea through to completion.
@@ -574,4 +585,8 @@ just what was need!
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
 %%% End:

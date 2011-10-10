@@ -144,7 +144,7 @@
   
   \begin{block}{This is \textbf{NOT} the introductory talk}
     \begin{itemize}
-    \item I assume you are a veteran of many XAS experiments and that
+    \item I assume you are a veteran of many XAS campaigns and that
       you already have your own data that you care about.
     \item I assume you are familar with the EXAFS equation.
     \item I assume you understand XAS data processing and have done
@@ -199,7 +199,7 @@
   \small
   Sometimes, we have {\color{Green4}\textit{beautiful}} data.  This is
   the merge of 5 scans on a 50\,nm film of GeSb on silica, at the Ge
-  edge and measured in fluorescence at NSLS X23A2.
+  edge and measured in fluorescence at NSLS X23A2.\\~
 
   \begin{columns}
     \begin{column}{0.5\linewidth}
@@ -219,7 +219,8 @@
     \notag N_{idp} \approx \frac{2\Delta k\Delta R}{\pi} \approx \alert{19}
   \end{equation}
 
-  \vskip -10pt
+  ~\\[-7ex]
+  ~
 
   \begin{exampleblock}{}
     \begin{center}
@@ -227,6 +228,11 @@
       portion of the EXAFS spectrum.
     \end{center}
   \end{exampleblock}
+  \begin{textblock*}{0.4\linewidth}(0pt,19.0\TPVertModule)%
+    \tiny%
+    These data are courtesy of Joseph Washington and Eric
+    Joseph (IBM Research)
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
@@ -253,7 +259,8 @@
     \notag N_{idp} \approx \frac{2\Delta k\Delta R}{\pi} \approx \alert{8}
   \end{equation}
 
-  \vskip -10pt
+  ~\\[-7ex]
+  ~
 
   \begin{exampleblock}{}
     \begin{center}
@@ -262,10 +269,18 @@
     \end{center}
   \end{exampleblock}
 
+  \begin{textblock*}{0.7\linewidth}(0pt,19.0\TPVertModule)%
+    \tiny%
+    B.\ Ravel, et al., \textit{EXAFS studies of catalytic DNA sensors
+      for mercury contamination of water}, Radiation Physics and
+    Chemistry \textbf{78}:10 (2009) pp\ S75-S79.
+    \href{http://dx.doi.org/10.1016/j.radphyschem.2009.05.024}
+    {\color{Blue4}\texttt{DOI:10.1016/j.radphyschem.2009.05.024}}
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
-  \frametitle{What is This \textit{Nyquist Criterion}?}
+  \frametitle{What is This \textit{Nyquist Criterion} thingie?}
 
   Applying Fourier analysis to $\chi(k)$ means that we treat EXAFS as
   a signal processing problem.  If
@@ -328,15 +343,15 @@
     \end{align}
   }
   \begin{block}{}
-    In Gaussian statistics and with a proper measure of $\epsilon$, a
-    \textit{good fit} has $\chi^2\approx1$.
+    In Gaussian statistics, assuming that $\epsilon$ has been measured
+    correctly, a \textit{good fit} has $\chi^2\approx1$.
   \end{block}
 \end{frame}
 
 \begin{frame}
   \frametitle{An Obviously Good Fit}
   \begin{columns}[T]
-    \begin{column}{0.3\linewidth}
+    \begin{column}{0.4\linewidth}
       \begin{block}{}
         \begin{center}
           Here is a fit to the first two shells of copper metal at
@@ -347,7 +362,7 @@
       %
       %\includegraphics[width=\linewidth]{info/cufit_chirre.png}      
     \end{column}
-    \begin{column}{0.7\linewidth}
+    \begin{column}{0.6\linewidth}
       \begin{center}
         This is an unambigously good fit:
         
@@ -363,7 +378,7 @@
           $\Theta_D$    & 550(46)\,K \\
         \end{tabular}
 
-        \bigskip
+        \medskip
 
         \onslide<2>{
           Yet \alert{$\chi_\nu^2 = 227.8$}\,!
@@ -904,7 +919,7 @@ Correlations between variables:
       \item Hydroxyl's just dangle
       \end{itemize}
       \begin{alertblock}{}
-        There is no way to find a feff.inp file for that!
+        There is no way to find a \file{feff.inp} file for that!
       \end{alertblock}
     \end{column}
     \begin{column}{0.5\linewidth}
@@ -1004,7 +1019,8 @@ Correlations between variables:
     and/or a furnace
   \item You have data at {\multiple} pressures from a high pressure cell
   \item You have powders/films/solutions of {\multiple} stoichiometries
-  \item You have data at {\multiple} edges of the same material
+  \item You have data from an electrochemical sample at {\multiple} potentials
+  \item You have data at {\multiple} edges of the same sample
   \end{enumerate}
 
   \bigskip
@@ -1595,20 +1611,24 @@ Correlations between variables:
   \begin{center}
     \includegraphics[width=\linewidth]{artemis/restraint.png}
 
-    {\color{Magenta3}Restraints} are managed on the Guess, Def, Set
+    {\color{Orange3}Restraints} are managed on the Guess, Def, Set
     page, like any other parameter and will be properly used in the
     fit.  A restraint depends upon a {\color{Green4}def} or
-    {\color{Purple4}guess} parameters -- something that changes during
+    {\color{Magenta3}guess} parameters -- something that changes during
     the fit.
   \end{center}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Now you know all the tricks!}
-
+  \frametitle{Now you know all my tricks!}
+  \LARGE
   \begin{block}{\LARGE Your assignment:}
     \begin{center}
-      \LARGE Use 'em all!\\[1ex]  Do great data analysis!
+      Use 'em all!
+
+      \bigskip
+
+      Do great data analysis!
     \end{center}
   \end{block}
 \end{frame}
@@ -1625,4 +1645,8 @@ Correlations between variables:
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
 %%% End:
