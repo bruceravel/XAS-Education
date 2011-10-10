@@ -586,7 +586,29 @@
 
 \begin{frame}
   \frametitle{XANES: Peak fiting}
-  titanate perovskites?
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      Peak fitting presumes that the XANES data can be explained as a
+      sum of simple line shapes -- usually a combination of
+      \begin{itemize}
+      \item arctangent (for the edge step)
+      \item Gaussian
+      \item Lorentzian
+      \item Voight or pseudo-Voight
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/peakfit.png}
+    \end{column}
+  \end{columns}
+
+  \bigskip
+
+  \begin{block}{The shortcoming of peak fitting}
+    It is difficult in general to ascribe physical meaning to the
+    lineshapes.  Peak fitting is, therefore, best used to quantify
+    changes in a related ensemble of data.
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -795,28 +817,85 @@
 
 \section{How we understand XAS}
 
-\begin{frame}
-  \frametitle{Real space multiple scattering}
-  
-\end{frame}
+\include{simple_picture}
+\include{firstprinciples}
 
 \begin{frame}
-  \frametitle{A bit of math}
-  
+  \frametitle{Real space multiple scattering in pictures}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/MS.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      Here are some examples (in two dimensions) of single, double,
+      and triple scattering paths.
+
+      \medskip
+
+      For SS, \textsc{feff} expands
+      {\color{DarkOrchid4}$\Gnot\,\tmat\,\Gnot$}, computing the three
+      SS paths shown and all others (up to some maximum length).
+
+      \medskip
+
+      SS and \textit{collinear} MS paths tend to be the dominant
+      contributions to the EXAFS.
+    \end{column}
+  \end{columns}
+  \begin{exampleblock}<2>{The trick to EXAFS analysis}
+    Artemis helps you evaluate each path and choose which ones to
+    include in a fit.
+  \end{exampleblock}
 \end{frame}
 
 \begin{frame}
   \frametitle{The EXAFS equation}
-  
+
+  For each kind of path, we evaluate the EXAFS equation:
+  {\small
+    \begin{align}
+      \chi(k,\Gamma) =& 
+      { \frac{{\color{Red4}(N_\Gamma S_0^2)}{\color{Blue4}F_\Gamma(k)}}
+        {2\,kR_\Gamma^2} }
+      \sin{(2kR_\Gamma + {\color{Blue4}\Phi_\Gamma(k)})}
+      e^{-2{\color{Red4}\sigma_\Gamma^2}k^2}
+      e^{-2R_\Gamma/{\color{Blue4}\lambda(k)}} \\
+      \chi_{\mathrm{theory}}(k) =& \sum\limits_{\Gamma}\chi(k,\Gamma)\\
+      R_\Gamma =& \> {\color{Blue4}R_{0,\Gamma}} +
+      {\color{Red4}\Delta R_\Gamma} \\
+      k =& N\sqrt{(E_0 - {\color{Red4}\Delta E_0})}
+    \end{align}}
+
+  \medskip
+
+  \textsc{feff} (and therefore \textsc{ifeffit} and \textsc{artemis})
+  treats SS and MS paths \textbf{equivalently}. $F_\Gamma$ and $\phi_\Gamma$
+  are the \textit{effective} scattering amplitude and phase shift for
+  the path.
+
+  \begin{alertblock}{Here is something you will hear me say frequently}
+    In {\ifeffit} the {\color{Red4}terms in red} are not
+    themselves the fitting parameters.  They are \textbf{written in
+      terms of} the actual fitting parameters.
+  \end{alertblock}
 \end{frame}
 
 \begin{frame}
   \frametitle{XAS out of the vacuum}
-  
-\end{frame}
-
-\begin{frame}
-  \frametitle{XAS and statistics}
+  \begin{alertblock}{}
+    You will \textbf{never} do an XAS experiment without some
+    experimental context.  You \textbf{always} have some priot
+    knowledge about your system.
+  \end{alertblock}
+  You XAS results must be interpreted in the context of the
+  \begin{itemize}
+  \item Electron microscopy or EDX
+  \item X-ray diffraction
+  \item UV/Vis, IR or Raman spectroscopy
+  \item TGA, Mass spec, ICP, etc.
+  \item ... and so on
+  \end{itemize}
+  that you have also done on your sample.
 \end{frame}
 
 \begin{frame}
@@ -829,3 +908,10 @@
   \end{alertblock}
 \end{frame}
 \end{document}
+
+%%% Local Variables:
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
+%%% End:
