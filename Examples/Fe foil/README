@@ -1,0 +1,31 @@
+These data are three scans on an iron foil measured at 60 K.
+
+These data were collected with the monochromator purposefully
+miscalibrated.  These data, then, are used to demonstrate how
+calibration and alignment are done in Athena.
+
+Here is a suggested outline for using these data:
+
+ 1. Import `fe.060'
+
+ 2. Calibrate these data by selecting an appropriate point -- say the
+    first peak in the first derivative -- and making it 7112.  Using
+    Athena's calibration tool, this will set the E0 value to 7112
+    *and* give the data an energy shift so that the proper point in
+    the data is displayed at 7112.
+
+ 3. Import the other two scans.
+
+ 4. Align the second two scans to the first.  Because the first scan
+    has an energy shift to correct the miscalibrated of the mono,
+    these two scans will be misaligned by many volts relative to the
+    first.
+
+ 5. Using Athena's alignment tool, only the energy shift will fixed.
+    You will then need set the E0 value for the other two scans to be
+    the same as for the first scan.  If you do not do this step, then
+    the data will be nicely aligned when plotted in energy, but will
+    be quite out of alignment when plotted in k.  The reason for this
+    is that the E0 value is also used as the 0 or k when the
+    background is subtracted.
+
