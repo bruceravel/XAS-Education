@@ -25,7 +25,7 @@
 \mode<presentation>
 %\mode<beamer>
 
-\title{Methyltin}%
+\title{Methyltin EXAFS}%
 \subtitle{An Artemis example}
 \include{author}
 
@@ -55,7 +55,7 @@
   The manufacture of PVC uses organic tin species, mostly dimethyl
   tin, as a stabilizing agent.  Over time, organic tin species can
   leach out of PVC and into municipal water supplies.  My collaborator,
-  Chris Impelliteri, at the US Environmental Protection Agency studied
+  Chris Impellitteri, at the US Environmental Protection Agency studied
   this leaching process.  The organic tin species used as stabilizers
   evolve during the manufacturing process, so we used XAS to identify
   and characterize the tin species present in commercial PVC pipes.
@@ -79,12 +79,28 @@
 
   \medskip
 
+  This document is intended as a supplement to the
+  demonstration/lecture on the same topic that I give as a part of an
+  XAS training course.
+
+  \medskip
+
   ~
+
+  \begin{textblock*}{0.7\linewidth}(0pt,19.0\TPVertModule)%
+    \tiny%
+    C.\ Impellitteri, et al., \textit{Speciation of organotins in
+      polyvinyl chloride pipe via X-ray absorption spectroscopy and in
+      leachates using GC-PFPD after derivatisation}, Journal of
+    Environmental Monitoring \textbf{9} (2007) pp\ 358-365.
+    \href{http://dx.doi.org/10.1039/B617711E}
+    {\color{Blue4}\texttt{DOI:10.1039/B617711E}}
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
   \frametitle{Methyl tin chloride}
-  The two samples we will examine are two methyl tin chloride species
+  The samples we will examine are two methyl tin chloride species
   dissolved in an organic solvent.
 
   \begin{columns}
@@ -150,7 +166,7 @@
 \begin{frame}[fragile]
   \frametitle{Results of the first fit}
   \small
-  The fit doesn't seem bad.  The {\color{Red3}red line} overplots the
+  The fit doesn't seem bad.  The {\color{Red3}red line} over-plots the
   {\color{Blue3}blue line} rather well.  Unfortunately, the amplitude
   and both $\sigma^2$ parameters are suspiciously large, and one
   correlation is quite alarming.
@@ -301,11 +317,12 @@ Correlations between variables:
   \frametitle{What's next?}
   \begin{enumerate}
   \item Could the Fourier transform range be longer?  Look at the k123
-    plot for each data set.
+    plot for each data set.  (I actually changed the k-range before
+    making the plot on the previous page.)
   \item Is the assumption about the bonds in the two samples valid?
-    How would you go about testing the assumption?
-  \item Trimethyl tin monochloride would have been useful to
-    measure....
+    How would you go about testing that assumption?
+  \item Trimethyl tin monochloride would have been a useful
+    measurement....
   \item The $\Delta R$s for both Sn$\leftrightarrows$C and the
     Sn$\leftrightarrows$Cl are rather large.  The fit might be
     improved by adjusting the original \file{feff.inp}, re-running
