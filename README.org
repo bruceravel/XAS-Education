@@ -5,20 +5,23 @@
 
 These folders contain the LaTeX source for my talks.  All talks use
 LaTeX and [[https://bitbucket.org/rivanvx/beamer/wiki/Home][the Beamer LaTeX class]].  All images are included, usually as
-.png or .jpg files.  Source material (e.g. GIMP ~.xcf~, LibreOffice ~.odg~,
-Xfig ~.fig~) are deposited for some images.
+.png or .jpg files.  Source material (e.g. ~.svg~, GIMP ~.xcf~,
+LibreOffice ~.odg~, Xfig ~.fig~) are deposited for some images and
+must be converted to PDF, png, or jpg.
 
-PDF files can be found in the [[https://github.com/bruceravel/XAS-Education/downloads][downloads area]].
+PDF files of the talks can be found in the [[https://github.com/bruceravel/XAS-Education/downloads][downloads area]].
 
- | *folder*   | *title of talk*                                                                 |
- |------------+---------------------------------------------------------------------------------|
- | ATEA       | Advanced Topics In EXAFS Analysis                                               |
- | Experiment | The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design |
- | i2x        | Interpreting XANES Data                                                         |
- | iiss       | Introduction to Inner Shell Spectroscopies                                      |
- | noxtal     | Modeling non-crystalline samples                                                |
- | pimst      | A Practical Introduction to Multiple Scattering Theory                          |
- | selfabs    | Understanding self-absorption in fluorescence XAS                               |
+ | *folder*      | *title of talk*                                                                 |
+ |---------------+---------------------------------------------------------------------------------|
+ | ATEA          | Advanced Topics In EXAFS Analysis                                               |
+ | Experiment    | The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design |
+ | i2x           | Interpreting XANES Data                                                         |
+ | iiss          | Introduction to Inner Shell Spectroscopies                                      |
+ | methyltin     | An Artemis example, supplement to a lecture/demo                                |
+ | noxtal        | Modeling non-crystalline samples                                                |
+ | pimst         | A Practical Introduction to Multiple Scattering Theory                          |
+ | secondlecture | An introductory lecture for an XAS short course                                 |
+ | selfabs       | Understanding self-absorption in fluorescence XAS                               |
 
 ** Examples
 
@@ -26,9 +29,11 @@ These folders contain the XAS and structural data used in the talks.
 
  | *folder*          | *contents*                                                             |
  |-------------------+------------------------------------------------------------------------|
- | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
  | Cr standards      | Cr 3+ and 6+ oxide standards                                           |
+ | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
  | EuTiO3            | Data at several temperatures, Ti K, and Eu L3 edges                    |
+ | Fe foil           | Iron foil, 3 scans, 60 K, miscalibrated energy                         |
+ | Fe standards      | An athena project file with various Fe standards                       |
  | FeS2              | FeS2 transmission EXAFS + crystal data                                 |
  | GeSb              | A single scan of a thin GeSb on silicon, p. 6 ATEA                     |
  | Germanium         | Crystalline and amorphous Ge data + crystal data                       |
@@ -41,7 +46,7 @@ These folders contain the XAS and structural data used in the talks.
 
  + ~sty/~
    + Copies of my customizations of the [[http://recherche.noiraudes.net/fr/LaTeX.php][progressbar Beamer theme]] by Sylvain Bouveret
-   + common copyright statement, author information, and date
+   + common copyright statement, author information, date, common frames, etc
 
 
 To use the style files, the ~TEXINPUTS~ environment variable must be
@@ -68,6 +73,8 @@ of advanced EXAFS analysis:
  + [[http://dx.doi.org/10.1088/1742-6596/190/1/012026][My paper from the XAFS14 conference on Composing complex EXAFS problems with severe information constraints]]
 
  + [[http://dx.doi.org/10.1103/PhysRevB.54.156][Eric Hudson's paper relating SS and MS values for sigma^2]]
+
+ + [[http://dx.doi.org/10.1088/1742-6596/190/1/012028][Corwin Booth's XAFS14 conference paper on error analysis]]
 
 ** License
 
