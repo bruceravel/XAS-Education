@@ -1,43 +1,8 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
 %\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
 
-\usetheme{progressbar}
-%\usecolortheme[named=Purple4]{structure}
-\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
+\include{header}
 
-\setbeamertemplate{navigation symbols}{}
-
-\usepackage{iwona} 
-
-\usepackage{alltt}
-\usepackage{amsmath,amsfonts, amssymb, amscd}
-\usepackage{hyperref}
-\usepackage{setspace}
-\usepackage{wasysym}
-\usepackage{ulem}
-
-\usepackage{calc}
-\usepackage[overlay,absolute]{textpos}
-\TPGrid[5mm,5mm]{20}{20}
-
-
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
-\newcommand{\debye}{\operatorname{debye}}
-
-\newcommand{\chik}{$\chi(k)$}
-\newcommand{\chir}{$|\tilde{\chi}(R)|$}
-
-
-\newcommand{\file}[1]{{\color{Firebrick4}\texttt{`#1'}}}
-\newcommand{\multiple}{{\color{Orange3}\textsl{multiple}}}
-
-
-\newcommand{\atoms}  {{\color{DarkOrchid4}\textsc{atoms}}}
-\newcommand{\feff}   {{\color{DarkOrchid4}\textsc{feff}}}
-\newcommand{\ifeffit}{{\color{DarkOrchid4}\textsc{ifeffit}}}
-\newcommand{\athena} {{\color{DarkOrchid4}\textsc{athena}}}
-\newcommand{\artemis}{{\color{DarkOrchid4}\textsc{artemis}}}
 \newcommand{\TheBigLesson}{%
   \begin{alertblock}{}
     In {\ifeffit} the {\color{SlateBlue3}terms in light blue} are not
@@ -45,33 +10,23 @@
       terms of} the actual fitting parameters.
   \end{alertblock}
 }
-
 \newcommand{\ybco}{YBa$_2$Cu$_3$O$_7$}
 \newcommand{\eto}{EuTiO$_3$}
-
-\renewenvironment<>{center}
-{\begin{actionenv}#1\begin{originalcenter}}
-{\end{originalcenter}\end{actionenv}}
-
-
 
 \mode<presentation>
 %\mode<beamer>
 
 \title{Advanced Topics in EXAFS Analysis}
 \include{author}
+\include{date}
+%\date[Diamond2011]{EXAFS Data Analysis workshop 2011\\
+%  Diamond Light Source\\November 14--17, 2011}
 
-\date[AEDA2011]{Advanced EXAFS Data Analysis workshop 2011\\
-  Universiteit Gent, January 12--14, 2011}
-
-
-%\logo{\includegraphics[width=1.0cm]{images/Artemis.png}}
 
 \begin{document}
-\begin{frame}
-  \titlepage
-\end{frame}
+\maketitle
 \include{copyright}
+
 \begin{frame}
   \frametitle{Acknowledgements}
   \footnotesize
@@ -545,14 +500,14 @@
   {\small
     \begin{align}
       \chi(k,\Gamma) =& {\Im}\>\Biggl(\, %%\sum\limits_{\Gamma}
-      { \frac{{\color{SlateBlue3}(N_\Gamma S_0^2)}{\color{Cornsilk4}F_\Gamma(k)}}
+      { \frac{{\color{SlateBlue3}(N_\Gamma S_0^2)}{\color{Gold4}F_\Gamma(k)}}
         {2\,kR_\Gamma^2} }
-      e^{i(2kR_\Gamma + {\color{Cornsilk4}\Phi_\Gamma(k)})}
+      e^{i(2kR_\Gamma + {\color{Gold4}\Phi_\Gamma(k)})}
       e^{-2{\color{SlateBlue3}\sigma_\Gamma^2}k^2}
-      e^{-2R_\Gamma/{\color{Cornsilk4}\lambda(k)}}
+      e^{-2R_\Gamma/{\color{Gold4}\lambda(k)}}
       \Biggl) \\
       \chi_{\mathrm{theory}}(k) =& \sum\limits_{\Gamma}\chi(k,\Gamma) \notag\\
-      R_\Gamma =& \> {\color{Cornsilk4}R_{0,\Gamma}} +
+      R_\Gamma =& \> {\color{Gold4}R_{0,\Gamma}} +
       {\color{SlateBlue3}\Delta R_\Gamma} \\
       k =& N\sqrt{(E_0 - {\color{SlateBlue3}\Delta E_0})}
     \end{align}}
@@ -561,7 +516,7 @@
 
   $\chi_{\mathrm{theory}}(k)$ is the function that is fit to data by
   varying the fitting parameters using theory from {\feff} (the
-  {\color{Cornsilk4}terms in grey}).
+  {\color{Gold4}terms in yellow-grey}).
 
   \bigskip
 
@@ -602,11 +557,11 @@
   {\small
     \begin{equation}
       \chi(k,\Gamma) = {\Im}\>\Bigl(\, %%\sum\limits_{\Gamma}
-      { \frac{{\color{SlateBlue3}(N_\Gamma S_0^2)}{\color{Cornsilk4}F_\Gamma(k)}}
+      { \frac{{\color{SlateBlue3}(N_\Gamma S_0^2)}{\color{Gold4}F_\Gamma(k)}}
         {2\,kR_\Gamma^2} }
-      e^{i(2kR_\Gamma + {\color{Cornsilk4}\Phi_\Gamma(k)})}
+      e^{i(2kR_\Gamma + {\color{Gold4}\Phi_\Gamma(k)})}
       e^{-2{\color{SlateBlue3}\sigma_\Gamma^2}k^2}
-      e^{-2R_\Gamma/{\color{Cornsilk4}\lambda(k)}}
+      e^{-2R_\Gamma/{\color{Gold4}\lambda(k)}}
       \Bigl) \notag
     \end{equation}}
 
@@ -877,14 +832,14 @@ Correlations between variables:
     \begin{column}{0.5\linewidth}
       \scriptsize
       \begin{alltt}
-  {\color{SteelBlue4}guess}  s0sqr = 0.9
+  {\color{guessp}guess}  s0sqr = 0.9
   {\color{Purple4}path} \{
-     {\color{Cornsilk4}file}    site1/feff0001.dat
-     {\color{Cornsilk4}label}   1st path, site 1
-     {\color{Cornsilk4}s02}     s0sqr / 3
+     {\color{Gold4}file}    site1/feff0001.dat
+     {\color{Gold4}label}   1st path, site 1
+     {\color{Gold4}s02}     s0sqr / 3
    \}
   {\color{Blue4}## all subsequent paths for site 1
-  ## have} {\color{Cornsilk4}s02}{\color{Blue4} * 1/3}
+  ## have} {\color{Gold4}s02}{\color{Blue4} * 1/3}
       \end{alltt}      
     \end{column}
     \begin{column}{0.5\linewidth}
@@ -892,12 +847,12 @@ Correlations between variables:
       \begin{alltt}
 
   {\color{Purple4}path} \{
-     {\color{Cornsilk4}file}    site2/feff0001.dat
-     {\color{Cornsilk4}label}   1st path, site 2
-     {\color{Cornsilk4}s02}     2 * s0sqr / 3
+     {\color{Gold4}file}    site2/feff0001.dat
+     {\color{Gold4}label}   1st path, site 2
+     {\color{Gold4}s02}     2 * s0sqr / 3
    \}
   {\color{Blue4}## all subsequent paths for site 2
-  ## have} {\color{Cornsilk4}s02}{\color{Blue4} * 2/3}
+  ## have} {\color{Gold4}s02}{\color{Blue4} * 2/3}
       \end{alltt}      
     \end{column}
   \end{columns}
@@ -1180,11 +1135,11 @@ Correlations between variables:
   {\small
     \begin{equation}
       \chi(k,\Gamma) = {\Im}\>\Biggl(\, %%\sum\limits_{\Gamma}
-      { \frac{{\color{SlateBlue3}(N_\Gamma S_0^2)}{\color{Cornsilk4}F_\Gamma(k)}}
+      { \frac{{\color{SlateBlue3}(N_\Gamma S_0^2)}{\color{Gold4}F_\Gamma(k)}}
         {2\,kR_\Gamma^2} }
-      e^{i(2kR_\Gamma + {\color{Cornsilk4}\Phi_\Gamma(k)})}
+      e^{i(2kR_\Gamma + {\color{Gold4}\Phi_\Gamma(k)})}
       e^{-2{\color{SlateBlue3}\sigma_\Gamma^2}k^2}
-      e^{-2R_\Gamma/{\color{Cornsilk4}\lambda(k)}}
+      e^{-2R_\Gamma/{\color{Gold4}\lambda(k)}}
       \Biggl) \notag
     \end{equation}}
 
@@ -1310,22 +1265,22 @@ Correlations between variables:
   \begin{block}{}
     \begin{alltt}
     \scriptsize
-     {\color{Purple4}set}      n\_eq     = 6
-     {\color{Purple4}guess}    n\_short  = 3
-     {\color{Purple4}def}      n\_long   = n\_eq - n\_short
-     {\color{Purple4}def}      n\_p      = n\_short
-     {\color{Purple4}def}      n\_c      = n\_long / 2
+     {\color{setp}set}      n\_eq     = 6
+     {\color{guessp}guess}    n\_short  = 3
+     {\color{defp}def}      n\_long   = n\_eq - n\_short
+     {\color{defp}def}      n\_p      = n\_short
+     {\color{defp}def}      n\_c      = n\_long / 2
 
-     {\color{Purple4}guess}    ss\_short = 0.003
-     {\color{Purple4}def}      ss\_long  = ss\_short
+     {\color{guessp}guess}    ss\_short = 0.003
+     {\color{defp}def}      ss\_long  = ss\_short
     \end{alltt}
   \end{block}
 
   We have described the coordination numbers and $\sigma^2$ for the
   equatorial oxygen atoms with a minimal number of
-  {\color{Purple4}guess}es.  The constraints on $\sigma^2$ and
-  $N_{eq}$ can be lifted easily by switching a {\color{Purple4}set} or
-  a {\color{Purple4}def} to a {\color{Purple4}guess}.
+  {\color{guessp}guess}es.  The constraints on $\sigma^2$ and
+  $N_{eq}$ can be lifted easily by switching a {\color{setp}set} or
+  a {\color{defp}def} to a {\color{guessp}guess}.
   
 \end{frame}
 
@@ -1335,7 +1290,7 @@ Correlations between variables:
   \frametitle{Using Imperfect Knowledge}
 
   {\ifeffit} allows the incoproration of imprecise
-  {\color{Green4}prior knowledge} by adding restraints in quadrature
+  \alert{prior knowledge} by adding restraints in quadrature
   to the fitting metric.
 
   {\small
@@ -1375,8 +1330,8 @@ Correlations between variables:
     \begin{block}{}
 \begin{alltt}
     \scriptsize
-     {\color{Purple4}guess} S0sqr = 0.8
-     {\color{SteelBlue4}path}(1, S02 = {\color{Cornsilk4}max}(0.6, {\color{Cornsilk4}min}(1.0, S0sqr) ) )
+     {\color{guessp}guess} S0sqr = 0.8
+     {\color{SteelBlue4}path}(1, S02 = {\color{Gold4}max}(0.6, {\color{Gold4}min}(1.0, S0sqr) ) )
 \end{alltt}
     
       \footnotesize
@@ -1387,9 +1342,9 @@ Correlations between variables:
     \begin{block}{}
 \begin{alltt}
     \scriptsize
-     {\color{Purple4}guess}    S0sqr = 0.8
-     {\color{Purple4}set}      scale = 2000
-     {\color{Purple4}restrain} S0sqr\_res = scale * {\color{Cornsilk4}penalty}(S0sqr, 0.6, 1.0)
+     {\color{guessp}guess}    S0sqr = 0.8
+     {\color{setp}set}      scale = 2000
+     {\color{restrainp}restrain} S0sqr\_res = scale * {\color{Gold4}penalty}(S0sqr, 0.6, 1.0)
      {\color{SteelBlue4}path}(1, S02 = S0sqr)
 \end{alltt}
     \end{block}
@@ -1422,10 +1377,10 @@ Correlations between variables:
   \begin{block}{}
     \begin{alltt}
     \scriptsize
-     {\color{Purple4}guess}    S0sqr = 0.9
-     {\color{Purple4}set}      S0sqr\_known = 0.876
-     {\color{Purple4}set}      scale = 2000
-     {\color{Purple4}restrain} S0sqr\_res = scale * (S0sqr - SOsqr\_known)
+     {\color{guessp}guess}    S0sqr = 0.9
+     {\color{setp}set}      S0sqr\_known = 0.876
+     {\color{setp}set}      scale = 2000
+     {\color{restrainp}restrain} S0sqr\_res = scale * (S0sqr - SOsqr\_known)
     \end{alltt}
   \end{block}
 
@@ -1473,12 +1428,12 @@ Correlations between variables:
   \begin{block}{}
     \begin{alltt}
     \scriptsize
-     {\color{Purple4}set}      valence = 2
-     {\color{Purple4}set}      rij     = 1.734  {\color{Blue4}# R'ij for Fe(2+)-O}
-     {\color{Purple4}set}      rnot    = 2.14
-     {\color{Purple4}set}      scale   = 1000
-     {\color{Purple4}guess}    delr    = 0.0
-     {\color{Purple4}restrain} bvs     = valence - 6 * exp( (rij - (rnot+delr)) / 0.37 )
+     {\color{setp}set}      valence = 2
+     {\color{setp}set}      rij     = 1.734  {\color{Blue4}# R'ij for Fe(2+)-O}
+     {\color{setp}set}      rnot    = 2.14
+     {\color{setp}set}      scale   = 1000
+     {\color{guessp}guess}    delr    = 0.0
+     {\color{restrainp}restrain} bvs     = valence - 6 * exp( (rij - (rnot+delr)) / 0.37 )
     \end{alltt}
   \end{block}
 
@@ -1501,10 +1456,10 @@ Correlations between variables:
   \begin{block}{}
     \begin{alltt}
     \scriptsize
-     {\color{Purple4}guess}      r\_short     = 2.32
-     {\color{Purple4}guess}      r\_long      = 2.45
-     {\color{Purple4}restrain}   r\_short\_res = scale * penalty(r\_short, 2.30, 2.34)
-     {\color{Purple4}restrain}   r\_long\_res  = scale * penalty(r\_short, 2.43, 2.47)
+     {\color{guessp}guess}      r\_short     = 2.32
+     {\color{guessp}guess}      r\_long      = 2.45
+     {\color{restrainp}restrain}   r\_short\_res = scale * penalty(r\_short, 2.30, 2.34)
+     {\color{restrainp}restrain}   r\_long\_res  = scale * penalty(r\_short, 2.43, 2.47)
     \end{alltt}
   \end{block}
   

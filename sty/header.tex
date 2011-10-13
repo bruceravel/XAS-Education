@@ -1,3 +1,24 @@
+\usetheme{progressbar}
+%\usecolortheme[named=Purple4]{structure}
+\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{iwona} 
+
+\usepackage{alltt}
+\usepackage{amsmath,amsfonts, amssymb, amscd}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{wasysym}
+\usepackage{ulem}
+
+\usepackage{calc}
+\usepackage[overlay,absolute]{textpos}
+\TPGrid[5mm,5mm]{20}{20}
+
+
+
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \newcommand{\debye}{\operatorname{debye}}
@@ -19,3 +40,22 @@
 \renewenvironment<>{center}
 {\begin{actionenv}#1\begin{originalcenter}}
 {\end{originalcenter}\end{actionenv}}
+
+\definecolor{guessp}   {rgb}{0.64,0.00,0.64}
+\newcommand{\guessp}   {{\color{guessp}guess}}
+\definecolor{defp}     {rgb}{0.00,0.55,0.00}
+\newcommand{\defp}     {{\color{defp}def}}
+\definecolor{setp}     {rgb}{0,0,0}
+\newcommand{\setp}     {{\color{setp}set}}
+\definecolor{lguessp}  {rgb}{0.24,0.11,0.56}
+\newcommand{\lguessp}  {{\color{lguessp}lguess}}
+\definecolor{skipp}    {rgb}{0.70,0.70,0.70}
+\newcommand{\skipp}    {{\color{skipp}skip}}
+\definecolor{restrainp}{rgb}{0.80,0.61,0.11}
+\newcommand{\restrainp}{{\color{restrainp}restrain}}
+\definecolor{afterp}   {rgb}{0.29,0.44,0.55}
+\newcommand{\afterp}   {{\color{afterp}after}}
+\definecolor{penaltyp} {rgb}{0.55,0.35,0.17}
+\newcommand{\penaltyp} {{\color{penaltyp}penalty}}
+\definecolor{mergep}   {rgb}{0.93,0.00,0.00}
+\newcommand{\mergep}   {{\color{mergep}merge}}

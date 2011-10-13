@@ -1,37 +1,5 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
-\usetheme{progressbar}
-\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
-
-\setbeamertemplate{navigation symbols}{}
-
-\usepackage{iwona} 
-\usepackage{alltt}
-\usepackage{amsmath,amsfonts, amssymb, amscd}
-\usepackage{hyperref}
-\usepackage{setspace}
-\usepackage{wasysym}
-
-\usepackage{calc}
-\usepackage[overlay,absolute]{textpos}
-\TPGrid[5mm,5mm]{20}{20}
-
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
-\newcommand{\debye}{\operatorname{debye}}
-
-\newcommand{\chik}{$\chi(k)$}
-\newcommand{\chir}{$|\tilde{\chi}(R)|$}
-
-
-\newcommand{\file}[1]{{\color{Firebrick4}\texttt{`#1'}}}
-\newcommand{\multiple}{{\color{Orange2}\textsl{multiple}}}
-
-
-\newcommand{\atoms}  {{\color{Brown4}\textsc{atoms}}}
-\newcommand{\feff}   {{\color{Brown4}\textsc{feff}}}
-\newcommand{\ifeffit}{{\color{Brown4}\textsc{ifeffit}}}
-\newcommand{\athena} {{\color{Brown4}\textsc{athena}}}
-\newcommand{\artemis}{{\color{Brown4}\textsc{artemis}}}
+\include{header}
 
 \newcommand{\ybco}{YBa$_2$Cu$_3$O$_7$}
 \newcommand{\eto}{EuTiO$_3$}
@@ -39,14 +7,8 @@
 \newcommand{\ufivemineral}%
 {U$^{\mathrm{V}}$(H$_2$O)$_2$(U$^{\mathrm{VI}}$O$_2$)$_2$O$_4$(OH)+4$\cdot$H$_2$O}
 
-\renewenvironment<>{center}
-{\begin{actionenv}#1\begin{originalcenter}}
-{\end{originalcenter}\end{actionenv}}
-
-
 
 \mode<presentation>
-%\mode<beamer>
 
 \title{Interpreting XANES Data}
 \include{author}
@@ -55,12 +17,8 @@
   X-ray Absorption Spectroscopy\\Synchrotron Light Research
   Institute\\Nakhon Ratchasima, Thailand \\29--31 July 2010}
 
-% \logo{\includegraphics[width=1.0cm]{images/ankaxas_black.png}}
-
 \begin{document}
-\begin{frame}
-  \titlepage
-\end{frame}
+\maketitle
 \include{copyright}
 
 %\mode<handout>{\frame{\tableofcontents}}
@@ -1166,6 +1124,8 @@
 \end{document}
 
 %%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
 %%% End:

@@ -1,67 +1,23 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
 %\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
-
-\usetheme{progressbar}
-%\usecolortheme[named=Purple4]{structure}
-\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
-
-\setbeamertemplate{navigation symbols}{}
-
-\usepackage{iwona} 
-
-\usepackage{alltt}
-\usepackage{amsmath,amsfonts, amssymb, amscd}
-\usepackage{hyperref}
-\usepackage{setspace}
-\usepackage{wasysym}
-\usepackage{ulem}
-
-\usepackage{calc}
-\usepackage[overlay,absolute]{textpos}
-\TPGrid[5mm,5mm]{20}{20}
-
-
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
-\newcommand{\debye}{\operatorname{debye}}
-
-\newcommand{\chik}{$\chi(k)$}
-\newcommand{\chir}{$|\tilde{\chi}(R)|$}
-
-
-\newcommand{\file}[1]{{\color{Firebrick4}\texttt{`#1'}}}
-\newcommand{\multiple}{{\color{Orange3}\textsl{multiple}}}
-
-
-\newcommand{\atoms}  {{\color{DarkOrchid4}\textsc{atoms}}}
-\newcommand{\feff}   {{\color{DarkOrchid4}\textsc{feff}}}
-\newcommand{\ifeffit}{{\color{DarkOrchid4}\textsc{ifeffit}}}
-\newcommand{\athena} {{\color{DarkOrchid4}\textsc{athena}}}
-\newcommand{\artemis}{{\color{DarkOrchid4}\textsc{artemis}}}
-
-\renewenvironment<>{center}
-{\begin{actionenv}#1\begin{originalcenter}}
-{\end{originalcenter}\end{actionenv}}
+\include{header}
 
 \hyphenation{microbeam}
 \hyphenation{beyond}
 
 \mode<presentation>
-%\mode<beamer>
 
 \title{Your Second EXAFS Lecture}%
 \subtitle{In which we explore the ins and outs of absorption
   spectroscopy, learn of some the ways to interpret our data, and
   prepare for the rest of this XAFS course}
 \include{author}
-
-\date[Diamond2011]{EXAFS Data Analysis workshop 2011\\
-  Diamond Light Source\\November 14--17, 2011}
+\include{date}
+%\date[Diamond2011]{EXAFS Data Analysis workshop 2011\\
+%  Diamond Light Source\\November 14--17, 2011}
 
 \begin{document}
-\begin{frame}
-  \titlepage
-\end{frame}
+\maketitle
 \include{copyright}
 
 \begin{frame}

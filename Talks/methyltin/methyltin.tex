@@ -1,43 +1,18 @@
-\documentclass[10pt, xcolor=x11names, compress]{beamer}
-%\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
-
-\usetheme{progressbar}
-%\usecolortheme[named=Purple4]{structure}
-\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
-
-\setbeamertemplate{navigation symbols}{}
-
-\usepackage{iwona} 
-
-\usepackage{alltt}
-\usepackage{amsmath,amsfonts, amssymb, amscd}
-\usepackage{hyperref}
-\usepackage{setspace}
-\usepackage{wasysym}
-\usepackage{ulem}
-
-\usepackage{calc}
-\usepackage[overlay,absolute]{textpos}
-\TPGrid[5mm,5mm]{20}{20}
+%\documentclass[10pt, xcolor=x11names, compress]{beamer}
+\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
 
 \include{header}
 
 \mode<presentation>
-%\mode<beamer>
 
 \title{Methyltin EXAFS}%
 \subtitle{An Artemis example}
 \include{author}
-
-%\date[Diamond2011]{EXAFS Data Analysis workshop 2011\\
-%  Diamond Light Source\\November 14--17, 2011}
-\date{~}
+\date{\today}
 
 \begin{document}
 
-\begin{frame}
-  \titlepage
-\end{frame}
+\maketitle
 \include{copyright}
 
 \section{Background}
@@ -87,7 +62,7 @@
 
   ~
 
-  \begin{textblock*}{0.7\linewidth}(0pt,19.0\TPVertModule)%
+  \begin{textblock*}{0.7\linewidth}(0pt,18.75\TPVertModule)%
     \tiny%
     C.\ Impellitteri, et al., \textit{Speciation of organotins in
       polyvinyl chloride pipe via X-ray absorption spectroscopy and in
@@ -148,7 +123,7 @@
     overall E$_0$ shift.
   \item We cannot expect to share $\sigma^2$ or $\Delta R$ 
     between the C and Cl scatterers, so create 4 more parameters for
-    those.  That's \alert{6} guess parameters.
+    those.  That comes to \alert{6} {\guessp} parameters.
   \item With the k-range set to [2:10.5] and the R-range set to
     [1:2.4], we have at most about \alert{7.5} independent points.
   \end{enumerate}
@@ -204,19 +179,15 @@ Correlations between variables:
   \end{columns}
   These data are severely stressed by fitting 6 parameters with barely
   more information.  That is the likely cause of the odd results.
-
-  \medskip
-
-  Now, click the buttons for k-weighting by 1 and 3 in the fit.
-  Re-run the fit.
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{An unstable fit}
-  \small
-  There is an even worse aspect of the fit we just did.  It turns out
-  that it is very unstable.  The result we just found is some kind of
-  local minimum, but perhaps not the best fit.
+  \small%
+  There is an even worse aspect of the fit -- it turns out to be
+  unstable.  The result we just found is some kind of local minimum,
+  but perhaps not the best fit.  Guessing 0.02 for \texttt{dr\_cl}
+  results in the following:
   \begin{columns}
     \begin{column}{0.5\linewidth}
       \includegraphics[width=\linewidth]{images/dmt_better.png}      
@@ -255,7 +226,7 @@ Correlations between variables:
 
   \medskip
 
-  The next trick to try is a multiple data set fit.
+  The next trick to try is a \alert{multiple data set} fit.
 \end{frame}
 
 \section{Multiple data set fit}
@@ -263,7 +234,7 @@ Correlations between variables:
 
 \begin{frame}
   \frametitle{Setting up a multiple data set fit}
-  Import the monomethyl tin trichloride (MMT) from the {\athena}
+  Import the monomethyltin trichloride (MMT) from the {\athena}
   project file.  This will open a second Data window and place a
   second item in the list of data sets.
   \begin{center}
@@ -283,7 +254,7 @@ Correlations between variables:
   \end{center}
   
   Change the N of the Sn$\leftrightarrows$C path to 1, since
-  monomethyl tin only has one methyl ligand.  Similarly, change the N
+  monomethyltin only has one methyl ligand.  Similarly, change the N
   of the Sn$\leftrightarrows$Cl path to 3, since there are three Cl ligands.
 \end{frame}
 
@@ -299,7 +270,8 @@ Correlations between variables:
 
   Given this assumption, the fitting situation is much improved.  We
   have \alert{doubled} the information content while introducing
-  \alert{0} additional parameters!
+  \alert{0} additional parameters!  Both data sets contribute to the
+  determination of our {\guessp} parameters.
 
   \begin{columns}
     \begin{column}{0.5\linewidth}
@@ -317,16 +289,21 @@ Correlations between variables:
   \frametitle{What's next?}
   \begin{enumerate}
   \item Could the Fourier transform range be longer?  Look at the k123
-    plot for each data set.  (I actually changed the k-range before
-    making the plot on the previous page.)
+    plot for each data set.  (I changed the k-range before making the
+    plot on the previous page.)
   \item Is the assumption about the bonds in the two samples valid?
     How would you go about testing that assumption?
-  \item Trimethyl tin monochloride would have been a useful
+  \item Trimethyltin monochloride would have been a useful
     measurement....
   \item The $\Delta R$s for both Sn$\leftrightarrows$C and the
-    Sn$\leftrightarrows$Cl are rather large.  The fit might be
+    Sn$\leftrightarrows$Cl are somewhat large.  The fit might be
     improved by adjusting the original \file{feff.inp}, re-running
     {\feff}, and re-doing the fit.
+  \item The structure used in the {\feff} calculation is unbounded
+    from the outside, which might effect the construction of muffin
+    tins.  Packing water moelcues around the DMT molecule might help.
+  \item Is the DMT {\feff} calculation transferable to MMT?  Running
+    {\feff} on MMT might help.
   \end{enumerate}
 \end{frame}
 \end{document}

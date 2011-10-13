@@ -1,76 +1,18 @@
 %\documentclass[10pt, xcolor=x11names, compress]{beamer}
 \documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
-
-\usetheme{progressbar}
-%\usecolortheme[named=Purple4]{structure}
-\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
-
-\setbeamertemplate{navigation symbols}{}
-
-\usepackage{iwona} 
-
-\usepackage{alltt}
-\usepackage{amsmath,amsfonts, amssymb, amscd}
-\usepackage{hyperref}
-\usepackage{setspace}
-\usepackage{wasysym}
-\usepackage{ulem}
-
-\usepackage{calc}
-\usepackage[overlay,absolute]{textpos}
-\TPGrid[5mm,5mm]{20}{20}
-
-
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
-\newcommand{\debye}{\operatorname{debye}}
-
-\newcommand{\chik}{$\chi(k)$}
-\newcommand{\chir}{$|\tilde{\chi}(R)|$}
-
-
-\newcommand{\file}[1]{{\color{Firebrick4}\texttt{`#1'}}}
-\newcommand{\multiple}{{\color{Orange3}\textsl{multiple}}}
-
-
-\newcommand{\atoms}  {{\color{DarkOrchid4}\textsc{atoms}}}
-\newcommand{\feff}   {{\color{DarkOrchid4}\textsc{feff}}}
-\newcommand{\ifeffit}{{\color{DarkOrchid4}\textsc{ifeffit}}}
-\newcommand{\athena} {{\color{DarkOrchid4}\textsc{athena}}}
-\newcommand{\artemis}{{\color{DarkOrchid4}\textsc{artemis}}}
-
-\newcommand{\ybco}{YBa$_2$Cu$_3$O$_7$}
-\newcommand{\eto}{EuTiO$_3$}
-
-\renewenvironment<>{center}
-{\begin{actionenv}#1\begin{originalcenter}}
-{\end{originalcenter}\end{actionenv}}
-
-
+\include{header}
 
 \mode<presentation>
-%\mode<beamer>
 
 \title{Understanding self-absorption in fluorescence XAS}
 \include{author}
-
 \date[NSLS2010]{Advanced EXAFS Data Analysis workshop 2011\\
   Universiteit Gent, January 12--14, 2011}
 
 
 \begin{document}
-\begin{frame}
-  \titlepage
-\end{frame}
+\maketitle
 \include{copyright}
-
-%\mode<handout>{\frame{\tableofcontents}}
-
-%% \section*{Outline}
-%% \begin{frame}
-%%   \tableofcontents
-%% \end{frame}
-
 
 \section[Introduction]{Introduction}
 \begin{frame}
@@ -88,12 +30,12 @@
   \begin{block}{No dependence on detector type}
     Self-absorption cannot be corrected by using a ``better''
     detector.  Be aware, though, that self-absorption and
-    \textit{deat-time} have similar impacts on the XAS.
+    \textit{dead-time} have similar impacts on the XAS.
   \end{block}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Math}
+  \frametitle{Some math}
 
   \small
   \begin{columns}
@@ -130,7 +72,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{More math}
+  \frametitle{Some more math}
   The get the fluorescence from the entire depth of the sample, we
   integrate the expression for $I_f$:
   \begin{equation}
@@ -525,7 +467,8 @@
     {\color{Blue2}DOI:10.1238/Physica.Topical.115a00202}\\ See also
     Corwin's web site: \href{http://lise.lbl.gov/RSXAP/}
     {\color{Blue2}\texttt{http://lise.lbl.gov/RSXAP/}}
-  \item[Atoms] \textit{Dead simple correction to $\chi(k)$}\\
+  \item[Atoms] \textit{Dead simple correction to $\chi(k)$ based on
+      tables of absorption coefficients}\\
     B. Ravel, J. Synchrotron Radiat., \textbf{8}:2, (2001) 314. 
     \href{http://dx.doi.org/10.1107/S090904950001493X}
     {\color{Blue2}DOI:10.1107/S090904950001493X}
@@ -536,6 +479,8 @@
 \end{document}
 
 %%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
 %%% End:

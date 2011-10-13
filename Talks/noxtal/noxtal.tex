@@ -1,76 +1,18 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
 %\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
-
-\usetheme{progressbar}
-%\usecolortheme[named=Purple4]{structure}
-\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
-
-\setbeamertemplate{navigation symbols}{}
-
-\usepackage{iwona} 
-
-\usepackage{alltt}
-\usepackage{amsmath,amsfonts, amssymb, amscd}
-\usepackage{hyperref}
-\usepackage{setspace}
-\usepackage{wasysym}
-\usepackage{ulem}
-
-\usepackage{calc}
-\usepackage[overlay,absolute]{textpos}
-\TPGrid[5mm,5mm]{20}{20}
-
-
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
-\newcommand{\debye}{\operatorname{debye}}
-
-\newcommand{\chik}{$\chi(k)$}
-\newcommand{\chir}{$|\tilde{\chi}(R)|$}
-
-
-\newcommand{\file}[1]{{\color{Firebrick4}\texttt{`#1'}}}
-\newcommand{\multiple}{{\color{Orange3}\textsl{multiple}}}
-
-
-\newcommand{\atoms}  {{\color{DarkOrchid4}\textsc{atoms}}}
-\newcommand{\feff}   {{\color{DarkOrchid4}\textsc{feff}}}
-\newcommand{\ifeffit}{{\color{DarkOrchid4}\textsc{ifeffit}}}
-\newcommand{\athena} {{\color{DarkOrchid4}\textsc{athena}}}
-\newcommand{\artemis}{{\color{DarkOrchid4}\textsc{artemis}}}
-
-\newcommand{\ybco}{YBa$_2$Cu$_3$O$_7$}
-\newcommand{\eto}{EuTiO$_3$}
-
-\renewenvironment<>{center}
-{\begin{actionenv}#1\begin{originalcenter}}
-{\end{originalcenter}\end{actionenv}}
-
-
+\include{header}
 
 \mode<presentation>
-%\mode<beamer>
 
 \title{Modeling non-crystalline samples}
 \include{author}
-
-\date[NSLS2010]{Advanced EXAFS Data Analysis workshop 2011\\
-  Universiteit Gent, January 12--14, 2011}
-
-%\logo{\includegraphics[width=1.0cm]{images/Artemis.png}}
+\include{date}
+%\date[NSLS2010]{Advanced EXAFS Data Analysis workshop 2011\\
+%  Universiteit Gent, January 12--14, 2011}
 
 \begin{document}
-\begin{frame}
-  \titlepage
-\end{frame}
+\maketitle
 \include{copyright}
-
-%\mode<handout>{\frame{\tableofcontents}}
-
-%% \section*{Outline}
-%% \begin{frame}
-%%   \tableofcontents
-%% \end{frame}
 
 
 \section[Introduction]{Introduction}
@@ -321,14 +263,6 @@ guess parameters:
     \textit{Any volunteers?}
   \end{alertblock}
 \end{frame}
-
-%   \begin{itemize}
-%   \item Molecule formats
-%   \item methyl tin chloride
-%   \item molecule to feff.inp
-%   \item show fit to methyl tin data
-%   \item boundary atoms
-%   \end{itemize}
 
 \section{Sorbed Uranyl Acetate}
 \label{sec:uace}

@@ -1,31 +1,6 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
-\usetheme{progressbar}
-%\usecolortheme[named=Purple4]{structure}
-\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
+\include{header}
 
-\setbeamertemplate{navigation symbols}{}
-
-\usepackage{iwona} 
-
-\usepackage{alltt}
-\usepackage{amsmath,amsfonts, amssymb, amscd}
-\usepackage{hyperref}
-%% \hypersetup{bookmarks=true,
-%%             pdftitle=A Practical Introduction to Multiple Scattering Theory,
-%%             pdfauthor=Bruce Ravel,
-%%             urlcolor=midnightblue,
-%%             linkcolor=darkorchid
-%%            }
-
-\usepackage{calc}
-\usepackage[overlay,absolute]{textpos}
-\TPGrid[5mm,5mm]{20}{20}
-
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
-
-\newcommand{\chik}{$\chi(k)$}
-\newcommand{\chir}{$|\tilde{\chi}(R)|$}
 
 \newcommand{\eto}{EuTiO$_3$}
 \newcommand{\pto}{PbTiO$_3$}
@@ -35,10 +10,10 @@
 \newcommand{\nicn}{$\big[$Ni(CN)$_4\big]$$^{2-}$}
 \newcommand{\knicn}{K$_2$Ni(CN)$_4$}
 
-\newcommand{\GMS}{\mathbb{G}}
-\newcommand{\Gnot}{\mathsf{G^0}}
-\newcommand{\tmat}{\mathsf{t}}
-\newcommand{\boldr}{\boldsymbol{r}}
+% \newcommand{\GMS}{\mathbb{G}}
+% \newcommand{\Gnot}{\mathsf{G^0}}
+% \newcommand{\tmat}{\mathsf{t}}
+% \newcommand{\boldr}{\boldsymbol{r}}
 
 \include{scatter}
 
@@ -46,25 +21,14 @@
 
 \title{A Practical Introduction to Multiple Scattering Theory}
 \include{author}
-
 \date[APS EXAFS 07]{2007 APS EXAFS Summer School\\July 23-27, 2007\\~}
 
 \begin{document}
-\begin{frame}
-  \titlepage
-\end{frame}
+\maketitle
 \include{copyright}
 
 
-
-% \section*{Outline}
-% \begin{frame}
-%   \tableofcontents
-% \end{frame}
-
-
 \section{Real-space multiple scattering}
-%\include{intro}
 
 \begin{frame}
   \frametitle{What I hope you take away from this talk}
@@ -104,11 +68,6 @@
 
 \include{simple_picture}
 \include{firstprinciples}
-
-
-
-
-%\include{cluster}
 
 
 \newcommand{\FeLeft}{0.60\linewidth}
@@ -240,14 +199,6 @@
 \end{frame}
 
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
-
-
-
-
 \section[XANES]{XANES Calculations}
 \subsection[Convergence of XANES]{\pto: Convergence of Full Multiple Scattering}
 
@@ -269,13 +220,59 @@
 
 
 \section[Resources]{Resources}
-\include{resources}
 
+\begin{frame}
+  \frametitle{Resources}
+  \begin{itemize}
+  \item Websites
+    \begin{itemize}
+    \item \footnotesize
+      \href{http://xafs.org}{\color{Purple4}\texttt{http://xafs.org}}
+      offers tutorials, links to resources, information about upcoming
+      workshops, and much more
+    \item \textsc{ifeffit} homepage:
+      \href{http://cars9.uchicago.edu/iffwiki/About}
+      {\color{Purple4}\texttt{http://cars9.uchicago.edu/iffwiki/About}}
+    \item \textsc{feff} homepage:
+      \href{http://feff.phys.washington.edu}
+      {\color{Purple4}\texttt{http://feff.phys.washington.edu}}
+    \item \textsc{athena} and \textsc{artemis}:
+      \href{http://cars9.uchicago.edu/~ravel/software/}
+      {\color{Purple4}\texttt{http://cars9.uchicago.edu/\char126ravel/software/}}
+    \end{itemize}
+  \item Journal articles
+    \begin{itemize}
+    \item \footnotesize The \textsc{feff} reference: Rehr and Albers review article:   J.J.~Rehr and R.C.~Albers,
+      Rev.\ Mod.\ Phys.\ \textbf{72}:3 (2000) pp.\ 621--654
+    \item Two excellent references on multiple scattering theory:
+      J.L.~Beeby, Proc.\ Royal Soc.\ \textbf{A274} (1964) pp.\
+      309--317 and \textbf{A279} (1967) pp.\ 82--97.
+    \end{itemize}
+  \item Other Software
+    \begin{itemize}
+    \item \footnotesize XANES calculations using Mulitplets:
+      \href{http://xafs.org/Software/TtMultiplet}
+      {\color{Purple4}\texttt{http://xafs.org/Software/TtMultiplet}}
+    \item XANES calculations by finite difference method:
+      \href{http://xafs.org/Software/FDMNES}
+      {\color{Purple4}\texttt{http://xafs.org/Software/FDMNES}}
+    \item Band structure: The work of Eric Shirley
+      (\href{http://physics.nist.gov/Divisions/Div844/facilities/theorModel/tmopm.html}
+      {\color{Purple4}\tiny \texttt{http://physics.nist.gov/Divisions/Div844/facilities/theorModel/tmopm.html}}) and
+      Aleksi Soininen, Helsinki University
+    \item XANES fitting: \textsc{FitIt} (\href{http://xafs.org/Software/FitIt}{\color{Purple4}\texttt{http://xafs.org/Software/FitIt}})
+      and \textsc{mxan} (PRB \textbf{65} (2002) 174205).
+    \end{itemize}
+  \end{itemize}
+\end{frame}
 
 
 \end{document}
 
+
 %%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
 %%% End:

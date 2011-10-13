@@ -1,30 +1,9 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
-\usetheme{progressbar}
-\progressbaroptions{headline=sections,titlepage=normal,frametitle=normal}
-\setbeamertemplate{navigation symbols}{}
-\usepackage{iwona}
-
-\usepackage{alltt}
-\usepackage{amsmath,amsfonts, amssymb, amscd}
-\usepackage{hyperref}
-\usepackage{setspace}
-
-\usepackage[overlay,absolute]{textpos}
-\TPGrid[5mm,5mm]{20}{20}
-
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
-
-\newcommand{\chik}{$\chi(k)$}
-\newcommand{\chir}{$|\tilde{\chi}(R)|$}
-
-
-\newcommand{\file}[1]{{\color{Firebrick4}\texttt{`#1'}}}
+\include{header}
 
 \mode<presentation>
 
 \definecolor{ExampleGreen}{rgb}{0,0.6,0} 
-
 
 \title{The XAFS Experiment}
 \subtitle[]{Instrumentation, Sample Preparation, and Experiment
@@ -35,21 +14,9 @@
   X-ray Absorption Spectroscopy\\Synchrotron Light Research
   Institute\\Nakhon Ratchasima, Thailand \\29--31 July 2010}
 
-%\logo{\includegraphics[width=1.0cm]{images/ankaxas_black.jpg}}
-
-
 \begin{document}
-\begin{frame}
-  \titlepage
-\end{frame}
+\maketitle
 \include{copyright}
-
-
-
-%% \section*{Outline}
-%% \begin{frame}
-%%   \tableofcontents
-%% \end{frame}
 
 \section{The synchrotron}
 \label{sec:synch}
@@ -1280,6 +1247,8 @@
 \end{document}
 
 %%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
 %%% End:
