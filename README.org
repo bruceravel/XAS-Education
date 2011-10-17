@@ -29,6 +29,7 @@ These folders contain the XAS and structural data used in the talks.
 
  | *folder*          | *contents*                                                             |
  |-------------------+------------------------------------------------------------------------|
+ | Au+Cyanobacteria  | LCF example using gold(III) chloride reduced to gold metal             |
  | Cr standards      | Cr 3+ and 6+ oxide standards                                           |
  | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
  | EuTiO3            | Data at several temperatures, Ti K, and Eu L3 edges                    |
