@@ -1,0 +1,20 @@
+* Peak fitting example
+
+** Data
+
+The file ~tipb.prj~ contains a single scan of PbTiO3 at room
+temperature and at the Ti K edge.
+
+** First stab at peak fitting
+
+After importing the Athena project file and verifying that the
+nromalization is reasonable:
+
+ 1. Set the fitting range to [-25:5]
+ 2. Create an arctangent, set its center to 4975.58
+ 3. Create a Gaussian, set its center to 4969.71
+ 4. Create a Lorentzian, set its center to 4966.20
+ 5. Click the fit button
+ 6. Try expanding the fit to include the peak at 4978.9
+
+How might the fit be further improved?

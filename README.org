@@ -40,6 +40,7 @@ These folders contain the XAS and structural data used in the talks.
  | Germanium         | Crystalline and amorphous Ge data + crystal data                       |
  | HgDNA             | merged scans of data and control for HgDNA example, p.7 ATEA           |
  | Methyltin         | Monomethyl tin trichloride + dimethyl tin dichloride + structure data  |
+ | PbTiO3            | Ti K edge of PbTiO3 as a peak fitting example                          |
  | Self Absorption   | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite |
  | Uranyl on Biomass | uranyl acetate in equilibrium with biomass                             |
 
