@@ -1,0 +1,58 @@
+* Linear Combination Fitting example
+
+This folder contains files related to the example of linear
+combination analysis that is used in several of the lectures.  
+
+These data and the analysis shown were published as 
+
+M. Lengke et el., /Mechanisms of Gold Bioaccumulation by Filamentous
+Cyanobacteria from Gold(III)-Chloride Complex/, Environ. Sci. Technol.
+*40*:20 p. 6304-6309. (2006), [[http://dx.doi.org/10.1021/es061040r][DOI:10.1021/es061040r]]
+
+
+** The files in the folder
+
+ + cyanobacteria.prj: An Athena project file containing data on
+   various gold standards and a selection of the time series data
+
+ + LCF_demo.pdf: pages 21-23 extracted from the Introduction to Inner
+   Shell Spectroscopy talk, which provide an outline of the LCF
+   analysis of these data.
+
+** The data
+
+   1. 0.12: Time series data at 0.12 hours after the begining of the
+      reaction.  The time is taken as the start time of the scan.
+   2. 2.42: 2.42 hours
+   3. 4.73: 4.73 hours
+   4. 7.03: 7.03 hours
+   5. 9.33: 9.33 hours
+   6. 20: 20 hours
+   7. 33: 33 hours
+   8. 720: 1 week.
+   9. Au foil: gold foil standard
+   10. Au1 Cl: powder gold(I) chloride standard, mixed with BN and
+       cold pressed into a pellet
+   11. Au3 Cl aq: aqueous gold(III) chloride standard
+   12. Au hydroxide: aqueous gold hydroxide at pH=11, gold oxide
+       reacted with sodium hydroxide
+   13. Au cyanide: powdered gold cyanide
+   14. Au thiocyanide: powdered gold thiocyanide
+   15. Au sulphide: powdered gold(I) sulfide, prepped in a glove box
+   16. Au thiosulphate aq.: gold(I) thiosulphate in water
+   17. Au thiomalate aq.: powdered gold(I) thiomalate
+
+** Things to try
+
+ + Pick an intermeidate time step, say the 7.03 hour sample.  Fit by
+   hand with Au foil and Au(III) chloride, evaluate fit quality
+ + Add the various sulfur-bearing species.  How do these improve the
+   fit?
+ + Try combinatorial fitting.  What gives the best answer?  How
+   different are the 3 or 4 top rated answers?
+ + Did any of the top answers include the hydroxide?  The samples were
+   acidic from the gold(II) chloride, so this ph=11 species certainly
+   was not present?  What does it mean if the fit wants to include the
+   hydroxide as a standard?
+ + Once you pick a favorite model, try a fit sequence to generate the
+   time sequence of component proportions.

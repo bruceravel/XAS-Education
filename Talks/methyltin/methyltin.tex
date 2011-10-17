@@ -154,9 +154,9 @@
 \tiny 
 \alert{Independent points          : 7.426757813
 Number of variables         : 6}
-Chi-square                  : 3016.609652735
-Reduced chi-square          : 2114.310940726
-R-factor                    : 0.007830860
+Chi-square                  : 10523.027205554
+Reduced chi-square          : 7375.482449341
+R-factor                    : 0.012603127   
          
 guess parameters:
   \alert{amp           =   3.17612332    # +/-   1.20737984}
@@ -287,10 +287,16 @@ Correlations between variables:
 
 \begin{frame}
   \frametitle{What's next?}
+  \small
   \begin{enumerate}
   \item Could the Fourier transform range be longer?  Look at the k123
     plot for each data set.  (I changed the k-range before making the
     plot on the previous page.)
+  \item Could the fitting range be longer?  Well, there is not much
+    signal beyond the first shell above the noise level.  Simply
+    expanding the R-range to make $N_{idp}$ larger without actually
+    including paths in that contribute spectral weight in the extended
+    range is cheating.
   \item Is the assumption about the bonds in the two samples valid?
     How would you go about testing that assumption?
   \item Trimethyltin monochloride would have been a useful
