@@ -15,6 +15,7 @@ PDF files of the talks can be found in the [[https://github.com/bruceravel/XAS-E
  |---------------+---------------------------------------------------------------------------------|
  | ATEA          | Advanced Topics In EXAFS Analysis                                               |
  | Experiment    | The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design |
+ | FeS2          | The discussion following an Artemis demonstration                               |
  | i2x           | Interpreting XANES Data                                                         |
  | iiss          | Introduction to Inner Shell Spectroscopies                                      |
  | methyltin     | An Artemis example, supplement to a lecture/demo                                |
