@@ -35,14 +35,14 @@
     data.  (They were taken from
     \href{http://cars9.uchicago.edu/~newville/ModelLib/search.html}
     {\color{Blue4}an on-line XAS data library}.$^2$) If the sample was
-    not homgeneous, that would attenuate the amplitude$^3$ by the
+    not homogeneous, that would attenuate the amplitude$^3$ by the
     ``pinhole efffect''.
   \item Again, without knowing the provenance, I cannot comment on the
     linearity of the detectors or any other aspect of the measurement.
   \end{enumerate}
 
   \begin{conclusion}
-    A result of 0.7 for amplitude seems acceptable.
+    A result of $\sim0.7$ for amplitude seems acceptable.
   \end{conclusion}
 
   \medskip
@@ -174,7 +174,7 @@
     \tiny
   \item E.A.\ Hudson et al., \textit{Polarized x-ray-absorption
       spectroscopy of the uranyl ion: Comparison of experiment and
-      theory}, Phys.\ Rev.\ B \textbf{54} (1996) pp.\ 156-165
+      theory},\\ Phys.\ Rev.\ B \textbf{54} (1996) pp.\ 156-165
     \href{http://dx.doi.org/10.1103/PhysRevB.54.156}
     {\color{Blue4}\texttt{DOI:10.1103/PhysRevB.54.156}}
   \end{enumerate}
@@ -236,7 +236,7 @@
 
   \begin{itemize}
     \footnotesize%
-  \item The distance between \textit{any two atoms} is some
+  \item The distance between \textit{any two atoms in a cubic crystal} is some
     geometrical factor multiplied by the lattice constant.  That
     factor depends on the positions of the atoms in the unit cell, but
     is a pure number.
@@ -246,19 +246,36 @@
     unit, which is reasonable for a cubic lattice that does not
     undergo a phase transition.  So $a=(1+\alpha)*a_0$.
   \end{itemize}
-  \begin{align}
-    d_{ij} =& d_{eff}(i,j) + \Delta d(i,j)\notag\\
-    =& C_{ij} \cdot a \notag\\
-    =& C_{ij} \cdot (1+\alpha)\cdot a_0 \notag\\
-    =& C_{ij}\cdot a_0 + C_{ij}\cdot \alpha\cdot a_0\notag\\
-    \therefore \> \Delta d(i,j) =& C_{ij}\cdot \alpha\cdot a_0\notag\\
-    =& \alpha\cdot d_{eff}(i,j)\notag
-  \end{align}
+  \begin{columns}[T]
+    \begin{column}{0.15\linewidth}
+      ~
+    \end{column}
+    \begin{column}{0.35\linewidth}
+      \begin{align}
+        d_{ij} =& d_{eff}(i,j) + \Delta d(i,j)\notag\\
+        =& C_{ij} \cdot a \notag\\
+        =& C_{ij} \cdot (1+\alpha)\cdot a_0 \notag\\
+        =& C_{ij}\cdot a_0 + C_{ij}\cdot \alpha\cdot a_0\notag
+      \end{align}
+    \end{column}
+    \begin{column}{0.35\linewidth}
+      \begin{align}
+        \therefore \> \Delta d(i,j) =& C_{ij}\cdot \alpha\cdot a_0\notag\\
+        =& \alpha\cdot d_{eff}(i,j)\notag
+      \end{align}
+    \end{column}
+    \begin{column}{0.15\linewidth}
+      ~
+    \end{column}
+  \end{columns}
   \begin{conclusion}
     $\alpha\cdot d_{eff}$ works for all legs of any SS or MS path in a
     cubic crystal (if there are no internal degrees of freedom). The
     $R$ of a path is the sum of $d$ for each leg, thus $\Delta R$ for
-    a path is the sum of $\Delta d$ for each leg.
+    a path is the sum of $\Delta d$ for each leg.\\[-5.5ex]
+    \begin{flushright}
+      \alert{This trick is \textbf{only} valid for a cubic crystal.}
+    \end{flushright}
   \end{conclusion}
 \end{frame}
 
@@ -306,11 +323,11 @@
   \small
   \begin{remember}
     Happiness is a semantic parameter and should NEVER be reported in
-    a publication -- NEVER!
+    a publication -- \alert{NEVER!}
   \end{remember}
   We have decades of knowledge of how the parameters of an EXAFS fit
   should behave.  ``Happiness'' attempts to encode that general
-  knowledge into a single, non-statistical, entirely semantic parameter.
+  knowledge into a single, \emph{non-statistical}, entirely semantic parameter.
   \begin{itemize}
   \item The $\mathcal{R}$-factor should be small.  An
     $\mathcal{R}$-factor below 0.02 gives no penalty. Above that, the
