@@ -3,7 +3,7 @@
 \newcommand{\tmat}{\mathsf{t}}
 \newcommand{\boldr}{\boldsymbol{r}}
 
-\begin{frame}
+\begin{frame}[label=fgr]
   \frametitle{Computing X-ray Absorption from First Principles}
   \begin{columns}
     \begin{column}{0.75\linewidth}
@@ -92,32 +92,30 @@
 \end{frame}
 
 \begin{frame}{Scattering Paths}
-  \begin{block}{Full multiple scattering (XANES)}
-    Solving {\color{DarkOrchid4} ${\color{Green4}\GMS} = \big(1 -
-      \Gnot \tmat\big)^{-1} \, \Gnot$} considers {\LARGE ALL} paths
-    within some cluster of atoms:
-  \end{block}
+  \textbf{Full multiple scattering (XANES):} Solving {\color{DarkOrchid4}
+    ${\color{Green4}\GMS} = \big(1 - \Gnot \tmat\big)^{-1} \, \Gnot$}
+  considers {\LARGE ALL} paths within some cluster of atoms:
   \begin{columns}[T]
-    \begin{column}{0.2\linewidth}
-      ~
+    \begin{column}{0.33\linewidth}
+      \begin{center}
+        {\color{DarkOrchid4}single scattering path}\\
+        {\color{blue}\SS}\\
+        (2 legs)
+      \end{center}
     \end{column}
-    \begin{column}{0.35\linewidth}
-      {\color{DarkOrchid4}single scattering path}\\
-      {\color{DarkOrchid4}double scattering path}\\
-      {\color{DarkOrchid4}triple scattering path}
+    \begin{column}{0.33\linewidth}
+      \begin{center}
+        {\color{DarkOrchid4}double scattering path}\\
+        {\color{blue}\FDS}\\
+        (3 legs)
+      \end{center}
     \end{column}
-    \begin{column}{0.1\linewidth}
-      {\color{blue}\SS}\\
-      ~\\
-      ~
-    \end{column}
-    \begin{column}{0.15\linewidth}
-      (2 legs)\\
-      (3 legs)\\
-      (4 legs)
-    \end{column}
-    \begin{column}{0.2\linewidth}
-      ~
+    \begin{column}{0.33\linewidth}
+      \begin{center}
+        {\color{DarkOrchid4}triple scattering path}\\
+        {\color{blue}\FTS}\\
+        (4 legs)
+      \end{center}
     \end{column}
   \end{columns}
 

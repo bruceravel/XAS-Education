@@ -1,8 +1,8 @@
-%% Time-stamp: <30-Jun-2007 14:37:50 bruce>
+%% Time-stamp: <2011-10-26 17:01:33 bruce>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%  Include file for
 %%%    A Practical Introduction to Multiple Scattering Theory
-%%%                            Copyright (C) 2004-2005 Bruce Ravel
+%%%                            Copyright (C) 2004-2005, 2011 Bruce Ravel
 %%%                            <bravel@anl.gov>
 %%%                            http://feff.phys.washington.edu/~ravel
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,38 +86,68 @@
 
 %% focussed DS
 \def  \FDS {{
-  \begin{minipage}[h][1truecm][c]{8truecm}
-  \begin{picture}(250,60)(0,0)
+  \begin{picture}(80,26)(0,0)
     \linethickness{1pt}
-    \qbezier(12.5,20)(62.5,40)(125,20)
-    \qbezier(125,20)(187.5,40)(225.5,20)
-    \qbezier(12.5,20)(112.5,0)(225.5,20)
-    {\color{firebrick4}
-    \put(12.5,20){\circle*{13}}}
-    {\color{blue}
-    \put(125,20){\circle*{13}}
-    \put(225.5,20){\circle*{13}}}
+    \qbezier(8,13)(20,26)(40,13)
+    \qbezier(8,13)(40,0)(72,13)
+    \qbezier(40,13)(56,26)(72,13)
+    {\color{red}
+    \put(8,13){\circle*{9}}}
+    {\color{Gold2}
+    \put(36,13){\circle*{9}}}
+    {\color{Gold2}
+    \put(68,13){\circle*{9}}}
   \end{picture}
-  \end{minipage}
 }}
 
 %% focussed TS
 \def  \FTS {{
-  \begin{minipage}[h][1truecm][c]{8truecm}
-  \begin{picture}(250,60)(0,0)
+  \begin{picture}(80,26)(0,0)
     \linethickness{1pt}
-    \qbezier(12.5,20)(62.5,40)(125,20)
-    \qbezier(125,20)(187.5,40)(225.5,20)
-    \qbezier(12.5,20)(62.5,0)(125,20)
-    \qbezier(125,20)(187.5,0)(225.5,20)
-    {\color{firebrick4}
-    \put(12.5,20){\circle*{13}}}
-    {\color{blue}
-    \put(125,20){\circle*{13}}
-    \put(225.5,20){\circle*{13}}}
+    \qbezier(8,13)(20,26)(40,13)
+    \qbezier(40,13)(56,26)(72,13)
+    \qbezier(8,13)(20,0)(40,13)
+    \qbezier(40,13)(56,0)(72,13)
+    {\color{red}
+    \put(8,13){\circle*{9}}}
+    {\color{Gold2}
+    \put(36,13){\circle*{9}}}
+    {\color{Gold2}
+    \put(68,13){\circle*{9}}}
   \end{picture}
-  \end{minipage}
 }}
+
+% %  \begin{minipage}[h][1truecm][c]{8truecm}
+%   \begin{picture}(250,60)(0,0)
+%     \linethickness{1pt}
+%     \qbezier(12.5,20)(62.5,40)(125,20)
+%     \qbezier(125,20)(187.5,40)(225.5,20)
+%     \qbezier(12.5,20)(112.5,0)(225.5,20)
+%     {\color{Firebrick4}
+%     \put(12.5,20){\circle*{13}}}
+%     {\color{blue}
+%     \put(125,20){\circle*{13}}
+%     \put(225.5,20){\circle*{13}}}
+%   \end{picture}
+% %  \end{minipage}
+
+% %% focussed TS
+% \def  \FTS {{
+% %  \begin{minipage}[h][1truecm][c]{8truecm}
+%   \begin{picture}(250,60)(0,0)
+%     \linethickness{1pt}
+%     \qbezier(12.5,20)(62.5,40)(125,20)
+%     \qbezier(125,20)(187.5,40)(225.5,20)
+%     \qbezier(12.5,20)(62.5,0)(125,20)
+%     \qbezier(125,20)(187.5,0)(225.5,20)
+%     {\color{Firebrick4}
+%     \put(12.5,20){\circle*{13}}}
+%     {\color{blue}
+%     \put(125,20){\circle*{13}}
+%     \put(225.5,20){\circle*{13}}}
+%   \end{picture}
+% %  \end{minipage}
+% }}
 
 
 %%% Local Variables:
