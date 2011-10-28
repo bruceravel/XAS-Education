@@ -213,10 +213,12 @@
 
 \section{EXAFS equation}
 
-\againframe{fgr}
+%\againframe{fgr}
 
 \begin{frame}
   \frametitle{Fermi's Golden Rule revisited}
+  The absorption is the dipole mediated transition from the initial
+  state of the deep-core electron to its final state:
   \begin{equation}
     \mu(E) \sim \big|\langle f| \mathcal{H}|i\rangle\big|^2
     \notag
@@ -240,7 +242,7 @@
   \end{block}
   \begin{textblock*}{0.6\linewidth}(0pt,19\TPVertModule)%
     \tiny%
-    The derivation on the following N pages is similar to an example by Matt
+    The derivation on the following N pages is similar to one by Matt
     Newville
     \href{http://xafs.org/Tutorials?action=AttachFile&do=view&target=Newville_Intro.pdf}
     {\color{Blue4}\texttt{http://xafs.org/Tutorials?action=AttachFile\&do=view\&target=Newville\_Intro.pdf}}
@@ -251,16 +253,20 @@
 \newtheorem{conclusion}[theorem]{Conclusion}
 \begin{frame}
   \frametitle{The fine structure}
+  With $|f\rangle = |f_0+\Delta f\rangle$
   \begin{align}
     \mu(E) \sim&\, \big|\langle \alert{f}| \mathcal{H}|i\rangle\big|^2
     \notag\\
     \sim&\, \big|\langle \alert{f_0}| \mathcal{H}|i\rangle\big|^2
     \big[
-    1 + A(E)\big|\langle \alert{\Delta f}| \mathcal{H}|i\rangle\big|
+    1 + A(E)
+    \big|\langle \alert{\Delta f}| \mathcal{H}|i\rangle\big|
     + C.C.
-    \big]\notag\\[2ex]
-    \mu(E) =&\, \mu_0(E) \cdot (1+\chi(E))\notag\\[2ex]
-    \therefore\> \chi(E) \propto&\,\Big(\big|\langle \alert{\Delta f}|
+    \big]\notag\\
+    \intertext{Remember that}
+    \mu(E) =&\, \mu_0(E) \cdot (1+\chi(E))\notag\\
+    \intertext{Therefore}
+    \chi(E) \propto&\,\Big(\big|\langle \alert{\Delta f}|
     \mathcal{H}|i\rangle\big| + C.C.\Big)\notag
   \end{align}
 
@@ -268,6 +274,14 @@
     The XAS fine structure, $\chi(E)$, is caused by the scattering from
     the neighboring atoms.
   \end{conclusion}
+
+  \begin{textblock*}{0.6\linewidth}(0pt,19.25\TPVertModule)%
+    \tiny%
+    $A(E)$ contains a bunch of stuff having nothing to do with the
+    scattering. $A(E) = \langle
+      i|\mathcal{H}|\alert{f_0}\rangle^\ast / \big|\langle
+      \alert{f_0}| \mathcal{H}|i\rangle\big|^2$
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
@@ -290,7 +304,7 @@
 
   Energy and photoelectron wavenumber are related by
   \begin{equation}
-    k = \sqrt{\frac{2m_e(E-E_0)}{\hbar^2}} \simeq \frac{\sqrt{E-E_0}}{3.81}\notag
+    k = \sqrt{2m_e(E-E_0)/\hbar^2} \simeq \alert{\sqrt{(E-E_0)/3.81}}\notag
   \end{equation}
 
   So, in terms of $k$
