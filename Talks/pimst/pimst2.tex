@@ -26,7 +26,10 @@
 \begin{document}
 \maketitle
 \include{copyright}
-
+\begin{frame}
+  \frametitle{Acknowledgements}
+  Matt
+\end{frame}
 
 \section{Real-space multiple scattering}
 
@@ -214,15 +217,130 @@
 
 \begin{frame}
   \frametitle{Fermi's Golden Rule revisited}
-  
+  \begin{equation}
+    \mu(E) \sim \big|\langle f| \mathcal{H}|i\rangle\big|^2
+    \notag
+  \end{equation}
+  \begin{description}
+  \item[The initial state $|i\rangle$] This is the deep core, atomic
+    state which is unaffected by the surroundings
+  \item[The excitation $\mathcal{H}$] The dipole operator, i.e.\ the
+    incident photon
+  \item[The final state $|f\rangle$] This high-lying or continuum
+    state \alert{is} affected by the surroundings
+  \end{description}
+  \begin{block}{Consider $|f\rangle = |f_0+\Delta f\rangle$}
+    \begin{itemize}
+    \item $|f_0\rangle$ is the final state in the presence of the
+      surrounding atoms but \alert{without} any scattering of the
+      photoelectron
+    \item $\Delta f$is the purturbation to the final state cause by
+      the scattering of the photoelectron from the surrounding atoms
+    \end{itemize}
+  \end{block}
+  \begin{textblock*}{0.6\linewidth}(0pt,19\TPVertModule)%
+    \tiny%
+    The derivation on the following N pages is similar to an example by Matt
+    Newville
+    \href{http://xafs.org/Tutorials?action=AttachFile&do=view&target=Newville_Intro.pdf}
+    {\color{Blue4}\texttt{http://xafs.org/Tutorials?action=AttachFile\&do=view\&target=Newville\_Intro.pdf}}
+  \end{textblock*}
 \end{frame}
 
+
+\newtheorem{conclusion}[theorem]{Conclusion}
+\begin{frame}
+  \frametitle{The fine structure}
+  \begin{align}
+    \mu(E) \sim&\, \big|\langle \alert{f}| \mathcal{H}|i\rangle\big|^2
+    \notag\\
+    \sim&\, \big|\langle \alert{f_0}| \mathcal{H}|i\rangle\big|^2
+    \big[
+    1 + A(E)\big|\langle \alert{\Delta f}| \mathcal{H}|i\rangle\big|
+    + C.C.
+    \big]\notag\\[2ex]
+    \mu(E) =&\, \mu_0(E) \cdot (1+\chi(E))\notag\\[2ex]
+    \therefore\> \chi(E) \propto&\,\Big(\big|\langle \alert{\Delta f}|
+    \mathcal{H}|i\rangle\big| + C.C.\Big)\notag
+  \end{align}
+
+  \begin{conclusion}
+    The XAS fine structure, $\chi(E)$, is caused by the scattering from
+    the neighboring atoms.
+  \end{conclusion}
+\end{frame}
 
 \begin{frame}
-  \frametitle{Simple picture}
+  \frametitle{Heuristic derivation of the EXAFS equation}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      The photoelectron:
+      \begin{itemize}
+      \item propagates from absorber to scatterer
+      \item scatters from the neighbor
+      \item propagates from scatterer to absorber
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+        \includegraphics[width=\linewidth]{images/circles.png}      
+    \end{column}
+  \end{columns}
+  
+  \bigskip
+
+  Energy and photoelectron wavenumber are related by
+  \begin{equation}
+    k = \sqrt{\frac{2m_e(E-E_0)}{\hbar^2}} \simeq \frac{\sqrt{E-E_0}}{3.81}\notag
+  \end{equation}
+
+  So, in terms of $k$
+  \begin{equation}
+    \chi(k) \sim \frac{e^{ikr}}{kr} \cdot
+    2kF(k)e^{\phi(k)} \cdot
+    \frac{e^{ikr}}{kr} + C.C.
+    \notag
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The EXAFS equation in its simplest form}
+  We can now simplify the equation to
+  \begin{equation}
+    \chi(k) \propto \frac{F(k)}{2kR^2}\sin\big(2kR+\phi(k)\big)
+    \notag
+  \end{equation}
+  This describes the signal from a single atom at a distance $R$.
+
+  \medskip
+
+  If we consider the contribution from $N$ atoms at distance $R$
+  (i.e.\ a ``shell'' of atoms):
+  \begin{equation}
+    \chi(k) \propto \frac{NF(k)}{2kR^2}\sin\big(2kR+\phi(k)\big)
+    \notag
+  \end{equation}
+  On the following pages, we consider
+  \begin{enumerate}
+  \item the amplitude reduction term $S_0^2$
+  \item the mean free path term $\lambda$
+  \item disorder via the mean square displacement term $\sigma^2$
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The amplitude reduction factor}
   
 \end{frame}
 
+\begin{frame}
+  \frametitle{The mean free path}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{The mean square displacement (disorder)}
+  
+\end{frame}
 
 \section[EXAFS]{Using FEFF to Solve EXAFS Problems}
 \subsection[\textsc{feff} input]{Preparing input for \textsc{feff}}
