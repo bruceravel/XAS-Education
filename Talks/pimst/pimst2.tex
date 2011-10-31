@@ -1,4 +1,5 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
+%\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
 \include{header}
 
 \newtheorem{conclusion}[theorem]{Conclusion}
@@ -30,7 +31,51 @@
 \include{copyright}
 \begin{frame}
   \frametitle{Acknowledgements}
-  Matt
+  \footnotesize
+  \begin{tabular}{cc}
+    \begin{minipage}{0.1\linewidth}
+      \includegraphics[width=\linewidth]{mugs/matt.jpg}
+    \end{minipage}&
+    \begin{minipage}{0.7\linewidth}
+      Matt Newville, author of {\ifeffit} and author of a
+      presentation which covers similar material to this talk.
+    \end{minipage} \\
+    \begin{minipage}{0.1\linewidth}
+      \includegraphics[width=\linewidth]{mugs/john.jpg}
+    \end{minipage}&
+    \begin{minipage}{0.7\linewidth}
+      John Rehr and his group, authors of {\feff}.
+    \end{minipage} \\
+    \begin{minipage}{0.1\linewidth}
+      \includegraphics[width=\linewidth]{mugs/ed.jpg}
+    \end{minipage}&
+    \begin{minipage}{0.7\linewidth}
+      Ed Stern, for teaching us all so well and for getting all this XAS
+      stuff started in the first place.
+    \end{minipage}
+  \end{tabular}
+
+  \medskip
+
+  \begin{itemize}
+    \footnotesize
+  \item The many users of my software: without years of feedback and
+    encouragement, my codes would suck way more than they do
+  \item The folks who make the great software I use to write my codes:
+    \href{http://www.perl.org}{\color{Blue4}Perl},
+    \href{http://wxperl.sourceforge.net/}{\color{Blue4}wxPerl},
+    \href{http://www.gnu.org/software/emacs/}{\color{Blue4}Emacs},
+    \href{http://ecb.sourceforge.net}{\color{Blue4}The Emacs Code Browser},
+    \href{http://git-scm.com/}{\color{Blue4}Git},
+    \href{http://github.com/}{\color{Blue4}GitHub}
+  \item The folks who make the great software used to write this talk:
+    \href{http://tug.ctan.org}{\color{Blue4}\LaTeX},
+    \href{http://latex-beamer.sourceforge.net}{\color{Blue4}Beamer},
+    \href{http://avogadro.sourceforge.net}{\color{Blue4}Avogadro},
+    \href{http://inkscape.net}{\color{Blue4}Inkscape},
+    \href{http://www.gimp.org}{\color{Blue4}The Gimp},
+    \href{http://www.gnuplot.info}{\color{Blue4}Gnuplot}
+  \end{itemize}
 \end{frame}
 
 \section{Introduction}
@@ -122,58 +167,58 @@
 \newcommand{\FePlot}{0.78\linewidth}
 
 \begin{frame}
-  \frametitle<1>{Iron metal: 1$^{\mathrm{st}}$ path, 1 shell }
-  \frametitle<2>{Iron metal: 2$^{\mathrm{nd}}$ path, 2 shells }
-  \frametitle<3>{Iron metal: 3$^{\mathrm{rd}}$ path, 1 shell }
-  \frametitle<4>{Iron metal: 4$^{\mathrm{th}}$ path, 2 shells }
-  \frametitle<5>{Iron metal: 5$^{\mathrm{th}}$ path, 3 shells }
-  \frametitle<6>{Iron metal: 8$^{\mathrm{th}}$ path, 4 shells }
+  \frametitle<1|handout:1>{Iron metal: 1$^{\mathrm{st}}$ path, 1 shell }
+  \frametitle<2|handout:2>{Iron metal: 2$^{\mathrm{nd}}$ path, 2 shells }
+  \frametitle<3|handout:3>{Iron metal: 3$^{\mathrm{rd}}$ path, 1 shell }
+  \frametitle<4|handout:4>{Iron metal: 4$^{\mathrm{th}}$ path, 2 shells }
+  \frametitle<5|handout:5>{Iron metal: 5$^{\mathrm{th}}$ path, 3 shells }
+  \frametitle<6|handout:6>{Iron metal: 8$^{\mathrm{th}}$ path, 4 shells }
 
   \begin{columns}[T]
     \begin{column}{0.60\linewidth}
-      \centering\includegraphics<1>[width=\FeCluster]{images/path1_diagram}
-      \centering\includegraphics<2>[width=\FeCluster]{images/path2_diagram}
-      \centering\includegraphics<3>[width=\FeCluster]{images/path3_diagram}
-      \centering\includegraphics<4>[width=\FeCluster]{images/path4_diagram}
-      \centering\includegraphics<5>[width=\FeCluster]{images/path5_diagram}
-      \centering\includegraphics<6>[width=\FeCluster]{images/path8_diagram}
+      \centering\includegraphics<1|handout:1>[width=\FeCluster]{images/path1_diagram}
+      \centering\includegraphics<2|handout:2>[width=\FeCluster]{images/path2_diagram}
+      \centering\includegraphics<3|handout:3>[width=\FeCluster]{images/path3_diagram}
+      \centering\includegraphics<4|handout:4>[width=\FeCluster]{images/path4_diagram}
+      \centering\includegraphics<5|handout:5>[width=\FeCluster]{images/path5_diagram}
+      \centering\includegraphics<6|handout:6>[width=\FeCluster]{images/path8_diagram}
       \begin{enumerate}
       \item %
-        \only<1>{The first path is much, but not all, of the first peak in {\chir}.}
-        \only<2>{The second path overlaps the first in {\chir}.}
-        \only<3>{This path contributes little to {\chir}.}
-        \only<4>{This path contributes little to {\chir}.}
-        \only<5>{This 3$^{\mathrm{rd}}$ shell SS path contributes most
+        \only<1|handout:1>{The first path is much, but not all, of the first peak in {\chir}.}
+        \only<2|handout:2>{The second path overlaps the first in {\chir}.}
+        \only<3|handout:3>{This path contributes little to {\chir}.}
+        \only<4|handout:4>{This path contributes little to {\chir}.}
+        \only<5|handout:5>{This 3$^{\mathrm{rd}}$ shell SS path contributes most
           of the spectral weight to the second peak of {\chir}.}
-        \only<6>{The 4$^{\mathrm{th}}$ shell SS path contributes to
+        \only<6|handout:6>{The 4$^{\mathrm{th}}$ shell SS path contributes to
           the third peak in {\chir}.}\\
-        {\color{Firebrick3}Degeneracy = \only<1>{8}\only<2>{6}\only<3>{24}\only<4>{48}\only<5>{12}\only<6>{24}}
+        {\color{Firebrick3}Degeneracy = \only<1|handout:1>{8}\only<2|handout:2>{6}\only<3|handout:3>{24}\only<4|handout:4>{48}\only<5|handout:5>{12}\only<6|handout:6>{24}}
       \item %
-        \only<1>{The first shell XANES calculation shows little of the
+        \only<1|handout:1>{The first shell XANES calculation shows little of the
           structure.}
-        \only<2>{The XANES calculation begins to show the structure of
+        \only<2|handout:2>{The XANES calculation begins to show the structure of
           the spectrum.}
-        \only<3>{The contribution from this path and all higher order
+        \only<3|handout:3>{The contribution from this path and all higher order
           paths scattering among these atoms is in the first shell
           XANES calculation.}
-        \only<4>{The contribution from this path and all higher order
+        \only<4|handout:4>{The contribution from this path and all higher order
           paths scattering among these the first two shells is in the
           second shell XANES calculation.}
-        \only<5>{The first peak after the edge in the XANES is
+        \only<5|handout:5>{The first peak after the edge in the XANES is
           sharpened considerably by the addition of this shell.}
-        \only<6>{Including this shell in the XANES calculation broadens
+        \only<6|handout:6>{Including this shell in the XANES calculation broadens
           the peak above the edge somewhat.  It also introduces the
           second shoulder.}
       \end{enumerate}
     \end{column}
     \begin{column}{0.38\linewidth}
       \centering
-      \includegraphics<1>[width=\FePlot]{images/path1}
-      \includegraphics<2>[width=\FePlot]{images/path2}
-      \includegraphics<3>[width=\FePlot]{images/path3}
-      \includegraphics<4>[width=\FePlot]{images/path4}
-      \includegraphics<5>[width=\FePlot]{images/path5}
-      \includegraphics<6>[width=\FePlot]{images/path8}
+      \includegraphics<1|handout:1>[width=\FePlot]{images/path1}
+      \includegraphics<2|handout:2>[width=\FePlot]{images/path2}
+      \includegraphics<3|handout:3>[width=\FePlot]{images/path3}
+      \includegraphics<4|handout:4>[width=\FePlot]{images/path4}
+      \includegraphics<5|handout:5>[width=\FePlot]{images/path5}
+      \includegraphics<6|handout:6>[width=\FePlot]{images/path8}
 
       \centering\color{Green4}\texttt{`feff000{\only<1>{1}\only<2>{2}\only<3>{3}\only<4>{4}\only<5>{5}\only<6>{8}}.dat'}
       %\only<2>{\color{Green4}\texttt{`feff0002.dat'}}
@@ -184,12 +229,12 @@
 
       \bigskip
 
-      \includegraphics<1>[width=\FePlot]{images/xanes_shell1}
-      \includegraphics<2>[width=\FePlot]{images/xanes_shell2}
-      \includegraphics<3>[width=\FePlot]{images/xanes_shell1}
-      \includegraphics<4>[width=\FePlot]{images/xanes_shell2}
-      \includegraphics<5>[width=\FePlot]{images/xanes_shell3}
-      \includegraphics<6>[width=\FePlot]{images/xanes_shell4}
+      \includegraphics<1|handout:1>[width=\FePlot]{images/xanes_shell1}
+      \includegraphics<2|handout:2>[width=\FePlot]{images/xanes_shell2}
+      \includegraphics<3|handout:3>[width=\FePlot]{images/xanes_shell1}
+      \includegraphics<4|handout:4>[width=\FePlot]{images/xanes_shell2}
+      \includegraphics<5|handout:5>[width=\FePlot]{images/xanes_shell3}
+      \includegraphics<6|handout:6>[width=\FePlot]{images/xanes_shell4}
 
       \centering{\color{blue}XANES}
 
@@ -383,7 +428,30 @@
 
 \begin{frame}
   \frametitle{The complex photoelectron scattering factor}
-  
+  The scattering function, $F(k)$ and $\phi(k)$ give EXAFS its
+  sensitivity to atomic species.
+  \begin{equation}
+    \chi(k) \sim \frac{N\alert{F(k)}}{2kR^2}\sin\big(2kR+\alert{\phi(k)}\big)
+    \notag
+  \end{equation}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        Magnitude
+
+        \includegraphics[width=\linewidth]{images/f_eff.png}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        Phase
+
+        \includegraphics[width=\linewidth]{images/phi_eff.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+  Examining the magnitude explains why the signal from light elements
+  does not extend much beyond 10\,\AA$^{-1}$.
 \end{frame}
 
 \begin{frame}
@@ -501,15 +569,15 @@
 \section[EXAFS]{Using FEFF to Solve EXAFS Problems}
 
 \begin{frame}[fragile]
-  \frametitle<1>{A Feff6 input file}
-  \frametitle<2>{A Feff8 input file}
+  \frametitle<1|handout:1>{A Feff6 input file}
+  \frametitle<2|handout:2>{A Feff8 input file}
   \begin{columns}[T]
     \begin{column}{0.44\linewidth}
       Here is an example of a \textsc{feff}\only<1>6\only<2>8 input file:
 
       \vspace*{\stretch{1}}
 
-      \begin{onlyenv}<1>
+      \begin{onlyenv}<1|handout:1>
         \begin{block}{}
           \begin{alltt}
             \tiny
@@ -534,7 +602,7 @@
           \end{alltt}
         \end{block}
       \end{onlyenv}
-      \begin{onlyenv}<2>
+      \begin{onlyenv}<2|handout:2>
         \begin{block}{}
           \begin{alltt}
             \tiny
@@ -782,41 +850,46 @@ TER
   \begin{itemize}
   \item Websites
     \begin{itemize}
-    \item \footnotesize
+    \item \scriptsize
       \href{http://xafs.org}{\color{Blue4}\texttt{http://xafs.org}}
       offers tutorials, links to resources, information about upcoming
       workshops, and much more
-    \item \textsc{ifeffit} homepage:
+    \item \scriptsize {\ifeffit} homepage:
       \href{http://cars9.uchicago.edu/iffwiki/About}
       {\color{Blue4}\texttt{http://cars9.uchicago.edu/iffwiki/About}}
-    \item \textsc{feff} homepage:
+    \item \scriptsize {\ifeffit} mailing list:
+      \href{http://cars9.uchicago.edu/mailman/listinfo/ifeffit}
+      {\color{Blue4}\texttt{http://cars9.uchicago.edu/mailman/listinfo/ifeffit}}
+    \item \scriptsize {\feff} homepage:
       \href{http://feff.phys.washington.edu}
       {\color{Blue4}\texttt{http://feff.phys.washington.edu}}
-    \item \textsc{athena} and \textsc{artemis}:
+    \item \scriptsize {\athena} and {\artemis}:
       \href{http://github.com/bruceravel/demeter}
       {\color{Blue4}\texttt{http://github.com/bruceravel/demeter/}}
     \end{itemize}
   \item Journal articles
     \begin{itemize}
-    \item \footnotesize The \textsc{feff} reference: Rehr and Albers review article:   J.J.~Rehr and R.C.~Albers,
-      Rev.\ Mod.\ Phys.\ \textbf{72}:3 (2000) pp.\ 621--654
-    \item Two excellent references on multiple scattering theory:
+    \item \scriptsize The \textsc{feff} reference: Rehr and Albers
+      review article: J.J.~Rehr and R.C.~Albers, Rev.\ Mod.\ Phys.\
+      \textbf{72}:3 (2000) pp.\ 621--654.  Also see subsequent
+      references from Rehr for {\feff}8 and {\feff}9.
+    \item \scriptsize Two excellent references on multiple scattering theory:
       J.L.~Beeby, Proc.\ Royal Soc.\ \textbf{A274} (1964) pp.\
       309--317 and \textbf{A279} (1967) pp.\ 82--97.
     \end{itemize}
   \item Other Software
     \begin{itemize}
-    \item \footnotesize XANES calculations using Mulitplets:
+    \item \scriptsize XANES calculations using Mulitplets:
       \href{http://xafs.org/Software/TtMultiplet}
       {\color{Blue4}\texttt{http://xafs.org/Software/TtMultiplet}}
-    \item XANES calculations by finite difference method:
+    \item \scriptsize XANES calculations by finite difference method:
       \href{http://xafs.org/Software/FDMNES}
       {\color{Blue4}\texttt{http://xafs.org/Software/FDMNES}}
-    \item Band structure: The work of Eric Shirley
+    \item \scriptsize Band structure: The work of Eric Shirley
       (\href{http://physics.nist.gov/Divisions/Div844/facilities/theorModel/tmopm.html}
       {\color{Blue4}\tiny \texttt{http://physics.nist.gov/Divisions/Div844/facilities/theorModel/tmopm.html}}) and
       Aleksi Soininen, Helsinki University
-    \item XANES fitting: \textsc{FitIt} (\href{http://xafs.org/Software/FitIt}{\color{Blue4}\texttt{http://xafs.org/Software/FitIt}})
+    \item \scriptsize XANES fitting: \textsc{FitIt} (\href{http://xafs.org/Software/FitIt}{\color{Blue4}\texttt{http://xafs.org/Software/FitIt}})
       and \textsc{mxan} (PRB \textbf{65} (2002) 174205).
     \end{itemize}
   \end{itemize}
