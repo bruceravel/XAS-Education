@@ -1,6 +1,8 @@
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
 \include{header}
 
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{notethis}[theorem]{Note}
 
 \newcommand{\eto}{EuTiO$_3$}
 \newcommand{\pto}{PbTiO$_3$}
@@ -31,7 +33,7 @@
   Matt
 \end{frame}
 
-\section{Real-space multiple scattering}
+\section{Introduction}
 
 \begin{frame}
   \frametitle{What I hope you take away from this talk}
@@ -68,6 +70,47 @@
   \item How RSMS is used in fitting EXAFS data.
   \end{itemize}
 \end{frame}
+
+\begin{frame}
+  \frametitle{XAS Data}
+  \begin{columns}<1->
+    \begin{column}{0.35\linewidth}
+      \includegraphics[width=\linewidth]{images/FeS2_mu.png}
+    \end{column}
+    \begin{column}{0.65\linewidth}
+      We measure the {\color{Blue4}XAS data} and find the
+      {\color{Red3}background function}
+      \begin{equation}
+        \mu(E) = \mu_0(E)\cdot\big(1+\chi(E)\big)
+        \notag
+      \end{equation}
+    \end{column}
+  \end{columns}
+  \begin{columns}<2->
+    \begin{column}{0.35\linewidth}
+      \includegraphics[width=\linewidth]{images/FeS2_chik.png}
+    \end{column}
+    \begin{column}{0.65\linewidth}
+      We subtract the background, $\mu_0(E)$, to isolate the ``fine
+      structure'' $\chi(k)$.  
+
+      {\scriptsize (Remember, \alert{EXAFS} $\equiv$ \alert{E}xtended
+        \alert{X}-ray \alert{A}bsorption \underline{\alert{F}ine
+        \alert{S}tructure}.)}
+    \end{column}
+  \end{columns}
+  \begin{columns}<3>
+    \begin{column}{0.35\linewidth}
+      \includegraphics[width=\linewidth]{images/FeS2_chir.png}
+    \end{column}
+    \begin{column}{0.65\linewidth}
+      We Fourier transform $\chi(k)$ and use \alert{multiple scattering
+        theory} to understand the local structure.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Real-space multiple scattering}
 
 \include{simple_picture}
 \include{firstprinciples}
@@ -167,36 +210,33 @@
 \begin{frame}
   \frametitle{Iron metal: 10$^{\mathrm{th}}$ path + MS, 5 shells}
   \begin{columns}[T]
-    \begin{column}{0.1\linewidth}
+    \begin{column}{0.05\linewidth}
       ~
     \end{column}
     \begin{column}{0.4\linewidth}
-      \includegraphics[width=0.8\linewidth]{images/path10}
+      \begin{center}
+        \includegraphics[width=0.75\linewidth]{images/path10}
 
-      5$^{\mathrm{th}}$ shell EXAFS: Magnitude
-    \end{column}
-    \begin{column}{0.4\linewidth}
-      \includegraphics[width=0.8\linewidth]{images/path10_re}
+        5$^{\mathrm{th}}$ shell EXAFS: Magnitude\\[2ex]
 
-      5$^{\mathrm{th}}$ shell EXAFS: Real part
+        \includegraphics[width=0.75\linewidth]{images/path10_re}
+
+        5$^{\mathrm{th}}$ shell EXAFS: Real part
+      \end{center}
     \end{column}
     \begin{column}{0.1\linewidth}
       ~
     \end{column}
-  \end{columns}    
-
-  \medskip
-  
-  \begin{columns}
     \begin{column}{0.4\linewidth}
       \begin{block}{Convergence}
         \includegraphics[width=\linewidth]{images/xanes_convergence}
       \end{block}
-    \end{column}
-    \begin{column}{0.6\linewidth}
       There are several MS geometries with the same path length as the
       5$^{\mathrm{th}}$ shell SS path.  Some are \emph{bigger} than
       the SS path!
+    \end{column}
+    \begin{column}{0.05\linewidth}
+      ~
     \end{column}
   \end{columns}
 \end{frame}
@@ -242,15 +282,14 @@
   \end{block}
   \begin{textblock*}{0.6\linewidth}(0pt,19\TPVertModule)%
     \tiny%
-    The derivation on the following N pages is similar to one by Matt
-    Newville
+    The discussion on the following 8 pages is inspired by Matt
+    Newville's at
     \href{http://xafs.org/Tutorials?action=AttachFile&do=view&target=Newville_Intro.pdf}
     {\color{Blue4}\texttt{http://xafs.org/Tutorials?action=AttachFile\&do=view\&target=Newville\_Intro.pdf}}
   \end{textblock*}
 \end{frame}
 
 
-\newtheorem{conclusion}[theorem]{Conclusion}
 \begin{frame}
   \frametitle{The fine structure}
   With $|f\rangle = |f_0+\Delta f\rangle$
@@ -266,7 +305,7 @@
     \intertext{Remember that}
     \mu(E) =&\, \mu_0(E) \cdot (1+\chi(E))\notag\\
     \intertext{Therefore}
-    \chi(E) \propto&\,\Big(\big|\langle \alert{\Delta f}|
+    \chi(E) \sim&\,\Big(\big|\langle \alert{\Delta f}|
     \mathcal{H}|i\rangle\big| + C.C.\Big)\notag
   \end{align}
 
@@ -290,13 +329,13 @@
     \begin{column}{0.5\linewidth}
       The photoelectron:
       \begin{itemize}
-      \item propagates from absorber to scatterer
+      \item propagates as a spherical wave from absorber to scatterer
       \item scatters from the neighbor
-      \item propagates from scatterer to absorber
+      \item propagates as a spherical wave from scatterer to absorber
       \end{itemize}
     \end{column}
     \begin{column}{0.5\linewidth}
-        \includegraphics[width=\linewidth]{images/circles.png}      
+      \includegraphics[width=\linewidth]{images/circles.png}
     \end{column}
   \end{columns}
   
@@ -320,7 +359,7 @@
   \frametitle{The EXAFS equation in its simplest form}
   We can now simplify the equation to
   \begin{equation}
-    \chi(k) \propto \frac{F(k)}{2kR^2}\sin\big(2kR+\phi(k)\big)
+    \chi(k) \sim \frac{F(k)}{2kR^2}\sin\big(2kR+\phi(k)\big)
     \notag
   \end{equation}
   This describes the signal from a single atom at a distance $R$.
@@ -330,11 +369,12 @@
   If we consider the contribution from $N$ atoms at distance $R$
   (i.e.\ a ``shell'' of atoms):
   \begin{equation}
-    \chi(k) \propto \frac{NF(k)}{2kR^2}\sin\big(2kR+\phi(k)\big)
+    \chi(k) \sim \frac{NF(k)}{2kR^2}\sin\big(2kR+\phi(k)\big)
     \notag
   \end{equation}
   On the following pages, we consider
   \begin{enumerate}
+  \item the shapes of $F(k)$ and $\phi(k)$
   \item the amplitude reduction term $S_0^2$
   \item the mean free path term $\lambda$
   \item disorder via the mean square displacement term $\sigma^2$
@@ -342,29 +382,398 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{The amplitude reduction factor}
+  \frametitle{The complex photoelectron scattering factor}
   
+\end{frame}
+
+\begin{frame}
+  \frametitle{The amplitude reduction factor}
+
+  When the core electron is ejected from it's deep-core state, the
+  remaining electrons relax:
+  \begin{equation}
+    S_0^2 = \big|\langle \Phi_f^{N-1}  | \Phi_i^{N-1}  \rangle
+    \big|^2    \notag
+  \end{equation}
+  where $|\Phi^{N-1}\rangle$ is the state of all remaining electrons
+  before ($i$) or after ($f$) the excitation.
+  \begin{equation}
+    \chi(k) \sim \frac{N\alert{S_0^2}F(k)}{2kR^2}\sin\big(2kR+\phi(k)\big)
+    \notag
+  \end{equation}
+  In practice, $0.7\lesssim S_0^2<1.0$, but note that $N$ and $S_0^2$
+  are completely correlated!
+  \begin{textblock*}{0.6\linewidth}(0pt,19.25\TPVertModule)%
+    \tiny%
+    G.G.\ Li, F.\ Bridges, \& C.H.\ Booth, Phys. Rev. B \textbf{52}
+    (1995) 6332--6348
+    \href{http://dx.doi.org/10.1103/PhysRevB.52.6332}
+    {\color{Blue4}\texttt{DOI:10.1103/PhysRevB.52.6332}}
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
   \frametitle{The mean free path}
-  
+  The photoelecton may scatter \textit{inelastically} and fail to
+  ``return'' to the absorber (loose coherence with the core-hole).
+
+  \medskip
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      We consider this by replacing the photoelecton spherical wave
+      with a damped spherical wave:
+      $\frac{e^{ikr}e^{-r/\lambda(k)}}{kr}$
+
+      \medskip
+
+      Here is {\feff}'s calculation of the mean free path in copper
+      metal.
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/mfp.png}
+    \end{column}
+  \end{columns}
+  \begin{equation}
+    \chi(k) \sim \frac{NS_0^2F(k)}{2kR^2}\sin\big(2kR+\phi(k)\big)
+    \alert{e^{-2R/\lambda(k)}}
+    \notag
+  \end{equation}
+  \begin{notethis}
+    $\frac{e^{-2R/\lambda(k)}}{R^2}$ is what makes EXAFS a \alert{local}
+    structure probe.
+  \end{notethis}
 \end{frame}
 
 \begin{frame}
   \frametitle{The mean square displacement (disorder)}
-  
+  Even in a highly ordered crystal -- like an FCC metal -- the atoms
+  are never actually on their lattice positions.  \textit{Thermal
+    motion} (i.e.\ phonons) distribute atoms around their nominal
+  positions such that
+  \begin{equation}
+    \sigma_{i,j}^2 = \langle r_{i,j}-\overline{r_{i,j}} \rangle^2 > 0
+    \notag
+  \end{equation}
+  This behaves some like the crystallographic Debye-Waller factor:
+  \begin{exampleblock}{The standard EXAFS equation}
+    \begin{equation}
+      \chi(k) = \frac{NS_0^2F(k)}{2kR^2}\sin\big(2kR+\phi(k)\big)
+      \alert{e^{-2k^2\sigma^2}}e^{-2r/\lambda(k)}
+      \notag
+    \end{equation}
+  \end{exampleblock}
+
+  \begin{textblock*}{0.8\linewidth}(0pt,17.5\TPVertModule)%
+    {\scriptsize
+      One can also consider higher moments of the distribution,
+      $\sigma^n = \langle r_{i,j}-\overline{r_{i,j}} \rangle^n$.  See
+    }\\
+    {\tiny%
+      G.\ Bunker, Nucl.\ Inst.\ Methods \textbf{207}:3 (1983) pp.\
+      437--444,
+      \href{http://dx.doi.org/10.1016/0167-5087(83)90655-5}
+      {\color{Blue4}\texttt{DOI:10.1016/0167-5087(83)90655-5}}
+    }
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Multiple scattering paths}
+  The magic of {\feff} is that it expresses the effect of multiple
+  scattering events entirely in $F(k)$ and $\phi(k)$:
+  \begin{equation}
+    \chi(k) = \frac{NS_0^2\alert{F_{eff}(k)}}{2kR^2}
+    \sin\big(2kR+\alert{\phi_{eff}(k)}\big)
+    e^{-2k^2\sigma^2}e^{-2r/\lambda(k)}
+    \notag
+  \end{equation}
+  That's the same equation!
+
+  \begin{textblock*}{0.6\linewidth}(0pt,19.5\TPVertModule)%
+    \tiny%
+    S.I.\ Zabinsky et al, Phys. Rev. B \textbf{52} (1995) 2995--3009\\
+    \href{http://dx.doi.org/10.1103/PhysRevB.52.2995}
+    {\color{Blue4}\texttt{DOI:10.1103/PhysRevB.52.2995}}    
+  \end{textblock*}
 \end{frame}
 
 \section[EXAFS]{Using FEFF to Solve EXAFS Problems}
-\subsection[\textsc{feff} input]{Preparing input for \textsc{feff}}
-\include{feffinp}
-\subsection[Atoms and paths]{Atoms and paths}
-\include{paths}
-\subsection[Good practice]{Using \textsc{feff} well}
-\include{tricks}
+
+\begin{frame}[fragile]
+  \frametitle<1>{A Feff6 input file}
+  \frametitle<2>{A Feff8 input file}
+  \begin{columns}[T]
+    \begin{column}{0.44\linewidth}
+      Here is an example of a \textsc{feff}\only<1>6\only<2>8 input file:
+
+      \vspace*{\stretch{1}}
+
+      \begin{onlyenv}<1>
+        \begin{block}{}
+          \begin{alltt}
+            \tiny
+ {\color{Green4}TITLE Cobalt sulfide  CoS\_2}
+
+ {\color{Purple2}HOLE} 1 1.0 {\color{Blue4}*  Co K edge (7709.0 eV)
+
+ *         mphase,mpath,mfeff,mchi}
+ {\color{SteelBlue2}CONTROL}   1      1     1     1
+ {\color{SteelBlue2}PRINT}     1      0     0     0
+
+ {\color{Purple2}RMAX}        6.0
 
 
+ {\color{Brown4}POTENTIALS}
+ {\color{Blue4}*    ipot   Z  element}
+        0   27   Co
+        1   27   Co
+        2   16   S
+
+                  {\color{Blue4}* continued ------>}
+          \end{alltt}
+        \end{block}
+      \end{onlyenv}
+      \begin{onlyenv}<2>
+        \begin{block}{}
+          \begin{alltt}
+            \tiny
+ {\color{Green4}TITLE Cobalt sulfide  CoS\_2}
+ {\color{Purple2}EDGE} K
+ {\color{Purple2}S02}  1.0
+
+ {\color{Blue4} *    pot    xsph  fms   paths genfmt ff2chi}
+ {\color{SteelBlue2}CONTROL}   1      1     1     1     1     1
+ {\color{SteelBlue2}PRINT}     1      0     0     0     0     0
+
+ {\color{Purple2}EXCHANGE}   0
+ {\color{Purple2}SCF}        4.0
+ {\color{Purple2}XANES}      4.0
+ {\color{Purple2}FMS}        5.09694  0
+ {\color{Purple2}LDOS}      -30   20     0.1
+ {\color{Purple2}RPATH}      0.1
+ {\color{Blue4}*EXAFS     20}
+
+ {\color{Brown4}POTENTIALS}
+ {\color{Blue4}*   ipot  Z  element  l\_scmt  l\_fms  stoi.}
+        0   27   Co       2       2       0
+        1   27   Co       2       2       4
+        2   16   S        2       2       8
+                          {\color{Blue4}* continued ------>}
+          \end{alltt}
+        \end{block}
+      \end{onlyenv}
+     \end{column}
+     %%
+     \begin{column}{0.54\linewidth}
+      \begin{block}{}
+         \begin{alltt}
+         \tiny
+  {\color{Brown4}ATOMS}   {\color{Blue4}* this list contains 71 atoms
+  *   x          y          z     ipot  tag     distance}
+     0.00000    0.00000    0.00000  0  Co1     0.00000
+     2.14845    0.61305    0.61305  2  S1\_1    2.31678
+     0.61305   -2.14845    0.61305  2  S1\_1    2.31678
+    -0.61305    0.61305    2.14845  2  S1\_1    2.31678
+    -0.61305    2.14845   -0.61305  2  S1\_1    2.31678
+    -2.14845   -0.61305   -0.61305  2  S1\_1    2.31678
+     0.61305   -0.61305   -2.14845  2  S1\_1    2.31678
+    -3.37455    0.61305    0.61305  2  S1\_2    3.48415
+     0.61305    3.37455    0.61305  2  S1\_2    3.48415
+     0.61305   -0.61305    3.37455  2  S1\_2    3.48415
+     3.37455   -0.61305   -0.61305  2  S1\_2    3.48415
+    -0.61305   -3.37455   -0.61305  2  S1\_2    3.48415
+    -0.61305    0.61305   -3.37455  2  S1\_2    3.48415
+    -2.14845   -2.14845    2.14845  2  S1\_3    3.72122
+     2.14845    2.14845   -2.14845  2  S1\_3    3.72122
+     2.76150    2.76150    0.00000  1  Co1\_1   3.90535
+    -2.76150    2.76150    0.00000  1  Co1\_1   3.90535
+     2.76150   -2.76150    0.00000  1  Co1\_1   3.90535
+    -2.76150   -2.76150    0.00000  1  Co1\_1   3.90535
+     2.76150    0.00000    2.76150  1  Co1\_1   3.90535
+    -2.76150    0.00000    2.76150  1  Co1\_1   3.90535
+     0.00000    2.76150    2.76150  1  Co1\_1   3.90535
+  {\color{Blue4}*
+  * etc...
+  *}
+  {\color{Purple2}END}
+         \end{alltt}
+       \end{block}
+     \end{column}
+   \end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Using \textsc{atoms} to prepare the \textsc{feff} input file}
+  %%
+  \textsc{artemis} includes a tool called \textsc{atoms} that converts
+  crystallographic data into a \textsc{feff} input file.
+
+  \medskip
+
+  \begin{columns}[c]
+    \begin{column}[c]{0.5\linewidth}
+      \begin{center}
+        \includegraphics[width=0.7\linewidth]{images/artemis_atoms}
+      \end{center}
+    \end{column}
+    %%
+    \begin{column}[c]{0.5\linewidth}
+      The input data can be a CIF file or this simple format:
+      \begin{block}{}
+        \begin{alltt}
+          \tiny
+ {\color{Green4}title Cobalt sulfide}
+ {\color{Green4}title Elliot (1960) J.Chem. Phys. 33(3), 903.}
+ {\color{Brown4}space} P a 3
+ {\color{Brown4}rmax}=6.0   {\color{Brown4}a}=5.523
+ {\color{Brown4}core}=Co
+ {\color{Brown4}atoms}
+ {\color{Blue4}! At.type   x     y     z      tag}
+    Co     0.00000   0.00000   0.00000  Co
+    S      0.38900   0.38900   0.38900  S
+         \end{alltt}
+       \end{block}
+     \end{column}
+   \end{columns}
+
+   \bigskip
+
+   These data are typically taken from the crystallography literature,
+   the \textit{Inorganic Crystal Structure Database}, or from:
+   \href{http://cars9.uchicago.edu/\char126newville/adb/search.html}
+   {\color{Blue4}\texttt{http://cars9.uchicago.edu/\char126newville/adb/search.html}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Feff input files for non-crystalline materials}
+  \begin{columns}[c]
+    \begin{column}{0.6\linewidth}
+      There are many sources of structural data about molecules,
+      proteins, and other non-crystalline materials. A bit of googling
+      turned up this Protein Data Bank File for cisplatin:
+
+      \centering\includegraphics<1>[width=0.4\linewidth]{images/cisplatin}
+      \begin{alltt}
+        \tiny
+ATOM   1 PT1  MOL A  1  -0.142   0.141   7.747  1.00  1.00
+ATOM   2 CL2  MOL A  1  -0.135  -2.042   8.092  1.00  1.00
+ATOM   3 CL3  MOL A  1   2.064   0.127   7.615  1.00  1.00
+ATOM   4  N4  MOL A  1  -0.147   2.166   7.427  1.00  1.00
+ATOM   5  N5  MOL A  1  -2.188   0.154   7.870  1.00  1.00
+ATOM   6 1H4  MOL A  1   0.793   2.489   7.319  1.00  1.00
+ATOM   7 2H4  MOL A  1  -0.570   2.625   8.208  1.00  1.00
+ATOM   8 3H4  MOL A  1  -0.668   2.370   6.598  1.00  1.00
+ATOM   9 1H5  MOL A  1  -2.464   0.303   8.819  1.00  1.00
+ATOM  10 2H5  MOL A  1  -2.546  -0.724   7.552  1.00  1.00
+ATOM  11 3H5  MOL A  1  -2.551   0.889   7.298  1.00  1.00
+TER
+      \end{alltt}
+    \end{column}
+    %%
+    \begin{column}{0.4\linewidth}
+      Cut, paste, insert some boilerplate, and voil\'a!
+      \begin{block}{}
+        \begin{alltt}
+          \tiny
+ {\color{Green4}TITLE cisplatin}
+ {\color{Purple2}HOLE}  4  1.0
+ {\color{Purple2}RMAX}  8
+ {\color{Brown4}POTENTIALS}
+     0   78   Pt
+     1   17   Cl
+     2    7   N
+     3    1   H
+
+ {\color{Brown4}ATOMS}
+   -0.142   0.141   7.747   0
+   -0.135  -2.042   8.092   1
+    2.064   0.127   7.615   1
+   -0.147   2.166   7.427   2
+   -2.188   0.154   7.870   2
+    0.793   2.489   7.319   3
+   -0.570   2.625   8.208   3
+   -0.668   2.370   6.598   3
+   -2.464   0.303   8.819   3
+   -2.546  -0.724   7.552   3
+   -2.551   0.889   7.298   3
+         \end{alltt}
+       \end{block}
+
+       ~\\[-5ex]
+
+       {\scriptsize Note that the absorber need not be at
+         (0,0,0) and the list need not be in any particular order.}
+
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+%\subsection[Atoms and paths]{Atoms and paths}
+%\include{paths}
+%\subsection[Good practice]{Using \textsc{feff} well}
+%\include{tricks}
+
+\begin{frame}
+  \frametitle{Multiple scattering and EXAFS: FeS$_2$}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/FeS2/fes2.png}
+      \begin{center}
+        {\color{Chocolate3}$\bullet$} = Fe \quad%
+        {\color{Gold2}$\bullet$} = S
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/intrp.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Multiple scattering and EXAFS: SS}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      The first sulfur SS path is from the octahedron surrounding the
+      Fe atom.  It provides most of the spectral weight under the
+      first peak.
+
+      \medskip
+
+      The next two S and one Fe SS paths overlap between 2.5 and
+      3.5\,\AA.
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/fes2_ss.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Multiple scattering and EXAFS: MS}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      The relationship between the EXAFS spectrum and atomic
+      structure can be quite complicated due to multiple
+      scattering.
+
+      \medskip
+
+      S--S and S--Fe triangles contribute
+      significantly between 2.5 and 3.5\,\AA.
+
+      \medskip
+
+      Collinear paths through the absorber involving 1$^{st}$ shell S
+      atoms contribute significantly around 3.9\,\AA.
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/fes2_ms.png}
+    \end{column}
+  \end{columns}
+\end{frame}
 
 \section[Resources]{Resources}
 
@@ -374,18 +783,18 @@
   \item Websites
     \begin{itemize}
     \item \footnotesize
-      \href{http://xafs.org}{\color{Purple4}\texttt{http://xafs.org}}
+      \href{http://xafs.org}{\color{Blue4}\texttt{http://xafs.org}}
       offers tutorials, links to resources, information about upcoming
       workshops, and much more
     \item \textsc{ifeffit} homepage:
       \href{http://cars9.uchicago.edu/iffwiki/About}
-      {\color{Purple4}\texttt{http://cars9.uchicago.edu/iffwiki/About}}
+      {\color{Blue4}\texttt{http://cars9.uchicago.edu/iffwiki/About}}
     \item \textsc{feff} homepage:
       \href{http://feff.phys.washington.edu}
-      {\color{Purple4}\texttt{http://feff.phys.washington.edu}}
+      {\color{Blue4}\texttt{http://feff.phys.washington.edu}}
     \item \textsc{athena} and \textsc{artemis}:
-      \href{http://cars9.uchicago.edu/~ravel/software/}
-      {\color{Purple4}\texttt{http://cars9.uchicago.edu/\char126ravel/software/}}
+      \href{http://github.com/bruceravel/demeter}
+      {\color{Blue4}\texttt{http://github.com/bruceravel/demeter/}}
     \end{itemize}
   \item Journal articles
     \begin{itemize}
@@ -399,15 +808,15 @@
     \begin{itemize}
     \item \footnotesize XANES calculations using Mulitplets:
       \href{http://xafs.org/Software/TtMultiplet}
-      {\color{Purple4}\texttt{http://xafs.org/Software/TtMultiplet}}
+      {\color{Blue4}\texttt{http://xafs.org/Software/TtMultiplet}}
     \item XANES calculations by finite difference method:
       \href{http://xafs.org/Software/FDMNES}
-      {\color{Purple4}\texttt{http://xafs.org/Software/FDMNES}}
+      {\color{Blue4}\texttt{http://xafs.org/Software/FDMNES}}
     \item Band structure: The work of Eric Shirley
       (\href{http://physics.nist.gov/Divisions/Div844/facilities/theorModel/tmopm.html}
-      {\color{Purple4}\tiny \texttt{http://physics.nist.gov/Divisions/Div844/facilities/theorModel/tmopm.html}}) and
+      {\color{Blue4}\tiny \texttt{http://physics.nist.gov/Divisions/Div844/facilities/theorModel/tmopm.html}}) and
       Aleksi Soininen, Helsinki University
-    \item XANES fitting: \textsc{FitIt} (\href{http://xafs.org/Software/FitIt}{\color{Purple4}\texttt{http://xafs.org/Software/FitIt}})
+    \item XANES fitting: \textsc{FitIt} (\href{http://xafs.org/Software/FitIt}{\color{Blue4}\texttt{http://xafs.org/Software/FitIt}})
       and \textsc{mxan} (PRB \textbf{65} (2002) 174205).
     \end{itemize}
   \end{itemize}
