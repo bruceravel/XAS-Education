@@ -1,0 +1,13 @@
+
+* Iron standards
+
+ + ~Fe_standards.prj~: Athena project file with alpha-FeOOH,
+   gamma-FeOOH, Fe foil, alpha-Fe2O3, and FeS2.  Mostly measured at
+   APS 10ID in quick-scan mode (thus can be used to demonstrate
+   rebinning)
+ + ~Fe_lepidocrocite.*~: Three scans of gamma-FeOOH from NSLS X23A2,
+   used to demonstrate Athena (data import, normalization, background
+   removal, alignment, merging)
+ + ~Fe_pyrite.000~: FeS2 from NSLS X23A2 used with gamma-FeOOH to
+   explain alignment
+
