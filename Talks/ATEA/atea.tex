@@ -299,7 +299,7 @@
   }
   \begin{block}{}
     In Gaussian statistics, assuming that $\epsilon$ has been measured
-    correctly, a \textit{good fit} has $\chi^2\approx1$.
+    correctly, a \textit{good fit} has $\chi_\nu^2\approx1$.
   \end{block}
 \end{frame}
 
@@ -489,6 +489,16 @@
 %     used to emphasize certain aspects of the signal.  ``{\feff} wavelets''
 %   \end{description}
 % \end{frame}
+
+\begin{frame}
+  \frametitle{Artemis: Statistics in the log file}
+  
+  \begin{center}
+    %\includegraphics[width=0.9\linewidth]{artemis/mkw.png}
+
+    \textit{Show log file, show top bar with log button}
+  \end{center}
+\end{frame}
 
 
 %\definecolor{MYcolor}{rgb}{0,0.5,0} %% dark green
@@ -762,6 +772,18 @@ Correlations between variables:
   \end{exampleblock}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Artemis: Multiple $k$-Weights}
+  
+  \begin{center}
+    \includegraphics[width=0.9\linewidth]{artemis/mkw.png}
+
+    Simply click any/all of the fitting $k$-weight buttons.\\
+    Do not confuse them with the buttons that control k-weighting for
+    plots.
+  \end{center}
+\end{frame}
+
 %\definecolor{MYcolor}{RGB}{75,67,55}  %% dark brown
 \section[MFC]{Multiple Feff Calculations}
 \begin{frame}
@@ -962,6 +984,18 @@ Correlations between variables:
   \end{exampleblock}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Artemis: Multiple Feff Calculations}
+
+  \begin{center}
+    \includegraphics[width=0.6\linewidth]{artemis/mfc.png}
+
+    Use as many {\feff} calculations as you need, run {\feff}, import
+    and include whichever paths you need.  (\textit{Nota bene:} there
+    is an out-of-the-box limit of 128 paths in {\ifeffit}.)
+  \end{center}
+\end{frame}
+
 %\definecolor{MYcolor}{RGB}{204,135,33}  %%dirty orange
 \section[MDS]{Multiple Data Sets}
 
@@ -1108,6 +1142,39 @@ Correlations between variables:
   \end{columns}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Artemis: Multiple Data Sets (I)}
+
+  If you have already imported data into {\artemis}, you can either
+  change the data on which you are working or import additional data
+  for a multiple data set fit,
+
+  \begin{center}
+    \includegraphics[width=0.2\linewidth]{artemis/change_data.png}\qquad
+    \includegraphics[width=0.4\linewidth]{artemis/data_import.png}
+  \end{center}
+
+  \begin{description}
+  \item[Change] From the ``Data'' menu in the Data window, select the
+    option to replace the $\chi(k)$.  This will open the file
+    selection dialog.
+  \item[New] Alternately, import data in the normal fashion.  It will
+    be added to the list of Data sets and included in all subsequent
+    fits.
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Artemis: Multiple Data Sets (II)}
+
+  \begin{center}
+    \includegraphics[width=0.6\linewidth]{artemis/mds.png}
+
+    Use as many data sets calculations as you need.  Each data set
+    needs one or more paths associated with it.  (\textit{Nota bene:}
+    there is an out-of-the-box limit of 10 data sets in {\ifeffit}.)
+  \end{center}
+\end{frame}
 
 
 %\definecolor{MYcolor}{RGB}{0,79,80}  %% dark teal
@@ -1281,8 +1348,20 @@ Correlations between variables:
   {\color{guessp}guess}es.  The constraints on $\sigma^2$ and
   $N_{eq}$ can be lifted easily by switching a {\color{setp}set} or
   a {\color{defp}def} to a {\color{guessp}guess}.
-  
 \end{frame}
+  
+\begin{frame}
+  \frametitle{Artemis: Specifying Constraints}
+
+  \begin{center}
+    \includegraphics[width=\linewidth]{artemis/constraint.png}
+
+    Constraints are implemented as {\color{defp}def} parameter math
+    expressions.  (Path parameters can also be expressed as math
+    expressions.)  {\ifeffit}'s math expressions are quite expressive.
+  \end{center}
+\end{frame}
+
 
 %\definecolor{MYcolor}{RGB}{49,49,96}   %% dark purple
 \section[Restraints]{Restraints On Fitting Parameters}
@@ -1467,97 +1546,6 @@ Correlations between variables:
 
   These restraints encourage those distances to stay near their
   imprecisely known values.
-
-\end{frame}
-
-
-%\definecolor{MYcolor}{RGB}{51,51,178}   %% Warsaw default
-\section[Artemis]{Bringing It All Together in Artemis}
-
-\againframe{themultiples}
-
-\begin{frame}
-  \frametitle{Artemis: Multiple $k$-Weights}
-  
-  \begin{center}
-    \includegraphics[width=0.9\linewidth]{artemis/mkw.png}
-
-    Simply click any/all of the fitting $k$-weight buttons.\\
-    Do not confuse them with the buttons that control k-weighting for
-    plots.
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Artemis: Multiple Feff Calculations}
-
-  \begin{center}
-    \includegraphics[width=0.6\linewidth]{artemis/mfc.png}
-
-    Use as many {\feff} calculations as you need, run {\feff}, import
-    and include whichever paths you need.  (\textit{Nota bene:} there
-    is an out-of-the-box limit of 128 paths in {\ifeffit}.)
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Artemis: Multiple Data Sets (I)}
-
-  If you have already imported data into {\artemis}, you can either
-  change the data on which you are working or import additional data
-  for a multiple data set fit,
-
-  \begin{center}
-    \includegraphics[width=0.2\linewidth]{artemis/change_data.png}\qquad
-    \includegraphics[width=0.4\linewidth]{artemis/data_import.png}
-  \end{center}
-
-  \begin{description}
-  \item[Change] From the ``Data'' menu in the Data window, select the
-    option to replace the $\chi(k)$.  This will open the file
-    selection dialog.
-  \item[New] Alternately, import data in the normal fashion.  It will
-    be added to the list of Data sets and included in all subsequent
-    fits.
-  \end{description}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Artemis: Multiple Data Sets (II)}
-
-  \begin{center}
-    \includegraphics[width=0.6\linewidth]{artemis/mds.png}
-
-    Use as many data sets calculations as you need.  Each data set
-    needs one or more paths associated with it.  (\textit{Nota bene:}
-    there is an out-of-the-box limit of 10 data sets in {\ifeffit}.)
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Artemis: Specifying Constraints (I)}
-
-  In the uranyl example we saw earlier, the oxygen distances
-  associated with the mono- and bidentate ligands are at different
-  distances.
-  \begin{center}
-    \includegraphics[width=0.5\linewidth]{mfc/uranyl.png}    
-  \end{center}
-  The number of P atoms is equal to the number of shorter equatorial
-  oxygen atoms, while the number of C atoms is half the number of
-  longer equatorial oxygens.
-\end{frame}
-
-\begin{frame}
-  \frametitle{Artemis: Specifying Constraints (II)}
-
-  \begin{center}
-    \includegraphics[width=\linewidth]{artemis/constraint.png}
-
-    Constraints are implemented as {\color{Green4}def} parameter math
-    expressions.  (Path parameters can also be expressed as math
-    expressions.)  {\ifeffit}'s math expressions are quite expressive.
-  \end{center}
 \end{frame}
 
 \begin{frame}
@@ -1573,6 +1561,110 @@ Correlations between variables:
     the fit.
   \end{center}
 \end{frame}
+
+% \section[Artemis]{Bringing It All Together in Artemis}
+
+% \againframe{themultiples}
+
+% \begin{frame}
+%   \frametitle{Artemis: Multiple $k$-Weights}
+  
+%   \begin{center}
+%     \includegraphics[width=0.9\linewidth]{artemis/mkw.png}
+
+%     Simply click any/all of the fitting $k$-weight buttons.\\
+%     Do not confuse them with the buttons that control k-weighting for
+%     plots.
+%   \end{center}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Artemis: Multiple Feff Calculations}
+
+%   \begin{center}
+%     \includegraphics[width=0.6\linewidth]{artemis/mfc.png}
+
+%     Use as many {\feff} calculations as you need, run {\feff}, import
+%     and include whichever paths you need.  (\textit{Nota bene:} there
+%     is an out-of-the-box limit of 128 paths in {\ifeffit}.)
+%   \end{center}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Artemis: Multiple Data Sets (I)}
+
+%   If you have already imported data into {\artemis}, you can either
+%   change the data on which you are working or import additional data
+%   for a multiple data set fit,
+
+%   \begin{center}
+%     \includegraphics[width=0.2\linewidth]{artemis/change_data.png}\qquad
+%     \includegraphics[width=0.4\linewidth]{artemis/data_import.png}
+%   \end{center}
+
+%   \begin{description}
+%   \item[Change] From the ``Data'' menu in the Data window, select the
+%     option to replace the $\chi(k)$.  This will open the file
+%     selection dialog.
+%   \item[New] Alternately, import data in the normal fashion.  It will
+%     be added to the list of Data sets and included in all subsequent
+%     fits.
+%   \end{description}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Artemis: Multiple Data Sets (II)}
+
+%   \begin{center}
+%     \includegraphics[width=0.6\linewidth]{artemis/mds.png}
+
+%     Use as many data sets calculations as you need.  Each data set
+%     needs one or more paths associated with it.  (\textit{Nota bene:}
+%     there is an out-of-the-box limit of 10 data sets in {\ifeffit}.)
+%   \end{center}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Artemis: Specifying Constraints (I)}
+
+%   In the uranyl example we saw earlier, the oxygen distances
+%   associated with the mono- and bidentate ligands are at different
+%   distances.
+%   \begin{center}
+%     \includegraphics[width=0.5\linewidth]{mfc/uranyl.png}    
+%   \end{center}
+%   The number of P atoms is equal to the number of shorter equatorial
+%   oxygen atoms, while the number of C atoms is half the number of
+%   longer equatorial oxygens.
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Artemis: Specifying Constraints (II)}
+
+%   \begin{center}
+%     \includegraphics[width=\linewidth]{artemis/constraint.png}
+
+%     Constraints are implemented as {\color{Green4}def} parameter math
+%     expressions.  (Path parameters can also be expressed as math
+%     expressions.)  {\ifeffit}'s math expressions are quite expressive.
+%   \end{center}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Artemis: Specifying Restraints}
+
+%   \begin{center}
+%     \includegraphics[width=\linewidth]{artemis/restraint.png}
+
+%     {\color{Orange3}Restraints} are managed on the Guess, Def, Set
+%     page, like any other parameter and will be properly used in the
+%     fit.  A restraint depends upon a {\color{Green4}def} or
+%     {\color{Magenta3}guess} parameters -- something that changes during
+%     the fit.
+%   \end{center}
+% \end{frame}
+
+\section{Conclusion}
 
 \begin{frame}
   \frametitle{Now you know all my tricks!}
