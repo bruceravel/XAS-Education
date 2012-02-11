@@ -1,0 +1,75 @@
+#!/bin/sh
+
+## unoconv does not seem to be a particularly robust tool...
+##
+## do 
+##    find . -iname '*odg'
+## to find all the odg files
+
+odg2pdf()
+{
+for f in $FILES; do
+    rm -fv $f.pdf
+    echo "convert $f.odg to pdf"
+    unoconv -d graphics -f pdf $f.odg
+done
+}
+xcf2img()
+{
+for f in $FILES; do
+    rm -fv $f.png
+    echo "convert $f.xcf to $EXT"
+    convert -flatten $f.xcf $f.$EXT
+done
+}
+
+cd iiss/images
+FILES='atom auger emission ion'
+odg2pdf
+
+cd ../../
+cd iiss/exp
+FILES='bl microprobe hutch_xas fluorescence ionchamber hutch transmission'
+odg2pdf
+
+cd ../../
+cd iiss/xas
+FILES=aucl_exp
+odg2pdf
+
+cd ../../
+cd ATEA/images
+FILES='ifeffit_control'
+odg2pdf
+
+cd ../../
+cd i2x/images/AuCl
+FILES=aucl_exp
+odg2pdf
+
+cd ../../../
+cd iiss/images
+FILES='periodic_table_of_elements'
+EXT=png
+xcf2img
+
+cd ../../
+cd iiss/xrf
+FILES='delta6200_3'
+EXT=jpg
+xcf2img
+
+cd ../../
+cd secondlecture/images
+rm -fv MS.png
+convert -crop 744x650+0+70 MS.svg MS.png
+
+cd ../../
+cd pimst/images
+rm -fv circle.png
+convert -crop 650x520+0+10 circles.svg circles.png
+
+cd ../../
+cd Experiment/bl/
+rm -fv reflection.png
+convert reflection.svg reflection.png 

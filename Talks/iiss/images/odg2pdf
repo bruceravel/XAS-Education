@@ -1,9 +1,0 @@
-#!/bin/sh -x
-
-FILES='atom auger emission ion'
-for f in $FILES; do
-    echo "convert $f"
-    unoconv -d graphics -f pdf $f.odg
-done
-
-convert -flatten periodic_table_of_elements.xcf periodic_table_of_elements.png
