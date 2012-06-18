@@ -309,8 +309,9 @@
 
 \begin{frame}
   \frametitle{Data limitations}
-  Here are successive samplings of 142 scans measured on a sample of
-  Cr$_2$O$_3$.  The merge changes little after 16 scans.
+  Here are 142 repititions of a measurement on Cr$_2$O$_3$.  These
+  were measured at the same beamline and with the same detector as the
+  previous data.  The merge changes little after 16 scans.
 
   \bigskip
 
@@ -343,26 +344,46 @@
 
 \begin{frame}
   \frametitle{Systematic uncertainty}
-  More repetitions only solves the problem of statistical noise.
-  There is systematic error -- probably sample inhomogeneity -- in the
-  Cr$_2$O$_3$ data at the level of $\epsilon_k \approx 5\times
-  10^{-4}$.
+
+  \begin{block}{Statistical and systematic noise}
+    More repetitions only solves the problem of statistical noise.
+    There is systematic error -- probably sample inhomogeneity -- in
+    these Cr$_2$O$_3$ data at the level of $\epsilon_k \approx 5\times
+    10^{-4}$.
+  \end{block}
 
   \bigskip
 
-  Here are a couple of obvious examples of systematic problems.
+  Several things can cause systematic problems, including
+  \begin{itemize}
+  \item Monochromator glitches
+  \item Sample inhomgeneity
+  \item Non-linear detectors and/or signal chains
+  \item Unstable mirrors or monochromator
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{An example of a gross systematic problem}
+
+  Here's an obvious example of a systematic problem.  These data were
+  measured with a detector that has an energy-dependent non-linearity.
 
   \begin{columns}[T]
     \begin{column}{0.5\linewidth}
-      \centering Mono glitch\\
-      \includegraphics[width=\linewidth, height=3cm]{dummy.png}      
+      \includegraphics[width=\linewidth]{images/mnxmu.png}      
     \end{column}
     \begin{column}{0.5\linewidth}
-      \centering Samply inhomogeneity?\\
-      \includegraphics[width=\linewidth, height=3cm]{dummy.png}      
+      \includegraphics[width=\linewidth]{images/mnchik.png}      
     \end{column}
   \end{columns}
 
+  \bigskip
+
+  \begin{alertblock}{}
+    No number of repititions will ever fix that feature of the data.
+    The \textbf{only} solution is to fix the detection problem.
+  \end{alertblock}
 \end{frame}
 
 \section{Conclusions}
