@@ -1,0 +1,12 @@
+
+These are the Cr2O3 data from the CLT talk.
+
+The data have all been gzipped to make this folder a bit smaller.
+
+The "megamerge.pl" file is a quick Demeter script for importing,
+aligning and merging these data, taking care to reject incomplete
+scans and taking successive sub samples of the data ensemble.  It
+writes an Athena project file called "quickmerge.prj".
+
+The "epsi.pl" script reads the epsilon values from "quickmerge.prj"
+and writes the values for page 13 of the CLT to the screen.
