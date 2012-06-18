@@ -1,0 +1,372 @@
+\documentclass[10pt, xcolor=x11names, compress]{beamer}
+%\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
+
+\include{header}
+
+\newtheorem{clt}[theorem]{The Central Limit Theorem}
+% \newtheorem{assertion}[theorem]{Assertion}
+% \newtheorem{exercise}[theorem]{Exercise for the reader}
+% \newtheorem{remember}[theorem]{Always remember}
+
+\mode<presentation>
+
+\title{The Central Limit Thoerem \textit{Always} Works!}%
+\subtitle{Statistics, EXAFS, and Knowing when to stop measuring data}
+\include{author}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\include{copyright}
+
+\section{Introduction}
+
+\begin{frame}
+  \frametitle{On a good day...} 
+
+  \small
+  ... we measure {\color{Green4}\textit{beautiful}} data.  This is
+  the merge of 5 scans on a 50\,nm film of GeSb on silica, at the Ge
+  edge and measured in fluorescence at NSLS X23A2.\\~
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        \includegraphics[width=0.8\linewidth]{../ATEA/info/gesb_chik.png}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        \includegraphics[width=0.8\linewidth]{../ATEA/info/gesb_chir.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+  Here, I show a Fourier transform window of [3\,:\,13] and I suggest a
+  fitting range of [1.7\,:\,4.7].  Applying the Nyquist criterion:
+  \begin{equation}
+    \notag N_{idp} \approx \frac{2\Delta k\Delta R}{\pi} \approx \alert{19}
+  \end{equation}
+
+  ~\\[-7ex]
+  ~
+
+  \begin{exampleblock}{}
+    \begin{center}
+      Did I really need to measure 5 scans?  Could I have stopped
+      after a single scan?
+    \end{center}
+  \end{exampleblock}
+  \begin{textblock*}{0.4\linewidth}(0pt,19.25\TPVertModule)%
+    \tiny%
+    These data are courtesy of Joseph Washington and Eric
+    Joseph (IBM Research)
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{On all the rest of the days...}
+  \small
+  Sometimes, we have less-than-beautiful data.  This is the merge of 42
+  scans on a solution containing 3\,mM of Hg bound to a synthetic DNA
+  complex, measured in fluorescence at APS 20BM.
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        \includegraphics[width=0.8\linewidth]{../ATEA/info/hgdna_chik.png}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        \includegraphics[width=0.8\linewidth]{../ATEA/info/hgdna_chir.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+  Here, I show a Fourier transform window of [2\,:\,8.8] and I suggest a
+  fitting range of [1\,:\,3].  Applying the Nyquist criterion:
+  \begin{equation}
+    \notag N_{idp} \approx \frac{2\Delta k\Delta R}{\pi} \approx \alert{8}
+  \end{equation}
+
+  ~\\[-7ex]
+  ~
+
+  \begin{exampleblock}{}
+    \begin{center}
+      Many real research problems are more like this.  Why were 42
+      scans measured?  Was that too many?  Not enough?  How can we know?
+    \end{center}
+  \end{exampleblock}
+
+  \begin{textblock*}{0.7\linewidth}(0pt,19.0\TPVertModule)%
+    \tiny%
+    B.\ Ravel, et al., \textit{EXAFS studies of catalytic DNA sensors
+      for mercury contamination of water}, Radiation Physics and
+    Chemistry \textbf{78}:10 (2009) pp\ S75-S79.
+    \href{http://dx.doi.org/10.1016/j.radphyschem.2009.05.024}
+    {\color{Blue4}\texttt{DOI:10.1016/j.radphyschem.2009.05.024}}
+  \end{textblock*}
+\end{frame}
+
+
+\begin{frame}
+  %\frametitle{The Central Limit Theorem}
+  \begin{clt}
+    Given certain conditions, the mean of a sufficiently large number
+    of independent random variables, each with finite mean and
+    variance, will be approximately normally distributed.
+  \end{clt}
+
+  \bigskip
+
+  In the context of an EXAFS measurement, the CLT tells us that, when a
+  noisy spectrum that is dominated by statistical noise, the spectral
+  noise will be distributed normally about its mean.
+
+  \bigskip
+
+  If we measure enough repititions of data dominated by statistical
+  noise and merge the data by computing the arithmetic mean at every
+  energy point, the data will converge to the mean.
+
+  \begin{block}{In short...}
+    With patience, ugly data becomes beautiful.
+  \end{block}
+\end{frame}
+
+
+\section{Practical matters}
+
+\begin{frame}
+  \frametitle{The most basic rule of thumb}
+  Before making a measurement, you have no idea what the data will
+  look like.  You \textbf{cannot} know how many repititions will be
+  required before examining the first scan.
+  \begin{description}
+  \item[One scan?] Never$^*$ measure a single scan.  How would you
+    know if something went wrong with the measurement?
+  \item[Two scans?] What if the two repititions are different?  How do
+    know which one is right?
+  \item[Three scans?] There you go!  Now you can know which on is
+    right.  \alert{Always plan on at least three repititions.}
+  \end{description}
+  \begin{textblock*}{0.7\linewidth}(0pt,17.5\TPVertModule)%
+    \footnotesize%
+    $^*$ Did I just say ``never''?  Yikes!  \textit{Never} say
+    ``never''!\\Why, on the very next page I am going to show examples
+    where single scans were measured.
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Rules of thumb always have exceptions...}
+  \small
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      Here are some time-resolved data.  Clearly we cannot take more
+      than one scan under any set of conditions because time marches on.        
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      The EXAFS data were taken at points in a rather large
+      fluorescence imaging map.  We simply did not have enough time
+      to measure more than a single scan and cover a large area.        
+    \end{column}
+  \end{columns}
+
+  \medskip
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth, height=3cm]{dummy.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth, height=3cm]{dummy.png}
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.4\linewidth}(0pt,18.0\TPVertModule)%
+    \tiny%
+    S.R.\ Bare, et al., \textit{Characterizing industrial catalysts
+      using in situ XAFS under identical conditions},
+    Phys. Chem. Chem. Phys. (2010) \textbf{12}, pp\ 7702-7711
+    \href{http://dx.doi.org/10.1039/B926621F}
+    {\color{Blue4}\texttt{DOI:10.1039/B926621F}}
+  \end{textblock*}
+  \begin{textblock*}{0.4\linewidth}(11\TPHorizModule,18.0\TPVertModule)%
+    \tiny%
+    D.H.\ Phillips, et al., \textit{Deposition of Uranium Precipitates
+      in Dolomitic Gravel Fill}, Environ. Sci. Technol. (2008)
+    \textbf{42}:19, pp\ 7104–7110
+    \href{http://dx.doi.org/10.1021/es8001579}
+    {\color{Blue4}\texttt{DOI:10.1016/10.1021/es8001579}}
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Statistical noise}
+  What does it mean to say that data are dominated by statistical
+  noise?
+  \begin{enumerate}
+  \item Your sample is well made
+    \begin{itemize}
+    \item homogeneous in the distribution of the absorber
+    \item of an appropriate thickness
+    \item not suffering from Bragg diffraction off of the sample or matrix
+    \end{itemize}
+  \item Your detectors are linear
+    \begin{itemize}
+    \item well constructed
+    \item not saturated
+    \item the entire signal chain is in a linear regime
+    \end{itemize}
+  \item The source and all optics are stable
+  \end{enumerate}
+  \begin{alertblock}{}
+    If all of those conditions are met, the variance in your data will
+    be statistical and subject to the CLT.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Making decisions with real data}
+  Take a look at this
+
+  \begin{center}
+    Show a picture of crap data\\
+    \includegraphics[width=0.5\linewidth, height=3cm]{dummy.png}
+  \end{center}
+
+
+  Three repititions will not be enough.  These data are simply not
+  good enough.
+\end{frame}
+
+\section{Statistical analysis}
+
+\begin{frame}
+  \frametitle{An ensemble of data}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      one scan\\
+      \includegraphics[width=\linewidth, height=3cm]{dummy.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      all the scans overplotted\\
+      \includegraphics[width=\linewidth, height=3cm]{dummy.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The data merged}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      one scan + merge in k\\
+      \includegraphics[width=\linewidth, height=3cm]{dummy.png}      
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      one scan + merge in R\\
+      \includegraphics[width=\linewidth, height=3cm]{dummy.png}      
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Convergance to the mean}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      Overplot 1 4 9 25 all\\
+      \includegraphics[width=\linewidth, height=3cm]{dummy.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{tabular}[h]{cccc}
+        scans & $\sqrt{N}$ & $\epsilon_k$ & ratio \\
+        \hline\\
+        1   & 1  & $x.xxx\times 10^{-3}$ & 1.0 \\
+        4   & 2  & $x.xxx\times 10^{-3}$ & x.x \\
+        16  & 4  & $x.xxx\times 10^{-4}$ & x.x \\
+        36  & 6  & $x.xxx\times 10^{-4}$ & x.x \\
+        64  & 8  & $x.xxx\times 10^{-4}$ & x.x \\
+        100 & 10 & $x.xxx\times 10^{-4}$ & x.x \\
+        142 & 11.9 & $x.xxx\times 10^{-4}$ & x.x
+      \end{tabular}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Data limitations}
+  Here are successive samplings of 142 scans measured on a sample of
+  Cr$_2$O$_3$.  The merge changes little after 16 scans.
+
+  \bigskip
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/cr2o3.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \small
+      \begin{tabular}[h]{cccc}
+        scans & $\sqrt{N}$ & $\epsilon_k$ & ratio \\
+        \hline\\
+        1   & 1  & $3.038\times 10^{-3}$ & 1.0 \\
+        4   & 2  & $1.420\times 10^{-3}$ & 2.1 \\
+        16  & 4  & $8.339\times 10^{-4}$ & 3.6 \\
+        36  & 6  & $7.185\times 10^{-4}$ & 4.2 \\
+        64  & 8  & $5.873\times 10^{-4}$ & 5.2 \\
+        100 & 10 & $5.419\times 10^{-4}$ & 5.6 \\
+        142 & 11.9 & $5.072\times 10^{-4}$ & 6.0
+      \end{tabular}
+    \end{column}
+  \end{columns}
+
+  \bigskip
+
+  \begin{alertblock}{}
+    \centering What's going on here?
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Systematic uncertainty}
+  More repititions only solves the problem of statistical noise.
+  There is systematic error -- probably sample inhomogeneity -- in the
+  Cr$_2$O$_3$ data at the level of $\epsilon_k \approx 5\times
+  10^{-4}$.
+
+  \bigskip
+
+  Here are a couple of obvious examples of systematic problems.
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \centering Mono glitch\\
+      \includegraphics[width=\linewidth, height=3cm]{dummy.png}      
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \centering Samply inhomogeneity?\\
+      \includegraphics[width=\linewidth, height=3cm]{dummy.png}      
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\section{Conclusions}
+
+\begin{frame}
+  \frametitle{Blah}
+  
+\end{frame}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
+%%% End:
