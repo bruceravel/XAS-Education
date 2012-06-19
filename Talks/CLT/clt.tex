@@ -167,9 +167,9 @@
       than one scan under any set of conditions. Time marches on.        
     \end{column}
     \begin{column}{0.5\linewidth}
-      The EXAFS data were taken at points in a rather large
+      These EXAFS data were taken at points in a rather large
       fluorescence imaging map.  To cover a large area, we only had time
-      to measure a single scan
+      to measure a single scan per point.
     \end{column}
   \end{columns}
 
@@ -201,23 +201,30 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Statistical noise}
-  What does it mean to say that data are dominated by statistical
-  noise?
+  \frametitle{When are data dominated by statistical noise?}
+  \begin{block}{}
+    Any of the following issues will contribute systematic uncertainty
+    to you data.  If any of these are large compared to shot noise,
+    then the CLT will not be observed in a data ensemble.
+  \end{block}
   \begin{enumerate}
   \item Your sample is well made
     \begin{itemize}
     \item homogeneous in the distribution of the absorber
     \item of an appropriate thickness
-    \item not suffering from Bragg diffraction off of the sample or matrix
+    \item no Bragg diffraction from the sample or the matrix
     \end{itemize}
   \item Your detectors are linear
     \begin{itemize}
     \item well constructed
     \item not saturated
     \item the entire signal chain is in a linear regime
+    \item no induced noise on the signal chain
     \end{itemize}
-  \item The source and all optics are stable
+  \item The source and all optics are stable in temperature and
+    vibration
+  \item Harmonic content is eliminated from the beam
+  \item The beam strikes the sample and only the sample
   \end{enumerate}
   \begin{alertblock}{}
     If all of those conditions are met, the variance in your data will
@@ -246,11 +253,11 @@
   \frametitle{An ensemble of data}
   \begin{columns}[T]
     \begin{column}{0.5\linewidth}
-      \centering Here, again, is our one noisy scan\\
+      \centering Here, again, is our one noisy scan\\[2.5ex]
       \includegraphics[width=\linewidth]{images/firstscan.png}
     \end{column}
     \begin{column}{0.5\linewidth}
-      \centering And here are 45 scans I measured on a weekend day\\
+      \centering ... and here are 45 scans I measured on a weekend day\\
       \includegraphics[width=\linewidth]{images/manyscans.png}
     \end{column}
   \end{columns}
@@ -390,10 +397,108 @@
 \section{Conclusions}
 
 \begin{frame}
-  \frametitle{Blah}
-  
+  \frametitle{Beating down noise can be a fool's game}
+  \small%
+  \begin{center}
+    \alert{Counting statistics is mean-spirited and $N^2$ is an
+      unhappy requirement.}
+  \end{center}
+
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{images/CoGr.png}
+  \end{center}
+
+  Here again is the convergance of the Co on carbon data.
+  It took 45 scans -- about 13 hours at my beamline -- to turn these
+  data into the sort of excellent EXAFS data we like to work on.  We
+  typically give users 3 days of beamtime, enough for 5 or 6 such
+  samples.
+
+  \bigskip
+
+  \begin{alertblock}{}
+    Sometimes we have to compromise on data quality in order to
+    measure enough samples to make a full experiment.
+  \end{alertblock}
 \end{frame}
 
+\begin{frame}
+  \frametitle{... but can really be worth it}
+
+  \begin{exampleblock}{}
+    The Central Limit Thoerem always works!  If data is important
+    enough to you, it can be measured.
+  \end{exampleblock}
+
+  \begin{center}
+    \includegraphics[width=0.55\linewidth]{images/merge_chik.png}
+
+    \bigskip
+
+    The collection of these data required only a simple calculation and
+    a bit of patience.
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{... except when it isn't!}
+  \begin{alertblock}{}
+    The Central Limit Thoerem only works when your data are dominated
+    by statistical noise.
+  \end{alertblock}
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/cr2o3.png}
+
+      \bigskip
+
+      The collection of scan 17 (or perhaps scan 5!) through scan 142
+      was a poor use of time.
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/mnxmu.png}  
+
+      \bigskip
+    
+      No amount of data repitition fixes a detector (or sample
+      or mono or...) problem.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Designing a real experiment (1)}
+  \begin{block}{Here are the sorts of questions you need to ask
+      youself at the beginning of a new project}
+    \begin{enumerate}
+    \item How much beamtime do you have?  How long does a scan
+      typically take at the beamline you will be visiting?  How
+      manysample do you have?
+    \item Have you considered how best to prepare your sample?  Will
+      you be measuring in transmission or fluorescence?
+    \item Will XANES data suffice?  Or do you need high quality EXAFS
+      data?
+    \item Have you prioritized your samples in case collection of
+      adequate data takes longer than you planned?
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Designing a real experiment (2)}
+  \begin{exampleblock}{Here are the sorts of questions you need to ask
+      youself once you begin collecting data}
+    \begin{enumerate}
+    \item What does the first scan look like?
+    \item Will XANES data suffice?  Or do you need high quality EXAFS
+      data?
+    \item On the basis of the noise, how many scans will be required
+      for beautiful data?
+    \item How many scans for usable data?
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
 
 \end{document}
 
