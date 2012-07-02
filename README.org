@@ -24,6 +24,7 @@ PDF files of the talks can be found in the [[https://github.com/bruceravel/XAS-E
      : | secondlecture | An introductory lecture for an XAS short course                                 |
      : | selfabs       | Understanding self-absorption in fluorescence XAS                               |
      : | CLT           | The central limit theorem and noise in EXAFS data                               |
+     : | RT            | The Ramsauer-Townsend effect in EXAFS analysis                                  |
 
 ** Examples
 
