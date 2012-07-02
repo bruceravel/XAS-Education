@@ -1,0 +1,12 @@
+set a.x=range(0,20,0.05)
+set a.y = sin(5*a.x)
+set b.y = sin(6*a.x)
+set c.y = a.y+b.y
+fftf(real=a.y, kmin = 3.0, kmax =16.0, dk=1.0)
+fftf(real=b.y, kmin = 3.0, kmax =16.0, dk=1.0)
+fftf(real=c.y, kmin = 3.0, kmax =16.0, dk=1.0)
+newplot(a.r, a.chir_mag)
+plot(a.r, b.chir_mag)
+plot(a.r, c.chir_mag)
+write_data(file=beat_k.dat, a.x, a.y, b.y, c.y)
+write_data(file=beat_r.dat, a.r, a.chir_mag, b.chir_mag, c.chir_mag)

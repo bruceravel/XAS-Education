@@ -1,0 +1,228 @@
+\documentclass[10pt, xcolor=x11names, compress]{beamer}
+%\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
+\include{header}
+
+%% define new commands here
+%\newcommand{\eto}{EuTiO$_3$}
+
+\mode<presentation>
+
+\title{The Ramsauer-Townsend effect in EXAFS}
+%\subtitle{}
+\include{author}
+\date{\today}
+
+\begin{document}
+\maketitle
+\include{copyright}
+
+\begin{frame}
+  \frametitle{Here's a common mailing list question}
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{Au_rk.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      Here are data on a gold foil.  Gold is an FCC metal with 12
+      neighbors in the first coordination shell at $\sim2.9$\,\AA\
+      and 6 in the second shell at $\sim4.1$\,\AA.
+
+      \bigskip
+
+      The Fourier transform of these data -- done with k-weight = 1 in
+      order to emphasize the point -- clearly show a split peak in the
+      $|\tilde\chi(R)|$ spectrum with peaks at about 2.5\,\AA\ and
+      3.0\,\AA.
+
+      \bigskip
+
+      \begin{alertblock}{}
+        \centering How can this be?
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Sum of sine waves}
+  Here is an overly simplified representation of the EXAFS signal
+  using pure, undamped sine waves.
+
+  \bigskip
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{beat_k.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      The {\color{Blue2}blue} wave has a frequency of 5, representing a
+      distance of 2.5\,\AA.
+
+      \medskip
+
+      The {\color{Red2}red} wave has a frequency of 6, representing a
+      distance of 3\,\AA.
+
+      \medskip
+
+      The {\color{Green4}green} wave is the sum of those two.  This
+      summation results in a beating pattern.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{The Fourier transform of the sum}
+  Here I show an EXAFS-like, finite-range Fourier transform over $2k$.
+  The k-range was 3\,\AA\ -- 16\,\AA, the window sill was 1\,\AA, and
+  a Kaiser-Bessel window was used.
+
+  \bigskip
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{beat_r.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      The {\color{Blue2}blue} and {\color{Red2}red} waves have peaks
+      at 2.5\,\AA\ and 3\,\AA, as expected.
+
+      \medskip
+      
+      The Fourier transform of the sum, the {\color{Green4}green}
+      wave, has peaks at both 2.5\,\AA\ and at 3\,\AA.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Interpreting the Au foil data}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{Au_rk.png}      
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{beat_r.png}
+
+      \medskip
+
+      Does this mean that we actually have 2 near-neighbor distances
+      in our gold foil?
+    \end{column}
+  \end{columns}
+  \begin{alertblock}<2>{}
+    \centering Certainly not!
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The EXAFS Equation}
+  {\small
+    \begin{align}
+      \chi(k,\Gamma) =&
+      { \frac{{\color{SlateBlue3}(N_\Gamma S_0^2)}{\color{Gold4}F_\Gamma(k)}}
+        {2\,kR_\Gamma^2} }
+      \sin(2kR_\Gamma + {\color{Gold4}\Phi_\Gamma(k)})
+      e^{-2{\color{SlateBlue3}\sigma_\Gamma^2}k^2}
+      e^{-2R_\Gamma/{\color{Gold4}\lambda(k)}} \\
+      \chi_{\mathrm{theory}}(k) =& \sum\limits_{\Gamma}\chi(k,\Gamma) \notag\\
+      R_\Gamma =& \> {\color{Gold4}R_{0,\Gamma}} +
+      {\color{SlateBlue3}\Delta R_\Gamma} \\
+      k =& N\sqrt{(E_0 - {\color{SlateBlue3}\Delta E_0})}
+    \end{align}}
+
+  \medskip
+
+  It is certainly true that we sum up terms with $\sin(2kR_\Gamma)$
+  (like in our simple, sine-wave example), however we also have the
+  terms ${\color{Gold4}F_\Gamma(k)}$ and
+  ${\color{Gold4}\Phi_\Gamma(k)}$ in the EXAFS equation.
+
+  \medskip
+
+  \begin{block}{}
+    \centering What does ${\color{Gold4}F_\Gamma(k)}$ look like for
+    something as heavy as Au?
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The scattering amplitude}
+  Show F from feff0001.dat for Au
+\end{frame}
+
+\begin{frame}
+  \frametitle{Simple model from quantum scattering theory}
+  Square well scattering
+\end{frame}
+
+\begin{frame}
+  \frametitle{Feff's calculation of the first shell in Au}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{Au+path.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      {\feff} accounts for the Ramsauer-Townsend effect correctly in
+      its calculation, enabling analysis in the same manner as for
+      lighter elements.
+
+      \bigskip
+
+      One moral of this story is that it is always wise to compare a
+      {\feff} calculation with your data before jumping to conclusions
+      about the interpetation of the peaks in $\tilde\chi(R)$.
+    \end{column}
+  \end{columns}
+
+  \bigskip
+
+  \begin{alertblock}{$\tilde\chi(R)$ is \textbf{NOT} a radial distribution function!}
+    The Ramsauer-Townsend effect on ${\color{Gold4}F_\Gamma(k)}$ is
+    among the many reasons for this.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Bibliography}
+
+  Searching for ``Ramsauer Townsend EXAFS'' on Google Scholar turns up
+  dozens of examples of papers discussing this phenomenon in EXAFS.
+
+  \medskip
+
+  Here is a small bibliography of important papers on this topic.
+  
+  \begin{enumerate}
+  \item P.A.\ Lee et al.,
+    \textit{Extended x-ray absorption fine structure--its strengths and limitations as a structural tool}
+    Rev.\ Mod.\ Phys. 53, 769-806 (1981)
+    \href{http://dx.doi.org/10.1103/RevModPhys.53.769}
+    {\color{Blue2}doi:10.1103/RevModPhys.53.769}
+  \item A.G.\ McKale et al., \textit{Generalized Ramsauer-Townsend
+      effect in extended x-ray-absorption fine structure} Phys.\ Rev.\ B
+    38, 10919-10921 (1988)
+    \href{http://dx.doi.org/10.1103/PhysRevB.38.10919}
+    {\color{Blue2}doi:10.1103/PhysRevB.38.10919}
+  \item J.J.\ Rehr, et al., \textit{X-ray-absorption fine structure in
+      embedded atoms} Phys.\ Rev.\ B 49, 12347-12350 (1994)
+    \href{http://dx.doi.org/10.1103/PhysRevB.49.12347}
+    {\color{Blue2}doi:10.1103/PhysRevB.49.12347}
+  \end{enumerate}
+\end{frame}
+
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
+%%% End:
