@@ -11,41 +11,41 @@ must be converted to PDF, png, or jpg.
 
 PDF files of the talks can be found in the [[https://github.com/bruceravel/XAS-Education/downloads][downloads area]].
 
- | *folder*      | *title of talk*                                                                 |
- |---------------+---------------------------------------------------------------------------------|
- | ATEA          | Advanced Topics In EXAFS Analysis                                               |
- | Experiment    | The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design |
- | FeS2          | The discussion following an Artemis demonstration                               |
- | i2x           | Interpreting XANES Data                                                         |
- | iiss          | Introduction to Inner Shell Spectroscopies                                      |
- | methyltin     | An Artemis example, supplement to a lecture/demo                                |
- | noxtal        | Modeling non-crystalline samples                                                |
- | pimst         | A Practical Introduction to Multiple Scattering Theory                          |
- | secondlecture | An introductory lecture for an XAS short course                                 |
- | selfabs       | Understanding self-absorption in fluorescence XAS                               |
- | CLT           | The central limit theorem and noise in EXAFS data                               |
+     : | *folder*      | *title of talk*                                                                 |
+     : |---------------+---------------------------------------------------------------------------------|
+     : | ATEA          | Advanced Topics In EXAFS Analysis                                               |
+     : | Experiment    | The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design |
+     : | FeS2          | The discussion following an Artemis demonstration                               |
+     : | i2x           | Interpreting XANES Data                                                         |
+     : | iiss          | Introduction to Inner Shell Spectroscopies                                      |
+     : | methyltin     | An Artemis example, supplement to a lecture/demo                                |
+     : | noxtal        | Modeling non-crystalline samples                                                |
+     : | pimst         | A Practical Introduction to Multiple Scattering Theory                          |
+     : | secondlecture | An introductory lecture for an XAS short course                                 |
+     : | selfabs       | Understanding self-absorption in fluorescence XAS                               |
+     : | CLT           | The central limit theorem and noise in EXAFS data                               |
 
 ** Examples
 
 These folders contain the XAS and structural data used in the talks.
 
- | *folder*          | *contents*                                                             |
- |-------------------+------------------------------------------------------------------------|
- | Au+Cyanobacteria  | LCF example using gold(III) chloride reduced to gold metal             |
- | Cr2O3             | The Cr2O3 data from the CLT talk                                       |
- | Cr standards      | Cr 3+ and 6+ oxide standards                                           |
- | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
- | EuTiO3            | Data at several temperatures, Ti K, and Eu L3 edges                    |
- | Fe foil           | Iron foil, 3 scans, 60 K, miscalibrated energy                         |
- | Fe standards      | An athena project file + several data files with various Fe standards  |
- | FeS2              | FeS2 transmission EXAFS + crystal data                                 |
- | GeSb              | A single scan of a thin GeSb on silicon, p. 6 ATEA                     |
- | Germanium         | Crystalline and amorphous Ge data + crystal data                       |
- | HgDNA             | merged scans of data and control for HgDNA example, p.7 ATEA           |
- | Methyltin         | Monomethyl tin trichloride + dimethyl tin dichloride + structure data  |
- | PbTiO3            | Ti K edge of PbTiO3 as a peak fitting example                          |
- | Self Absorption   | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite |
- | Uranyl on Biomass | uranyl acetate in equilibrium with biomass                             |
+     : | *folder*          | *contents*                                                             |
+     : |-------------------+------------------------------------------------------------------------|
+     : | Au+Cyanobacteria  | LCF example using gold(III) chloride reduced to gold metal             |
+     : | Cr2O3             | The Cr2O3 data from the CLT talk                                       |
+     : | Cr standards      | Cr 3+ and 6+ oxide standards                                           |
+     : | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
+     : | EuTiO3            | Data at several temperatures, Ti K, and Eu L3 edges                    |
+     : | Fe foil           | Iron foil, 3 scans, 60 K, miscalibrated energy                         |
+     : | Fe standards      | An athena project file + several data files with various Fe standards  |
+     : | FeS2              | FeS2 transmission EXAFS + crystal data                                 |
+     : | GeSb              | A single scan of a thin GeSb on silicon, p. 6 ATEA                     |
+     : | Germanium         | Crystalline and amorphous Ge data + crystal data                       |
+     : | HgDNA             | merged scans of data and control for HgDNA example, p.7 ATEA           |
+     : | Methyltin         | Monomethyl tin trichloride + dimethyl tin dichloride + structure data  |
+     : | PbTiO3            | Ti K edge of PbTiO3 as a peak fitting example                          |
+     : | Self Absorption   | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite |
+     : | Uranyl on Biomass | uranyl acetate in equilibrium with biomass                             |
 
 ** Other folders
 
