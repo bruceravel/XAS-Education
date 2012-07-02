@@ -28,7 +28,7 @@
 \include{copyright}
 
 \begin{frame}
-  \frametitle{Acknowledgements}
+  \frametitle{Acknowledgments}
   \footnotesize
   \begin{tabular}{cc}
     \begin{minipage}{0.1\linewidth}
@@ -42,7 +42,7 @@
       \includegraphics[width=\linewidth]{mugs/shelly.jpg}
     \end{minipage}&
     \begin{minipage}{0.7\linewidth}
-      Shelly Kelly, bug finder extraordinare and progenitor of several
+      Shelly Kelly, bug finder extraordinaire and progenitor of several
       examples in this talk
     \end{minipage} \\
     \begin{minipage}{0.1\linewidth}
@@ -101,7 +101,7 @@
     \begin{itemize}
     \item I assume you are a veteran of many XAS campaigns and that
       you already have your own data that you care about.
-    \item I assume you are familar with the EXAFS equation.
+    \item I assume you are familiar with the EXAFS equation.
     \item I assume you understand XAS data processing and have done
       some EXAFS analysis.
     \item Some familiarity with {\ifeffit} or {\artemis} will help.
@@ -121,12 +121,12 @@
 \begin{frame}[label=themultiples]
   \frametitle{The ``Multiples''}
   \begin{description}[Multiple]
-  \item[Multiple $k$-weight] Corefinement of the data using {\multiple}
+  \item[Multiple $k$-weight] Co-refinement of the data using {\multiple}
     values of $k$-weighting in the Fourier Transform
   \item[Multiple Feff Calculations] Using {\multiple} runs of the
     {\feff} program to generate the theory used in your fitting
     model
-  \item[Multiple Data Sets] Corefinement of {\multiple} data sets --
+  \item[Multiple Data Sets] Co-refinement of {\multiple} data sets --
     this may be data measured at multiple edges, multiple
     temperatures, etc.
   \item[Constraints Between Parameters] At the heart of an EXAFS
@@ -319,7 +319,7 @@
     \end{column}
     \begin{column}{0.6\linewidth}
       \begin{center}
-        This is an unambigously good fit:
+        This is an unambiguously good fit:
         
         \medskip
 
@@ -378,7 +378,7 @@
       \begin{itemize}
       \item Approximations and errors in theory
       \item Sample inhomogeneity
-      \item Detector nonlinearity
+      \item Detector non-linearity
       \item Gremlins --- never forget about the gremlins! $\ddot\smile$
       \end{itemize}
     \end{column}
@@ -399,7 +399,7 @@
   \item $\chi^2_\nu$ {\color{Green4}\textbf{can}} be used to compare
     different fits.  A fit is improved if $\chi^2_\nu$ is
     significantly smaller.
-  \item Error bars are taken from the diagonal of the covarience
+  \item Error bars are taken from the diagonal of the covariance
     matrix.  If $\chi^2_\nu$ is way too big, the error bars will be way
     too small.  The error bars reported by {\ifeffit} have been scaled
     by $\sqrt{\chi^2_\nu}$.
@@ -427,7 +427,7 @@
   \item The results should be consistent with other things you know
     about the sample.
   \item The R-factor should be small and the fit should closely
-    overplot the data.  (That was redundant. $\ddot\smile$ )
+    over-plot the data.  (That was redundant. $\ddot\smile$ )
   \end{itemize}
 \end{frame}
 
@@ -492,11 +492,15 @@
 
 \begin{frame}
   \frametitle{Artemis: Statistics in the log file}
-  
+  \small%
   \begin{center}
-    %\includegraphics[width=0.9\linewidth]{artemis/mkw.png}
+    \includegraphics[width=0.9\linewidth]{info/log.png}
 
-    \textit{Show log file, show top bar with log button}
+    Statistical information is reported in the log file.  The log from
+    the most recent fit can be displayed by clicking the log button on
+    the right side on the main window.  The log files from all fits in
+    the project can be viewed by clicking the history button on the
+    left side of the main window.
   \end{center}
 \end{frame}
 
@@ -526,7 +530,7 @@
 
   $\chi_{\mathrm{theory}}(k)$ is the function that is fit to data by
   varying the fitting parameters using theory from {\feff} (the
-  {\color{Gold4}terms in yellow-grey}).
+  {\color{Gold4}terms in yellow-gray}).
 
   \bigskip
 
@@ -679,7 +683,7 @@
       \small
       \quad\includegraphics[width=0.7\linewidth]{mkw/fitkw2.png}
 
-      The fit \textit{looks} ok, but it's actually kind of a mess.
+      The fit \textit{looks} OK, but it's actually kind of a mess.
       \begin{itemize}
         \small
       \item The $S_0^2$ value is way too big
@@ -793,7 +797,7 @@ Correlations between variables:
   \begin{enumerate}
   \item A crystal with the absorbing atom in {\multiple} lattice
     positions
-  \item A metalloprotein with {\multiple}, inequivalent active sites
+  \item A metalloprotein with {\multiple}, nonequivalent active sites
   \item An adsorbed metallic species that might be in {\multiple}
     ligation environments
   \item A physical mixture of {\multiple} species, e.g.\ dirt
@@ -886,14 +890,14 @@ Correlations between variables:
 
   \begin{columns}[T]
     \begin{column}{0.5\linewidth}
-      A uranyl solution brought into equillibrium with biomass will
+      A uranyl solution brought into equilibrium with biomass will
       proportionate in a pH-dependent manner among hydroxyl,
       phosphoryl, and carboxyl ligands.
       \begin{itemize}
       \item Uranyl species tend to have 5 or 6 equatorial O's
       \item Phosphoryl ligands are monodentate
       \item Carboxyl ligands are bidentate
-      \item Hydroxyl's just dangle
+      \item Hydroxyls just dangle
       \end{itemize}
       \begin{alertblock}{}
         There is no way to find a \file{feff.inp} file for that!
@@ -1015,7 +1019,7 @@ Correlations between variables:
   \bigskip
 
   \begin{block}{Some parameters may be related across data sets}
-    Corefining related data sets will dramatically increase the
+    Co-refining related data sets will dramatically increase the
     information content of the fit --- each data set \textbf{is} an
     independent measurement --- while not equivalently increasing the
     number of fitting parameters.
@@ -1026,7 +1030,7 @@ Correlations between variables:
 \begin{frame}
   \frametitle{Example: Multiple Temperatures}
 
-  I can corefine the {\color{Green4}copper metal} data measured at
+  I can co-refine the {\color{Green4}copper metal} data measured at
   many temperatures.  Here is the fit we saw earlier, extended to
   include 10\,K \textbf{and} 50\,K data:
   \begin{columns}
@@ -1083,7 +1087,7 @@ Correlations between variables:
 \begin{frame}
   \frametitle{Example: Stoichiometry}
 
-  I can corefine {\color{Green4}forms of methyltin}, remembering that
+  I can co-refine {\color{Green4}forms of methyltin}, remembering that
   monomethyl tin has 1 Sn--C ligand and 3 Sn-Cl, while dimethyl tin
   has 2 and 2.
   \begin{columns}
@@ -1101,7 +1105,7 @@ Correlations between variables:
     \end{column}
   \end{columns}
   \begin{exampleblock}{Twice the information, same number of parameters!}
-    The simple assertion that the ligands are invarient between these
+    The simple assertion that the ligands are invariant between these
     samples adds considerable depth to the fitting model.  Is this
     assertion correct?  That is easily tested by lifting constraints
     on $\sigma^2$ and $\Delta R$ are comparing the fit results.
@@ -1368,7 +1372,7 @@ Correlations between variables:
 \begin{frame}
   \frametitle{Using Imperfect Knowledge}
 
-  {\ifeffit} allows the incoproration of imprecise
+  {\ifeffit} allows the incorporation of imprecise
   \alert{prior knowledge} by adding restraints in quadrature
   to the fitting metric.
 
