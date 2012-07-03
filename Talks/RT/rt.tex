@@ -17,7 +17,7 @@
 \include{copyright}
 
 \begin{frame}
-  \frametitle{Here's a common mailing list question}
+  \frametitle{Here's a beginner's question}
 
   \begin{columns}[T]
     \begin{column}{0.5\linewidth}
@@ -150,12 +150,43 @@
 
 \begin{frame}
   \frametitle{The scattering amplitude}
-  Show F from feff0001.dat for Au
+  Here is ${\color{Gold4}F_\Gamma(k)}$. as calculated by {\feff} for
+  the first shell Au atom in FCC gold.
+  \begin{center}
+    \includegraphics[width=0.7\linewidth]{f_au.png}
+  \end{center}
+  The minimum just above 5\,\AA\ will introduce structure to the EXAFS
+  equation that resembles the beat due to the sum of sine waves.
+  \begin{textblock*}{0.7\linewidth}(0pt,19.5\TPVertModule)%
+    \tiny%
+    Here I am plotting columns 1 v.\ 3 from the file \file{feff0001.dat}.
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
   \frametitle{Simple model from quantum scattering theory}
-  Square well scattering
+  The basic physics of this phenomenon is related to the well-known
+  problem of scattering from a square potential.  All first-year
+  physics graduate students have to solve the 1D problem of scattering
+  from a square potential.
+  \begin{columns}[T]
+    \begin{column}{0.6\linewidth}
+      \centering\includegraphics[width=0.7\linewidth]{Finitepot.png}
+    \end{column}
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=0.7\linewidth]{Finitebarrdiag.png}      
+    \end{column}
+  \end{columns}
+  In the quantum problem, there is a large tunneling probability at
+  certain enegies (wavelengths).  At the minimum in
+  ${\color{Gold4}F_\Gamma(k)}$, we are seeing tranmission of the
+  photoelectron through the scatterer.
+  \begin{textblock*}{0.7\linewidth}(0pt,19.5\TPVertModule)%
+    \tiny%
+    These images from Wikimedia Commons.\\See
+    \href{http://en.wikipedia.org/wiki/Rectangular_potential_barrier}
+    {\color{Blue2}the Wikipedia ``Rectangular potential barrier'' page}
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
@@ -181,36 +212,49 @@
 
   \begin{alertblock}{$\tilde\chi(R)$ is \textbf{NOT} a radial distribution function!}
     The Ramsauer-Townsend effect on ${\color{Gold4}F_\Gamma(k)}$ is
-    among the many reasons for this.
+    among the many reasons $\tilde\chi(R)$ is \textbf{NOT} an RDF.
   \end{alertblock}
 \end{frame}
 
 \begin{frame}
   \frametitle{Bibliography}
-
+  \small%
   Searching for ``Ramsauer Townsend EXAFS'' on Google Scholar turns up
   dozens of examples of papers discussing this phenomenon in EXAFS.
 
   \medskip
 
-  Here is a small bibliography of important papers on this topic.
+  Here is a small bibliography of papers explaining this topic in much
+  more depth than this presentation.
   
   \begin{enumerate}
   \item P.A.\ Lee et al.,
-    \textit{Extended x-ray absorption fine structure--its strengths and limitations as a structural tool}
+    \textit{Extended x-ray absorption fine structure--its strengths and limitations as a structural tool},
     Rev.\ Mod.\ Phys. 53, 769-806 (1981)
     \href{http://dx.doi.org/10.1103/RevModPhys.53.769}
     {\color{Blue2}doi:10.1103/RevModPhys.53.769}
   \item A.G.\ McKale et al., \textit{Generalized Ramsauer-Townsend
-      effect in extended x-ray-absorption fine structure} Phys.\ Rev.\ B
+      effect in extended x-ray-absorption fine structure}, Phys.\ Rev.\ B
     38, 10919-10921 (1988)
     \href{http://dx.doi.org/10.1103/PhysRevB.38.10919}
     {\color{Blue2}doi:10.1103/PhysRevB.38.10919}
   \item J.J.\ Rehr, et al., \textit{X-ray-absorption fine structure in
-      embedded atoms} Phys.\ Rev.\ B 49, 12347-12350 (1994)
+      embedded atoms}, Phys.\ Rev.\ B 49, 12347-12350 (1994)
     \href{http://dx.doi.org/10.1103/PhysRevB.49.12347}
     {\color{Blue2}doi:10.1103/PhysRevB.49.12347}
   \end{enumerate}
+
+  Here are some discussions from the
+  \href{http://millenia.cars.aps.anl.gov/mailman/listinfo/ifeffit}
+  {\color{Blue2}Ifeffit Mailing List} on this topic:
+  \begin{itemize}
+  \item \scriptsize
+    \href{http://millenia.cars.aps.anl.gov/pipermail/ifeffit/2006-November/007243.html}
+    {\color{Blue2}http://millenia.cars.aps.anl.gov/pipermail/ifeffit/2006-November/007243.html}
+  \item \scriptsize
+    \href{http://millenia.cars.aps.anl.gov/pipermail/ifeffit/2011-October/010241.html}
+    {\color{Blue2}http://millenia.cars.aps.anl.gov/pipermail/ifeffit/2011-October/010241.html}
+  \end{itemize}
 \end{frame}
 
 

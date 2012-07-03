@@ -1,0 +1,9 @@
+title name:     gold
+title formula:  Au
+title notes1:   metal, fcc
+space  f m 3 m
+a    = 4.08
+rmax = 9.00   rpath = 6
+core = Au
+atom
+  Au     0.00000   0.00000   0.00000  Au
