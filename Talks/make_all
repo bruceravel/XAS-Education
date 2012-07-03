@@ -3,7 +3,7 @@
 makepdf()
 {
 cd $1
-echo -n compiling $2.tex in $1
+echo -n "compiling $2.tex in $1 "
 echo "\n\n==========================================\n**** compiling $FILE.tex in $DIR\n\n" 1>> ../make_all.log
 pdflatex $2.tex 1>> ../make_all.log 2>&1
 echo "  (second pass)"
