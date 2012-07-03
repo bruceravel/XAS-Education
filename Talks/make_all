@@ -1,9 +1,11 @@
 #!/bin/sh
 
+TOTAL=12
+
 makepdf()
 {
 cd $1
-echo -n "compiling $2.tex in $1 "
+echo -n "($3/$TOTAL) compiling $2.tex in $1 "
 echo "\n\n==========================================\n**** compiling $FILE.tex in $DIR\n\n" 1>> ../make_all.log
 pdflatex $2.tex 1>> ../make_all.log 2>&1
 echo "  (second pass)"
@@ -14,15 +16,15 @@ cd ..
 rm -f make_all.log
 
 ##      directory       tex file name
-makepdf 'ATEA'          'atea'
-makepdf 'CLT'           'clt'
-makepdf 'Experiment'    'experiment'
-makepdf 'FeS2'          'fes2'
-makepdf 'RT'            'rt'
-makepdf 'i2x'           'i2x'
-makepdf 'iiss'          'iiss'
-makepdf 'methyltin'     'methyltin'
-makepdf 'noxtal'        'noxtal'
-makepdf 'pimst'         'pimst2'
-makepdf 'secondlecture' 'second'
-makepdf 'selfabs'       'selfabs'
+makepdf 'ATEA'          'atea'           1
+makepdf 'CLT'           'clt'            2
+makepdf 'Experiment'    'experiment'     3
+makepdf 'FeS2'          'fes2'           4
+makepdf 'RT'            'rt'             5
+makepdf 'i2x'           'i2x'            6
+makepdf 'iiss'          'iiss'           7
+makepdf 'methyltin'     'methyltin'      8
+makepdf 'noxtal'        'noxtal'         9
+makepdf 'pimst'         'pimst2'         10
+makepdf 'secondlecture' 'second'         11
+makepdf 'selfabs'       'selfabs'        12
