@@ -1,0 +1,28 @@
+#!/bin/sh
+
+makepdf()
+{
+cd $1
+echo -n compiling $2.tex in $1
+echo "\n\n==========================================\n**** compiling $FILE.tex in $DIR\n\n" 1>> ../make_all.log
+pdflatex $2.tex 1>> ../make_all.log 2>&1
+echo "  (second pass)"
+pdflatex $2.tex 1>> ../make_all.log 2>&1 
+cd ..
+}
+
+rm -f make_all.log
+
+##      directory       tex file name
+makepdf 'ATEA'          'atea'
+makepdf 'CLT'           'clt'
+makepdf 'Experiment'    'experiment'
+makepdf 'FeS2'          'fes2'
+makepdf 'RT'            'rt'
+makepdf 'i2x'           'i2x'
+makepdf 'iiss'          'iiss'
+makepdf 'methyltin'     'methyltin'
+makepdf 'noxtal'        'noxtal'
+makepdf 'pimst'         'pimst2'
+makepdf 'secondlecture' 'second'
+makepdf 'selfabs'       'selfabs'
