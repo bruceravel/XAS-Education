@@ -292,9 +292,13 @@
   energy will fluoresce.
 
   \begin{center}
-    NIST X-ray Fluorescence Standard \#1833, incident energy $\approx$ 12\,keV
-    \includegraphics[width=0.7\linewidth]{xrf/NBS1833.png}
+    Glass with every 2$^{\mathrm{nd}}$ element Ca--Ge, incident energy = 11153\,eV\\
+    \includegraphics[width=0.75\linewidth]{xrf/glass_linear.png}
   \end{center}
+  % \begin{center}
+  %   NIST X-ray Fluorescence Standard \#1833, incident energy $\approx$ 12\,keV
+  %   \includegraphics[width=0.7\linewidth]{xrf/NBS1833.png}
+  % \end{center}
 
 \end{frame}
 
@@ -517,6 +521,151 @@
   \end{center}
 \end{frame}
 
+
+\section[Real-world problem]{Solving a real-world problem with XRF and XAS}
+
+\begin{frame}
+  \frametitle{My backyard}
+  When I bought my house, there was a wooden deck off the dining
+  room.  I replaced this with a paving stone patio and converted the
+  adjacent plot of ground into a vegetable garden.
+
+  \medskip
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{garden/wooden_deck.jpg}      
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.75\linewidth]{dummy.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Wood preservative}
+
+  \begin{columns}[T]
+    \begin{column}{0.6\linewidth}
+      The wood used to make the deck was treated with the wood
+      preservative chromated copper arsentate (CCA), which is chromium
+      bearing analogue of copper orthoarsente,
+      Cu$_3$(AsO$_4$)$_2$$\cdot$4H$_2$O.
+    \end{column}
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=\linewidth]{garden/copper_arsenate.png}      
+    \end{column}
+  \end{columns}
+
+  \bigskip
+
+  \begin{block}{}
+    CCA-treated wood is known to leach all three elements into
+    surrounding soils.  I had some questions:
+
+    \bigskip
+
+    \begin{enumerate}
+    \item How much As is in the soil?  Is it higher than elsewhere
+      in the garden? (Use XRF)
+    \item What chemical species is the As in the soil?  (Use XAS)
+    \end{enumerate}
+  \end{block}
+  \begin{textblock*}{0.5\linewidth}(0pt,19.5\TPVertModule)%
+    \tiny%
+    The orthoarsenate image is from Wikimedia commons and is in the
+    public domain.
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{XRF spectra}
+  
+  I took soil samples from a few centimeters below the surface from a
+  spot adjecent to the old deck and from a spot 5 meters away and slightly
+  uphill.
+
+  \smallskip
+
+  Here are the XRF spectra from those two spots:
+
+  \begin{center}
+    \includegraphics[width=0.65\linewidth]{garden/close_far.png}
+  \end{center}
+
+  There is a clear enhancement of both As and Cr in the soil adjacent
+  to the old deck.  The As is enhanced roughly two-fold.
+\end{frame}
+
+\begin{frame}
+  \frametitle{As standards}
+  
+  As a point of reference, here are the XAS spectra from two inorganic
+  As standards, As$^{3+}_2$O$_3$ and As$^{5+}_2$O$_5$.
+
+  \begin{center}
+    \includegraphics[width=0.65\linewidth]{garden/standards.png}
+  \end{center}
+
+  Note that the edge of As$^{5+}$ standard is shifted substantially to
+  higher energy and that its white line is much enhanced.
+
+  \begin{center}
+    As$^{5+}$ is water soluble, thus more mobile than As$^{3+}$.
+
+    Also As$^{5+}$ is \alert{quite toxic}.
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{XAS from the soil samples}
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      Here are the raw $\mu(E)$ data from the two soil locations.
+      Sure enough, the signal from the site adjacent to the old deck
+      is enhanced by about a factor of 2.
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \only<2>{ Here are the normalized data compared to standards.
+        The As is slightly reduced, but predominantly As$^{5+}$.  As
+        in soil is well known to bind to soil particles as As$^{5+}$.}
+    \end{column}
+  \end{columns}
+
+  \medskip
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{garden/mue.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics<2>[width=\linewidth]{garden/soils.png}      
+    \end{column}
+  \end{columns}
+
+  \begin{alertblock}<2>{}
+    Should I be worried about the produce I grow in the garden?
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{XRF spectra from plant leaves}
+  Here are XRF spectra from the leaf of a squash plant growing in the
+  soil adjacent to the old deck.
+  \begin{center}
+    \includegraphics[width=0.65\linewidth]{garden/squash_leaf.png}
+  \end{center}
+  Although toxic As$^{5+}$ is present in the soil in elevated
+  quantities, very little is taken up by the plants growing the that
+  soil.
+
+  \bigskip
+
+  The squash were delicious!
+\end{frame}
+
 \section[XAS Applications]{Applications of XAS}
 
 \begin{frame}
@@ -530,10 +679,10 @@
   \begin{description}[Dielectric materials]
   \item[Economic geology] Measure the rate of reduction of Au$^{3+}$
     chloride to metallic Au and identify an intermediate species
-  \item[Minerology] Supporting evidence for a novel U$^5$/U$^6$
-    mineral formed under certain hydrothermal conditions
-  \item[Dielectric materials] {\bton} represents a class of materials
-    with tunable dielectric properties
+  %\item[Minerology] Supporting evidence for a novel U$^5$/U$^6$
+  %  mineral formed under certain hydrothermal conditions
+  %\item[Dielectric materials] {\bton} represents a class of materials
+  %  with tunable dielectric properties
   \end{description}
 
   \bigskip
@@ -550,144 +699,9 @@
 \subsection[Economic geology]{Economic geology}
 \include{aucl}
 
-\subsection[Minerology]{Minerology}
-\begin{frame}
-  \frametitle{Minerology (I)}
+%\include{minerology}
+%\include{dielectric}
 
-  A deep understanding of the nuclear fuel cycle requires study of
-  ``exotic'' pentavalent uranium minerals that can form under specific
-  mine or storage facility conditions.  One such mineral,
-  {\ufivemineral}, has recently been synthesized.
-
-  \qquad\includegraphics[width=0.7\linewidth]{xas/u5mineral.png}
-
-  \begin{block}{}
-    XRD is an indirect measure of valence | XAS is a direct measure!
-  \end{block}
-
-  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule) 
-    \tiny
-    N. Belai et el., \textit{Pentavalent Uranium Oxide via Reduction
-      of [UO$_2$]$^{2+}$ Under Hydrothermal Reaction Conditions},
-    Inorg. Chem., 2008, 47 (21), pp 10135–10140,
-    \href{http://dx.doi.org/10.1021/ic801534m}
-    {\color{Blue4}\texttt{DOI: 10.1021/ic801534m}}
-  \end{textblock*}
-\end{frame}
-\begin{frame}
-  \frametitle{Minerology (II)}
-  XAS on \ufivemineral
-
-  \begin{columns}[T]
-    \begin{column}{0.5\linewidth}
-      \begin{center}
-        \small
-        XANES data\\
-        \includegraphics[width=\linewidth]{xas/u5norm.png}\\
-        We see evidence of U$^{\mathrm{V}}$ by  the intermediate edge position
-        between our U$^{\mathrm{IV}}$ and U$^{\mathrm{VI}}$ standards.
-      \end{center}
-    \end{column}
-    \begin{column}{0.5\linewidth}
-      \begin{center}
-        \small
-        EXAFS analysis\\
-        \includegraphics[width=\linewidth]{xas/u5chikr.png}\\
-        The crystal structure refined from the XRD is consistent with
-        the EXAFS data.
-      \end{center}
-    \end{column}
-  \end{columns}
-
-%   \bigskip
-
-%   The data on this page has been redacted as the paper has not yet
-%   been published.  The data that were here demonstrated that the
-%   mineral contains U$^{\mathrm{V}}$ and that the structure refined
-%   from XRD is consistent with the EXAFS data.
-
-  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule) 
-    \tiny
-    N. Belai et el., \textit{Pentavalent Uranium Oxide via Reduction
-      of [UO$_2$]$^{2+}$ Under Hydrothermal Reaction Conditions},
-    Inorg. Chem., 2008, 47 (21), pp 10135–10140,
-    \href{http://dx.doi.org/10.1021/ic801534m}
-    {\color{Blue4}\texttt{DOI: 10.1021/ic801534m}}
-  \end{textblock*}
-\end{frame}
-
-
-
-\subsection[Dielectric materials]{Dielectric materials}
-\begin{frame}
-  \frametitle{Dielectric materials (I)}
-
-  Tantalum oxynitrides are a class of dielectric materials with high
-  $K$ which is tunable by selection of the A cation.  By mixing A
-  cations, a temperature-constant dielectric is possible.
-  \begin{columns}
-    \begin{column}{0.5\linewidth}
-      \begin{center}
-        \includegraphics[width=0.6\linewidth]{xas/perovskite.png}
-      \end{center}
-    \end{column}
-    \begin{column}{0.5\linewidth}
-      \begin{center}
-        \includegraphics[width=0.9\linewidth]{xas/bton_permit.png}
-      \end{center}
-    \end{column}
-  \end{columns}
-
-  First principles DFT suggests that the different ionic radii of O
-  and N introduce substantial disorder around the Ta atom.
-  
-  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule) 
-    \tiny
-    B. Ravel et el., \textit{Role of local disorder in the dielectric
-      response of BaTaO$_2$N}, Phys. Rev. \textbf{B73}, p. 184121 (2006),
-    \href{http://dx.doi.org/10.1103/PhysRevB.73.184121}
-    {\color{Blue4}\texttt{DOI: 10.1103/PhysRevB.73.184121}}
-  \end{textblock*}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Dielectric materials (II)}%
-  The DFT results in a rather complex coordination environment about
-  the Ta atom | much more complex than the simple perovskite
-  structure.
-  \begin{columns}
-    \begin{column}{0.5\linewidth}
-      \begin{center}
-        \includegraphics[width=\linewidth]{xas/bton_SS.png}
-      \end{center}
-    \end{column}
-    \begin{column}{0.5\linewidth}
-      \begin{center}
-        \includegraphics[width=\linewidth]{xas/bton_fit.png}
-      \end{center}
-    \end{column}
-  \end{columns}
-  With some effort, this complexity can be incorporated into the data
-  analysis.  The EXAFS data are shown to be (mostly) consistent with
-  the DFT results.
-
-  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule) 
-    \tiny
-    B. Ravel et al., \textit{Role of local disorder in the dielectric
-      response of BaTaO$_2$N}, Phys. Rev. \textbf{B73}, p. 184121 (2006), 
-    \href{http://dx.doi.org/10.1103/PhysRevB.73.184121}
-    {\color{Blue4}\texttt{DOI: 10.1103/PhysRevB.73.184121}}
-  \end{textblock*}
-\end{frame}
-
-
-% \section[XRF Applications]{Applications of XRF}
-
-% \begin{frame}
-%   \frametitle{Beamline}
-
-%   Beamline
-% \end{frame}
 
 \section[Microprobe]{XRF and XAS on the Micron Scale}
 
@@ -861,119 +875,7 @@
   \end{textblock*}
 \end{frame}
 
-\subsection[200 nm]{200 Nanometer Probe}
-\begin{frame}
-  \frametitle{Radiation resistance of D. Radiodurans (I)}
-
-  \textit{D. Radiodurens} were cultured on a TEM grid and dried.  The
-  locations of cells were registered under a light microscope and
-  found again at APS beamline 2\,ID-D, where a 250\,nm
-  probe was used.
-  
-  \begin{columns}
-    \begin{column}{0.4\linewidth}
-      \begin{center}
-        \includegraphics[width=0.8\linewidth]{xrf/dr_tem_grid.jpg}\\[1ex]
-        {\tiny
-          \begin{tabular}{ccc}
-            element & max $\mu$g/cm$^2$ & max mass ppm \\
-            \hline
-            P  & 3.5200 & 312.3\\
-            S  & 0.4790 & 42.5\\
-            Cl & 0.2130 & 18.9\\
-            K  & 2.3600 & 209.4\\
-            Ca & 0.1300 & 11.5\\
-            Cr & 0.0014 & 0.1\\
-            Mn & 0.0155 & 1.4\\
-            Fe & 0.0135 & 1.2\\
-            Co & 0.0019 & 0.2\\
-            Ni & 0.0024 & 0.2\\
-            Cu & 0.0413 & 3.7\\
-            Zn & 0.0457 & 4.1\\
-          \end{tabular}
-        }
-      \end{center}
-    \end{column}
-    \begin{column}{0.6\linewidth}
-      \begin{center}
-        This proved to be a colony of four cells:\\[1ex]
-        \includegraphics[width=0.9\linewidth]{xrf/dr_allmaps.png}
-      \end{center}
-    \end{column}
-  \end{columns}
-
-  \bigskip
-
-  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule)
-    \tiny M. Daly et el., \textit{Protein Oxidation Implicated as the
-      Primary Determinant of Bacterial Radioresistance}, PLoS
-    Biol \textbf{5}(4): e92 
-    \href{http://dx.doi.org/10.1371/journal.pbio.0050092}
-    {\color{Blue4}\texttt{doi:10.1371/journal.pbio.0050092}}
-  \end{textblock*}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Radiation resistance of D. Radiodurans (II)}
-
-  \textit{D. Radiodurens}:
-  \begin{enumerate}
-  \item is unusually resistent to high doses of ionizing radiation, even
-    thriving under doses that would quickly kill other bacteria
-  \item has high intracellular Mn/Fe concentration ratios compared to
-    IR-sensitive bacteria
-  \end{enumerate}
-
-  \bigskip
-  
-  \begin{block}{We noticed a trend in the Fe and Mn distribution}
-    \begin{itemize}
-    \item Fe is enhanced in the cell walls.  It is available when
-      needed for metabolism but sequestered from cell organs to
-      protect them from Fenton chemistry.
-    \item Mn in enhanced in cell body and is available to scavange
-      radiolosis radicals near cell organs.
-    \end{itemize}
-  \end{block}
-
-  \bigskip
-
-  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule)
-    \tiny M. Daly et el., \textit{Protein Oxidation Implicated as the
-      Primary Determinant of Bacterial Radioresistance}, PLoS
-    Biol \textbf{5}(4): e92
-    \href{http://dx.doi.org/10.1371/journal.pbio.0050092}
-    {\color{Blue4}\texttt{doi:10.1371/journal.pbio.0050092}}
-  \end{textblock*}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Radiation resistance of D. Radiodurans (III)}
-
-  Here are images we published on a diploid colony:
-
-  \bigskip
-
-  \begin{columns}
-    \begin{column}{0.5\linewidth}
-      \includegraphics[width=\linewidth]{xrf/dr_4maps.jpg}
-    \end{column}
-    \begin{column}{0.5\linewidth}
-      Superposing those four images:\\[1ex]
-      \includegraphics[width=\linewidth]{xrf/dr_superposed.jpg}
-    \end{column}
-  \end{columns}    
-  
-  \bigskip
-
-  \begin{textblock*}{0.5\linewidth}(0pt,19\TPVertModule)
-    \tiny M. Daly et el., \textit{Protein Oxidation Implicated as the
-      Primary Determinant of Bacterial Radioresistance}, PLoS
-    Biol \textbf{5}(4): e92
-    \href{http://dx.doi.org/10.1371/journal.pbio.0050092}
-    {\color{Blue4}\texttt{doi:10.1371/journal.pbio.0050092}}
-  \end{textblock*}
-\end{frame}
+%\include{200nm}    % deinococus radiodurans example
 
 \section[XAS Community]{The XAS Community}
 
@@ -996,8 +898,8 @@
       {\color{Blue4}\texttt{http://cars9.uchicago.edu/ifeffit/}}}
   \item[Athena \& Artemis] Graphical programs for the processing and
     analysis of XAFS data.\\\qquad{\scriptsize
-      \href{http://github.com/bruceravel/demeter/}
-      {\color{Blue4}\texttt{http://github.com/bruceravel/demeter/}}}
+      \href{http://bruceravel.github.com/demeter}
+      {\color{Blue4}\texttt{http://bruceravel.github.com/demeter}}}
   \item[The Ifeffit mailing list] Discussion of \textsc{ifeffit} and
     related XAFS analysis programs.  Also covered are general
     discussions of XAFS, XAFS theory, and related
