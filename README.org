@@ -31,23 +31,23 @@ PDF files of the talks can be found in the [[https://github.com/bruceravel/XAS-E
 
 These folders contain the XAS and structural data used in the talks.
 
-     : | *folder*          | *contents*                                                             |
-     : |-------------------+------------------------------------------------------------------------|
-     : | Au+Cyanobacteria  | LCF example using gold(III) chloride reduced to gold metal             |
-     : | Cr2O3             | The Cr2O3 data from the CLT talk                                       |
-     : | Cr standards      | Cr 3+ and 6+ oxide standards                                           |
-     : | Cu metal          | Copper foil at 3 temperatures + crystal data                           |
-     : | EuTiO3            | Data at several temperatures, Ti K, and Eu L3 edges                    |
-     : | Fe foil           | Iron foil, 3 scans, 60 K, miscalibrated energy                         |
-     : | Fe standards      | An Athena project file + several data files with various Fe standards  |
-     : | FeS2              | FeS2 transmission EXAFS + crystal data                                 |
-     : | GeSb              | A single scan of a thin GeSb on silicon, p. 6 ATEA                     |
-     : | Germanium         | Crystalline and amorphous Ge data + crystal data                       |
-     : | HgDNA             | Merged scans of data and control for HgDNA example, p.7 ATEA           |
-     : | Methyltin         | Monomethyl tin trichloride + dimethyl tin dichloride + structure data  |
-     : | PbTiO3            | Ti K edge of PbTiO3 as a peak fitting example                          |
-     : | Self Absorption   | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite |
-     : | Uranyl on Biomass | Uranyl acetate in equilibrium with biomass                             |
+| *folder*          | *contents*                                                             |
+|-------------------+------------------------------------------------------------------------|
+| Au+Cyanobacteria  | LCF example using gold(III) chloride reduced to gold metal             |
+| Cr2O3             | The Cr2O3 data from the CLT talk                                       |
+| Cr standards      | Cr 3+ and 6+ oxide standards                                           |
+| Cu metal          | Copper foil at 3 temperatures + crystal data                           |
+| EuTiO3            | Data at several temperatures, Ti K, and Eu L3 edges                    |
+| Fe foil           | Iron foil, 3 scans, 60 K, miscalibrated energy                         |
+| Fe standards      | An Athena project file + several data files with various Fe standards  |
+| FeS2              | FeS2 transmission EXAFS + crystal data                                 |
+| GeSb              | A single scan of a thin GeSb on silicon, p. 6 ATEA                     |
+| Germanium         | Crystalline and amorphous Ge data + crystal data                       |
+| HgDNA             | Merged scans of data and control for HgDNA example, p.7 ATEA           |
+| Methyltin         | Monomethyl tin trichloride + dimethyl tin dichloride + structure data  |
+| PbTiO3            | Ti K edge of PbTiO3 as a peak fitting example                          |
+| Self Absorption   | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite |
+| Uranyl on Biomass | Uranyl acetate in equilibrium with biomass                             |
 
 ** Other folders
 
@@ -73,15 +73,17 @@ To use the copyright, author, and date file, put these in the main .tex file of 
 The following are some of my favorite papers covering the ins and outs
 of advanced EXAFS analysis:
 
- + [[http://dx.doi.org/10.1103/PhysRevB.66.224405][Scott Calvin's paper on analysis of doped ferrites]]
+ * [[http://dx.doi.org/10.1103/PhysRevB.66.224405][Scott Calvin's paper on analysis of doped ferrites]]
 
- + [[http://dx.doi.org/10.1016/S0016-7037(02)00947-X][Shelly Kelly's uranium on biomass paper demonstrating the use of crystalline analogs]]
+ * [[http://dx.doi.org/10.1016/S0016-7037(02)00947-X][Shelly Kelly's uranium on biomass paper demonstrating the use of crystalline analogs]]
 
- + [[http://dx.doi.org/10.1088/1742-6596/190/1/012026][My paper from the XAFS14 conference on Composing complex EXAFS problems with severe information constraints]]
+ * [[http://dx.doi.org/10.1088/1742-6596/190/1/012026][My paper from the XAFS14 conference on Composing complex EXAFS problems with severe information constraints]]
 
- + [[http://dx.doi.org/10.1103/PhysRevB.54.156][Eric Hudson's paper relating SS and MS values for sigma^2]]
+ * [[http://dx.doi.org/10.1103/PhysRevB.54.156][Eric Hudson's paper relating SS and MS values for sigma^2]]
 
- + [[http://dx.doi.org/10.1088/1742-6596/190/1/012028][Corwin Booth's XAFS14 conference paper on error analysis]]
+ * [[http://dx.doi.org/10.1088/1742-6596/190/1/012028][Corwin Booth's XAFS14 conference paper on error analysis]]
+
+ * [[http://dx.doi.org/10.1016/j.jallcom.2005.04.021][My paper on A Practical Introduction to Multiple Scattering Theory]]
 
 ** License
 
@@ -92,26 +94,26 @@ This is a human-readable summary of the [[http://creativecommons.org/licenses/by
  
 You are free:
 
- + *to Share* — to copy, distribute and transmit the work
- + *to Remix* — to adapt the work
- + to make commercial use of the work
+ * *to Share* — to copy, distribute and transmit the work
+ * *to Remix* — to adapt the work
+ * to make commercial use of the work
 
 Under the following conditions:
 
- + *Attribution* — You must attribute the work in the manner specified
+ * *Attribution* — You must attribute the work in the manner specified
    by the author or licensor (but not in any way that suggests that they
    endorse you or your use of the work).
 
- + *Share Alike* — If you alter, transform, or build upon this work,
+ * *Share Alike* — If you alter, transform, or build upon this work,
    you may distribute the resulting work only under the same or
    similar license to this one.
 
 With the understanding that:
 
- + *Waiver* — Any of the above conditions can be waived if you get permission from the copyright holder.
- + *Public Domain* — Where the work or any of its elements is in the public domain under applicable law, that status is in no way affected by the license.
- + *Other Rights* — In no way are any of the following rights affected by the license:
-    + Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;
-    + The author's moral rights;
-    + Rights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.
- + *Notice* — For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to this web page.
+ * *Waiver* — Any of the above conditions can be waived if you get permission from the copyright holder.
+ * *Public Domain* — Where the work or any of its elements is in the public domain under applicable law, that status is in no way affected by the license.
+ * *Other Rights* — In no way are any of the following rights affected by the license:
+    * Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;
+    * The author's moral rights;
+    * Rights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.
+ * *Notice* — For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do this is with a link to this web page.
