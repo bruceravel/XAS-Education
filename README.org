@@ -46,6 +46,7 @@ These folders contain the XAS and structural data used in the talks.
      : | PbTiO3            | Ti K edge of PbTiO3 as a peak fitting example                          |
      : | Self Absorption   | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite |
      : | Uranyl on Biomass | Uranyl acetate in equilibrium with biomass                             |
+     : | Xtal              | Crystal structure examples                                             |
 
 ** Other folders
 
