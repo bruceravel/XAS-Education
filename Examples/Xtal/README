@@ -1,0 +1,3 @@
+This folder contains crystal data used in XAS Education examples or in
+the Demeter & Artemis documents.  These data are either in the form of
+an atoms.inp file, a feff.inp file, or a CIF file.
