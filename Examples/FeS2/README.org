@@ -10,6 +10,14 @@ example.  You should not consider this to be a recipe -- at each step
 you should play around with the settings in either Athena or Artemis
 to understand fully these data and the programs.
 
+The file ~FeS2.fpj~ is an Artemis project file containing the final
+fitting model that I show when presenting this fit during an XAS
+workshop.  This example is [[http://bruceravel.github.com/demeter/artug/examples/fes2.html][worked through]] in the Artemis users' Guide.
+It is also the topic of the fifth video from [[http://www.diamond.ac.uk/Home/Events/Past_events/XAS-workshop-2011.html%3FmgnlCK%3D1339516257183][the 2011 XAS workshop at
+Diamond]].  Finally, check out [[http://cloud.github.com/downloads/bruceravel/XAS-Education/fes2.pdf][this presentation]] for discussion of the
+details of this fit and its model.
+
+
  1.  Fire up Athena.  Import the data file.
 
  2.  Find a set of parameters that gives a good background removal and
