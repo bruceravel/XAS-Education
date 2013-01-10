@@ -39,3 +39,15 @@ Zirconalite data:
      Plot tranmission and corrected data as chi(k) or chi(R)
 
   4. Apply the same correction to the irradiated sample
+
+==============================================================================
+
+Copper data:
+
+  Example for applying the Booth algorithm, see
+  http://dx.doi.org/10.1238/Physica.Topical.115a00202 and
+  http://lise.lbl.gov/RSXAP/
+
+  The project file contains a transmission Cu foil at 150K and Corwins
+  Cu film example.  According to the paper, the incident and exit
+  angles were 49 and 41 degrees and the film was 4.6 microns thick.
