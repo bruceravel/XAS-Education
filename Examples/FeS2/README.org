@@ -5,23 +5,23 @@ Matt's data archive at
      [[http://cars9.uchicago.edu/~newville/ModelLib/search.html]]
      
 This is sufficient information to begin a fitting project for FeS2.
-In this readme file, I'll write steps to take to work through this
+In this README file, I'll write steps to take to work through this
 example.  You should not consider this to be a recipe -- at each step
 you should play around with the settings in either Athena or Artemis
 to understand fully these data and the programs.
 
-The file ~FeS2.fpj~ is an Artemis project file containing the final
-fitting model that I show when presenting this fit during an XAS
-workshop.  This example is [[http://bruceravel.github.com/demeter/artug/examples/fes2.html][worked through]] in the Artemis users' Guide.
+The file ~FeS2_final.fpj~ is an Artemis project file containing the
+final fitting model that I show when presenting this fit during an XAS
+workshop.  This example is [[http://bruceravel.github.io/demeter/artug/examples/fes2.html][worked through]] in the Artemis Users' Guide.
 It is also the topic of the fifth video from [[http://www.diamond.ac.uk/Home/Events/Past_events/XAS-workshop-2011.html%3FmgnlCK%3D1339516257183][the 2011 XAS workshop at
-Diamond]].  Finally, check out [[http://cloud.github.com/downloads/bruceravel/XAS-Education/fes2.pdf][this presentation]] for discussion of the
+Diamond]].  Finally, check out [[https://speakerdeck.com/bruceravel/discussion-of-the-fes2-exafs-analysis-example][this presentation]] for discussion of the
 details of this fit and its model.
 
 
  1.  Fire up Athena.  Import the data file.
 
  2.  Find a set of parameters that gives a good background removal and
-     Fourier transform.  Note that the first couple data points in the
+     Fourier transform.  Note that the first few data points in the
      pre-edge are odd -- be sure to select pre-edge parameters that
      avoid that bit of data.
 
@@ -37,8 +37,8 @@ details of this fit and its model.
 
  7.  Verify that the Feff input data is reasonable, then run Feff.
 
- 8.  Select the first 10 paths in the path interpretation by clicking
-     on path #1 then clicking on path #10 while holding the shift key.
+ 8.  Select the first 11 paths in the path interpretation by clicking
+     on path #0 then clicking on path #10 while holding the shift key.
      Drag and drop these paths onto the Data window.
 
  9.  Use the plot transfer buttons (the little red and blue buttons in
@@ -50,11 +50,11 @@ details of this fit and its model.
        it contributes spectral weight in the region of the first peak.
 
      * Clear the plotting list and put the data and the next three
-       singel scattering paths in the plotting list.  Where do those
+       single scattering paths in the plotting list.  Where do those
        paths contribute spectral weight?
 
-     * Plot the various multiple scattering pathss along with the
-       data.  Do anyof these MS paths seem like they might be
+     * Plot the various multiple scattering paths along with the
+       data.  Do any of these MS paths seem like they might be
        important contributions to the fit?
 
  10. Click the GDS button to open the parameters window.  Create 4
@@ -81,12 +81,12 @@ details of this fit and its model.
  15. Now you need to set parameters for the paths you just included.
      It is reasonable to use the same S02 and E0 parameters for each
      path.  Should Delta R be the same for each path?  Should sigma^2?
-     Come up with some reasonable parameterization, either by making
+     Come up with some reasonable parametrization, either by making
      interesting constraints between the paths or by creating new
      guess parameters as needed.
 
- 16. Make a fit using your parameterization.  Are the best fit values
-     reasonable?  How might you change the parameterization?  Is it
+ 16. Make a fit using your parametrization.  Are the best fit values
+     reasonable?  How might you change the parametrization?  Is it
      possible to make constraints between the paths?
 
  17. FeS2 is a cubic material (it's space group is Pa3 -- a cubic
