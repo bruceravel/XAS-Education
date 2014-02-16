@@ -1,0 +1,122 @@
+% auxiliary package for mol2chemfig
+\ProvidesPackage{mol2chemfig}[2013/02/13 v1.3b]
+\RequirePackage{xcolor, chemfig, twoopt, ifmtarg}
+
+\newcommand{\cycleon}{\CF@incycletrue}
+\newcommand{\cycleoff}{\CF@incyclefalse}
+
+\def\mcfcringle#1{% this macro was written by Christian Tellechea
+\tikz\draw(0,0)circle(\CF@atom@sep*#1*0.66667*\CF@cycle@inraduiscoeff);}
+
+% stacking atoms horizontally and vertically
+
+\newlength{\mcfvspace}
+\setlength{\mcfvspace}{1.5pt}
+
+\newcommand{\mcfabove}[2]{\chemabove[\mcfvspace]{#1}{#2}}
+\newcommand{\mcfbelow}[2]{\chembelow[\mcfvspace]{#1}{#2}}
+
+\newlength{\mcf@boxwidth}
+\newlength{\mcf@boxheight}
+
+\newcommand{\mcf@box}[3][l]{
+\settowidth{\mcf@boxwidth}{\printatom{#2}}
+\settoheight{\mcf@boxheight}{\printatom{#2}}
+\makebox[\mcf@boxwidth][#1]{\raisebox{0pt}[\mcf@boxheight][0pt]{\printatom{#3}}}}
+
+\newcommand{\mcfleft}[2]{\mcf@box[r]{#2}{#1#2}}
+\newcommand{\mcfright}[2]{\mcf@box{#1}{#1#2}}
+
+\newcommand{\mcfaboveright}[3]{\mcfabove{#1}{\mcf@box{#2}{#2#3}}}
+\newcommand{\mcfbelowright}[3]{\mcfbelow{#1}{\mcf@box{#2}{#2#3}}}
+
+% setup for wavy bonds
+\usetikzlibrary{decorations}
+
+% the complete sines definition is taken from http://tex.stackexchange.com/questions/25678/nicer-wavy-line-with-tikz
+\pgfdeclaredecoration{complete sines}{initial}
+{
+    \state{initial}[
+        width=+0pt,
+        next state=sine,
+        persistent precomputation={\pgfmathsetmacro\matchinglength{
+            \pgfdecoratedinputsegmentlength / int(\pgfdecoratedinputsegmentlength/\pgfdecorationsegmentlength)}
+            \setlength{\pgfdecorationsegmentlength}{\matchinglength pt}
+        }] {}
+    \state{sine}[width=\pgfdecorationsegmentlength]{
+        \pgfpathsine{\pgfpoint{0.25\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathcosine{\pgfpoint{0.25\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathsine{\pgfpoint{0.25\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathcosine{\pgfpoint{0.25\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+}
+    \state{final}{}
+}
+
+\tikzset{ % set styles
+    % wavy bonds. Slightly modified from http://www.texdev.net/tag/chemfig/
+    mcfwavy/.style =
+    {
+      decorate,
+      decoration =
+        {
+          complete sines,
+          post length = 0 pt,
+          pre length  = 0 pt,
+          % Use the atom spacing: saved
+          segment length = \the\dimexpr\csname CF@atom@sep\endcsname/6\relax,
+          amplitude = \the\dimexpr\csname CF@atom@sep\endcsname/10\relax
+        }
+    },
+    % this style is used by the
+    mcfpusharrow/.style = {
+        ->,
+        >=stealth,
+        shorten <=2.5pt,
+        shorten >=1pt,
+        preaction={draw=white, -,line width=1.5pt}
+    },
+    % one bond crossing before another - gets a wider white backdrop
+    mcfcrossbond/.style={%
+        preaction={draw,white,line width=1.25pt,shorten <= 2.5pt,shorten >= 2.5pt}
+    }
+}
+
+% give \setbondstyle an optional argument to adjust the appearence of
+% crossbonds
+\let\mcf@setbondstyle\setbondstyle
+\renewcommand{\setbondstyle}[2][]{%
+\mcf@setbondstyle{#2}%
+\@ifmtarg{#1}{}{\tikzset{mcfcrossbond/.style={preaction={#1}}}}}
+
+% more convenient drawing of push arrows
+% this command is adapted from the myChemistry package
+% by Clemens Niederberger
+\newcommand{\mcf@elmove}[5][]{%
+\node at (0,0) {% dummy wrapper node
+\chemmove{\draw[mcfpusharrow,#1](#2).. controls +(#3) and +(#5)..(#4);%
+}};}
+
+% and, since the only practically common operation to require tikz code
+% is arrow shortening and lengthening: a command streamlined for that.
+
+\newcommandtwoopt{\mcfpush}[6][][]{% we use empties to keep same defaults
+\@ifmtarg{#2}{
+    \@ifmtarg{#1}{\mcf@elmove{#3}{#4}{#5}{#6}}
+                 {\mcf@elmove[shorten <=#1]{#3}{#4}{#5}{#6}}
+}{% #2 not empty
+    \@ifmtarg{#1}{\mcf@elmove[shorten >=#2]{#3}{#4}{#5}{#6}}
+                 {\mcf@elmove[shorten <=#1, shorten >=#2]{#3}{#4}{#5}{#6}}
+}}
+
+
+% formatting of charges and atom numbers
+
+% Charges - could for example be set to \oplus and \ominus
+\newcommand{\mcfplus}{+}
+\newcommand{\mcfminus}{-}
+
+% atom numbers (used when option atom-numbers is selected)
+\newcommand{\mcfatomno}[1]{\raisebox{2pt}{\color{blue}{\ensuremath{\mathsf{_{#1}}}}}}
+
+% a little help with direct processing of mol2chemfig commands
+\let\mcfinput\@@input
