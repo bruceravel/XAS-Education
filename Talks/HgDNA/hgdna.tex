@@ -1,0 +1,141 @@
+\documentclass[10pt, xcolor=x11names, compress]{beamer}
+%\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
+\include{header}
+\usepackage{chemfig}
+\usepackage{mol2chemfig}
+
+%% define new commands here
+%\newcommand{\eto}{EuTiO$_3$}
+
+%% this makes the dashed lines to the Hg atoms
+\newcommand*{\bondwidth}{0.17 em} %'Bond Width'
+\newcommand*{\bondboldwidth}{0.22832 em} %'Bold Width'
+\newcommand*{\bondhashlength}{0.25737 em} % 'Hash Spacing'
+\tikzset{
+  bold bond/.style = {line width = \bondboldwidth},
+  dash bond/.style =
+    {dash pattern = on \bondhashlength off \bondhashlength},
+  hash bond/.style =
+    {
+      dash pattern = on \bondwidth off \bondhashlength,
+      line width   = \bondboldwidth
+    },
+}
+
+\newcommand{\qm}{?}
+\newcommand{\spc}{~}
+
+\newcommand\namebond[4][5pt]{\chemmove{\path(#2)--(#3)node[midway,sloped,yshift=#1]{#4};}}
+\newcommand\arcbetweennodes[3]{%
+  \pgfmathanglebetweenpoints{\pgfpointanchor{#1}{center}}{\pgfpointanchor{#2}{center}}%
+  \let#3\pgfmathresult}
+\newcommand\arclabel[6][stealth-stealth,shorten <=1pt,shorten >=1pt]{%
+  \chemmove{%
+    \arcbetweennodes{#4}{#3}\anglestart \arcbetweennodes{#4}{#5}\angleend
+    \draw[#1]([shift=(\anglestart:#2)]#4)arc(\anglestart:\angleend:#2);
+    \pgfmathparse{(\anglestart+\angleend)/2}\let\anglestart\pgfmathresult
+    \node[shift=(\anglestart:#2+4pt)#4,anchor=\anglestart+180,rotate=\anglestart+90,inner sep=0pt,
+    outer sep=0pt]at(#4){#6};}}
+
+
+
+
+\mode<presentation>
+
+\title{A challenging EXAFS analysis problem}
+%\subtitle{}
+\include{author}
+%\include{date}
+\date[ACXAS 2014]{ASEAN Workshop on X-ray Absorption Spectroscopy\\
+  Synchrotron Light Research Institute\\June 2--4, 2014}
+
+\begin{document}
+\maketitle
+\include{copyright}
+
+\begin{frame}
+  \frametitle{The nucleotides}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      {\tiny
+        \input{nucleotides/adenosinemonophosphate.chemfig}}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      {\tiny 
+        \input{nucleotides/guanisinemonophosphate.chemfig}}
+    \end{column}
+  \end{columns}
+
+  \bigskip
+
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      {\tiny
+        \input{nucleotides/thymidinemonophosphate.chemfig}
+      }     
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      {\tiny
+        \input{nucleotides/cytodinemonophosphate.chemfig}
+      }      
+    \end{column}
+  \end{columns}
+
+  \begin{textblock*}{0.2\linewidth}(4.5\TPHorizModule,3.0\TPVertModule)%
+    Adenisine
+  \end{textblock*}
+  \begin{textblock*}{0.2\linewidth}(17\TPHorizModule,7.0\TPVertModule)%
+    Guanisine
+  \end{textblock*}
+  \begin{textblock*}{0.2\linewidth}(2\TPHorizModule,12.0\TPVertModule)%
+    Thymidine
+  \end{textblock*}
+  \begin{textblock*}{0.2\linewidth}(13\TPHorizModule,13\TPVertModule)%
+    Cytodine
+  \end{textblock*}
+  \begin{textblock*}{0.2\linewidth}(8.75\TPHorizModule,9\TPVertModule)%
+    \textbf{Purines}
+  \end{textblock*}
+  \begin{textblock*}{0.2\linewidth}(8.5\TPHorizModule,18\TPVertModule)%
+    \textbf{Pyridines}
+  \end{textblock*}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Hg and thymidine}
+  \chemfig{%
+    % nitrogenous base begins
+    C-[:330]C=[:30,,,,-]C(-[:90,,,,dash bond]Hg\qm)%
+    -[:330,,,,-]N(-[:270,,,,-]C(%
+    -[:210,,,,-]@{2}N(-[:270,,,,dash bond]@{1}\underline{Hg}\qm)%
+    -[:150,,,,-]@{3}C(=[:210,,,,-]O)%
+    -[:90,,,,-]C)=[:330,,,,-]O(-[:330,,,,dash bond]\widetilde{Hg}\qm))%
+    % sugar begins
+    -[:30]C-[:84]C(-[:150,,,,dash bond]\overline{Hg}\qm)-[:12]C(-[:66,,,1]OH^{\color{white}2})%
+    -[:300]C(-[:228]O(-[:285,,,,dash bond]\overline{Hg}\qm)%
+    % bridge sugar to phosphate
+    -[:156]C)-[:354]C-[:294]O-[:354]%
+    % phosphate begins
+    P(-[:54]\mcfright{O}{^{\mcfminus}})%
+    (-[:294]\mcfright{O}{^{\mcfminus}}
+    (-[:294,,,,dash bond]\widetilde{Hg}\qm))%
+    =[:354]O%
+    \namebond{2}{1}{\footnotesize $a$}
+    \namebond{2}{3}{\footnotesize $b$}
+    \arclabel{0.5cm}{1}{2}{3}{\footnotesize$\varphi$}
+  }
+\end{frame}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
+%%% End:
