@@ -1,0 +1,47 @@
+\documentclass{article}
+
+%\usepackage{tgtermes}%
+%\usepackage{times}%
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{chemfig}
+%\usepackage{mol2chemfig}
+\usepackage{fullpage}
+
+
+%% mol2chemfig -wz -c -i pubchem 6083
+
+\begin{document}
+
+%% mol2chemfig -wzc -a 270 -i pubchem 6083 > adenosinemonophosphate.chemfig
+Adenosine (purine) monophosphate\\[2ex]
+\input{adenosinemonophosphate.chemfig}
+
+\bigskip
+
+%% mol2chemfig -wzc -a 90 -i pubchem 9700 > thymidinemonophosphate.chemfig
+Thymidine (pyrimidine) monophosphate\\[2ex]
+\input{thymidinemonophosphate.chemfig}
+
+\newpage
+
+%% mol2chemfig -wzc -a 90 -i pubchem 9700 > thymidinemonophosphate.chemfig
+Guanisine (purine) monophosphate\\[2ex]
+\input{guanisinemonophosphate.chemfig}
+
+\bigskip
+
+%% mol2chemfig -wzc -a 90 -i pubchem 6131 > cytodinemonophosphate.chemfig
+Cytosine (pyrimidine) monophosphate\\[2ex]
+\input{cytodinemonophosphate.chemfig}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
+%%% End:
