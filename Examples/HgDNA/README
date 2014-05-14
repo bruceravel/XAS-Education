@@ -16,3 +16,7 @@ and
 
      http://dx.doi.org/10.1088/1742-6596/190/1/012026
 
+The raw data files are all from APS 20BM.  Energy is in column 1.  The
+fluorescence signal is column 9, the I0 signal is column 4.  So the
+EXAFS is colum9/column4.  The reference spectrum (something with
+selenium) is ln(column5/column6).
