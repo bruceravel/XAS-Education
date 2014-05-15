@@ -351,7 +351,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Question \#1}
+  \frametitle{First question}
   \begin{exampleblock}{Is all Hg taken up by the DNA?}
     \centering To answer this, we measured a sample with excess Hg.
   \end{exampleblock}
@@ -934,7 +934,7 @@
 
   \end{center}
   \begin{enumerate}
-  \item $E_0$ and $S_0^2$ are variables \dotfill\ (1,2)
+  \item $E_0$ and \texttt{amp} are variables \dotfill\ (1,2)
   \item Hg-N distance and $\sigma^2$ are variables \dotfill\ (3,4)
   \item Hg-O distance and $\sigma^2$ are variables \dotfill\ (5,6)
   \item Assume that the ring is \alert{completely rigid}, this allows
@@ -998,12 +998,185 @@
 
       \bigskip
 
-      Assuming the ring is rigid, then we \alert{approximate}
-      $\sigma^2_{\mathrm{Hg\cdot C}}$ as scaling geometrically from
-      $\sigma^2_{\mathrm{Hg\cdot N}}$
+      Assuming the ring is \textbf{rigid}, then we \alert{approximate}
+      $\sigma^2_{\mathrm{Hg\cdot C}}$ (and others) by scaling
+      geometrically from $\sigma^2_{\mathrm{Hg\cdot N}}$
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Paths}
+  \begin{columns}[T]
+    \begin{column}{0.25\linewidth}
+      Path 1 (SS)\\[1ex]
+      \tiny
+      \chemfig{
+        {\color{black!20!white}N}-[:270,,,,-]C(%
+        -[:210,,,,-]@{2}N?[a]%
+        (-[:270,,,,dash bond]@{1}Hg?[a,1,red])%
+        -[:150,,,,-]@{3}C(=[:210,,,,-]O)%
+        -[:90,,,,-]\cgray)=[:330,,,,-]O%
+      }
+    \end{column}
+    \begin{column}{0.25\linewidth}
+      Path 2 (SS)\\[1ex]
+      {\tiny
+        \chemfig{
+          {\color{black!20!white}N}-[:270,,,,-]C(%
+          -[:210,,,,-]@{2}N%
+          (-[:270,,,,dash bond]@{1}Hg?[a])%
+          -[:150,,,,-]@{3}C?[a,1,red](=[:210,,,,-]O)%
+          -[:90,,,,-]\cgray)=[:330,,,,-]O%
+        }{\normalsize $\times 2$}\\[1ex]
+        $\Delta R$ uses trigonomtry\\
+        $\sigma^2_2 \propto\sigma^2_1$
+      }
+    \end{column}
+    \begin{column}{0.25\linewidth}
+      Path 3 (SS)\\[1ex]
+      \tiny
+      \chemfig{
+        {\color{black!20!white}N}-[:270,,,,-]C(%
+        -[:210,,,,-]@{2}N%
+        (-[:270,,,,dash bond]@{1}Hg?[a])%
+        -[:150,,,,-]@{3}C(=[:210,,,,-]O?[a,1,red])%
+        -[:90,,,,-]\cgray)=[:330,,,,-]O%
+      }{\normalsize $\times 2$}
     \end{column}
   \end{columns}
 
+  ~\\[3ex]
+
+  \begin{columns}[T]
+    \begin{column}{0.25\linewidth}
+      Path 4 (MS)\\[1ex]
+      {\tiny
+        \chemfig{
+          {\color{black!20!white}N}-[:270,,,,-]C(%
+          -[:210,,,,-]@{2}N?[a]%
+          (-[:270,,,,dash bond]@{1}Hg?[a,1,red]?[b])%
+          -[:150,,,,-]@{3}C?[a,1,red]?[b,1,red](=[:210,,,,-]O)%
+          -[:90,,,,-]\cgray)=[:330,,,,-]O%
+        }{\normalsize $\times 4$}\\[1ex]
+        $\Delta R$ computed from paths 1 and 2\\
+        $\sigma^2_4 :=\sigma^2_2$
+      }
+    \end{column}
+    \begin{column}{0.25\linewidth}
+      Path 5 (MS)\\[1ex]
+      {\tiny
+        \chemfig{
+          {\color{black!20!white}N}-[:270,,,,-]C(%
+          -[:210,,,,-]@{2}N?[a]%
+          (-[:270,,,,dash bond]@{1}Hg?[a,1,red])%
+          -[:150,,,,-]@{3}C?[a,1,red](=[:210,,,,-]O)%
+          -[:90,,,,-]\cgray)=[:330,,,,-]O%
+        }{\normalsize $\times 2$}\\[1ex]
+        $\Delta R$ computed from path 1\\
+        $\sigma^2_5 :=\sigma^2_2$
+      }
+    \end{column}
+    \begin{column}{0.25\linewidth}
+      Path 6 (MS)\\[1ex]
+      {\tiny
+        \chemfig{
+          {\color{black!20!white}N}-[:270,,,,-]C(%
+          -[:210,,,,-]@{2}N%
+          (-[:270,,,,dash bond]@{1}Hg?[a])%
+          -[:150,,,,-]@{3}C?[a,1,red]?[b](=[:210,,,,-]O?[a,1,red]?[b,2,red])%
+          -[:90,,,,-]\cgray)=[:330,,,,-]O%
+        }{\normalsize $\times 4$}\\[1ex]
+        $\Delta R$ computed from paths 1 and 3\\
+        $\sigma^2_6 :=\sigma^2_1+\sigma^2_3$
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fitting result}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/fit.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{tabular}{rl}
+        \texttt{amp} & $1.86\pm 0.44$ \\
+        $E_0$ & $1.41\pm 1.91$\\
+        $\Delta R(N)$ & $0.006\pm 0.028$\\
+        $\Delta R(O)$ & $-0.058\pm 0.063$\\
+        $\sigma^2(N)$ & $0.0046\pm 0.0045$\\
+        $\sigma^2(O)$ & $0.0096\pm 0.0081$
+      \end{tabular}
+
+      \bigskip
+
+      \begin{block}{Why is \texttt{amp} near 2?}
+        The Hg atom bridges 2 thymines.  Our {\feff} model had Hg
+        bound to 1 thymine.  So $S_0^2$ is really 0.93(44)!
+      \end{block}
+
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Post mortem}
+
+\begin{frame}
+  \frametitle{Uncertainties}
+  \begin{itemize}
+  \item The data are short -- i.e.\ little information content -- and
+    noisy
+  \item The uncertainties are all quite large, although the best fit
+    values all make sense
+  \item $S_0^2$ came out right, although with large uncertainty
+  \item The $\sigma^2$ approximations are sensible, but certainly not correct
+  \item The assumption that the ring is rigid is sensible, but
+    certainly not correct
+  \item The assumption that the Hg atom sits in the plane of the ring
+    is sensible, but certainly not correct
+  \end{itemize}
+
+  \begin{block}{}
+    Our data are \textbf{consistent} with the Hg atom bound to the N
+    atom in the 6-member nitrogenous base
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What could we have done better?}
+  \begin{itemize}
+  \item The As in the cacodylic acid hurt.  Use a different buffer.
+  \item The sample geometry hurt.  Use better packaging or a focusing mirror.
+  \end{itemize}
+
+  \bigskip
+
+  \begin{block}{}
+    Those two things could have increased efficiency by about an order
+    of magnitude.  Another couple inverse {\AA}ngstroms would have
+    made a huge difference!
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What have we learned?}
+  \begin{itemize}
+  \item The science question required interpretation of both XANES and
+    EXAFS
+  \item Quick first shell fit to approximate the first shell distance
+  \item Made input for {\feff} from published structural data and a
+    sensible guess for the location of the Hg atom
+  \item Tried several possible coordination geometries, but only
+    pursued the one that looked promising
+  \item Dealt with limited information by applying interesting
+    constraints
+  \item We didn't exactly \textit{solve} the structure, but we
+    demonstrated that the EXAFS data are consistent with the
+    assumption from NMR
+  \end{itemize}
 \end{frame}
 
 \end{document}
