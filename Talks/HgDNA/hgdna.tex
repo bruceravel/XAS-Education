@@ -159,13 +159,13 @@
   \end{center}
 \end{frame}
 
-\section{Hg sensor}
+\section{Experiment}
 
 
 \begin{frame}
   \frametitle{DNA-based Hg sensor}
   
-  \begin{block}{U.S.\ limit on Hg in water is 10\,nM (2\,ppb)}
+  \begin{block}{U.S.\ EPA limit on Hg in water is 10\,nM (2\,ppb)}
     The DNA-based sensor for Hg has a detection limit of 2.4\,nM
   \end{block}
 
@@ -285,8 +285,8 @@
       \includegraphics[width=0.8\linewidth]{images/displex.jpg}
     \end{column}
     \begin{column}{0.5\linewidth}
-      The samples were packaged back at the University and were about
-      15\,mm by 3\,mm.
+      The samples were packaged back at the University of Illinois and
+      were about 15\,mm by 3\,mm.
 
       \bigskip
 
@@ -446,7 +446,7 @@
   \bigskip
 
   \begin{alertblock}{}
-    \centering Neat!  But we need 3D structures to run \textsc{feff}...
+    \centering Neat!  But we need 3D structures to run {\feff}...
   \end{alertblock}
 \end{frame}
 
@@ -465,7 +465,7 @@
 \begin{frame}[fragile]
   \frametitle{Cartesian coordinates: 3D SDF file}
   \begin{columns}
-    \begin{column}{0.7\linewidth}
+    \begin{column}{0.65\linewidth}
   \begin{alltt}
     \tiny
  9700
@@ -496,10 +496,10 @@
    -1.6278    2.9841   -1.5911 H   0  0  0  0  0  0  0  0  0  0  0  0
    -2.2303    2.3332    1.0386 H   0  0  0  0  0  0  0  0  0  0  0  0
 
-      (plus several more hydrogen atoms)
+      (+ several more hydrogen atoms + bonding information)
   \end{alltt}
     \end{column}
-    \begin{column}{0.3\linewidth}
+    \begin{column}{0.35\linewidth}
       Here is the ``SDF'' file downloaded from PubChem.
 
       \bigskip
@@ -523,7 +523,7 @@
   \begin{alltt}
 \tiny
  {\color{Green4}TITLE Hg decorating thymidine monophosphate}
- {\color{Purple2}HOLE}      1   1.0  {\color{Blue4} *  Hg L3 edge (12284 eV), S0^2}
+ {\color{Purple2}HOLE}      4   1.0  {\color{Blue4} *  Hg L3 edge (12284 eV), S0^2}
  {\color{Blue4}*         mphase,mpath,mfeff,mchi}
  {\color{SteelBlue2}CONTROL}   1      1     1     1
  {\color{SteelBlue2}PRINT}     1      0     0     0
@@ -539,7 +539,7 @@
         5    1   H
 
  {\color{Brown4}ATOMS}
- {\color{Blue4}*   x       y       z    ipot}
+ {\color{Blue4}*   x         y         z    ipot}
    -3.5515   -1.5175    0.1599 4
    -0.4389    1.3396    1.0202 1
    -0.9101    4.1569   -0.0812 1
@@ -554,7 +554,6 @@
    -1.0101    2.8736   -0.6948 3
    -1.5699    1.8660    0.2995 3
     0.3733    2.3378   -0.9829 3
-
  {\color{Blue4}*   (and so on...)}
   \end{alltt}
     \end{column}
@@ -571,6 +570,41 @@
     \end{column}
   \end{columns}
 \end{frame}
+
+\begin{frame}
+  \frametitle{What is the likely location of the Hg atom?}
+  \begin{columns}
+    \begin{column}{0.6\linewidth}
+      \begin{enumerate}
+      \item Thymine forms its hydrogen bond with adenisine via the N
+        atom
+      \item The engineered DNA sensor is known to have a T-T mismatch
+      \item Earlier NMR work was interpreted at having the Hg bridging
+        the T-T mismatch.
+      \end{enumerate}
+
+      \bigskip
+
+      \begin{alertblock}{}
+        That said, \textbf{I} don't know much about this chemistry.
+      \end{alertblock}
+    \end{column}
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=\linewidth]{images/nmr.png}      
+    \end{column}
+  \end{columns}
+
+  \begin{textblock*}{0.7\linewidth}(0pt,19\TPVertModule)%%
+    \tiny Y. Miyake, et al.,
+    \textit{Mercury$^{\mathrm{II}}$-Mediated Formation of
+      Thymine-Hg$^{\mathrm{II}}$-Thymine Base Pairs in DNA
+      Duplexes}.  J.~Am.~Chem.~Soc.~(2006) v.128, 2172-2173
+    \href{http://dx.doi.org/10.1021/ja056354d}{\color{Blue4}DOI:
+      10.1021/ja056354d}
+  \end{textblock*}
+\end{frame}
+
+\section{Model building}
 
 
 \begin{frame}
@@ -589,13 +623,387 @@
     -[:156]C)-[:354]C-[:294]O-[:354]%
     % phosphate begins
     P(-[:54]\mcfright{O}{^{\mcfminus}})%
-    (-[:294]\mcfright{O}{^{\mcfminus}}
+    (-[:294]\mcfright{O}{^{\mcfminus}}%
     (-[:294,,,,dash bond]\widetilde{Hg}\qm))%
     =[:354]O%
-    \namebond{2}{1}{\footnotesize $a$}
-    \namebond{2}{3}{\footnotesize $b$}
-    \arclabel{0.5cm}{1}{2}{3}{\footnotesize$\varphi$}
+    \namebond{2}{1}{\footnotesize $a$}%
+    \namebond{2}{3}{\footnotesize $b$}%
+    \arclabel{0.5cm}{1}{2}{3}{\footnotesize$\varphi$}%
   }
+\end{frame}
+
+\begin{frame}
+  \frametitle{Hg atom placement, 1}
+  \begin{columns}
+    \begin{column}{0.35\linewidth}
+      Do a quick first shell fit to determine the Hg 1$^{\mathrm{st}}$
+      shell distance.
+    \end{column}
+    \begin{column}{0.65\linewidth}
+      \includegraphics[width=\linewidth]{images/qfs.png}
+    \end{column}
+  \end{columns}
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/qfs_fit.png}      
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      Not a great fit, but it tells us that the Hg atom is about
+      2.05\,\AA\ away from it's neighbor.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Hg atom placement, 2}
+  Using the known nucleotide structures, I wrote a small program to
+  solve some trigonometry:\\[1ex]
+
+  \begin{enumerate}
+  \item The Hg atom is in the same plane as the neighboring atoms
+  \item The Hg atom is equidistant from the second neighbors (6- and
+    5-member ring options)
+  \item The Hg atom is collinear with the 1$^{\mathrm{st}}$ and
+    2$^{\mathrm{nd}}$ neighbors (monodentate option)
+  \end{enumerate}
+
+  Wrote out \file{feff.inp} files with Hg as the absorber.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{5-member ring option: coordinates}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+  \begin{alltt}
+\tiny {\color{Green4}TITLE Hg decorating thymidine monophosphate}
+ {\color{Purple2}HOLE}      4   1.0  {\color{Blue4} *  Hg L3 edge (12284 eV), S0^2}
+ {\color{SteelBlue2}CONTROL}   1      1     1     1
+ {\color{SteelBlue2}PRINT}     1      0     0     0
+ {\color{Purple2}RMAX}      6.0
+ {\color{Brown4}POTENTIALS}
+ {\color{Blue4}*    ipot   Z  element}
+        0   50   Hg
+        1    8   O        
+        2    7   N        
+        3    6   C        
+        4   15   P   
+ {\color{Brown4}ATOMS}
+ {\color{Blue4}*   x         y         z    ipot}
+      0.49977     0.63093     2.85314   0  Hg     0.00000
+     -3.71800    -2.00000    -1.24900   1  O      6.44507
+     -3.91000    -1.59800     0.29000   4  P      5.56632
+     -5.35700    -1.58600     0.60000   1  O      6.65531
+     -3.02000    -2.44600     1.11000   1  O      4.98947
+     -3.35200    -0.12200     0.45900   1  O      4.59727
+     -1.95500     0.01100     0.30500   3  C      3.59210
+     -1.48700     1.40500     0.63700   3  C      3.07534
+     -0.11000     1.31500     1.03100   1  O      2.05000
+     -1.52300     2.38600    -0.51700   3  C      4.30462
+     -1.77700     3.69900    -0.00600   1  O      4.77194
+     -0.15400     2.19400    -1.16100   3  C      4.35705
+      0.73400     1.75700     0.00100   3  C      3.07532
+      1.68600     0.62300    -0.15600   2  N      3.23452
+      1.54600    -0.35900    -1.10700   3  C      4.21393
+      0.64900    -0.39000    -1.93000   1  O      4.89315
+      2.52400    -1.32100    -1.06300   2  N      4.82117
+      3.58700    -1.40200    -0.18100   3  C      4.78223
+      4.40700    -2.31400    -0.22400   1  O      5.77995
+      3.65500    -0.33500     0.78500   3  C      3.89431
+      4.86400    -0.10800     1.62800   3  C      4.59276
+      2.71300     0.59300     0.75000   3  C      3.05336
+  \end{alltt}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/5member.png}
+    \end{column}  
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{5-member ring option: paths}
+  \begin{columns}
+    \begin{column}{0.4\linewidth}
+      \includegraphics[width=\linewidth]{images/5member_intrp.png}
+    \end{column}
+    \begin{column}{0.6\linewidth}
+      Run {\feff}, drag-n-drop first 6 paths, transfer them to the
+      plotting list, plot in R:
+
+      \medskip
+
+      \includegraphics[width=\linewidth]{images/5member_paths.png}
+    \end{column}
+  \end{columns}
+  
+  \bigskip
+
+  \begin{exampleblock}{}
+    \centering This looks sort of promising ... or does it?
+  \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{5-member ring option: VPath}
+
+  We fit a \alert{sum of paths} to the data, so let's examine the sum
+  of these paths.  In {\artemis}, this is called a ``VPath.''
+
+  \bigskip
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/5member_chirmag.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/5member_chirre.png}
+    \end{column}
+  \end{columns}
+  
+  \bigskip
+
+  \begin{alertblock}{}
+    \centering Not so promising, after all.
+  \end{alertblock}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Monodentate option: coordinates}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+  \begin{alltt}
+\tiny {\color{Green4}TITLE Hg decorating thymidine monophosphate}
+ {\color{Purple2}HOLE}      4   1.0  {\color{Blue4} *  Hg L3 edge (12284 eV), S0^2}
+ {\color{SteelBlue2}CONTROL}   1      1     1     1
+ {\color{SteelBlue2}PRINT}     1      0     0     0
+ {\color{Purple2}RMAX}      6.0
+ {\color{Brown4}POTENTIALS}
+ {\color{Blue4}*    ipot   Z  element}
+        0   50   Hg
+        1    8   O        
+        2    7   N        
+        3    6   C        
+        4   15   P   
+ {\color{Brown4}ATOMS}
+ {\color{Blue4}*   x         y         z    ipot}
+      5.74339    -3.80032    -0.29408   0  Hg     0.00000
+     -3.71800    -2.00000    -1.24900   1  O      9.67837
+     -3.91000    -1.59800     0.29000   4  P      9.91863
+     -5.35700    -1.58600     0.60000   1  O     11.35435
+     -3.02000    -2.44600     1.11000   1  O      8.97789
+     -3.35200    -0.12200     0.45900   1  O      9.83988
+     -1.95500     0.01100     0.30500   3  C      8.61105
+     -1.48700     1.40500     0.63700   3  C      8.95772
+     -0.11000     1.31500     1.03100   1  O      7.88572
+     -1.52300     2.38600    -0.51700   3  C      9.54572
+     -1.77700     3.69900    -0.00600   1  O     10.62446
+     -0.15400     2.19400    -1.16100   3  C      8.45356
+      0.73400     1.75700     0.00100   3  C      7.48765
+      1.68600     0.62300    -0.15600   2  N      6.00394
+      1.54600    -0.35900    -1.10700   3  C      5.48832
+      0.64900    -0.39000    -1.93000   1  O      6.34502
+      2.52400    -1.32100    -1.06300   2  N      4.13555
+      3.58700    -1.40200    -0.18100   3  C      3.22719
+      4.40700    -2.31400    -0.22400   1  O      2.05000
+      3.65500    -0.33500     0.78500   3  C      4.18739
+      4.86400    -0.10800     1.62800   3  C      4.25452
+      2.71300     0.59300     0.75000   3  C      5.43826
+  \end{alltt}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/monodentate.png}
+    \end{column}  
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Monodentate option: VPath}
+
+  Same exercise -- run {feff}, drag-n-drop the first few paths, make
+  a VPath, plot with the data.
+
+  \bigskip
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/monodentate_chirmag.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/monodentate_chirre.png}
+    \end{column}
+  \end{columns}
+  
+  \bigskip
+
+  \begin{alertblock}{}
+    \centering Better than the 5-member ring option, but still not so great.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{6-member ring option: coordinates}
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+  \begin{alltt}
+\tiny {\color{Green4}TITLE Hg decorating thymidine monophosphate}
+ {\color{Purple2}HOLE}      4   1.0  {\color{Blue4} *  Hg L3 edge (12284 eV), S0^2}
+ {\color{SteelBlue2}CONTROL}   1      1     1     1
+ {\color{SteelBlue2}PRINT}     1      0     0     0
+ {\color{Purple2}RMAX}      6.0
+ {\color{Brown4}POTENTIALS}
+ {\color{Blue4}*    ipot   Z  element}
+        0   50   Hg
+        1    8   O        
+        2    7   N        
+        3    6   C        
+        4   15   P   
+ {\color{Brown4}ATOMS}
+ {\color{Blue4}*   x         y         z    ipot}
+      2.40463    -2.80748    -2.45560   0  Hg     0.00000
+     -3.71800    -2.00000    -1.24900   1  O      6.29242
+     -3.91000    -1.59800     0.29000   4  P      6.99112
+     -5.35700    -1.58600     0.60000   1  O      8.43040
+     -3.02000    -2.44600     1.11000   1  O      6.50160
+     -3.35200    -0.12200     0.45900   1  O      6.98896
+     -1.95500     0.01100     0.30500   3  C      5.87972
+     -1.48700     1.40500     0.63700   3  C      6.51567
+     -0.11000     1.31500     1.03100   1  O      5.95606
+     -1.52300     2.38600    -0.51700   3  C      6.79387
+     -1.77700     3.69900    -0.00600   1  O      8.11301
+     -0.15400     2.19400    -1.16100   3  C      5.76519
+      0.73400     1.75700     0.00100   3  C      5.44613
+      1.68600     0.62300    -0.15600   2  N      4.19199
+      1.54600    -0.35900    -1.10700   3  C      2.92421
+      0.64900    -0.39000    -1.93000   1  O      3.03360
+      2.52400    -1.32100    -1.06300   2  N      2.05000
+      3.58700    -1.40200    -0.18100   3  C      2.92356
+      4.40700    -2.31400    -0.22400   1  O      3.03859
+      3.65500    -0.33500     0.78500   3  C      4.26357
+      4.86400    -0.10800     1.62800   3  C      5.47827
+      2.71300     0.59300     0.75000   3  C      4.68340
+  \end{alltt}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/6member.png}
+    \end{column}  
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{6-member ring option: VPath}
+
+  Again -- run {\feff}, drag-n-drop the first few paths, make
+  a VPath, plot with the data.
+
+  \bigskip
+
+  \begin{columns}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/6member_chirmag.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/6member_chirre.png}
+    \end{column}
+  \end{columns}
+  
+  \bigskip
+
+  \begin{block}{}
+    \centering I actually like this one quite a bit!  The amplitude is
+    off by \alert{about a factor of 2}, but the phase is quite close.
+  \end{block}
+\end{frame}
+
+\section{The fit}
+
+\begin{frame}
+  \frametitle{Parameterization}
+
+  \begin{center}
+    \begin{minipage}{0.8\linewidth}
+      \begin{block}{Number of independent points}
+        k-range: 2\,\AA$^{-1}$ to 8.8\,\AA$^{-1}$ \hfill
+        R-range: 1\,\AA\ to 3.1\,\AA \\[-2ex]
+        \begin{center}
+          $N_{\mathrm{idp}} = 2\Delta k\Delta R / \pi \approx 9.09$
+        \end{center}
+      \end{block}
+    \end{minipage}
+
+  \end{center}
+  \begin{enumerate}
+  \item $E_0$ and $S_0^2$ are variables \dotfill\ (1,2)
+  \item Hg-N distance and $\sigma^2$ are variables \dotfill\ (3,4)
+  \item Hg-O distance and $\sigma^2$ are variables \dotfill\ (5,6)
+  \item Assume that the ring is \alert{completely rigid}, this allows
+    us to approximate the contributions of various single and multiple
+    scattering paths without introducing any more variables.
+  \end{enumerate}
+
+
+%   date this restriction, we made the following parameterizations:
+% (1) the distance from the Hg to the nearest neighbor was one
+% fitting parameter, (2) the ring was assumed to be completely rigid,
+% thus the distance to second neighbor ring members (the C atoms
+% in Fig. 4) was completely determined from the first fitting
+% parameter and trigonometry, (3) the s2 for the nearest neighbor
+% was a fitting parameter and the s2 for the second neighbor was
+% scaled geometrically by path length from that value, (4) atoms in
+% positions like the two O atoms bound to the pyrimidine ring in Fig.
+% 4 contribute significantly. Their single scattering paths were given
+% DR and s2 as variables of the fit, and (5) various multiple
+% scattering paths involving the N, C, and O also contribute
+% significant spectral weight and are parameterized in R and s2
+% entirely using the parameters described above and so contribute
+% no new parameters to the fit. Along with E0 and amplitude
+% parameters, the six variables described in Table 1 were used to
+% make the fit shown in Fig. 5.
+
+\end{frame}
+
+
+\newcommand{\cgray}{{\color{black!20!white}C}}
+\begin{frame}
+  \frametitle{Trigonometry}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \small
+      \chemfig{
+        {\color{black!20!white}N}-[:270,,,,-]C(%
+        -[:210,,,,-]@{2}{\color{black!40!red}N}%
+        (-[:270,,,,dash bond]@{1}{\color{black!40!red}Hg})%
+        -[:150,,,,-]@{3}C(=[:210,,,,-]O)%
+        -[:90,,,,-]\cgray)=[:330,,,,-]O%
+        \namebond{2}{1}{$a$}%
+        \namebond{2}{3}{$b$}%
+        \arclabel{0.5cm}{1}{2}{3}{$\varphi$}%    
+      }
+
+      \bigskip
+
+      \begin{align}
+        \varphi=&116.25^\circ\notag\\
+        b=&1.378\,\mathrm{\AA}\notag
+      \end{align}
+      $a$ and $\sigma^2_{\mathrm{Hg\cdot N}}$ are variables of the fit.
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      Here's a formula for a triangle in a plane:
+      \begin{align}
+        D(Hg-C) =& \frac{a-b}{\cos(\theta)}\cos(\varphi/2)\notag\\
+        \tan(\theta) =& \frac{a+b}{a-b}\tan(\varphi/2)\notag
+      \end{align}
+
+      \bigskip
+
+      Assuming the ring is rigid, then we \alert{approximate}
+      $\sigma^2_{\mathrm{Hg\cdot C}}$ as scaling geometrically from
+      $\sigma^2_{\mathrm{Hg\cdot N}}$
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \end{document}
