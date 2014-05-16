@@ -92,7 +92,7 @@
   and speciate water contaminants at very low concentrations.  The
   real-world task of environmental monitoring requires a
   fast, flexible, sensitive, selective method of detecting
-  contaminants \alert{in the field}.
+  contaminants \textit{in the field}.
 
   \medskip
 
@@ -353,7 +353,7 @@
 \begin{frame}
   \frametitle{First question}
   \begin{exampleblock}{Is all Hg taken up by the DNA?}
-    \centering To answer this, we measured a sample with excess Hg.
+    To answer this, we measured a sample with excess Hg.
   \end{exampleblock}
   \begin{columns}[T]
     \begin{column}{0.5\linewidth}
@@ -361,7 +361,8 @@
 
       \medskip
 
-      Let's go do some linear combination fitting...
+      Let's go do some linear combination fitting.  (Note the
+      isosbestic points.) 
     \end{column}
     \begin{column}{0.5\linewidth}
       \visible<2>{
@@ -500,7 +501,8 @@
   \end{alltt}
     \end{column}
     \begin{column}{0.35\linewidth}
-      Here is the ``SDF'' file downloaded from PubChem.
+      Here is the ``SDF'' file for thymidine monophosphate
+      from PubChem.
 
       \bigskip
 
@@ -566,7 +568,7 @@
 
       \bigskip
 
-      And we are ready for the next step...
+      What about the Hg atom?
     \end{column}
   \end{columns}
 \end{frame}
@@ -658,17 +660,21 @@
 \begin{frame}
   \frametitle{Hg atom placement, 2}
   Using the known nucleotide structures, I wrote a small program to
-  solve some trigonometry:\\[1ex]
+  solve some trigonometry:\\[2ex]
 
+  The Hg atom is ...
   \begin{enumerate}
-  \item The Hg atom is in the same plane as the neighboring atoms
-  \item The Hg atom is equidistant from the second neighbors (6- and
+  \item ... 2.05\,\AA\ away from its neighbor 
+  \item ... in the same plane as the neighboring atoms
+  \item ... equidistant from the second neighbors (6- and
     5-member ring options)
-  \item The Hg atom is collinear with the 1$^{\mathrm{st}}$ and
+  \item ... collinear with the 1$^{\mathrm{st}}$ and
     2$^{\mathrm{nd}}$ neighbors (monodentate option)
   \end{enumerate}
 
-  Wrote out \file{feff.inp} files with Hg as the absorber.
+  \bigskip
+
+  Finally, write out \file{feff.inp} files with Hg as the absorber.
 \end{frame}
 
 \begin{frame}[fragile]
@@ -921,13 +927,14 @@
 \begin{frame}
   \frametitle{Parameterization}
 
+  %% (8.8-2)*(2.8-1)*2/3.14159
   \begin{center}
     \begin{minipage}{0.8\linewidth}
       \begin{block}{Number of independent points}
         k-range: 2\,\AA$^{-1}$ to 8.8\,\AA$^{-1}$ \hfill
-        R-range: 1\,\AA\ to 3.1\,\AA \\[-2ex]
+        R-range: 1\,\AA\ to 2.8\,\AA \\[-2ex]
         \begin{center}
-          $N_{\mathrm{idp}} = 2\Delta k\Delta R / \pi \approx 9.09$
+          $N_{\mathrm{idp}} = 2\Delta k\Delta R / \pi \approx 7.8$
         \end{center}
       \end{block}
     \end{minipage}
@@ -1011,13 +1018,15 @@
   \begin{columns}[T]
     \begin{column}{0.25\linewidth}
       Path 1 (SS)\\[1ex]
-      \tiny
-      \chemfig{
-        {\color{black!20!white}N}-[:270,,,,-]C(%
-        -[:210,,,,-]@{2}N?[a]%
-        (-[:270,,,,dash bond]@{1}Hg?[a,1,red])%
-        -[:150,,,,-]@{3}C(=[:210,,,,-]O)%
-        -[:90,,,,-]\cgray)=[:330,,,,-]O%
+      {\tiny
+        \chemfig{
+          {\color{black!20!white}N}-[:270,,,,-]C(%
+          -[:210,,,,-]@{2}N?[a]%
+          (-[:270,,,,dash bond]@{1}Hg?[a,1,red])%
+          -[:150,,,,-]@{3}C(=[:210,,,,-]O)%
+          -[:90,,,,-]\cgray)=[:330,,,,-]O%
+        }{\normalsize $\times 1$}\\[1ex]
+        $\Delta R_1$ and $\sigma^2_1$ are variables
       }
     \end{column}
     \begin{column}{0.25\linewidth}
@@ -1030,20 +1039,22 @@
           -[:150,,,,-]@{3}C?[a,1,red](=[:210,,,,-]O)%
           -[:90,,,,-]\cgray)=[:330,,,,-]O%
         }{\normalsize $\times 2$}\\[1ex]
-        $\Delta R$ uses trigonomtry\\
+        $\Delta R_2$ computed with trigonomtry\\
         $\sigma^2_2 \propto\sigma^2_1$
       }
     \end{column}
     \begin{column}{0.25\linewidth}
       Path 3 (SS)\\[1ex]
-      \tiny
-      \chemfig{
-        {\color{black!20!white}N}-[:270,,,,-]C(%
-        -[:210,,,,-]@{2}N%
-        (-[:270,,,,dash bond]@{1}Hg?[a])%
-        -[:150,,,,-]@{3}C(=[:210,,,,-]O?[a,1,red])%
-        -[:90,,,,-]\cgray)=[:330,,,,-]O%
-      }{\normalsize $\times 2$}
+      {\tiny
+        \chemfig{
+          {\color{black!20!white}N}-[:270,,,,-]C(%
+          -[:210,,,,-]@{2}N%
+          (-[:270,,,,dash bond]@{1}Hg?[a])%
+          -[:150,,,,-]@{3}C(=[:210,,,,-]O?[a,1,red])%
+          -[:90,,,,-]\cgray)=[:330,,,,-]O%
+        }{\normalsize $\times 2$}\\[1ex]
+        $\Delta R_3$ and $\sigma^2_3$ are variables
+      }
     \end{column}
   \end{columns}
 
@@ -1060,7 +1071,7 @@
           -[:150,,,,-]@{3}C?[a,1,red]?[b,1,red](=[:210,,,,-]O)%
           -[:90,,,,-]\cgray)=[:330,,,,-]O%
         }{\normalsize $\times 4$}\\[1ex]
-        $\Delta R$ computed from paths 1 and 2\\
+        $\Delta R_4$ computed from paths 1 and 2\\
         $\sigma^2_4 :=\sigma^2_2$
       }
     \end{column}
@@ -1074,7 +1085,7 @@
           -[:150,,,,-]@{3}C?[a,1,red](=[:210,,,,-]O)%
           -[:90,,,,-]\cgray)=[:330,,,,-]O%
         }{\normalsize $\times 2$}\\[1ex]
-        $\Delta R$ computed from path 1\\
+        $\Delta R_5$ computed from path 1\\
         $\sigma^2_5 :=\sigma^2_2$
       }
     \end{column}
@@ -1088,7 +1099,7 @@
           -[:150,,,,-]@{3}C?[a,1,red]?[b](=[:210,,,,-]O?[a,1,red]?[b,2,red])%
           -[:90,,,,-]\cgray)=[:330,,,,-]O%
         }{\normalsize $\times 4$}\\[1ex]
-        $\Delta R$ computed from paths 1 and 3\\
+        $\Delta R_6$ computed from paths 1 and 3\\
         $\sigma^2_6 :=\sigma^2_1+\sigma^2_3$
       }
     \end{column}
