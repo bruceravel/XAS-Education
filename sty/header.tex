@@ -64,3 +64,17 @@
 \newcommand{\mergep}   {{\color{mergep}merge}}
 
 \hyphenation{EXAFS}
+
+%% inline enumeration, see
+%% http://tex.stackexchange.com/questions/94478/beamer-inline-itemize-and-enumeration/94521#94521
+\newcounter{newenumi}
+\setcounter{newenumi}{1}
+\newcommand{\inlineenum}{%
+ {%
+ \setcounter{enumi}{\thenewenumi}%
+ \leavevmode\usebeamertemplate{enumerate  item}
+ \stepcounter{newenumi}
+ \setcounter{enumi}{0}
+ }
+}
+\newcommand{\resetinlineenum}{\setcounter{newenumi}{1}}

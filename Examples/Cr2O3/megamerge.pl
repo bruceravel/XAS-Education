@@ -12,7 +12,7 @@ use Demeter qw(:plotwith=gnuplot :ui=screen :data);
 my $datadir = dirname($0);
 #my $datadir = File::Spec->catfile($base, 'data');
 opendir(my $D, $datadir) || die "can't opendir $datadir: $!";
-my @list = map {File::Spec->catfile($datadir, $_)} sort {$a cmp $b} grep { m{\.} && -f File::Spec->catfile($datadir, $_) } readdir $D;
+my @list = map {File::Spec->catfile($datadir, $_)} sort {$a cmp $b} grep { m{Cr2O3\.\d+} && -f File::Spec->catfile($datadir, $_) } readdir $D;
 closedir $D;
 
 ## import the first file in the list
@@ -25,6 +25,7 @@ my $master = Demeter::Data->new($plugin->data_attributes,
 				name => "Cr2O3, first scan",
 				bkg_e0=>6001, bkg_pre1=>-100, bkg_pre2=>-30,
 			       );
+#$master->metadata_from_ini($plugin->metadata_ini);
 
 ## this is how it's done not using the plugin...
 # my $master = Demeter::Data->new(file        => $first,
@@ -39,6 +40,8 @@ my $master = Demeter::Data->new($plugin->data_attributes,
 $master -> _update('normalize');
 $master -> po -> set(e_mu=>1, e_norm=>1, e_bkg=>0, e_pre=>0, e_post=>0, emin=>-100, emax=>600, kweight=>2);
 $master -> plot('E');
+
+$#list = 9;
 
 my $bm = Demeter::Data::BulkMerge->new(master	 => $master,
 				       data	 => \@list,
