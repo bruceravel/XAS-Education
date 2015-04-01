@@ -78,12 +78,8 @@
 \begin{frame}[fragile]
   \frametitle{Sodium uranyl triacetate}
   \begin{columns}[T]
-    \begin{column}{0.3\linewidth}
-      \includegraphics[width=\linewidth]{../ATEA/mfc/NaU_triacetate_full.png}
-
-      \includegraphics[width=\linewidth]{../ATEA/mfc/NaU_triacetate.png}
-    \end{column}
     \begin{column}{0.7\linewidth}
+      Here's a crystal that contains the uranyl moiety:
       \begin{center}
         \begin{minipage}{0.75\linewidth}
           \begin{block}{}
@@ -95,24 +91,193 @@
 {\color{SteelBlue4}rmax}  = 7.0    {\color{SteelBlue4}a}=10.689
 {\color{SteelBlue4}core}  = U
 {\color{Purple4}atoms}
-{\color{Blue4}! At.type   x        y       z       tag}
-  U     0.4294    0.4294    0.4294  U 
-  Na    0.8286    0.8286    0.8286  Na
-  O     0.3343    0.3343    0.3343  O1
-  O     0.5242    0.5242    0.5242  O2
-  O     0.3834    0.2945    0.6110  O3
-  O     0.5464    0.2443    0.5007  O4
-  C     0.4786    0.2260    0.5950  C1
-  C     0.5088    0.1240    0.6862  C2 
+{\color{Blue4}! At.type   x         y         z      tag}
+  U        0.4294    0.4294    0.4294  U 
+  Na       0.8286    0.8286    0.8286  Na
+  O        0.3343    0.3343    0.3343  Oax
+  O        0.5242    0.5242    0.5242  Oax
+  O        0.3834    0.2945    0.6110  Oeq
+  O        0.5464    0.2443    0.5007  Oeq
+  C        0.4786    0.2260    0.5950  C
+  C        0.5088    0.1240    0.6862  C 
             \end{alltt}
           \end{block}
         \end{minipage}
       \end{center}
+      If we ignore the Na and C, this has all the scatterers we need
+      at the approximate distances we need.
+    \end{column}
+    \begin{column}{0.3\linewidth}
+      \includegraphics[width=\linewidth]{../ATEA/mfc/NaU_triacetate_full.png}
+
+      \includegraphics[width=\linewidth]{../ATEA/mfc/NaU_triacetate.png}
     \end{column}
   \end{columns}
 \end{frame}
 
+\defverbatim{\StyleElem}{%
+\tiny
+\begin{verbatim}
+     0     92     U         
+     1     92     U         
+     2     11     Na        
+     3     8      O         
+     4     6      C
+\end{verbatim}
+\vspace{-3ex}
+}
+\defverbatim{\StyleSites}{%
+\tiny
+\begin{verbatim}
+     0     92     U         
+     1     92     U         
+     2     11     Na        
+     3     8      Oax         
+     4     8      Oax         
+     5     8      Oeq         
+     6     8      Oeq         
+     7     6      C
+     8     6      C
+\end{verbatim}
+\vspace{-3ex}
+}
+\defverbatim{\StyleTags}{%
+\tiny
+\begin{verbatim}
+     0     92     U
+     1     92     U
+     2     11     Na
+     3     8      Oax
+     4     8      Oeq
+     5     6      C
+\end{verbatim}
+\vspace{-3ex}
+}
 
+\defverbatim[colored]{\AtomsList}{%
+\tiny
+\begin{alltt}
+ {\color{SteelBlue4}ATOMS}
+ {\color{Blue4}* x          y          z     ipot tag      distance}
+  0.00000    0.00000    0.00000  0  U        0.00000
+  1.01332    1.01332    1.01332  3  Oax.1    1.75512
+ -1.01652   -1.01652   -1.01652  3  Oax.2    1.76067
+  1.25061   -1.97853    0.76213  4  Oeq.1    2.46160
+ -1.97853    0.76213    1.25061  4  Oeq.1    2.46160
+  0.76213    1.25061   -1.97853  4  Oeq.1    2.46160
+ -0.49169   -1.44195    1.94112  4  Oeq.2    2.46758
+ -1.44195    1.94112   -0.49169  4  Oeq.2    2.46758
+  1.94112   -0.49169   -1.44195  4  Oeq.2    2.46758
+\end{alltt}
+}
+  
+\begin{frame}[fragile]
+  \frametitle{Unique potentials in Feff}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.9\linewidth]{images/atoms.png}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      Style = \only<1>{elem}\only<2-3>{sites}\only<4>{tags}\\
+      \vspace{-2ex}
+      \begin{block}{}
+        \tiny\begin{alltt}
+ {\color{SteelBlue4}POTENTIALS}
+  {\color{Blue4}* ipot   Z      tag}
+        \end{alltt}
+        \vspace{-9ex}
+        \only<1>{\StyleElem}\only<2-3>{\StyleSites}\only<4>{\StyleTags}
+      \end{block}
+      \only<3>{\includegraphics[width=\linewidth]{images/sites_error.png}}
+      \only<4>{
+        \begin{exampleblock}{}
+          \AtomsList
+        \end{exampleblock}
+      }
+    \end{column}
+  \end{columns}
+  \begin{block}<4>{}
+    Separate \texttt{ipot} values for the two O atoms is a good idea,
+    given the very short oxygenyl bond.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The paths list}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        \includegraphics[width=0.85\linewidth]{images/feffinp.png}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{center}
+        \includegraphics[width=0.85\linewidth]{images/paths.png}
+      \end{center}
+    \end{column}
+  \end{columns}
+  \begin{block}{Degeneracy margin}
+    Fuzzy degeneracy ``collapses'' nearly degenerate paths, giving you
+    fewer individual paths to worry about in the fit.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fit results}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      2 paths, 6 parameters -- pretty simple!
+
+      \bigskip
+
+      I get a very similar fit as the reference from GCA.
+
+      \bigskip
+
+      \begin{tabular}{lrr}
+        \small parameter & GCA & Here \\
+        \hline
+        $S_0^2$         &  0.93(10) & 1.0(1) \\
+        $R_{ax}$        &  1.80(1) & 1.78(1) \\
+        $\sigma^2_{ax}$ &  0.001(1) & 0.002(1) \\
+        $R_{eq}$        &  2.44(2) & 2.42(1) \\
+        $\sigma^2_{eq}$ &  0.007(2) & 0.009(1) \\
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=0.85\linewidth]{images/fit.png}
+    \end{column}
+  \end{columns}
+  \begin{textblock*}{0.7\linewidth}(0pt,19.0\TPVertModule)%
+    \tiny%
+    S.D.\ Kelly, et al., \textit{X-ray absorption fine structure
+      determination of pH-dependent U-bacterial cell wall
+      interactions}, Geochimica et Cosmochimica Acta \textbf{66}:22
+    (2002) pp\  3855-3871.
+    \href{http://dx.doi.org/10.1016/S0016-7037(02)00947-X}
+    {\color{Blue4}\texttt{DOI:10.1016/S0016-7037(02)00947-X}}
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{So, is it data?}
+  \begin{columns}
+    \begin{column}{0.6\linewidth}
+      \includegraphics[width=0.85\linewidth]{images/fit.png}
+    \end{column}
+    \begin{column}{0.4\linewidth}
+      There is clearly data beyond 9\,\AA$^{-1}$.
+
+      \medskip
+
+      In fact, I'd say there's data beyond 14\,\AA$^{-1}$!
+
+      \medskip
+
+      More measuring time would likely help in this case.
+    \end{column}
+  \end{columns}
+\end{frame}
 
 \end{document}
 
