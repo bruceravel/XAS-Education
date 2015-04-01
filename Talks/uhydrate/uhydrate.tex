@@ -1,0 +1,126 @@
+\documentclass[10pt, xcolor=x11names, compress]{beamer}
+%\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
+\include{header}
+
+%% define new commands here
+%\newcommand{\eto}{EuTiO$_3$}
+
+\mode<presentation>
+
+\title{Noisy Data on Uranyl Hydrate}
+%\subtitle{}
+\include{author}
+\include{date}
+%\date[Diamond2011]{EXAFS Data Analysis workshop 2011\\
+%  Diamond Light Source\\November 14--17, 2011}
+
+\begin{document}
+\maketitle
+\include{copyright}
+
+\begin{frame}
+  \frametitle{The sample}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      1000 ppm uranyl nitrate solution dissolved in DI water, pH=0.96\\[3ex]
+
+      \includegraphics[width=\linewidth]{uranyl.pdf}
+
+      \bigskip
+
+      The liquid was held in a fluid cell and measured in fluorescence.
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/uhydrate_mu.png}
+
+      \includegraphics[width=\linewidth]{images/uhydrate_chi.png}
+    \end{column}
+  \end{columns}
+
+  \begin{textblock*}{0.7\linewidth}(0pt,19.0\TPVertModule)%
+    \tiny%
+    S.D.\ Kelly, et al., \textit{X-ray absorption fine structure
+      determination of pH-dependent U-bacterial cell wall
+      interactions}, Geochimica et Cosmochimica Acta \textbf{66}:22
+    (2002) pp\  3855-3871.
+    \href{http://dx.doi.org/10.1016/S0016-7037(02)00947-X}
+    {\color{Blue4}\texttt{DOI:10.1016/S0016-7037(02)00947-X}}
+  \end{textblock*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Statistical noise and systematic noise}
+  \begin{columns}[T]
+    \begin{column}{0.5\linewidth}
+      \includegraphics[width=\linewidth]{images/merged_chi.png}
+      
+    \end{column}
+    \begin{column}{0.5\linewidth}
+      \begin{tabular}{lr}
+        data & \multicolumn{1}{c}{$\epsilon_k$} \\
+        \hline
+        5 scans & $\sim4.76\times10^{-3}$ \\
+        merge   & $1.77\times10^{-3}$
+      \end{tabular}
+      $$\frac{\epsilon_1}{\epsilon_{merge}} = 2.69$$
+      $$\sqrt{5} \approx 2.24$$
+    \end{column}
+  \end{columns}
+  \begin{block}{The data seem show the behavior of statistcal noise}
+    But is the signal at 14\,\AA$^{-1}$ really data?  In fact, is the
+    signal beyond 9\,\AA$^{-1}$ really data?
+  \end{block}
+  \begin{alertblock}{}
+    \centering In any case, how to we proceed with a molecule in solution?
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Sodium uranyl triacetate}
+  \begin{columns}[T]
+    \begin{column}{0.3\linewidth}
+      \includegraphics[width=\linewidth]{../ATEA/mfc/NaU_triacetate_full.png}
+
+      \includegraphics[width=\linewidth]{../ATEA/mfc/NaU_triacetate.png}
+    \end{column}
+    \begin{column}{0.7\linewidth}
+      \begin{center}
+        \begin{minipage}{0.75\linewidth}
+          \begin{block}{}
+            \tiny
+            \begin{alltt}
+{\color{Green4}title Na uranyl triacetate}
+{\color{Green4}title Templeton, et al, Acta Cryst 1985 C41 1439-1441}
+{\color{SteelBlue4}space} = P 21 3
+{\color{SteelBlue4}rmax}  = 7.0    {\color{SteelBlue4}a}=10.689
+{\color{SteelBlue4}core}  = U
+{\color{Purple4}atoms}
+{\color{Blue4}! At.type   x        y       z       tag}
+  U     0.4294    0.4294    0.4294  U 
+  Na    0.8286    0.8286    0.8286  Na
+  O     0.3343    0.3343    0.3343  O1
+  O     0.5242    0.5242    0.5242  O2
+  O     0.3834    0.2945    0.6110  O3
+  O     0.5464    0.2443    0.5007  O4
+  C     0.4786    0.2260    0.5950  C1
+  C     0.5088    0.1240    0.6862  C2 
+            \end{alltt}
+          \end{block}
+        \end{minipage}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
+%%% End:
