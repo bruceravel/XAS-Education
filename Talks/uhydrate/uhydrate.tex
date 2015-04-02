@@ -7,7 +7,7 @@
 
 \mode<presentation>
 
-\title{Noisy Data on Uranyl Hydrate}
+\title{Discussion of the Uranyl Hydrate EXAFS Analysis Example}
 %\subtitle{}
 \include{author}
 \include{date}
@@ -154,7 +154,8 @@
 \vspace{-3ex}
 }
 
-\defverbatim[colored]{\AtomsList}{%
+
+\defverbatim[colored]{\AtomsListElem}{%
 \tiny
 \begin{alltt}
  {\color{SteelBlue4}ATOMS}
@@ -162,6 +163,40 @@
   0.00000    0.00000    0.00000  0  U        0.00000
   1.01332    1.01332    1.01332  3  Oax.1    1.75512
  -1.01652   -1.01652   -1.01652  3  Oax.2    1.76067
+  1.25061   -1.97853    0.76213  3  Oeq.1    2.46160
+ -1.97853    0.76213    1.25061  3  Oeq.1    2.46160
+  0.76213    1.25061   -1.97853  3  Oeq.1    2.46160
+ -0.49169   -1.44195    1.94112  3  Oeq.2    2.46758
+ -1.44195    1.94112   -0.49169  3  Oeq.2    2.46758
+  1.94112   -0.49169   -1.44195  3  Oeq.2    2.46758
+\end{alltt}
+}
+
+\defverbatim[colored]{\AtomsListSites}{%
+\tiny
+\begin{alltt}
+ {\color{SteelBlue4}ATOMS}
+ {\color{Blue4}* x          y          z     ipot tag      distance}
+  0.00000    0.00000    0.00000  0  U        0.00000
+  1.01332    1.01332    1.01332  4  Oax.1    1.75512
+ -1.01652   -1.01652   -1.01652  3  Oax.2    1.76067
+  1.25061   -1.97853    0.76213  6  Oeq.1    2.46160
+ -1.97853    0.76213    1.25061  6  Oeq.1    2.46160
+  0.76213    1.25061   -1.97853  6  Oeq.1    2.46160
+ -0.49169   -1.44195    1.94112  5  Oeq.2    2.46758
+ -1.44195    1.94112   -0.49169  5  Oeq.2    2.46758
+  1.94112   -0.49169   -1.44195  5  Oeq.2    2.46758
+\end{alltt}
+}
+
+\defverbatim[colored]{\AtomsListTags}{%
+\tiny
+\begin{alltt}
+ {\color{SteelBlue4}ATOMS}
+ {\color{Blue4}* x          y          z     ipot tag      distance}
+  0.00000    0.00000    0.00000  0  U        0.00000
+ {\color{DeepPink2} 1.01332    1.01332    1.01332  3  Oax.1    1.75512}
+ {\color{DeepPink2}-1.01652   -1.01652   -1.01652  3  Oax.2    1.76067}
   1.25061   -1.97853    0.76213  4  Oeq.1    2.46160
  -1.97853    0.76213    1.25061  4  Oeq.1    2.46160
   0.76213    1.25061   -1.97853  4  Oeq.1    2.46160
@@ -171,6 +206,9 @@
 \end{alltt}
 }
   
+
+
+
 \begin{frame}[fragile]
   \frametitle{Unique potentials in Feff}
   \begin{columns}[T]
@@ -188,18 +226,32 @@
         \vspace{-9ex}
         \only<1>{\StyleElem}\only<2-3>{\StyleSites}\only<4>{\StyleTags}
       \end{block}
+      \only<1>{
+        \begin{exampleblock}{}
+          \AtomsListElem
+        \end{exampleblock}
+      }
+      \only<2>{
+        \begin{exampleblock}{}
+          \AtomsListSites
+        \end{exampleblock}
+      }
       \only<3>{\includegraphics[width=\linewidth]{images/sites_error.png}}
       \only<4>{
         \begin{exampleblock}{}
-          \AtomsList
+          \AtomsListTags
         \end{exampleblock}
       }
     \end{column}
   \end{columns}
-  \begin{block}<4>{}
-    Separate \texttt{ipot} values for the two O atoms is a good idea,
-    given the very short oxygenyl bond.
+  \begin{block}<4>{}%
+    Separate \texttt{ipot} values for the two O atoms allows
+    \textsc{feff} to compute different muffin tin radii -- a good
+    thing for the oxygenyl ligand.
   \end{block}
+  \begin{textblock*}{0.33\linewidth}(12.0\TPHorizModule,10.3\TPVertModule)%
+    \only<2>{\includegraphics[width=\linewidth]{images/circle_x.png}}
+  \end{textblock*}
 \end{frame}
 
 \begin{frame}
@@ -237,7 +289,7 @@
       \begin{tabular}{lrr}
         \small parameter & GCA & Here \\
         \hline
-        $S_0^2$         &  0.93(10) & 1.0(1) \\
+        $S_0^2$         &   1.00(10) & 0.93(10) \\
         $R_{ax}$        &  1.80(1) & 1.78(1) \\
         $\sigma^2_{ax}$ &  0.001(1) & 0.002(1) \\
         $R_{eq}$        &  2.44(2) & 2.42(1) \\
