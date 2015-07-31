@@ -12,6 +12,7 @@
 \usepackage{setspace}
 \usepackage{wasysym}
 \usepackage{ulem}
+\usepackage{xspace}
 
 \usepackage{calc}
 \usepackage[overlay,absolute]{textpos}
@@ -30,15 +31,16 @@
 \newcommand{\file}[1]{{\color{Firebrick4}\texttt{`#1'}}}
 \newcommand{\multiple}{{\color{Orange3}\textsl{multiple}}}
 
-
-\newcommand{\atoms}  {{\color{DarkOrchid4}\textsc{atoms}}}
-\newcommand{\feff}   {{\color{DarkOrchid4}\textsc{feff}}}
-\newcommand{\feffsix}   {{\color{DarkOrchid4}\textsc{feff6}}}
-\newcommand{\feffeight} {{\color{DarkOrchid4}\textsc{feff8}}}
-\newcommand{\feffnine}  {{\color{DarkOrchid4}\textsc{feff9}}}
-\newcommand{\ifeffit}{{\color{DarkOrchid4}\textsc{ifeffit}}}
-\newcommand{\athena} {{\color{DarkOrchid4}\textsc{athena}}}
-\newcommand{\artemis}{{\color{DarkOrchid4}\textsc{artemis}}}
+\definecolor{Programs}{rgb}{0.0,0.2,0.0}
+\newcommand{\atoms}    {{\color{Programs}\textsc{atoms}}\xspace}
+\newcommand{\feff}     {{\color{Programs}\textsc{feff}}\xspace}
+\newcommand{\feffex}   {{\color{Programs}\textsc{feff85exafs}}\xspace}
+\newcommand{\feffsix}  {{\color{Programs}\textsc{feff6}}\xspace}
+\newcommand{\feffeight}{{\color{Programs}\textsc{feff8}}\xspace}
+\newcommand{\feffnine} {{\color{Programs}\textsc{feff9}}\xspace}
+\newcommand{\ifeffit}  {{\color{Programs}\textsc{ifeffit}}\xspace}
+\newcommand{\athena}   {{\color{Programs}\textsc{athena}}\xspace}
+\newcommand{\artemis}  {{\color{Programs}\textsc{artemis}}\xspace}
 
 \renewenvironment<>{center}
 {\begin{actionenv}#1\begin{originalcenter}}
@@ -78,3 +80,19 @@
  }
 }
 \newcommand{\resetinlineenum}{\setcounter{newenumi}{1}}
+
+\usepackage{xparse}
+\definecolor{bngray}{rgb}{0.5,0.5,0.5}
+\NewDocumentEnvironment{bottomnote}{O{0.5}O{19.5}}%[0.85][19.5]
+{\begin{textblock*}{#1\linewidth}(0pt,#2\TPVertModule)%
+   \tiny\begin{color}{bngray}}%
+{\end{color}\end{textblock*}}
+
+\NewDocumentCommand{\cornerlogo}{m}
+{\begin{textblock*}{0.08\linewidth}(17.2\TPHorizModule,0\TPVertModule)%
+    \includegraphics[width=2cm]{#1}%
+  \end{textblock*}} 
+
+
+\DeclareDocumentCommand{\doiref}{m}%
+{\href{http://dx.doi.org/#1}{\color{Blue4}DOI:~#1}}
