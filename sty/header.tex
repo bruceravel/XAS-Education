@@ -18,6 +18,8 @@
 \usepackage[overlay,absolute]{textpos}
 \TPGrid[5mm,5mm]{20}{20}
 
+\usepackage{marvosym}
+\newcommand{\homepagesymbol}{{\Large\ComputerMouse~}}%      {{\Large\marvosymbol{205}}~}
 
 
 \renewcommand{\Re}{\operatorname{Re}}
@@ -92,7 +94,14 @@
 {\begin{textblock*}{0.08\linewidth}(17.2\TPHorizModule,0\TPVertModule)%
     \includegraphics[width=2cm]{#1}%
   \end{textblock*}} 
+\NewDocumentCommand{\smcornerlogo}{m}
+{\begin{textblock*}{0.08\linewidth}(19.5\TPHorizModule,0\TPVertModule)%
+    \includegraphics[width=7mm]{#1}%
+  \end{textblock*}} 
 
 
-\DeclareDocumentCommand{\doiref}{m}%
-{\href{http://dx.doi.org/#1}{\color{Blue4}DOI:~#1}}
+\DeclareDocumentCommand{\doiref}{mO{Blue4}}%
+{\href{http://dx.doi.org/#1}{\color{#2}{\ComputerMouse~}DOI:~#1}}
+
+\DeclareDocumentCommand{\inlinelogo}{m}%
+{\raisebox{-.2\height}{\includegraphics[width=5mm]{#1}}\xspace}
