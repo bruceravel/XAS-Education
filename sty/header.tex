@@ -105,3 +105,7 @@
 
 \DeclareDocumentCommand{\inlinelogo}{m}%
 {\raisebox{-.2\height}{\includegraphics[width=5mm]{#1}}\xspace}
+
+\DeclareDocumentCommand{\titlepageurl}{mO{Blue4}}%
+{~\\[2ex]{\footnotesize\href{#1}{\color{#2}%
+    {\ComputerMouse\,}PDF of this talk: #1}}}
