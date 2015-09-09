@@ -1,0 +1,117 @@
+% adapted Philippe Dreuw and Thomas Deselaers
+% further adapted from edits by James Malcolm
+% finally, Shawn Lankton made some edits (www.shawnlankton.com)
+% adapted by Bruce Ravel for his tastes (awesome stuff, Shawn!)
+
+\ProvidesPackage{beamerthemeLanktonModified}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<presentation>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{butter}{rgb}{0.98824, 0.91373, 0.30980}		% #fce94f
+\definecolor{orange}{rgb}{0.98824, 0.68627, 0.24314}		% #fcaf3e
+\definecolor{purple}{rgb}{0.30078, 0.04297, 0.49609}            % #4E0B7F
+\definecolor{almostblack}{rgb}{0.17578, 0.19922, 0.19922}       % #4E0B7F
+
+\setbeamercolor{headline}{bg=almostblack}
+\setbeamercolor{footline}{bg=almostblack}
+\setbeamerfont{footline}{size=\large}
+\setbeamercolor{separation line}{bg=almostblack}
+\setbeamercolor{title in headline}{fg=butter}
+\setbeamercolor{author in headline}{fg=orange}
+\setbeamercolor{institute in headline}{fg=lightgray}
+
+\setbeamercolor{framesubtitle}{fg=purple, bg=gray}
+\setbeamercolor{author in head/foot}{fg=orange,bg=almostblack}
+\setbeamercolor{title in head/foot}{fg=butter,bg=black}
+\setbeamercolor{website in footline}{fg=butter,bg=almostblack}
+\setbeamercolor{email in footline}{fg=butter,bg=almostblack}
+\setbeamercolor{local structure}{fg=purple}
+
+\setbeamercolor*{normal text}{fg=black, bg=white}
+\setbeamercolor*{block body}{fg=black,bg=white}
+\setbeamercolor*{block title}{bg=purple,fg=white}
+\setbeamerfont{block title}{size=\large,series=\sc\bf}
+\setbeamercolor{upper separation line head}{fg=almostblack}
+
+% \setbeamertemplate{blocks}[rounded][shadow=true]
+
+% \setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.5ex
+  \begin{beamercolorbox}[rounded=true,shadow=false,leftskip=1ex,colsep*=.5ex]{block title}%
+    \usebeamerfont*{block title}{\Large \insertblocktitle}
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=false,colsep*=.5ex,sep=.5ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.5ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{.17\paperwidth}
+      \end{column}
+      \begin{column}{.4\paperwidth}
+        \vskip12ex
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\Huge{\inserttitle}}\\[1ex]}
+      \end{column}
+      \begin{column}{.275\paperwidth}
+        \vskip12ex
+        \raggedleft
+        \usebeamercolor{author in headline}{\color{fg}\LARGE{\textbf{\insertauthor}}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg}\large{\textbf{\insertinstitute}}\\[1ex]}
+        \vskip2ex
+      \end{column}
+      \begin{column}{.10\paperwidth}
+        \centering
+        \vskip4ex
+        \includegraphics[height=0.05\paperwidth]{logo}
+        \vspace{1pt}
+      \end{column}
+      \begin{column}{.03\paperwidth}
+      \end{column}
+    \end{columns}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+    \usebeamercolor{website in footline}{\color{fg} \footleft}
+    \hfill
+    \usebeamercolor{email in footline}{\color{fg} \footright}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \Mode<all>
