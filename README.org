@@ -41,6 +41,7 @@ These folders contain the XAS and structural data used in the talks.
 | Fe foil           | Iron foil, 3 scans, 60 K, miscalibrated energy                         |
 | Fe standards      | An Athena project file + several data files with various Fe standards  |
 | FeS2              | FeS2 transmission EXAFS + crystal data                                 |
+| Fuzzy Degeneracy  | Zirconolite data from https://doi.org/10.1107/S1600577514014982        |
 | GeSb              | A single scan of a thin GeSb on silicon, p. 6 ATEA                     |
 | Germanium         | Crystalline and amorphous Ge data + crystal data                       |
 | HgDNA             | Merged scans of data and control for HgDNA example, p.7 ATEA           |
