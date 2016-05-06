@@ -70,6 +70,25 @@
 
 \hyphenation{EXAFS}
 
+\newcommand{\exafsequation}{%
+  {\small
+    \begin{align}
+      \chi(k,\Gamma) =& 
+      { \frac{{\color{Red4}(N_\Gamma S_0^2)}{\color{Blue4}F_\Gamma(k)}
+                        e^{-2{\color{Red4}\sigma_\Gamma^2}k^2}
+                        e^{-2R_\Gamma/{\color{Blue4}\lambda(k)}}
+                        }
+                        {2\,kR_\Gamma^2} }
+      \sin{(2kR_\Gamma + {\color{Blue4}\Phi_\Gamma(k)})} \\
+      \chi_{\mathrm{theory}}(k) =& \sum\limits_{\Gamma}\chi(k,\Gamma)\\
+      R_\Gamma =& \> {\color{Blue4}R_{0,\Gamma}} +
+      {\color{Red4}\Delta R_\Gamma} \\
+      k =& \sqrt{2m_e(E_0 - {\color{Red4}\Delta E_0})/\hbar^2} 
+           \approx \sqrt{(E_0 - {\color{Red4}\Delta E_0})/3.81}
+    \end{align}}
+}
+
+
 %% inline enumeration, see
 %% http://tex.stackexchange.com/questions/94478/beamer-inline-itemize-and-enumeration/94521#94521
 \newcounter{newenumi}
@@ -102,7 +121,7 @@
 
 
 \DeclareDocumentCommand{\doiref}{mO{Blue4}}%
-{\href{http://dx.doi.org/#1}{\color{#2}{\ComputerMouse~}DOI:~#1}}
+{\href{https://doi.org/#1}{\color{#2}{\ComputerMouse~}DOI:~#1}}
 
 \DeclareDocumentCommand{\inlinelogo}{m}%
 {\raisebox{-.2\height}{\includegraphics[width=5mm]{#1}}\xspace}
