@@ -17,20 +17,20 @@ page](http://bruceravel.github.io/XAS-Education/).
 PDF files of the talks can be found at
 [SpeakerDeck](https://speakerdeck.com/bruceravel).
 
-  **folder**      **title of talk**
-  --------------- ---------------------------------------------------------------------------------
-  ATEA            Advanced Topics In EXAFS Analysis
-  Experiment      The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design
-  FeS2            The discussion following an Artemis demonstration
-  i2x             Interpreting XANES Data
-  iiss            Introduction to Inner Shell Spectroscopies
-  methyltin       An Artemis example, supplement to a lecture/demo
-  noxtal          Modeling non-crystalline samples
-  pimst           A Practical Introduction to Multiple Scattering Theory
-  secondlecture   An introductory lecture for an XAS short course
-  selfabs         Understanding self-absorption in fluorescence XAS
-  CLT             The central limit theorem and noise in EXAFS data
-  RT              The Ramsauer-Townsend effect in EXAFS analysis
+ | **folder**    |  **title of talk**                                                                |
+ | ------------- | --------------------------------------------------------------------------------- |
+ | ATEA          |  Advanced Topics In EXAFS Analysis                                                |
+ | Experiment    |  The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design  |
+ | FeS2          |  The discussion following an Artemis demonstration                                |
+ | i2x           |  Interpreting XANES Data                                                          |
+ | iiss          |  Introduction to Inner Shell Spectroscopies                                       |
+ | methyltin     |  An Artemis example, supplement to a lecture/demo                                 |
+ | noxtal        |  Modeling non-crystalline samples                                                 |
+ | pimst         |  A Practical Introduction to Multiple Scattering Theory                           |
+ | secondlecture |  An introductory lecture for an XAS short course                                  |
+ | selfabs       |  Understanding self-absorption in fluorescence XAS                                |
+ | CLT           |  The central limit theorem and noise in EXAFS data                                |
+ | RT            |  The Ramsauer-Townsend effect in EXAFS analysis                                   |
 
 Examples
 --------
