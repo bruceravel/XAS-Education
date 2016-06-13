@@ -37,25 +37,25 @@ Examples
 
 These folders contain the XAS and structural data used in the talks.
 
-  **folder**          **contents**
-  ------------------- ------------------------------------------------------------------------
-  Au+Cyanobacteria    LCF example using gold(III) chloride reduced to gold metal
-  Cr2O3               The Cr2O3 data from the CLT talk
-  Cr standards        Cr 3+ and 6+ oxide standards
-  Cu metal            Copper foil at 3 temperatures + crystal data
-  EuTiO3              Data at several temperatures, Ti K, and Eu L3 edges
-  Fe foil             Iron foil, 3 scans, 60 K, miscalibrated energy
-  Fe standards        An Athena project file + several data files with various Fe standards
-  FeS2                FeS2 transmission EXAFS + crystal data
-  Fuzzy Degeneracy    Zirconolite data from <https://doi.org/10.1107/S1600577514014982>
-  GeSb                A single scan of a thin GeSb on silicon, p. 6 ATEA
-  Germanium           Crystalline and amorphous Ge data + crystal data
-  HgDNA               Merged scans of data and control for HgDNA example, p.7 ATEA
-  Methyltin           Monomethyl tin trichloride + dimethyl tin dichloride + structure data
-  PbTiO3              Ti K edge of PbTiO3 as a peak fitting example
-  Self Absorption     Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite
-  Uranyl on Biomass   Uranyl acetate in equilibrium with biomass
-  Xtal                Crystal structure examples
+| **folder**         | **contents**                                                             |
+| ------------------ | ------------------------------------------------------------------------ |
+| Au+Cyanobacteria   | LCF example using gold(III) chloride reduced to gold metal               |
+| Cr2O3              | The Cr2O3 data from the CLT talk                                         |
+| Cr standards       | Cr 3+ and 6+ oxide standards                                             |
+| Cu metal           | Copper foil at 3 temperatures + crystal data                             |
+| EuTiO3             | Data at several temperatures, Ti K, and Eu L3 edges                      |
+| Fe foil            | Iron foil, 3 scans, 60 K, miscalibrated energy                           |
+| Fe standards       | An Athena project file + several data files with various Fe standards    |
+| FeS2               | FeS2 transmission EXAFS + crystal data                                   |
+| Fuzzy Degeneracy   | Zirconolite data from <https://doi.org/10.1107/S1600577514014982>        |
+| GeSb               | A single scan of a thin GeSb on silicon, p. 6 ATEA                       |
+| Germanium          | Crystalline and amorphous Ge data + crystal data                         |
+| HgDNA              | Merged scans of data and control for HgDNA example, p.7 ATEA             |
+| Methyltin          | Monomethyl tin trichloride + dimethyl tin dichloride + structure data    |
+| PbTiO3             | Ti K edge of PbTiO3 as a peak fitting example                            |
+| Self Absorption    | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite   |
+| Uranyl on Biomass  | Uranyl acetate in equilibrium with biomass                               |
+| Xtal               | Crystal structure examples                                               |
 
 Other folders
 -------------
