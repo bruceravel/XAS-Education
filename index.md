@@ -1,0 +1,157 @@
+Bruce Ravel's XAS Education Materials
+=====================================
+
+Talks
+-----
+
+These folders contain the LaTeX source for my talks. All talks use LaTeX
+and [the Beamer LaTeX
+class](https://bitbucket.org/rivanvx/beamer/wiki/Home). All images are
+included, usually as .png or .jpg files. Source material (e.g. `.svg`,
+GIMP `.xcf`, LibreOffice `.odg`, Xfig `.fig`) are deposited for some
+images and must be converted to PDF, png, or jpg.
+
+See also [the XAS Education product
+page](http://bruceravel.github.io/XAS-Education/).
+
+PDF files of the talks can be found at
+[SpeakerDeck](https://speakerdeck.com/bruceravel).
+
+| **folder**    |  **title of talk**                                                                |
+| ------------- | --------------------------------------------------------------------------------- |
+| ATEA          |  Advanced Topics In EXAFS Analysis                                                |
+| Experiment    |  The XAFS Experiment: Instrumentation, Sample Preparation, and Experiment Design  |
+| FeS2          |  The discussion following an Artemis demonstration                                |
+| i2x           |  Interpreting XANES Data                                                          |
+| iiss          |  Introduction to Inner Shell Spectroscopies                                       |
+| methyltin     |  An Artemis example, supplement to a lecture/demo                                 |
+| noxtal        |  Modeling non-crystalline samples                                                 |
+| pimst         |  A Practical Introduction to Multiple Scattering Theory                           |
+| secondlecture |  An introductory lecture for an XAS short course                                  |
+| selfabs       |  Understanding self-absorption in fluorescence XAS                                |
+| CLT           |  The central limit theorem and noise in EXAFS data                                |
+| RT            |  The Ramsauer-Townsend effect in EXAFS analysis                                   |
+
+Examples
+--------
+
+These folders contain the XAS and structural data used in the talks.
+
+| **folder**         | **contents**                                                             |
+| ------------------ | ------------------------------------------------------------------------ |
+| Au+Cyanobacteria   | LCF example using gold(III) chloride reduced to gold metal               |
+| Cr2O3              | The Cr2O3 data from the CLT talk                                         |
+| Cr standards       | Cr 3+ and 6+ oxide standards                                             |
+| Cu metal           | Copper foil at 3 temperatures + crystal data                             |
+| EuTiO3             | Data at several temperatures, Ti K, and Eu L3 edges                      |
+| Fe foil            | Iron foil, 3 scans, 60 K, miscalibrated energy                           |
+| Fe standards       | An Athena project file + several data files with various Fe standards    |
+| FeS2               | FeS2 transmission EXAFS + crystal data                                   |
+| Fuzzy Degeneracy   | Zirconolite data from <https://doi.org/10.1107/S1600577514014982>        |
+| GeSb               | A single scan of a thin GeSb on silicon, p. 6 ATEA                       |
+| Germanium          | Crystalline and amorphous Ge data + crystal data                         |
+| HgDNA              | Merged scans of data and control for HgDNA example, p.7 ATEA             |
+| Methyltin          | Monomethyl tin trichloride + dimethyl tin dichloride + structure data    |
+| PbTiO3             | Ti K edge of PbTiO3 as a peak fitting example                            |
+| Self Absorption    | Data demonstrating self-absorption: Fe, Fe73Ga27, sulfate, zirconolite   |
+| Uranyl on Biomass  | Uranyl acetate in equilibrium with biomass                               |
+| Xtal               | Crystal structure examples                                               |
+
+Other folders
+-------------
+
+-   `sty/`
+    -   Copies of my customizations of the [progressbar Beamer
+        theme](http://recherche.noiraudes.net/fr/LaTeX.php) by Sylvain
+        Bouveret
+    -   common copyright statement, author information, date, common
+        frames, etc
+
+To use the style files, the `TEXINPUTS` environment variable must be set
+with a line like this either in the `.bashrc` file or at the command
+line:
+
+``` {.example}
+export TEXINPUTS=".:$HOME/TeX/XAS-Education/sty/:"
+```
+
+where `$HOME/TeX` would be replaced by the location of the local
+XAS-Education repository.
+
+To use the copyright, author, and date file, put these in the main .tex
+file of a talk
+
+``` {.example}
+ \include{XX.tex}  % where XX=(copyright|author|date)
+```
+
+Recommended reading
+-------------------
+
+The following are some of my favorite papers covering the ins and outs
+of advanced EXAFS analysis:
+
+-   [Scott Calvin's paper on analysis of doped
+    ferrites](https://doi.org/10.1103/PhysRevB.66.224405)
+
+-   [Shelly Kelly's uranium on biomass paper demonstrating the use of
+    crystalline analogs](https://doi.org/10.1016/S0016-7037(02)00947-X)
+
+-   [My paper from the XAFS14 conference on Composing complex EXAFS
+    problems with severe information
+    constraints](https://doi.org/10.1088/1742-6596/190/1/012026)
+
+-   [Eric Hudson's paper relating SS and MS values for
+    sigma^2^](https://doi.org/10.1103/PhysRevB.54.156)
+
+-   [Corwin Booth's XAFS14 conference paper on error
+    analysis](https://doi.org/10.1088/1742-6596/190/1/012028)
+
+-   [My paper on A Practical Introduction to Multiple Scattering
+    Theory](https://doi.org/10.1016/j.jallcom.2005.04.021)
+
+License
+-------
+
+Unless otherwise indicated, all these talks are licensed under the
+[Creative Commons](http://creativecommons.org/) [Attribution-ShareAlike
+3.0 Unported (CC BY-SA
+3.0)](http://creativecommons.org/licenses/by-sa/3.0/) license.
+
+This is a human-readable summary of the [Legal Code (the full
+license)](http://creativecommons.org/licenses/by-sa/3.0/legalcode).
+
+You are free:
+
+-   **to Share** — to copy, distribute and transmit the work
+-   **to Remix** — to adapt the work
+-   to make commercial use of the work
+
+Under the following conditions:
+
+-   **Attribution** — You must attribute the work in the manner
+    specified by the author or licensor (but not in any way that
+    suggests that they endorse you or your use of the work).
+
+-   **Share Alike** — If you alter, transform, or build upon this work,
+    you may distribute the resulting work only under the same or similar
+    license to this one.
+
+With the understanding that:
+
+-   **Waiver** — Any of the above conditions can be waived if you get
+    permission from the copyright holder.
+-   **Public Domain** — Where the work or any of its elements is in the
+    public domain under applicable law, that status is in no way
+    affected by the license.
+-   **Other Rights** — In no way are any of the following rights
+    affected by the license:
+    -   Your fair dealing or fair use rights, or other applicable
+        copyright exceptions and limitations;
+    -   The author's moral rights;
+    -   Rights other persons may have either in the work itself or in
+        how the work is used, such as publicity or privacy rights.
+-   **Notice** — For any reuse or distribution, you must make clear to
+    others the license terms of this work. The best way to do this is
+    with a link to this web page.
+
