@@ -30,6 +30,7 @@ PDF files of the talks can be found at [[https://speakerdeck.com/bruceravel][Spe
 ** Examples
 
 These folders contain the XAS and structural data used in the talks.
+All these examples can be downloaded from [[https://s3.amazonaws.com/XAS-Education/Examples.zip][this zip file]].
 
 | *folder*          | *contents*                                                             |
 |-------------------+------------------------------------------------------------------------|

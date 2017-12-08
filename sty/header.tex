@@ -70,8 +70,8 @@
 
 \hyphenation{EXAFS}
 
-\newcommand{\exafsequation}{%
-  {\small
+\newcommand{\exafsequation}[1][\small]{%
+  {#1
     \begin{align}
       \chi(k,\Gamma) =& 
       { \frac{{\color{Red4}(N_\Gamma S_0^2)}{\color{Blue4}F_\Gamma(k)}
