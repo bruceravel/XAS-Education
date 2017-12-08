@@ -8,7 +8,7 @@ LaTeX and [[https://bitbucket.org/rivanvx/beamer/wiki/Home][the Beamer LaTeX cla
 LibreOffice ~.odg~, Xfig ~.fig~) are deposited for some images and
 must be converted to PDF, png, or jpg.
 
-See also [[http://bruceravel.github.io/XAS-Education/][the XAS Education product page]].
+See also [[http://bruceravel.github.io/XAS-Education/][the XAS Education github page]].
 
 PDF files of the talks can be found at [[https://speakerdeck.com/bruceravel][SpeakerDeck]].
 
