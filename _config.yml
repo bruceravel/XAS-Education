@@ -1,0 +1,8 @@
+title: XAS Education
+description: Educational materials for XAS training courses
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-leap-day
+
+gems:
+  - jekyll-mentions
