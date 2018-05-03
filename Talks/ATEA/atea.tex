@@ -5,7 +5,7 @@
 
 \newcommand{\TheBigLesson}{%
   \begin{alertblock}{}
-    In {\ifeffit} the {\color{SlateBlue3}terms in light blue} are not
+    In {\artemis} the {\color{SlateBlue3}terms in light blue} are not
     themselves the fitting parameters.  They are \alert{written in
       terms of} the actual fitting parameters.
   \end{alertblock}
@@ -34,8 +34,8 @@
       \includegraphics[width=\linewidth]{mugs/matt.jpg}
     \end{minipage}&
     \begin{minipage}{0.7\linewidth}
-      Matt Newville, of course.  Without {\ifeffit} none of us would
-      be having this much fun
+      Matt Newville, of course.  Without {\larch} and {\ifeffit} none
+      of us would be having this much fun
     \end{minipage} \\
     \begin{minipage}{0.1\linewidth}
       \includegraphics[width=\linewidth]{mugs/shelly.jpg}
@@ -49,7 +49,7 @@
     \end{minipage}&
     \begin{minipage}{0.7\linewidth}
       John Rehr and his group.  If we didn't have fun with {\feff}, we
-      wouldn't have fun with {\ifeffit}
+      wouldn't have this fun with {\larch} and {\ifeffit}
     \end{minipage} \\
     \begin{minipage}{0.1\linewidth}
       \includegraphics[width=\linewidth]{mugs/ed.jpg}
@@ -93,51 +93,51 @@
 \section[Introduction]{Introduction}
 
 %\subsection{Beamline}
-\begin{frame}
-  \frametitle{This Talk}
+% \begin{frame}
+%   \frametitle{This Talk}
   
-  \begin{block}{This is \textbf{NOT} the introductory talk}
-    \begin{itemize}
-    \item I assume you are a veteran of many XAS campaigns and that
-      you already have your own data that you care about.
-    \item I assume you are familiar with the EXAFS equation.
-    \item I assume you understand XAS data processing and have done
-      some EXAFS analysis.
-    \item Some familiarity with {\ifeffit} or {\artemis} will help.
-    \end{itemize}
-  \end{block}
+%   \begin{block}{This is \textbf{NOT} the introductory talk}
+%     \begin{itemize}
+%     \item I assume you are a veteran of many XAS campaigns and that
+%       you already have your own data that you care about.
+%     \item I assume you are familiar with the EXAFS equation.
+%     \item I assume you understand XAS data processing and have done
+%       some EXAFS analysis.
+%     \item Some familiarity with {\ifeffit} or {\artemis} will help.
+%     \end{itemize}
+%   \end{block}
 
-  \bigskip
+%   \bigskip
 
-  \begin{alertblock}{}
-    \begin{center}
-      The audience for this talk is interested in advanced techniques
-      which will improve their use of their EXAFS data.
-    \end{center}
-  \end{alertblock}
-\end{frame}
+%   \begin{alertblock}{}
+%     \begin{center}
+%       The audience for this talk is interested in advanced techniques
+%       which will improve their use of their EXAFS data.
+%     \end{center}
+%   \end{alertblock}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{This Talk}
-  \begin{columns}
-    \begin{column}{0.5\linewidth}
-      %% fetch from http://waynocartoons.blogspot.com/2011_05_01_archive.html
-      \includegraphics[width=\linewidth]{images/bz-panel-05-16-11-wno.jpg}
-    \end{column}
-    \begin{column}{0.5\linewidth}
-      This is a long talk with some difficult content.  
+% \begin{frame}
+%   \frametitle{This Talk}
+%   \begin{columns}
+%     \begin{column}{0.5\linewidth}
+%       %% fetch from http://waynocartoons.blogspot.com/2011_05_01_archive.html
+%       \includegraphics[width=\linewidth]{images/bz-panel-05-16-11-wno.jpg}
+%     \end{column}
+%     \begin{column}{0.5\linewidth}
+%       This is a long talk with some difficult content.  
 
-      \bigskip
+%       \bigskip
 
-      We'll see how far we get.
-    \end{column}
-  \end{columns}
-  \begin{bottomnote}[0.4][19.0]%
-    Cartoon $\copyright$ Wayno and Dan Piraro
-    \href{http://waynocartoons.blogspot.com/2011_05_01_archive.html}
-    {\color{LightBlue4}{\ComputerMouse~}\texttt{http://waynocartoons.blogspot.com/2011\_05\_01\_archive.html}}
-  \end{bottomnote}
-\end{frame}
+%       We'll see how far we get.
+%     \end{column}
+%   \end{columns}
+%   \begin{bottomnote}[0.4][19.0]%
+%     Cartoon $\copyright$ Wayno and Dan Piraro
+%     \href{http://waynocartoons.blogspot.com/2011_05_01_archive.html}
+%     {\color{LightBlue4}{\ComputerMouse~}\texttt{http://waynocartoons.blogspot.com/2011\_05\_01\_archive.html}}
+%   \end{bottomnote}
+% \end{frame}
 
 \begin{frame}[label=themultiples]
   \frametitle{The ``Multiples''}
@@ -282,7 +282,7 @@
 
   \begin{alertblock}<6>{Unfortunately ...}
     None of those conditions really get met in EXAFS.  $N_{idp}$ is,
-    at best, an upper bond of the actual information content of the
+    at best, an upper bound of the actual information content of the
     EXAFS signal.
   \end{alertblock}
   
@@ -292,7 +292,7 @@
 \begin{frame}
   \frametitle{Statistical Parameters: Definitions}
   
-  {\ifeffit} uses a Levenberg-Marquardt non-linear least-squares
+  {\artemis} uses a Levenberg-Marquardt non-linear least-squares
   minimization, a standard $\chi^2$ fitting metric, and a simple
   definition of an R-factor:
 
@@ -381,7 +381,7 @@
     \end{column}
     \begin{column}{0.7\linewidth}
       The determination of measurement uncertainty is, perhaps, a bit
-      hokey in {\ifeffit}.  It is the average of the signal between
+      hokey in {\artemis}.  It is the average of the signal between
       15\,\AA\ and 25\,\AA\ in the Fourier transform -- a range that
       probably does not include much signal above the noise.
 
@@ -408,7 +408,7 @@
 
   \begin{exampleblock}{}
     OK then ... what is the implication of $\epsilon$ never being
-    evaluated correctly by {\ifeffit}?
+    evaluated correctly by {\artemis}?
   \end{exampleblock}
 
   \begin{enumerate}[<+->]
@@ -419,9 +419,9 @@
     significantly smaller.
   \item Error bars are taken from the diagonal of the covariance
     matrix.  If $\chi^2_\nu$ is way too big, the error bars will be way
-    too small.  The error bars reported by {\ifeffit} have been scaled
+    too small.  The error bars reported by {\artemis} have been scaled
     by $\sqrt{\chi^2_\nu}$.
-  \item Thus the error bars reported by {\ifeffit} are of the
+  \item Thus the error bars reported by {\artemis} are of the
     {\color{Green4}``correct''} size if we assume that the fit
     is a {\color{Green4}``good fit''}.
   \end{enumerate}
@@ -524,11 +524,11 @@
 
 
 %\definecolor{MYcolor}{rgb}{0,0.5,0} %% dark green
-\section[Ifeffit]{Evaluation of the EXAFS Equation in Ifeffit}
+\section[Algorithm]{Evaluation of the EXAFS Equation}
 \begin{frame}
   \frametitle{The Path Expansion}
 
-  {\ifeffit} is used to evaluate the EXAFS equation:
+  We evaluate the EXAFS equation:
   {\small
     \begin{align}
       \chi(k,\Gamma) =& {\Im}\>\Biggl(\, %%\sum\limits_{\Gamma}
@@ -556,12 +556,12 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Flow control in Ifeffit}
+  \frametitle{Flow control in Artemis}
 
   \begin{columns}
     \begin{column}{0.5\linewidth}
-      Every trick in this talk exploits the fact that {\ifeffit}
-      introduces this layer of abstraction between the
+      Every trick in this talk exploits the fact that {\artemis}
+      exploits this layer of abstraction between the
       {\color{SlateBlue3}path parameters} and the
       {\color{Green4}parameters of the fit}.
 
@@ -569,7 +569,7 @@
 
       \begin{exampleblock}{}
         Virtually any clever idea you have for describing your data
-        can be expressed using {\ifeffit}'s math expressions.
+        can be expressed using {\artemis}'s math expressions.
       \end{exampleblock}
     \end{column}
     \begin{column}{0.5\linewidth}
@@ -836,49 +836,56 @@ Correlations between variables:
 \begin{frame}[fragile]
   \frametitle{\ybco: Multiple Lattice Positions}
 
-  In {\ybco}, copper occupies 2 sites.  Site 1 is in a
-  {\color{Blue3}four-fold planar} configuration.  Site 2 is near the
-  center of a {\color{Blue3}square pyramid}.  The unit cell has
-  \alert{one} Cu1 and \alert{two} Cu2 positions.
+  \begin{columns}
+    \begin{column}{0.55\linewidth}
+      In {\ybco}, copper occupies 2 sites.  Site 1 is in a
+      {\color{Blue3}four-fold planar} configuration.  Site 2 is near
+      the center of a {\color{Blue3}square pyramid}.  The unit cell
+      has \alert{one} Cu1 and \alert{two} Cu2 positions.
+
+      \bigskip
+      
+      This is handled naturally in {\artemis} after running {\feff}
+      twice:
+    \end{column}
+    \begin{column}{0.45\linewidth}
+      \includegraphics[width=0.8\linewidth]{images/atoms_ybco.png}
+    \end{column}
+  \end{columns}
   
-  \begin{center}
+%   \begin{center}
 
-    \vskip -10pt
+%     \vskip -10pt
 
-    \begin{minipage}{0.5\linewidth}
-      \begin{block}{}
-        \tiny
-        \begin{alltt}
-{\color{Green4}title YBCO: Y Ba2 Cu3 O7}
-{\color{SteelBlue4}space} = P M M M
-{\color{SteelBlue4}rmax}  = 7.2   {\color{SteelBlue4}a}=3.817 {\color{SteelBlue4}b}=3.882  {\color{SteelBlue4}c}=11.671
-{\color{SteelBlue4}core}  = cu1
-{\color{Purple4}atoms}
-{\color{Blue4}! At.type   x        y       z       tag}
-   Y       0.5      0.5     0.5
-   Ba      0.5      0.5     0.1839
-   Cu      0        0       0        cu1
-   Cu      0        0       0.3546   cu2
-   O       0        0.5     0        O1
-   O       0        0       0.1589   O2
-   O       0        0.5     0.3780   O3
-   O       0.5      0       0.3783   O4
-        \end{alltt}
-      \end{block}
-    \end{minipage}
-  \end{center}
+%     \begin{minipage}{0.5\linewidth}
+%       \begin{block}{}
+%         \tiny
+%         \begin{alltt}
+% {\color{Green4}title YBCO: Y Ba2 Cu3 O7}
+% {\color{SteelBlue4}space} = P M M M
+% {\color{SteelBlue4}rmax}  = 7.2   {\color{SteelBlue4}a}=3.817 {\color{SteelBlue4}b}=3.882  {\color{SteelBlue4}c}=11.671
+% {\color{SteelBlue4}core}  = cu1
+% {\color{Purple4}atoms}
+% {\color{Blue4}! At.type   x        y       z       tag}
+%    Y       0.5      0.5     0.5
+%    Ba      0.5      0.5     0.1839
+%    Cu      0        0       0        cu1
+%    Cu      0        0       0.3546   cu2
+%    O       0        0.5     0        O1
+%    O       0        0       0.1589   O2
+%    O       0        0.5     0.3780   O3
+%    O       0.5      0       0.3783   O4
+%         \end{alltt}
+%       \end{block}
+%     \end{minipage}
+%   \end{center}
 
-  This is handled naturally in {\ifeffit} after running {\feff} twice:
-
-  \vskip -8pt
-  
   \begin{columns}
     \begin{column}{0.5\linewidth}
       \scriptsize
       \begin{alltt}
   {\color{guessp}guess}  s0sqr = 0.9
   {\color{Purple4}path} \{
-     {\color{Gold4}file}    site1/feff0001.dat
      {\color{Gold4}label}   1st path, site 1
      {\color{Gold4}s02}     s0sqr / 3
    \}
@@ -891,7 +898,6 @@ Correlations between variables:
       \begin{alltt}
 
   {\color{Purple4}path} \{
-     {\color{Gold4}file}    site2/feff0001.dat
      {\color{Gold4}label}   1st path, site 2
      {\color{Gold4}s02}     2 * s0sqr / 3
    \}
@@ -1014,7 +1020,7 @@ Correlations between variables:
 
     Use as many {\feff} calculations as you need, run {\feff}, import
     and include whichever paths you need.  (\textit{Nota bene:} there
-    is an out-of-the-box limit of 128 paths in {\ifeffit}.)
+    is an out-of-the-box limit of 128 paths in {\artemis}.)
   \end{center}
 \end{frame}
 
@@ -1194,7 +1200,7 @@ Correlations between variables:
 
     Use as many data sets calculations as you need.  Each data set
     needs one or more paths associated with it.  (\textit{Nota bene:}
-    there is an out-of-the-box limit of 10 data sets in {\ifeffit}.)
+    there is an out-of-the-box limit of 10 data sets in {\artemis}.)
   \end{center}
 \end{frame}
 
@@ -1209,7 +1215,7 @@ Correlations between variables:
       \includegraphics[width=\linewidth]{images/ifeffit_control.pdf}      
     \end{column}
     \begin{column}{0.5\linewidth}
-      All of {\ifeffit}'s magic happens in the {\color{SlateBlue3}blue
+      All of {\artemis}'s magic happens in the {\color{SlateBlue3}blue
         steps}.  The effective use of MFC or MDS fitting, begins with
       clever model building.
     \end{column}
@@ -1316,7 +1322,7 @@ Correlations between variables:
   \end{columns}
   
   \begin{block}{Path geometry}
-    {\ifeffit} is clever enough to use the correct values for
+    {\artemis} is clever enough to use the correct values for
     $R_{eff}$ (the path length used in the {\feff} calculation) and
     the reduced mass as path parameter math expressions are evaluated
     for each path.
@@ -1380,7 +1386,7 @@ Correlations between variables:
 
     Constraints are implemented as {\color{defp}def} parameter math
     expressions.  (Path parameters can also be expressed as math
-    expressions.)  {\ifeffit}'s math expressions are quite expressive.
+    expressions.)  {\artemis}'s math expressions are quite expressive.
   \end{center}
 \end{frame}
 
@@ -1390,7 +1396,7 @@ Correlations between variables:
 \begin{frame}
   \frametitle{Using Imperfect Knowledge}
 
-  {\ifeffit} allows the incorporation of imprecise
+  {\artemis} allows the incorporation of imprecise
   \alert{prior knowledge} by adding restraints in quadrature
   to the fitting metric.
 
@@ -1608,7 +1614,7 @@ Correlations between variables:
 
 %     Use as many {\feff} calculations as you need, run {\feff}, import
 %     and include whichever paths you need.  (\textit{Nota bene:} there
-%     is an out-of-the-box limit of 128 paths in {\ifeffit}.)
+%     is an out-of-the-box limit of 128 paths in {\artemis}.)
 %   \end{center}
 % \end{frame}
 
@@ -1642,7 +1648,7 @@ Correlations between variables:
 
 %     Use as many data sets calculations as you need.  Each data set
 %     needs one or more paths associated with it.  (\textit{Nota bene:}
-%     there is an out-of-the-box limit of 10 data sets in {\ifeffit}.)
+%     there is an out-of-the-box limit of 10 data sets in {\artemis}.)
 %   \end{center}
 % \end{frame}
 
@@ -1668,7 +1674,7 @@ Correlations between variables:
 
 %     Constraints are implemented as {\color{Green4}def} parameter math
 %     expressions.  (Path parameters can also be expressed as math
-%     expressions.)  {\ifeffit}'s math expressions are quite expressive.
+%     expressions.)  {\artemis}'s math expressions are quite expressive.
 %   \end{center}
 % \end{frame}
 
