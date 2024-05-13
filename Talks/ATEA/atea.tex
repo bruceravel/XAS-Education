@@ -1,3 +1,5 @@
+% see https://tex.stackexchange.com/a/74828
+\PassOptionsToPackage{x11names}{xcolor}
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
 %\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
 
@@ -12,6 +14,9 @@
 }
 \newcommand{\ybco}{YBa$_2$Cu$_3$O$_7$}
 \newcommand{\eto}{EuTiO$_3$}
+
+\definecolor{brass}{rgb}{0.71, 0.65, 0.26}
+
 
 \mode<presentation>
 %\mode<beamer>
@@ -532,16 +537,16 @@
   {\small
     \begin{align}
       \chi(k,\Gamma) =& {\Im}\>\Biggl(\, %%\sum\limits_{\Gamma}
-      { \frac{{\color{SlateBlue3}(N_\Gamma S_0^2)}{\color{Gold4}F_\Gamma(k)}}
+      { \frac{{\color{Blue3}(N_\Gamma S_0^2)}{\color{Gold4}F_\Gamma(k)}}
         {2\,kR_\Gamma^2} }
       e^{i(2kR_\Gamma + {\color{Gold4}\Phi_\Gamma(k)})}
-      e^{-2{\color{SlateBlue3}\sigma_\Gamma^2}k^2}
+      e^{-2{\color{Blue3}\sigma_\Gamma^2}k^2}
       e^{-2R_\Gamma/{\color{Gold4}\lambda(k)}}
       \Biggl) \\
       \chi_{\mathrm{theory}}(k) =& \sum\limits_{\Gamma}\chi(k,\Gamma) \notag\\
       R_\Gamma =& \> {\color{Gold4}R_{0,\Gamma}} +
-      {\color{SlateBlue3}\Delta R_\Gamma} \\
-      k =& N\sqrt{(E_0 - {\color{SlateBlue3}\Delta E_0})}
+      {\color{Blue3}\Delta R_\Gamma} \\
+      k =& N\sqrt{(E_0 - {\color{Blue3}\Delta E_0})}
     \end{align}}
 
   \medskip

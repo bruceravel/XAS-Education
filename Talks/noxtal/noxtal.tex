@@ -1,3 +1,5 @@
+% see https://tex.stackexchange.com/a/74828
+\PassOptionsToPackage{x11names}{xcolor}
 \documentclass[10pt, xcolor=x11names, compress]{beamer}
 %\documentclass[10pt, xcolor=x11names, compress, handout]{beamer}
 \include{header}
@@ -6,8 +8,10 @@
 
 \title{Modeling non-crystalline samples}
 \include{author}
-\date[IFPAN, April 2015]{New Challenges and Solutions for XAS Data Analysis\\
-  Institute of Physics, Polish Academy of Sciences\\14-17 April, 2015}
+% \date[IFPAN, April 2015]{New Challenges and Solutions for XAS Data Analysis\\
+%   Institute of Physics, Polish Academy of Sciences\\14-17 April, 2015}
+
+\date[3 May, 2024]{3 May 2024}
 
 \begin{document}
 \maketitle
@@ -264,14 +268,10 @@ guess parameters:
     \item Integrate Open Babel into {\artemis}
     \end{enumerate}
   \end{block}
-  \begin{alertblock}<2>{This has long been on my to do list.}
-    This is a substantive, yet tractable, way that someone could make
-    a contribution to the {\ifeffit} project.
-
-    \smallskip
-
-    \textit{Any volunteers?}
-  \end{alertblock}
+  \begin{exampleblock}<2>{See recent versions of Larch.}
+    Matt and Mauro have made a lot of progress in this area in recent
+    releases of Larch!!
+  \end{exampleblock}
 \end{frame}
 
 \section{Sorbed Uranyl Acetate}

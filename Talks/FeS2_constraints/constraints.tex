@@ -1,0 +1,213 @@
+% see https://tex.stackexchange.com/a/74828
+\PassOptionsToPackage{x11names}{xcolor}
+%\documentclass[10pt, xcolor=x11names, compress]{beamer}
+\documentclass[10pt, xcolor=x11names, compress]{beamer}
+
+\include{header}
+\usepackage{ulem}
+
+
+\newcommand{\fes}{FeS$_2$}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{exercise}[theorem]{Exercise for the reader}
+\newtheorem{remember}[theorem]{Always remember}
+
+\mode<presentation>
+
+\title{FeS$_2$ EXAFS}%
+\subtitle{Talking about constraints}
+\include{author}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+  \frametitle{The EXAFS Equation}
+  \exafsequation
+
+  \smallskip
+
+  \par\noindent\rule{\textwidth}{0.4pt}
+
+  \begin{overlayarea}{\linewidth}{0.5\textheight} 
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Problem}
+  \exafsequation
+
+  \smallskip
+
+  \par\noindent\rule{\textwidth}{0.4pt}
+
+  \begin{overlayarea}{\linewidth}{0.5\textheight} 
+    \begin{enumerate}
+    \item There are 5 parameters that must be determined for each
+      path: {\color{Red4} N}, {\color{Red4} $S_0^2$},
+      {\color{Red4} $\Delta E_0$}, {\color{Red4} $\Delta R$}, and
+      {\color{Red4} $\sigma^2$}
+    \item We are currently considering 4 paths
+    \item That's 20 numbers, but \artemis tells us that we have
+      fewer than 17 independent points.
+    \end{enumerate}
+    \begin{alertblock}{}
+      \begin{center}
+        Are we doomed?  Is EXAFS hopeless?
+      \end{center}
+    \end{alertblock}
+  \end{overlayarea}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{The Problem}
+  \exafsequation
+
+  \smallskip
+
+  \par\noindent\rule{\textwidth}{0.4pt}
+  
+  \begin{overlayarea}{\linewidth}{0.5\textheight} 
+    \begin{center}
+      \begin{tabular}{ccccl}
+        Npaths & Nparams & Constraints & count & comment \\
+        \hline
+        4 & 5 & 0 & 20 & too many!\\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Coordination number}
+  \exafsequation
+
+  \smallskip
+
+  \par\noindent\rule{\textwidth}{0.4pt}
+  
+  \begin{overlayarea}{\linewidth}{0.5\textheight} 
+    \begin{center}
+      \begin{tabular}{ccccl}
+        Npaths & Nparams & Constraints & count & comment \\
+        \hline
+        {\color{Gray0}4} & {\color{Gray0}5} & {\color{Gray0}0} & {\color{Gray0}20} & {\color{Gray0}too many!}\\
+        4 & \alert{4} & \alert{0} & \alert{16} & \alert{use N from CIF file!}\\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$S_0^2$: Amplitude reduction factor}
+  \exafsequation
+
+  \smallskip
+
+  \par\noindent\rule{\textwidth}{0.4pt}
+  
+  \begin{overlayarea}{\linewidth}{0.5\textheight} 
+    \begin{center}
+      \begin{tabular}{ccccl}
+        Npaths & Nparams & Constraints & count & comment \\
+        \hline
+        {\color{Gray0}4} & {\color{Gray0}5} & {\color{Gray0}0} & {\color{Gray0}20} & {\color{Gray0}too many!}\\
+        {\color{Gray0}4} & {\color{Gray0}4} & {\color{Gray0}0} & {\color{Gray0}16} & {\color{Gray0}use N from CIF file!}\\
+        4 & \alert{3} & \alert{1} & \alert{13} & \alert{$S_0^2$ is common to all paths!}\\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$\Delta E_0$: Shift of the 0 of wavenumber}
+  \exafsequation
+
+  \smallskip
+
+  \par\noindent\rule{\textwidth}{0.4pt}
+  
+  \begin{overlayarea}{\linewidth}{0.5\textheight} 
+    \begin{center}
+      \begin{tabular}{ccccl}
+        Npaths & Nparams & Constraints & count & comment \\
+        \hline
+        {\color{Gray0}4} & {\color{Gray0}5} & {\color{Gray0}0} & {\color{Gray0}20} & {\color{Gray0}too many!}\\
+        {\color{Gray0}4} & {\color{Gray0}4} & {\color{Gray0}0} & {\color{Gray0}16} & {\color{Gray0}use N from CIF file!}\\
+        {\color{Gray0}4} & {\color{Gray0}3} & {\color{Gray0}1} & {\color{Gray0}13} & {\color{Gray0}$S_0^2$ is common to all paths!}\\
+        4 & \alert{2} & \alert{2} & \alert{10} & \alert{$\Delta E_0$ is common to all paths!}\\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Isotropic lattice expansion/contraction}
+  \exafsequation
+
+  \smallskip
+
+  \par\noindent\rule{\textwidth}{0.4pt}
+  
+  \begin{overlayarea}{\linewidth}{0.5\textheight} 
+    \begin{center}
+      \begin{tabular}{ccccl}
+        Npaths & Nparams & Constraints & count & comment \\
+        \hline
+        {\color{Gray0}4} & {\color{Gray0}5} & {\color{Gray0}0} & {\color{Gray0}20} & {\color{Gray0}too many!}\\
+        {\color{Gray0}4} & {\color{Gray0}4} & {\color{Gray0}0} & {\color{Gray0}16} & {\color{Gray0}use N from CIF file!}\\
+        {\color{Gray0}4} & {\color{Gray0}3} & {\color{Gray0}1} & {\color{Gray0}13} & {\color{Gray0}$S_0^2$ is common to all paths!}\\
+        {\color{Gray0}4} & {\color{Gray0}2} & {\color{Gray0}2} & {\color{Gray0}10} & {\color{Gray0}$\Delta S_0$ is common to all paths!}\\
+        4 & \alert{1} & \alert{3} & \alert{7} & \alert{Compute $\Delta R$ from $\alpha$!}\\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{overlayarea}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Mean square deviations in R}
+  \exafsequation
+
+  \smallskip
+
+  \par\noindent\rule{\textwidth}{0.4pt}
+  
+  \begin{overlayarea}{\linewidth}{0.5\textheight} 
+    \begin{center}
+      \begin{tabular}{ccccl}
+        Npaths & Nparams & Constraints & count & comment \\
+        \hline
+        {\color{Gray0}4} & {\color{Gray0}5} & {\color{Gray0}0} & {\color{Gray0}20} & {\color{Gray0}too many!}\\
+        {\color{Gray0}4} & {\color{Gray0}4} & {\color{Gray0}0} & {\color{Gray0}16} & {\color{Gray0}use N from CIF file!}\\
+        {\color{Gray0}4} & {\color{Gray0}3} & {\color{Gray0}1} & {\color{Gray0}13} & {\color{Gray0}$S_0^2$ is common to all paths!}\\
+        {\color{Gray0}4} & {\color{Gray0}2} & {\color{Gray0}2} & {\color{Gray0}10} & {\color{Gray0}$\Delta S_0$ is common to all paths!}\\
+        4 & \alert{1} & \alert{3} & \alert{7} & \alert{Compute $\Delta R$ from $\alpha$!}\\
+        \hline
+      \end{tabular}
+    \end{center}
+
+    Sadly, there is no such constraint that is easy to figure out for
+    $\sigma^2$, so will start with a $\sigma^2$ for each path.
+    
+  \end{overlayarea}
+\end{frame}
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% TeX-parse-self: t
+%%% TeX-auto-save: t
+%%% TeX-auto-untabify: t
+%%% TeX-PDF-mode: t
+%%% End:

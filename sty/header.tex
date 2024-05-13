@@ -18,6 +18,9 @@
 \usepackage[overlay,absolute]{textpos}
 \TPGrid[5mm,5mm]{20}{20}
 
+
+\usepackage[x11names]{xcolor}
+
 \usepackage{marvosym}
 \newcommand{\homepagesymbol}{{\Large\ComputerMouse~}}%      {{\Large\marvosymbol{205}}~}
 
@@ -72,7 +75,7 @@
 
 \newcommand{\exafsequation}[1][\small]{%
   {#1
-    \begin{align}
+    \begin{align*}
       \chi(k,\Gamma) =& 
       { \frac{{\color{Red4}(N_\Gamma S_0^2)}{\color{Blue4}F_\Gamma(k)}
                         e^{-2{\color{Red4}\sigma_\Gamma^2}k^2}
@@ -85,7 +88,7 @@
       {\color{Red4}\Delta R_\Gamma} \\
       k =& \sqrt{2m_e(E_0 - {\color{Red4}\Delta E_0})/\hbar^2} 
            \approx \sqrt{(E_0 - {\color{Red4}\Delta E_0})/3.81}
-    \end{align}}
+    \end{align*}}
 }
 
 
